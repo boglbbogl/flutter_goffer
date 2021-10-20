@@ -7,7 +7,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MainPage(),
+      home: const MainPage(),
       theme: ThemeData(
         fontFamily: 'Yanolja',
         primaryColor: Colors.deepPurple,

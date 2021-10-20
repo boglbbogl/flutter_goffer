@@ -10,10 +10,10 @@ class MainPage extends StatelessWidget {
     theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Font 테스트'),
+        title: const Text('Font 테스트'),
       ),
       body: Column(
-        children: [
+        children: const [
           Text('data'),
         ],
       ),

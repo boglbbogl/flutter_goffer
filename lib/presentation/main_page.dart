@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
+import 'package:flutter_goffer/presentation/create/create_background_page.dart';
+import 'package:flutter_goffer/presentation/create/create_main_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class MainPage extends StatelessWidget {
@@ -12,10 +14,7 @@ class MainPage extends StatelessWidget {
           child: const Center(child: Text('First Screen')),
         ),
       ),
-      Container(
-        color: Colors.white,
-        child: const Center(child: Text('Second Screen')),
-      ),
+      const CreateBackgroundPage(),
       Container(
         color: Colors.white,
         child: const Center(child: Text('Third Screen')),
@@ -48,11 +47,11 @@ class MainPage extends StatelessWidget {
       _btnItem(
           title: "Add",
           icon: Icons.add_box_rounded,
-          activeColor: Colors.deepOrange),
+          activeColor: Colors.deepPurple),
       _btnItem(
         title: "Setting",
         icon: Icons.settings,
-        activeColor: Colors.amber,
+        activeColor: Colors.deepOrange,
       ),
     ];
   }
@@ -68,7 +67,14 @@ class MainPage extends StatelessWidget {
         controller: controller,
         screens: _screens(),
         items: _items(),
-        onItemSelected: (index) {},
+        onItemSelected: (index) {
+          if (index == 1) {
+            pushNewScreen(context,
+                screen: const CreateMainPage(),
+                pageTransitionAnimation: PageTransitionAnimation.slideUp);
+            controller.jumpToTab(0);
+          }
+        },
         // backgroundColor: Colors.white,
         navBarHeight: 62,
         navBarStyle: NavBarStyle.style10,

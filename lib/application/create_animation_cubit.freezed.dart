@@ -16,9 +16,16 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CreateAnimationStateTearOff {
   const _$CreateAnimationStateTearOff();
 
-  _CreateAnimationState call({required bool startAnimation}) {
+  _CreateAnimationState call(
+      {required bool startAnimation,
+      required double date,
+      required double destination,
+      required double layover}) {
     return _CreateAnimationState(
       startAnimation: startAnimation,
+      date: date,
+      destination: destination,
+      layover: layover,
     );
   }
 }
@@ -29,6 +36,9 @@ const $CreateAnimationState = _$CreateAnimationStateTearOff();
 /// @nodoc
 mixin _$CreateAnimationState {
   bool get startAnimation => throw _privateConstructorUsedError;
+  double get date => throw _privateConstructorUsedError;
+  double get destination => throw _privateConstructorUsedError;
+  double get layover => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateAnimationStateCopyWith<CreateAnimationState> get copyWith =>
@@ -40,7 +50,8 @@ abstract class $CreateAnimationStateCopyWith<$Res> {
   factory $CreateAnimationStateCopyWith(CreateAnimationState value,
           $Res Function(CreateAnimationState) then) =
       _$CreateAnimationStateCopyWithImpl<$Res>;
-  $Res call({bool startAnimation});
+  $Res call(
+      {bool startAnimation, double date, double destination, double layover});
 }
 
 /// @nodoc
@@ -55,12 +66,27 @@ class _$CreateAnimationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? startAnimation = freezed,
+    Object? date = freezed,
+    Object? destination = freezed,
+    Object? layover = freezed,
   }) {
     return _then(_value.copyWith(
       startAnimation: startAnimation == freezed
           ? _value.startAnimation
           : startAnimation // ignore: cast_nullable_to_non_nullable
               as bool,
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as double,
+      destination: destination == freezed
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as double,
+      layover: layover == freezed
+          ? _value.layover
+          : layover // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -72,7 +98,8 @@ abstract class _$CreateAnimationStateCopyWith<$Res>
           $Res Function(_CreateAnimationState) then) =
       __$CreateAnimationStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool startAnimation});
+  $Res call(
+      {bool startAnimation, double date, double destination, double layover});
 }
 
 /// @nodoc
@@ -89,12 +116,27 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? startAnimation = freezed,
+    Object? date = freezed,
+    Object? destination = freezed,
+    Object? layover = freezed,
   }) {
     return _then(_CreateAnimationState(
       startAnimation: startAnimation == freezed
           ? _value.startAnimation
           : startAnimation // ignore: cast_nullable_to_non_nullable
               as bool,
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as double,
+      destination: destination == freezed
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as double,
+      layover: layover == freezed
+          ? _value.layover
+          : layover // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -102,14 +144,24 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CreateAnimationState implements _CreateAnimationState {
-  _$_CreateAnimationState({required this.startAnimation});
+  _$_CreateAnimationState(
+      {required this.startAnimation,
+      required this.date,
+      required this.destination,
+      required this.layover});
 
   @override
   final bool startAnimation;
+  @override
+  final double date;
+  @override
+  final double destination;
+  @override
+  final double layover;
 
   @override
   String toString() {
-    return 'CreateAnimationState(startAnimation: $startAnimation)';
+    return 'CreateAnimationState(startAnimation: $startAnimation, date: $date, destination: $destination, layover: $layover)';
   }
 
   @override
@@ -118,13 +170,23 @@ class _$_CreateAnimationState implements _CreateAnimationState {
         (other is _CreateAnimationState &&
             (identical(other.startAnimation, startAnimation) ||
                 const DeepCollectionEquality()
-                    .equals(other.startAnimation, startAnimation)));
+                    .equals(other.startAnimation, startAnimation)) &&
+            (identical(other.date, date) ||
+                const DeepCollectionEquality().equals(other.date, date)) &&
+            (identical(other.destination, destination) ||
+                const DeepCollectionEquality()
+                    .equals(other.destination, destination)) &&
+            (identical(other.layover, layover) ||
+                const DeepCollectionEquality().equals(other.layover, layover)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(startAnimation);
+      const DeepCollectionEquality().hash(startAnimation) ^
+      const DeepCollectionEquality().hash(date) ^
+      const DeepCollectionEquality().hash(destination) ^
+      const DeepCollectionEquality().hash(layover);
 
   @JsonKey(ignore: true)
   @override
@@ -134,11 +196,20 @@ class _$_CreateAnimationState implements _CreateAnimationState {
 }
 
 abstract class _CreateAnimationState implements CreateAnimationState {
-  factory _CreateAnimationState({required bool startAnimation}) =
-      _$_CreateAnimationState;
+  factory _CreateAnimationState(
+      {required bool startAnimation,
+      required double date,
+      required double destination,
+      required double layover}) = _$_CreateAnimationState;
 
   @override
   bool get startAnimation => throw _privateConstructorUsedError;
+  @override
+  double get date => throw _privateConstructorUsedError;
+  @override
+  double get destination => throw _privateConstructorUsedError;
+  @override
+  double get layover => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CreateAnimationStateCopyWith<_CreateAnimationState> get copyWith =>

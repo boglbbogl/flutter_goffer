@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
-import 'package:flutter_goffer/presentation/create/create_background_page.dart';
-import 'package:flutter_goffer/presentation/create/create_main_page.dart';
+import 'package:flutter_goffer/presentation/create/screen/create_background_page.dart';
+import 'package:flutter_goffer/presentation/create/screen/create_main_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class MainPage extends StatelessWidget {

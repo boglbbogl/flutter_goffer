@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/create_animation_cubit.dart';
-import 'package:flutter_goffer/presentation/create/create_matrix_slider_page.dart';
+import 'package:flutter_goffer/presentation/create/screen/create_matrix_slider_page.dart';
 
 class CreateMainPage extends StatelessWidget {
   const CreateMainPage({Key? key}) : super(key: key);

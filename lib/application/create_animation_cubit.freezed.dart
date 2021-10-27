@@ -17,14 +17,12 @@ class _$CreateAnimationStateTearOff {
   const _$CreateAnimationStateTearOff();
 
   _CreateAnimationState call(
-      {required bool startAnimation,
-      required double date,
+      {required int switcherIndex,
       required double destination,
       required double layover,
       required double result}) {
     return _CreateAnimationState(
-      startAnimation: startAnimation,
-      date: date,
+      switcherIndex: switcherIndex,
       destination: destination,
       layover: layover,
       result: result,
@@ -37,8 +35,7 @@ const $CreateAnimationState = _$CreateAnimationStateTearOff();
 
 /// @nodoc
 mixin _$CreateAnimationState {
-  bool get startAnimation => throw _privateConstructorUsedError;
-  double get date => throw _privateConstructorUsedError;
+  int get switcherIndex => throw _privateConstructorUsedError;
   double get destination => throw _privateConstructorUsedError;
   double get layover => throw _privateConstructorUsedError;
   double get result => throw _privateConstructorUsedError;
@@ -54,11 +51,7 @@ abstract class $CreateAnimationStateCopyWith<$Res> {
           $Res Function(CreateAnimationState) then) =
       _$CreateAnimationStateCopyWithImpl<$Res>;
   $Res call(
-      {bool startAnimation,
-      double date,
-      double destination,
-      double layover,
-      double result});
+      {int switcherIndex, double destination, double layover, double result});
 }
 
 /// @nodoc
@@ -72,21 +65,16 @@ class _$CreateAnimationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? startAnimation = freezed,
-    Object? date = freezed,
+    Object? switcherIndex = freezed,
     Object? destination = freezed,
     Object? layover = freezed,
     Object? result = freezed,
   }) {
     return _then(_value.copyWith(
-      startAnimation: startAnimation == freezed
-          ? _value.startAnimation
-          : startAnimation // ignore: cast_nullable_to_non_nullable
-              as bool,
-      date: date == freezed
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as double,
+      switcherIndex: switcherIndex == freezed
+          ? _value.switcherIndex
+          : switcherIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       destination: destination == freezed
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
@@ -111,11 +99,7 @@ abstract class _$CreateAnimationStateCopyWith<$Res>
       __$CreateAnimationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool startAnimation,
-      double date,
-      double destination,
-      double layover,
-      double result});
+      {int switcherIndex, double destination, double layover, double result});
 }
 
 /// @nodoc
@@ -131,21 +115,16 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? startAnimation = freezed,
-    Object? date = freezed,
+    Object? switcherIndex = freezed,
     Object? destination = freezed,
     Object? layover = freezed,
     Object? result = freezed,
   }) {
     return _then(_CreateAnimationState(
-      startAnimation: startAnimation == freezed
-          ? _value.startAnimation
-          : startAnimation // ignore: cast_nullable_to_non_nullable
-              as bool,
-      date: date == freezed
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as double,
+      switcherIndex: switcherIndex == freezed
+          ? _value.switcherIndex
+          : switcherIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       destination: destination == freezed
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
@@ -166,16 +145,13 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
 
 class _$_CreateAnimationState implements _CreateAnimationState {
   _$_CreateAnimationState(
-      {required this.startAnimation,
-      required this.date,
+      {required this.switcherIndex,
       required this.destination,
       required this.layover,
       required this.result});
 
   @override
-  final bool startAnimation;
-  @override
-  final double date;
+  final int switcherIndex;
   @override
   final double destination;
   @override
@@ -185,18 +161,16 @@ class _$_CreateAnimationState implements _CreateAnimationState {
 
   @override
   String toString() {
-    return 'CreateAnimationState(startAnimation: $startAnimation, date: $date, destination: $destination, layover: $layover, result: $result)';
+    return 'CreateAnimationState(switcherIndex: $switcherIndex, destination: $destination, layover: $layover, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CreateAnimationState &&
-            (identical(other.startAnimation, startAnimation) ||
+            (identical(other.switcherIndex, switcherIndex) ||
                 const DeepCollectionEquality()
-                    .equals(other.startAnimation, startAnimation)) &&
-            (identical(other.date, date) ||
-                const DeepCollectionEquality().equals(other.date, date)) &&
+                    .equals(other.switcherIndex, switcherIndex)) &&
             (identical(other.destination, destination) ||
                 const DeepCollectionEquality()
                     .equals(other.destination, destination)) &&
@@ -210,8 +184,7 @@ class _$_CreateAnimationState implements _CreateAnimationState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(startAnimation) ^
-      const DeepCollectionEquality().hash(date) ^
+      const DeepCollectionEquality().hash(switcherIndex) ^
       const DeepCollectionEquality().hash(destination) ^
       const DeepCollectionEquality().hash(layover) ^
       const DeepCollectionEquality().hash(result);
@@ -225,16 +198,13 @@ class _$_CreateAnimationState implements _CreateAnimationState {
 
 abstract class _CreateAnimationState implements CreateAnimationState {
   factory _CreateAnimationState(
-      {required bool startAnimation,
-      required double date,
+      {required int switcherIndex,
       required double destination,
       required double layover,
       required double result}) = _$_CreateAnimationState;
 
   @override
-  bool get startAnimation => throw _privateConstructorUsedError;
-  @override
-  double get date => throw _privateConstructorUsedError;
+  int get switcherIndex => throw _privateConstructorUsedError;
   @override
   double get destination => throw _privateConstructorUsedError;
   @override

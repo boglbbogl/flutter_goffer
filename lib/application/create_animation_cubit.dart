@@ -12,23 +12,23 @@ class CreateAnimationCubit extends Cubit<CreateAnimationState> {
   CreateAnimationCubit() : super(CreateAnimationState.initial());
 
   Future<Unit> started() async {
-    emit(state.copyWith(startAnimation: false));
+    emit(state.copyWith(switcherIndex: 0));
     return unit;
   }
 
-  Future<Unit> startAnimation() async {
-    emit(state.copyWith(startAnimation: true));
+  Future<Unit> startAnimation({
+    required int index,
+  }) async {
+    emit(state.copyWith(switcherIndex: index));
     return unit;
   }
 
   Future<Unit> changedPage({
-    required double date,
     required double destination,
     required double layover,
     required double result,
   }) async {
     emit(state.copyWith(
-      date: date,
       destination: destination,
       layover: layover,
       result: result,

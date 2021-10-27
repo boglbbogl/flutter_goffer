@@ -12,10 +12,7 @@ class DestinationCreateBody extends StatelessWidget {
     return CreateBodyWidget(
       onTap: () {
         context.read<CreateAnimationCubit>().changedPage(
-            date: -size.width,
-            destination: -size.width,
-            layover: 0,
-            result: size.width);
+            destination: -size.width, layover: 0, result: size.width);
       },
       widget: Center(
           child: Text(

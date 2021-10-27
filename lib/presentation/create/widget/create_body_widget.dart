@@ -17,6 +17,19 @@ class CreateBodyWidget extends StatelessWidget {
       height: size.height,
       child: Stack(
         children: [
+          Positioned(
+              top: 35,
+              right: 15,
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: Icon(
+                  Icons.clear_outlined,
+                  color: appColor,
+                  size: 30,
+                ),
+              )),
           widget,
           Align(
             alignment: Alignment.bottomCenter,

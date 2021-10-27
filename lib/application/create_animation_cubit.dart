@@ -25,11 +25,13 @@ class CreateAnimationCubit extends Cubit<CreateAnimationState> {
     required double date,
     required double destination,
     required double layover,
+    required double result,
   }) async {
     emit(state.copyWith(
       date: date,
       destination: destination,
       layover: layover,
+      result: result,
     ));
     return unit;
   }

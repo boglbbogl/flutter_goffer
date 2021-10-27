@@ -80,6 +80,7 @@ class CreateMainPage extends StatelessWidget {
                       datePosition: state.date,
                       destinationPosition: state.destination,
                       layoverPosition: state.layover,
+                      resultPosition: state.result,
                     ));
         },
       ),

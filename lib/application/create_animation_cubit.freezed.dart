@@ -20,12 +20,14 @@ class _$CreateAnimationStateTearOff {
       {required bool startAnimation,
       required double date,
       required double destination,
-      required double layover}) {
+      required double layover,
+      required double result}) {
     return _CreateAnimationState(
       startAnimation: startAnimation,
       date: date,
       destination: destination,
       layover: layover,
+      result: result,
     );
   }
 }
@@ -39,6 +41,7 @@ mixin _$CreateAnimationState {
   double get date => throw _privateConstructorUsedError;
   double get destination => throw _privateConstructorUsedError;
   double get layover => throw _privateConstructorUsedError;
+  double get result => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateAnimationStateCopyWith<CreateAnimationState> get copyWith =>
@@ -51,7 +54,11 @@ abstract class $CreateAnimationStateCopyWith<$Res> {
           $Res Function(CreateAnimationState) then) =
       _$CreateAnimationStateCopyWithImpl<$Res>;
   $Res call(
-      {bool startAnimation, double date, double destination, double layover});
+      {bool startAnimation,
+      double date,
+      double destination,
+      double layover,
+      double result});
 }
 
 /// @nodoc
@@ -69,6 +76,7 @@ class _$CreateAnimationStateCopyWithImpl<$Res>
     Object? date = freezed,
     Object? destination = freezed,
     Object? layover = freezed,
+    Object? result = freezed,
   }) {
     return _then(_value.copyWith(
       startAnimation: startAnimation == freezed
@@ -87,6 +95,10 @@ class _$CreateAnimationStateCopyWithImpl<$Res>
           ? _value.layover
           : layover // ignore: cast_nullable_to_non_nullable
               as double,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -99,7 +111,11 @@ abstract class _$CreateAnimationStateCopyWith<$Res>
       __$CreateAnimationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool startAnimation, double date, double destination, double layover});
+      {bool startAnimation,
+      double date,
+      double destination,
+      double layover,
+      double result});
 }
 
 /// @nodoc
@@ -119,6 +135,7 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
     Object? date = freezed,
     Object? destination = freezed,
     Object? layover = freezed,
+    Object? result = freezed,
   }) {
     return _then(_CreateAnimationState(
       startAnimation: startAnimation == freezed
@@ -137,6 +154,10 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
           ? _value.layover
           : layover // ignore: cast_nullable_to_non_nullable
               as double,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -148,7 +169,8 @@ class _$_CreateAnimationState implements _CreateAnimationState {
       {required this.startAnimation,
       required this.date,
       required this.destination,
-      required this.layover});
+      required this.layover,
+      required this.result});
 
   @override
   final bool startAnimation;
@@ -158,10 +180,12 @@ class _$_CreateAnimationState implements _CreateAnimationState {
   final double destination;
   @override
   final double layover;
+  @override
+  final double result;
 
   @override
   String toString() {
-    return 'CreateAnimationState(startAnimation: $startAnimation, date: $date, destination: $destination, layover: $layover)';
+    return 'CreateAnimationState(startAnimation: $startAnimation, date: $date, destination: $destination, layover: $layover, result: $result)';
   }
 
   @override
@@ -177,7 +201,10 @@ class _$_CreateAnimationState implements _CreateAnimationState {
                 const DeepCollectionEquality()
                     .equals(other.destination, destination)) &&
             (identical(other.layover, layover) ||
-                const DeepCollectionEquality().equals(other.layover, layover)));
+                const DeepCollectionEquality()
+                    .equals(other.layover, layover)) &&
+            (identical(other.result, result) ||
+                const DeepCollectionEquality().equals(other.result, result)));
   }
 
   @override
@@ -186,7 +213,8 @@ class _$_CreateAnimationState implements _CreateAnimationState {
       const DeepCollectionEquality().hash(startAnimation) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(destination) ^
-      const DeepCollectionEquality().hash(layover);
+      const DeepCollectionEquality().hash(layover) ^
+      const DeepCollectionEquality().hash(result);
 
   @JsonKey(ignore: true)
   @override
@@ -200,7 +228,8 @@ abstract class _CreateAnimationState implements CreateAnimationState {
       {required bool startAnimation,
       required double date,
       required double destination,
-      required double layover}) = _$_CreateAnimationState;
+      required double layover,
+      required double result}) = _$_CreateAnimationState;
 
   @override
   bool get startAnimation => throw _privateConstructorUsedError;
@@ -210,6 +239,8 @@ abstract class _CreateAnimationState implements CreateAnimationState {
   double get destination => throw _privateConstructorUsedError;
   @override
   double get layover => throw _privateConstructorUsedError;
+  @override
+  double get result => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CreateAnimationStateCopyWith<_CreateAnimationState> get copyWith =>

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/application/create_animation_cubit.dart';
-import 'package:flutter_goffer/presentation/create/date_select_body.dart';
+import 'package:flutter_goffer/presentation/create/body/date_create_body.dart';
+import 'package:flutter_goffer/presentation/create/body/destination_create_body.dart';
+import 'package:flutter_goffer/presentation/create/body/layover_create_body.dart';
 
 class CreateMatrixSliderPage extends StatelessWidget {
   final double datePosition;
@@ -30,7 +32,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
                   context.read<CreateAnimationCubit>().changedPage(
                       date: -size.width, destination: 0, layover: size.width);
                 },
-                widget: DateSelectBody()),
+                widget: const DateCreateBody()),
             _animationWidget(
                 context: context,
                 xPosition: destinationPosition,
@@ -38,12 +40,12 @@ class CreateMatrixSliderPage extends StatelessWidget {
                   context.read<CreateAnimationCubit>().changedPage(
                       date: -size.width, destination: -size.width, layover: 0);
                 },
-                widget: Container()),
+                widget: const DestinationCreateBody()),
             _animationWidget(
                 context: context,
                 xPosition: layoverPosition,
                 onTap: () {},
-                widget: Container()),
+                widget: const LayoverCreateBody()),
           ],
         ),
       ),

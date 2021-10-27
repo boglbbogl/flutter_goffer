@@ -42,16 +42,17 @@ class MainPage extends StatelessWidget {
       _btnItem(
         title: "Home",
         icon: Icons.home_filled,
-        activeColor: Colors.deepPurple,
+        activeColor: appColor,
       ),
       _btnItem(
-          title: "Add",
-          icon: Icons.add_box_rounded,
-          activeColor: Colors.deepPurple),
+        title: "Add",
+        icon: Icons.add_box_rounded,
+        activeColor: appColor,
+      ),
       _btnItem(
         title: "Setting",
         icon: Icons.settings,
-        activeColor: Colors.deepOrange,
+        activeColor: appColor,
       ),
     ];
   }

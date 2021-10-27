@@ -11,9 +11,7 @@ class CreateBackgroundPage extends StatelessWidget {
           child: Text(
         '나만의 여정을 만들어 보세요',
         style: theme.textTheme.bodyText2!.copyWith(
-            color: Colors.deepPurple,
-            fontWeight: FontWeight.bold,
-            fontSize: 30),
+            color: appColor, fontWeight: FontWeight.bold, fontSize: 30),
       )),
     );
   }

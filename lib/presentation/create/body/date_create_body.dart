@@ -29,7 +29,7 @@ class DateCreateBody extends StatelessWidget {
                       topRight: Radius.circular(12)),
                   color: Colors.white70),
               child: Padding(
-                padding: const EdgeInsets.only(right: 25, left: 10),
+                padding: const EdgeInsets.only(right: 20, left: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

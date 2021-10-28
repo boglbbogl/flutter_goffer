@@ -18,11 +18,13 @@ class _$CreateAnimationStateTearOff {
 
   _CreateAnimationState call(
       {required int switcherIndex,
+      required bool isExpandable,
       required double destination,
       required double layover,
       required double result}) {
     return _CreateAnimationState(
       switcherIndex: switcherIndex,
+      isExpandable: isExpandable,
       destination: destination,
       layover: layover,
       result: result,
@@ -36,6 +38,7 @@ const $CreateAnimationState = _$CreateAnimationStateTearOff();
 /// @nodoc
 mixin _$CreateAnimationState {
   int get switcherIndex => throw _privateConstructorUsedError;
+  bool get isExpandable => throw _privateConstructorUsedError;
   double get destination => throw _privateConstructorUsedError;
   double get layover => throw _privateConstructorUsedError;
   double get result => throw _privateConstructorUsedError;
@@ -51,7 +54,11 @@ abstract class $CreateAnimationStateCopyWith<$Res> {
           $Res Function(CreateAnimationState) then) =
       _$CreateAnimationStateCopyWithImpl<$Res>;
   $Res call(
-      {int switcherIndex, double destination, double layover, double result});
+      {int switcherIndex,
+      bool isExpandable,
+      double destination,
+      double layover,
+      double result});
 }
 
 /// @nodoc
@@ -66,6 +73,7 @@ class _$CreateAnimationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? switcherIndex = freezed,
+    Object? isExpandable = freezed,
     Object? destination = freezed,
     Object? layover = freezed,
     Object? result = freezed,
@@ -75,6 +83,10 @@ class _$CreateAnimationStateCopyWithImpl<$Res>
           ? _value.switcherIndex
           : switcherIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      isExpandable: isExpandable == freezed
+          ? _value.isExpandable
+          : isExpandable // ignore: cast_nullable_to_non_nullable
+              as bool,
       destination: destination == freezed
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
@@ -99,7 +111,11 @@ abstract class _$CreateAnimationStateCopyWith<$Res>
       __$CreateAnimationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int switcherIndex, double destination, double layover, double result});
+      {int switcherIndex,
+      bool isExpandable,
+      double destination,
+      double layover,
+      double result});
 }
 
 /// @nodoc
@@ -116,6 +132,7 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? switcherIndex = freezed,
+    Object? isExpandable = freezed,
     Object? destination = freezed,
     Object? layover = freezed,
     Object? result = freezed,
@@ -125,6 +142,10 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
           ? _value.switcherIndex
           : switcherIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      isExpandable: isExpandable == freezed
+          ? _value.isExpandable
+          : isExpandable // ignore: cast_nullable_to_non_nullable
+              as bool,
       destination: destination == freezed
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
@@ -146,12 +167,15 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
 class _$_CreateAnimationState implements _CreateAnimationState {
   _$_CreateAnimationState(
       {required this.switcherIndex,
+      required this.isExpandable,
       required this.destination,
       required this.layover,
       required this.result});
 
   @override
   final int switcherIndex;
+  @override
+  final bool isExpandable;
   @override
   final double destination;
   @override
@@ -161,7 +185,7 @@ class _$_CreateAnimationState implements _CreateAnimationState {
 
   @override
   String toString() {
-    return 'CreateAnimationState(switcherIndex: $switcherIndex, destination: $destination, layover: $layover, result: $result)';
+    return 'CreateAnimationState(switcherIndex: $switcherIndex, isExpandable: $isExpandable, destination: $destination, layover: $layover, result: $result)';
   }
 
   @override
@@ -171,6 +195,9 @@ class _$_CreateAnimationState implements _CreateAnimationState {
             (identical(other.switcherIndex, switcherIndex) ||
                 const DeepCollectionEquality()
                     .equals(other.switcherIndex, switcherIndex)) &&
+            (identical(other.isExpandable, isExpandable) ||
+                const DeepCollectionEquality()
+                    .equals(other.isExpandable, isExpandable)) &&
             (identical(other.destination, destination) ||
                 const DeepCollectionEquality()
                     .equals(other.destination, destination)) &&
@@ -185,6 +212,7 @@ class _$_CreateAnimationState implements _CreateAnimationState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(switcherIndex) ^
+      const DeepCollectionEquality().hash(isExpandable) ^
       const DeepCollectionEquality().hash(destination) ^
       const DeepCollectionEquality().hash(layover) ^
       const DeepCollectionEquality().hash(result);
@@ -199,12 +227,15 @@ class _$_CreateAnimationState implements _CreateAnimationState {
 abstract class _CreateAnimationState implements CreateAnimationState {
   factory _CreateAnimationState(
       {required int switcherIndex,
+      required bool isExpandable,
       required double destination,
       required double layover,
       required double result}) = _$_CreateAnimationState;
 
   @override
   int get switcherIndex => throw _privateConstructorUsedError;
+  @override
+  bool get isExpandable => throw _privateConstructorUsedError;
   @override
   double get destination => throw _privateConstructorUsedError;
   @override

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/create_animation_cubit.dart';
+import 'package:flutter_goffer/presentation/create/body/date_create_body.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_matrix_slider_page.dart';
 
 class CreateMainPage extends StatelessWidget {
@@ -50,7 +51,8 @@ class CreateMainPage extends StatelessWidget {
                                 .read<CreateAnimationCubit>()
                                 .startAnimation(index: 2);
                           },
-                          widget: Container())
+                          widget:
+                              DateCreateBody(isExpandable: state.isExpandable))
                       : CreateMatrixSliderPage(
                           destinationPosition: state.destination,
                           layoverPosition: state.layover,

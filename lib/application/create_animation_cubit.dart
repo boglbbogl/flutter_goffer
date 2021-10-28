@@ -12,7 +12,7 @@ class CreateAnimationCubit extends Cubit<CreateAnimationState> {
   CreateAnimationCubit() : super(CreateAnimationState.initial());
 
   Future<Unit> started() async {
-    emit(state.copyWith(switcherIndex: 0));
+    emit(state.copyWith(switcherIndex: 0, isExpandable: false));
     return unit;
   }
 
@@ -33,6 +33,16 @@ class CreateAnimationCubit extends Cubit<CreateAnimationState> {
       layover: layover,
       result: result,
     ));
+    return unit;
+  }
+
+  Future<Unit> dateAndTimeExpandable() async {
+    if (state.isExpandable) {
+      emit(state.copyWith(isExpandable: false));
+    } else {
+      emit(state.copyWith(isExpandable: true));
+    }
+
     return unit;
   }
 }

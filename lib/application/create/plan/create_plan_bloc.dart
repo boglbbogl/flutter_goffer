@@ -1,11 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_goffer/domain/create_plan.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'create_plan_event.dart';
 part 'create_plan_state.dart';
 part 'create_plan_bloc.freezed.dart';
 
+@Injectable()
 class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
   CreatePlanBloc() : super(CreatePlanState.initial());
 

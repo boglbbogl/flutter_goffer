@@ -100,7 +100,7 @@ class DateCreateBody extends StatelessWidget {
     required String time,
   }) {
     return SizedBox(
-      width: size.width * 0.3,
+      width: size.width * 0.29,
       height: size.height * 0.1,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

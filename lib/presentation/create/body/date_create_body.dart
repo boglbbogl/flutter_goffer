@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_goffer/_constant/widgets/theme.dart';
-import 'package:flutter_goffer/application/create_animation_cubit.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_goffer/_constant/widgets/theme.dart';
+import 'package:flutter_goffer/application/create/animation/create_animation_cubit.dart';
+import 'package:flutter_goffer/application/create/plan/create_plan_bloc.dart';
+import 'package:flutter_goffer/application/domain/create/create_plan.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class DateCreateBody extends StatelessWidget {
   final bool isExpandable;
+  final CreatePlan plan;
   const DateCreateBody({
     Key? key,
     required this.isExpandable,
+    required this.plan,
   }) : super(key: key);
 
   @override
@@ -45,14 +49,16 @@ class DateCreateBody extends StatelessWidget {
                               Column(
                                 children: [
                                   Text(
-                                    '2021',
+                                    plan.startDate.substring(0, 4),
                                     style: theme.textTheme.bodyText2!.copyWith(
                                         color: appColor,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22),
                                   ),
                                   Text(
-                                    '10/20',
+                                    plan.startDate
+                                        .substring(5, 10)
+                                        .replaceAll("-", "/"),
                                     style: theme.textTheme.bodyText2!.copyWith(
                                         color: appColor,
                                         fontWeight: FontWeight.bold,
@@ -84,14 +90,16 @@ class DateCreateBody extends StatelessWidget {
                               Column(
                                 children: [
                                   Text(
-                                    '2021',
+                                    plan.endDate.substring(0, 4),
                                     style: theme.textTheme.bodyText2!.copyWith(
                                         color: appColor,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22),
                                   ),
                                   Text(
-                                    '10/20',
+                                    plan.endDate
+                                        .substring(5, 10)
+                                        .replaceAll("-", "/"),
                                     style: theme.textTheme.bodyText2!.copyWith(
                                         color: appColor,
                                         fontWeight: FontWeight.bold,
@@ -146,7 +154,23 @@ class DateCreateBody extends StatelessWidget {
                     child: SfDateRangePicker(
                       minDate: DateTime.now(),
                       maxDate: DateTime(2100),
-                      onSelectionChanged: (value) {},
+
+                      onSelectionChanged: (args) {
+                        if (args.value is PickerDateRange) {
+                          context.read<CreatePlanBloc>().add(
+                              CreatePlanEvent.dateSelected(
+                                  start: args.value.startDate
+                                      .toString()
+                                      .substring(0, 10),
+                                  end: args.value.endDate == null
+                                      ? args.value.startDate
+                                          .toString()
+                                          .substring(0, 10)
+                                      : args.value.endDate
+                                          .toString()
+                                          .substring(0, 10)));
+                        }
+                      },
                       selectionMode: DateRangePickerSelectionMode.range,
                       rangeTextStyle: theme.textTheme.bodyText2!
                           .copyWith(color: Colors.white),

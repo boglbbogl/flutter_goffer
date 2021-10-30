@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter_goffer/application/domain/create/create_plan.dart';
+import 'package:flutter_goffer/domain/create_plan.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'create_plan_event.dart';

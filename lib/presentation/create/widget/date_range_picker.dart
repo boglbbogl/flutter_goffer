@@ -19,7 +19,7 @@ class DateRangePicker extends StatelessWidget {
           color: Colors.white70),
       child: SfDateRangePicker(
         minDate: DateTime.now(),
-        maxDate: DateTime(2023),
+        maxDate: DateTime(2024),
         initialSelectedRange: PickerDateRange(DateTime.now(), DateTime.now()),
         onSelectionChanged: (args) {
           if (args.value is PickerDateRange) {
@@ -31,8 +31,10 @@ class DateRangePicker extends StatelessWidget {
           }
         },
         selectionMode: DateRangePickerSelectionMode.range,
+
         rangeTextStyle:
             theme.textTheme.bodyText2!.copyWith(color: Colors.white),
+
         monthCellStyle: DateRangePickerMonthCellStyle(
             disabledDatesTextStyle:
                 theme.textTheme.bodyText2!.copyWith(fontSize: 0),
@@ -44,6 +46,7 @@ class DateRangePicker extends StatelessWidget {
         startRangeSelectionColor: appColor,
         endRangeSelectionColor: appColor,
         rangeSelectionColor: appColor,
+
         selectionTextStyle:
             theme.textTheme.bodyText2!.copyWith(color: Colors.white),
         todayHighlightColor: appColor,

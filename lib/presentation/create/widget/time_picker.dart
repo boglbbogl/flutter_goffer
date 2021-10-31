@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
@@ -43,6 +44,16 @@ class TimePicker extends StatelessWidget {
                   ],
                 ),
               ),
+              // SizedBox(
+              //   height: size.height * 0.3,
+              //   width: size.width * 0.35,
+              //   child: CupertinoPicker(
+              //     scrollController:
+              //         FixedExtentScrollController(initialItem: 18),
+              //     itemExtent: 55,
+              //     onSelectedItemChanged: (index) {},
+              //   children: [],),
+              // ),
               timePickerForm(
                 title: '도착 시간',
                 listWidget: ListView(

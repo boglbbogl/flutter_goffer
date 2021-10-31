@@ -68,6 +68,9 @@ class CreateMainPage extends StatelessWidget {
                               destinationPosition: state.destination,
                               layoverPosition: state.layover,
                               resultPosition: state.result,
+                              plan: planState.plan!,
+                              isDestinationSwitch:
+                                  planState.isDestinationSwitch,
                             ));
             },
           );

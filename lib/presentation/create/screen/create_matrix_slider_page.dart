@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
+import 'package:flutter_goffer/domain/create_plan.dart';
 import 'package:flutter_goffer/presentation/create/body/destination_create_body.dart';
 import 'package:flutter_goffer/presentation/create/body/layover_create_body.dart';
 import 'package:flutter_goffer/presentation/create/body/result_create_body.dart';
@@ -8,11 +9,15 @@ class CreateMatrixSliderPage extends StatelessWidget {
   final double destinationPosition;
   final double layoverPosition;
   final double resultPosition;
+  final CreatePlan plan;
+  final bool isDestinationSwitch;
   const CreateMatrixSliderPage({
     Key? key,
     required this.destinationPosition,
     required this.layoverPosition,
     required this.resultPosition,
+    required this.plan,
+    required this.isDestinationSwitch,
   }) : super(key: key);
 
   @override
@@ -28,7 +33,10 @@ class CreateMatrixSliderPage extends StatelessWidget {
                 context: context,
                 xPosition: destinationPosition,
                 images: 'assets/images/cappadocia_first.jpg',
-                widget: const DestinationCreateBody()),
+                widget: DestinationCreateBody(
+                  plan: plan,
+                  isDestinationSwitch: isDestinationSwitch,
+                )),
             _animationWidget(
                 context: context,
                 xPosition: layoverPosition,

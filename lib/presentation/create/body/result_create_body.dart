@@ -8,6 +8,7 @@ class ResultCreateBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CreateBodyWidget(
+      btnText: '경로 확인하러 가기',
       onTap: () {},
       widget: Center(
           child: Text(

@@ -4,10 +4,12 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 class CreateBodyWidget extends StatelessWidget {
   final Function() onTap;
   final Widget widget;
+  final String btnText;
   const CreateBodyWidget({
     Key? key,
     required this.onTap,
     required this.widget,
+    required this.btnText,
   }) : super(key: key);
 
   @override
@@ -44,7 +46,7 @@ class CreateBodyWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(18), color: appColor),
                   child: Center(
                     child: Text(
-                      '선택완료',
+                      btnText,
                       style: theme.textTheme.bodyText2!
                           .copyWith(color: Colors.white, fontSize: 20),
                     ),

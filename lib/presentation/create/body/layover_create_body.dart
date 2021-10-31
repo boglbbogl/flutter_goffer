@@ -11,6 +11,7 @@ class LayoverCreateBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CreateBodyWidget(
+      btnText: '경로 만들러 가기',
       onTap: () {
         context.read<CreateAnimationCubit>().changedPage(
             destination: -size.width, layover: -size.width, result: 0);

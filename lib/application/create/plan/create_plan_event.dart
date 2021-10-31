@@ -11,4 +11,6 @@ class CreatePlanEvent with _$CreatePlanEvent {
       _StartTimeSelected;
   const factory CreatePlanEvent.endTimeSelected({required String end}) =
       _EndTimeSelected;
+  const factory CreatePlanEvent.destinationToggleSwitched() =
+      _DestinationToggleSwitched;
 }

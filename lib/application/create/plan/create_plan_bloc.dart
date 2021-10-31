@@ -27,6 +27,7 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
         CreatePlanState _state;
         _state = state.copyWith(
           plan: initialPlan,
+          isDestinationSwitch: false,
         );
         yield _state;
       },
@@ -39,6 +40,13 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
       },
       endTimeSelected: (e) async* {
         yield state.copyWith(plan: state.plan!.copyWith(endTime: e.end));
+      },
+      destinationToggleSwitched: (e) async* {
+        if (state.isDestinationSwitch) {
+          yield state.copyWith(isDestinationSwitch: false);
+        } else {
+          yield state.copyWith(isDestinationSwitch: true);
+        }
       },
     );
   }

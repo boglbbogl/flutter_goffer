@@ -38,6 +38,10 @@ class _$CreatePlanEventTearOff {
       end: end,
     );
   }
+
+  _DestinationToggleSwitched destinationToggleSwitched() {
+    return const _DestinationToggleSwitched();
+  }
 }
 
 /// @nodoc
@@ -51,6 +55,7 @@ mixin _$CreatePlanEvent {
     required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
+    required TResult Function() destinationToggleSwitched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +64,7 @@ mixin _$CreatePlanEvent {
     TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
+    TResult Function()? destinationToggleSwitched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +74,8 @@ mixin _$CreatePlanEvent {
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
     required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_DestinationToggleSwitched value)
+        destinationToggleSwitched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +84,8 @@ mixin _$CreatePlanEvent {
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
     TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_DestinationToggleSwitched value)?
+        destinationToggleSwitched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +149,7 @@ class _$_Started implements _Started {
     required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
+    required TResult Function() destinationToggleSwitched,
   }) {
     return started();
   }
@@ -150,6 +161,7 @@ class _$_Started implements _Started {
     TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
+    TResult Function()? destinationToggleSwitched,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -165,6 +177,8 @@ class _$_Started implements _Started {
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
     required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_DestinationToggleSwitched value)
+        destinationToggleSwitched,
   }) {
     return started(this);
   }
@@ -176,6 +190,8 @@ class _$_Started implements _Started {
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
     TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_DestinationToggleSwitched value)?
+        destinationToggleSwitched,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -269,6 +285,7 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
+    required TResult Function() destinationToggleSwitched,
   }) {
     return dateSelected(start, end);
   }
@@ -280,6 +297,7 @@ class _$_DateSelected implements _DateSelected {
     TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
+    TResult Function()? destinationToggleSwitched,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -295,6 +313,8 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
     required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_DestinationToggleSwitched value)
+        destinationToggleSwitched,
   }) {
     return dateSelected(this);
   }
@@ -306,6 +326,8 @@ class _$_DateSelected implements _DateSelected {
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
     TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_DestinationToggleSwitched value)?
+        destinationToggleSwitched,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -395,6 +417,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
+    required TResult Function() destinationToggleSwitched,
   }) {
     return startTimeSelected(start);
   }
@@ -406,6 +429,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
+    TResult Function()? destinationToggleSwitched,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -421,6 +445,8 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
     required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_DestinationToggleSwitched value)
+        destinationToggleSwitched,
   }) {
     return startTimeSelected(this);
   }
@@ -432,6 +458,8 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
     TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_DestinationToggleSwitched value)?
+        destinationToggleSwitched,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -520,6 +548,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
+    required TResult Function() destinationToggleSwitched,
   }) {
     return endTimeSelected(end);
   }
@@ -531,6 +560,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
+    TResult Function()? destinationToggleSwitched,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -546,6 +576,8 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
     required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_DestinationToggleSwitched value)
+        destinationToggleSwitched,
   }) {
     return endTimeSelected(this);
   }
@@ -557,6 +589,8 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
     TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_DestinationToggleSwitched value)?
+        destinationToggleSwitched,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -576,13 +610,118 @@ abstract class _EndTimeSelected implements CreatePlanEvent {
 }
 
 /// @nodoc
+abstract class _$DestinationToggleSwitchedCopyWith<$Res> {
+  factory _$DestinationToggleSwitchedCopyWith(_DestinationToggleSwitched value,
+          $Res Function(_DestinationToggleSwitched) then) =
+      __$DestinationToggleSwitchedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$DestinationToggleSwitchedCopyWithImpl<$Res>
+    extends _$CreatePlanEventCopyWithImpl<$Res>
+    implements _$DestinationToggleSwitchedCopyWith<$Res> {
+  __$DestinationToggleSwitchedCopyWithImpl(_DestinationToggleSwitched _value,
+      $Res Function(_DestinationToggleSwitched) _then)
+      : super(_value, (v) => _then(v as _DestinationToggleSwitched));
+
+  @override
+  _DestinationToggleSwitched get _value =>
+      super._value as _DestinationToggleSwitched;
+}
+
+/// @nodoc
+
+class _$_DestinationToggleSwitched implements _DestinationToggleSwitched {
+  const _$_DestinationToggleSwitched();
+
+  @override
+  String toString() {
+    return 'CreatePlanEvent.destinationToggleSwitched()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _DestinationToggleSwitched);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String end) endTimeSelected,
+    required TResult Function() destinationToggleSwitched,
+  }) {
+    return destinationToggleSwitched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String end)? endTimeSelected,
+    TResult Function()? destinationToggleSwitched,
+    required TResult orElse(),
+  }) {
+    if (destinationToggleSwitched != null) {
+      return destinationToggleSwitched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_DateSelected value) dateSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_DestinationToggleSwitched value)
+        destinationToggleSwitched,
+  }) {
+    return destinationToggleSwitched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_DateSelected value)? dateSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_DestinationToggleSwitched value)?
+        destinationToggleSwitched,
+    required TResult orElse(),
+  }) {
+    if (destinationToggleSwitched != null) {
+      return destinationToggleSwitched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DestinationToggleSwitched implements CreatePlanEvent {
+  const factory _DestinationToggleSwitched() = _$_DestinationToggleSwitched;
+}
+
+/// @nodoc
 class _$CreatePlanStateTearOff {
   const _$CreatePlanStateTearOff();
 
-  _CreatePlanState call({required bool isLoading, required CreatePlan? plan}) {
+  _CreatePlanState call(
+      {required bool isLoading,
+      required CreatePlan? plan,
+      required bool isDestinationSwitch}) {
     return _CreatePlanState(
       isLoading: isLoading,
       plan: plan,
+      isDestinationSwitch: isDestinationSwitch,
     );
   }
 }
@@ -594,6 +733,7 @@ const $CreatePlanState = _$CreatePlanStateTearOff();
 mixin _$CreatePlanState {
   bool get isLoading => throw _privateConstructorUsedError;
   CreatePlan? get plan => throw _privateConstructorUsedError;
+  bool get isDestinationSwitch => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreatePlanStateCopyWith<CreatePlanState> get copyWith =>
@@ -605,7 +745,7 @@ abstract class $CreatePlanStateCopyWith<$Res> {
   factory $CreatePlanStateCopyWith(
           CreatePlanState value, $Res Function(CreatePlanState) then) =
       _$CreatePlanStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, CreatePlan? plan});
+  $Res call({bool isLoading, CreatePlan? plan, bool isDestinationSwitch});
 
   $CreatePlanCopyWith<$Res>? get plan;
 }
@@ -623,6 +763,7 @@ class _$CreatePlanStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? plan = freezed,
+    Object? isDestinationSwitch = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -633,6 +774,10 @@ class _$CreatePlanStateCopyWithImpl<$Res>
           ? _value.plan
           : plan // ignore: cast_nullable_to_non_nullable
               as CreatePlan?,
+      isDestinationSwitch: isDestinationSwitch == freezed
+          ? _value.isDestinationSwitch
+          : isDestinationSwitch // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -655,7 +800,7 @@ abstract class _$CreatePlanStateCopyWith<$Res>
           _CreatePlanState value, $Res Function(_CreatePlanState) then) =
       __$CreatePlanStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, CreatePlan? plan});
+  $Res call({bool isLoading, CreatePlan? plan, bool isDestinationSwitch});
 
   @override
   $CreatePlanCopyWith<$Res>? get plan;
@@ -676,6 +821,7 @@ class __$CreatePlanStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? plan = freezed,
+    Object? isDestinationSwitch = freezed,
   }) {
     return _then(_CreatePlanState(
       isLoading: isLoading == freezed
@@ -686,6 +832,10 @@ class __$CreatePlanStateCopyWithImpl<$Res>
           ? _value.plan
           : plan // ignore: cast_nullable_to_non_nullable
               as CreatePlan?,
+      isDestinationSwitch: isDestinationSwitch == freezed
+          ? _value.isDestinationSwitch
+          : isDestinationSwitch // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -693,16 +843,21 @@ class __$CreatePlanStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CreatePlanState implements _CreatePlanState {
-  _$_CreatePlanState({required this.isLoading, required this.plan});
+  _$_CreatePlanState(
+      {required this.isLoading,
+      required this.plan,
+      required this.isDestinationSwitch});
 
   @override
   final bool isLoading;
   @override
   final CreatePlan? plan;
+  @override
+  final bool isDestinationSwitch;
 
   @override
   String toString() {
-    return 'CreatePlanState(isLoading: $isLoading, plan: $plan)';
+    return 'CreatePlanState(isLoading: $isLoading, plan: $plan, isDestinationSwitch: $isDestinationSwitch)';
   }
 
   @override
@@ -713,14 +868,18 @@ class _$_CreatePlanState implements _CreatePlanState {
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
             (identical(other.plan, plan) ||
-                const DeepCollectionEquality().equals(other.plan, plan)));
+                const DeepCollectionEquality().equals(other.plan, plan)) &&
+            (identical(other.isDestinationSwitch, isDestinationSwitch) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDestinationSwitch, isDestinationSwitch)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(plan);
+      const DeepCollectionEquality().hash(plan) ^
+      const DeepCollectionEquality().hash(isDestinationSwitch);
 
   @JsonKey(ignore: true)
   @override
@@ -731,12 +890,15 @@ class _$_CreatePlanState implements _CreatePlanState {
 abstract class _CreatePlanState implements CreatePlanState {
   factory _CreatePlanState(
       {required bool isLoading,
-      required CreatePlan? plan}) = _$_CreatePlanState;
+      required CreatePlan? plan,
+      required bool isDestinationSwitch}) = _$_CreatePlanState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
   CreatePlan? get plan => throw _privateConstructorUsedError;
+  @override
+  bool get isDestinationSwitch => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CreatePlanStateCopyWith<_CreatePlanState> get copyWith =>

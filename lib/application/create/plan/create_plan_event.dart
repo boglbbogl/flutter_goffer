@@ -13,4 +13,7 @@ class CreatePlanEvent with _$CreatePlanEvent {
       _EndTimeSelected;
   const factory CreatePlanEvent.destinationToggleSwitched() =
       _DestinationToggleSwitched;
+  const factory CreatePlanEvent.addressBottomSearched({
+    required bool value,
+  }) = _AdressBottomSearched;
 }

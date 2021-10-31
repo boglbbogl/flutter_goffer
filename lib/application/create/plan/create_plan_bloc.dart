@@ -28,6 +28,7 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
         _state = state.copyWith(
           plan: initialPlan,
           isDestinationSwitch: false,
+          isAddressSearchBar: false,
         );
         yield _state;
       },
@@ -47,6 +48,9 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
         } else {
           yield state.copyWith(isDestinationSwitch: true);
         }
+      },
+      addressBottomSearched: (e) async* {
+        yield state.copyWith(isAddressSearchBar: e.value);
       },
     );
   }

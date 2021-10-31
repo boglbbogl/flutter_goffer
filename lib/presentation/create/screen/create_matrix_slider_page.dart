@@ -11,6 +11,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
   final double resultPosition;
   final CreatePlan plan;
   final bool isDestinationSwitch;
+  final bool isAddressSearchBar;
   const CreateMatrixSliderPage({
     Key? key,
     required this.destinationPosition,
@@ -18,6 +19,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
     required this.resultPosition,
     required this.plan,
     required this.isDestinationSwitch,
+    required this.isAddressSearchBar,
   }) : super(key: key);
 
   @override
@@ -25,29 +27,36 @@ class CreateMatrixSliderPage extends StatelessWidget {
     // willpopscope
     return WillPopScope(
       onWillPop: () async => false,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Stack(
-          children: [
-            _animationWidget(
-                context: context,
-                xPosition: destinationPosition,
-                images: 'assets/images/cappadocia_first.jpg',
-                widget: DestinationCreateBody(
-                  plan: plan,
-                  isDestinationSwitch: isDestinationSwitch,
-                )),
-            _animationWidget(
-                context: context,
-                xPosition: layoverPosition,
-                images: 'assets/images/cappadocia_second.jpg',
-                widget: const LayoverCreateBody()),
-            _animationWidget(
-                context: context,
-                xPosition: resultPosition,
-                images: 'assets/images/cappadocia_third.jpg',
-                widget: const ResultCreateBody()),
-          ],
+      child: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          backgroundColor: Colors.white,
+          body: Stack(
+            children: [
+              _animationWidget(
+                  context: context,
+                  xPosition: destinationPosition,
+                  images: 'assets/images/cappadocia_first.jpg',
+                  widget: DestinationCreateBody(
+                    plan: plan,
+                    isDestinationSwitch: isDestinationSwitch,
+                    isAddressSearchBar: isAddressSearchBar,
+                  )),
+              _animationWidget(
+                  context: context,
+                  xPosition: layoverPosition,
+                  images: 'assets/images/cappadocia_second.jpg',
+                  widget: const LayoverCreateBody()),
+              _animationWidget(
+                  context: context,
+                  xPosition: resultPosition,
+                  images: 'assets/images/cappadocia_third.jpg',
+                  widget: const ResultCreateBody()),
+            ],
+          ),
         ),
       ),
     );

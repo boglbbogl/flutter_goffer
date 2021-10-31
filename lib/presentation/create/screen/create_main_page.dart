@@ -71,6 +71,7 @@ class CreateMainPage extends StatelessWidget {
                               plan: planState.plan!,
                               isDestinationSwitch:
                                   planState.isDestinationSwitch,
+                              isAddressSearchBar: planState.isAddressSearchBar,
                             ));
             },
           );

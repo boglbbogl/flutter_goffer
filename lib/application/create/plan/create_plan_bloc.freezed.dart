@@ -42,6 +42,12 @@ class _$CreatePlanEventTearOff {
   _DestinationToggleSwitched destinationToggleSwitched() {
     return const _DestinationToggleSwitched();
   }
+
+  _AdressBottomSearched addressBottomSearched({required bool value}) {
+    return _AdressBottomSearched(
+      value: value,
+    );
+  }
 }
 
 /// @nodoc
@@ -56,6 +62,7 @@ mixin _$CreatePlanEvent {
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
+    required TResult Function(bool value) addressBottomSearched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +72,7 @@ mixin _$CreatePlanEvent {
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
+    TResult Function(bool value)? addressBottomSearched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -76,6 +84,8 @@ mixin _$CreatePlanEvent {
     required TResult Function(_EndTimeSelected value) endTimeSelected,
     required TResult Function(_DestinationToggleSwitched value)
         destinationToggleSwitched,
+    required TResult Function(_AdressBottomSearched value)
+        addressBottomSearched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,6 +96,7 @@ mixin _$CreatePlanEvent {
     TResult Function(_EndTimeSelected value)? endTimeSelected,
     TResult Function(_DestinationToggleSwitched value)?
         destinationToggleSwitched,
+    TResult Function(_AdressBottomSearched value)? addressBottomSearched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +161,7 @@ class _$_Started implements _Started {
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
+    required TResult Function(bool value) addressBottomSearched,
   }) {
     return started();
   }
@@ -162,6 +174,7 @@ class _$_Started implements _Started {
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
+    TResult Function(bool value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -179,6 +192,8 @@ class _$_Started implements _Started {
     required TResult Function(_EndTimeSelected value) endTimeSelected,
     required TResult Function(_DestinationToggleSwitched value)
         destinationToggleSwitched,
+    required TResult Function(_AdressBottomSearched value)
+        addressBottomSearched,
   }) {
     return started(this);
   }
@@ -192,6 +207,7 @@ class _$_Started implements _Started {
     TResult Function(_EndTimeSelected value)? endTimeSelected,
     TResult Function(_DestinationToggleSwitched value)?
         destinationToggleSwitched,
+    TResult Function(_AdressBottomSearched value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -286,6 +302,7 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
+    required TResult Function(bool value) addressBottomSearched,
   }) {
     return dateSelected(start, end);
   }
@@ -298,6 +315,7 @@ class _$_DateSelected implements _DateSelected {
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
+    TResult Function(bool value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -315,6 +333,8 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function(_EndTimeSelected value) endTimeSelected,
     required TResult Function(_DestinationToggleSwitched value)
         destinationToggleSwitched,
+    required TResult Function(_AdressBottomSearched value)
+        addressBottomSearched,
   }) {
     return dateSelected(this);
   }
@@ -328,6 +348,7 @@ class _$_DateSelected implements _DateSelected {
     TResult Function(_EndTimeSelected value)? endTimeSelected,
     TResult Function(_DestinationToggleSwitched value)?
         destinationToggleSwitched,
+    TResult Function(_AdressBottomSearched value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -418,6 +439,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
+    required TResult Function(bool value) addressBottomSearched,
   }) {
     return startTimeSelected(start);
   }
@@ -430,6 +452,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
+    TResult Function(bool value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -447,6 +470,8 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function(_EndTimeSelected value) endTimeSelected,
     required TResult Function(_DestinationToggleSwitched value)
         destinationToggleSwitched,
+    required TResult Function(_AdressBottomSearched value)
+        addressBottomSearched,
   }) {
     return startTimeSelected(this);
   }
@@ -460,6 +485,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function(_EndTimeSelected value)? endTimeSelected,
     TResult Function(_DestinationToggleSwitched value)?
         destinationToggleSwitched,
+    TResult Function(_AdressBottomSearched value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -549,6 +575,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
+    required TResult Function(bool value) addressBottomSearched,
   }) {
     return endTimeSelected(end);
   }
@@ -561,6 +588,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
+    TResult Function(bool value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -578,6 +606,8 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function(_EndTimeSelected value) endTimeSelected,
     required TResult Function(_DestinationToggleSwitched value)
         destinationToggleSwitched,
+    required TResult Function(_AdressBottomSearched value)
+        addressBottomSearched,
   }) {
     return endTimeSelected(this);
   }
@@ -591,6 +621,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function(_EndTimeSelected value)? endTimeSelected,
     TResult Function(_DestinationToggleSwitched value)?
         destinationToggleSwitched,
+    TResult Function(_AdressBottomSearched value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -655,6 +686,7 @@ class _$_DestinationToggleSwitched implements _DestinationToggleSwitched {
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
+    required TResult Function(bool value) addressBottomSearched,
   }) {
     return destinationToggleSwitched();
   }
@@ -667,6 +699,7 @@ class _$_DestinationToggleSwitched implements _DestinationToggleSwitched {
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
+    TResult Function(bool value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (destinationToggleSwitched != null) {
@@ -684,6 +717,8 @@ class _$_DestinationToggleSwitched implements _DestinationToggleSwitched {
     required TResult Function(_EndTimeSelected value) endTimeSelected,
     required TResult Function(_DestinationToggleSwitched value)
         destinationToggleSwitched,
+    required TResult Function(_AdressBottomSearched value)
+        addressBottomSearched,
   }) {
     return destinationToggleSwitched(this);
   }
@@ -697,6 +732,7 @@ class _$_DestinationToggleSwitched implements _DestinationToggleSwitched {
     TResult Function(_EndTimeSelected value)? endTimeSelected,
     TResult Function(_DestinationToggleSwitched value)?
         destinationToggleSwitched,
+    TResult Function(_AdressBottomSearched value)? addressBottomSearched,
     required TResult orElse(),
   }) {
     if (destinationToggleSwitched != null) {
@@ -711,17 +747,156 @@ abstract class _DestinationToggleSwitched implements CreatePlanEvent {
 }
 
 /// @nodoc
+abstract class _$AdressBottomSearchedCopyWith<$Res> {
+  factory _$AdressBottomSearchedCopyWith(_AdressBottomSearched value,
+          $Res Function(_AdressBottomSearched) then) =
+      __$AdressBottomSearchedCopyWithImpl<$Res>;
+  $Res call({bool value});
+}
+
+/// @nodoc
+class __$AdressBottomSearchedCopyWithImpl<$Res>
+    extends _$CreatePlanEventCopyWithImpl<$Res>
+    implements _$AdressBottomSearchedCopyWith<$Res> {
+  __$AdressBottomSearchedCopyWithImpl(
+      _AdressBottomSearched _value, $Res Function(_AdressBottomSearched) _then)
+      : super(_value, (v) => _then(v as _AdressBottomSearched));
+
+  @override
+  _AdressBottomSearched get _value => super._value as _AdressBottomSearched;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_AdressBottomSearched(
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AdressBottomSearched implements _AdressBottomSearched {
+  const _$_AdressBottomSearched({required this.value});
+
+  @override
+  final bool value;
+
+  @override
+  String toString() {
+    return 'CreatePlanEvent.addressBottomSearched(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _AdressBottomSearched &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$AdressBottomSearchedCopyWith<_AdressBottomSearched> get copyWith =>
+      __$AdressBottomSearchedCopyWithImpl<_AdressBottomSearched>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String end) endTimeSelected,
+    required TResult Function() destinationToggleSwitched,
+    required TResult Function(bool value) addressBottomSearched,
+  }) {
+    return addressBottomSearched(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String end)? endTimeSelected,
+    TResult Function()? destinationToggleSwitched,
+    TResult Function(bool value)? addressBottomSearched,
+    required TResult orElse(),
+  }) {
+    if (addressBottomSearched != null) {
+      return addressBottomSearched(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_DateSelected value) dateSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_DestinationToggleSwitched value)
+        destinationToggleSwitched,
+    required TResult Function(_AdressBottomSearched value)
+        addressBottomSearched,
+  }) {
+    return addressBottomSearched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_DateSelected value)? dateSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_DestinationToggleSwitched value)?
+        destinationToggleSwitched,
+    TResult Function(_AdressBottomSearched value)? addressBottomSearched,
+    required TResult orElse(),
+  }) {
+    if (addressBottomSearched != null) {
+      return addressBottomSearched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AdressBottomSearched implements CreatePlanEvent {
+  const factory _AdressBottomSearched({required bool value}) =
+      _$_AdressBottomSearched;
+
+  bool get value => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$AdressBottomSearchedCopyWith<_AdressBottomSearched> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$CreatePlanStateTearOff {
   const _$CreatePlanStateTearOff();
 
   _CreatePlanState call(
       {required bool isLoading,
       required CreatePlan? plan,
-      required bool isDestinationSwitch}) {
+      required bool isDestinationSwitch,
+      required bool isAddressSearchBar}) {
     return _CreatePlanState(
       isLoading: isLoading,
       plan: plan,
       isDestinationSwitch: isDestinationSwitch,
+      isAddressSearchBar: isAddressSearchBar,
     );
   }
 }
@@ -734,6 +909,7 @@ mixin _$CreatePlanState {
   bool get isLoading => throw _privateConstructorUsedError;
   CreatePlan? get plan => throw _privateConstructorUsedError;
   bool get isDestinationSwitch => throw _privateConstructorUsedError;
+  bool get isAddressSearchBar => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreatePlanStateCopyWith<CreatePlanState> get copyWith =>
@@ -745,7 +921,11 @@ abstract class $CreatePlanStateCopyWith<$Res> {
   factory $CreatePlanStateCopyWith(
           CreatePlanState value, $Res Function(CreatePlanState) then) =
       _$CreatePlanStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, CreatePlan? plan, bool isDestinationSwitch});
+  $Res call(
+      {bool isLoading,
+      CreatePlan? plan,
+      bool isDestinationSwitch,
+      bool isAddressSearchBar});
 
   $CreatePlanCopyWith<$Res>? get plan;
 }
@@ -764,6 +944,7 @@ class _$CreatePlanStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? plan = freezed,
     Object? isDestinationSwitch = freezed,
+    Object? isAddressSearchBar = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -777,6 +958,10 @@ class _$CreatePlanStateCopyWithImpl<$Res>
       isDestinationSwitch: isDestinationSwitch == freezed
           ? _value.isDestinationSwitch
           : isDestinationSwitch // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAddressSearchBar: isAddressSearchBar == freezed
+          ? _value.isAddressSearchBar
+          : isAddressSearchBar // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -800,7 +985,11 @@ abstract class _$CreatePlanStateCopyWith<$Res>
           _CreatePlanState value, $Res Function(_CreatePlanState) then) =
       __$CreatePlanStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, CreatePlan? plan, bool isDestinationSwitch});
+  $Res call(
+      {bool isLoading,
+      CreatePlan? plan,
+      bool isDestinationSwitch,
+      bool isAddressSearchBar});
 
   @override
   $CreatePlanCopyWith<$Res>? get plan;
@@ -822,6 +1011,7 @@ class __$CreatePlanStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? plan = freezed,
     Object? isDestinationSwitch = freezed,
+    Object? isAddressSearchBar = freezed,
   }) {
     return _then(_CreatePlanState(
       isLoading: isLoading == freezed
@@ -836,6 +1026,10 @@ class __$CreatePlanStateCopyWithImpl<$Res>
           ? _value.isDestinationSwitch
           : isDestinationSwitch // ignore: cast_nullable_to_non_nullable
               as bool,
+      isAddressSearchBar: isAddressSearchBar == freezed
+          ? _value.isAddressSearchBar
+          : isAddressSearchBar // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -846,7 +1040,8 @@ class _$_CreatePlanState implements _CreatePlanState {
   _$_CreatePlanState(
       {required this.isLoading,
       required this.plan,
-      required this.isDestinationSwitch});
+      required this.isDestinationSwitch,
+      required this.isAddressSearchBar});
 
   @override
   final bool isLoading;
@@ -854,10 +1049,12 @@ class _$_CreatePlanState implements _CreatePlanState {
   final CreatePlan? plan;
   @override
   final bool isDestinationSwitch;
+  @override
+  final bool isAddressSearchBar;
 
   @override
   String toString() {
-    return 'CreatePlanState(isLoading: $isLoading, plan: $plan, isDestinationSwitch: $isDestinationSwitch)';
+    return 'CreatePlanState(isLoading: $isLoading, plan: $plan, isDestinationSwitch: $isDestinationSwitch, isAddressSearchBar: $isAddressSearchBar)';
   }
 
   @override
@@ -871,7 +1068,10 @@ class _$_CreatePlanState implements _CreatePlanState {
                 const DeepCollectionEquality().equals(other.plan, plan)) &&
             (identical(other.isDestinationSwitch, isDestinationSwitch) ||
                 const DeepCollectionEquality()
-                    .equals(other.isDestinationSwitch, isDestinationSwitch)));
+                    .equals(other.isDestinationSwitch, isDestinationSwitch)) &&
+            (identical(other.isAddressSearchBar, isAddressSearchBar) ||
+                const DeepCollectionEquality()
+                    .equals(other.isAddressSearchBar, isAddressSearchBar)));
   }
 
   @override
@@ -879,7 +1079,8 @@ class _$_CreatePlanState implements _CreatePlanState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(plan) ^
-      const DeepCollectionEquality().hash(isDestinationSwitch);
+      const DeepCollectionEquality().hash(isDestinationSwitch) ^
+      const DeepCollectionEquality().hash(isAddressSearchBar);
 
   @JsonKey(ignore: true)
   @override
@@ -891,7 +1092,8 @@ abstract class _CreatePlanState implements CreatePlanState {
   factory _CreatePlanState(
       {required bool isLoading,
       required CreatePlan? plan,
-      required bool isDestinationSwitch}) = _$_CreatePlanState;
+      required bool isDestinationSwitch,
+      required bool isAddressSearchBar}) = _$_CreatePlanState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -899,6 +1101,8 @@ abstract class _CreatePlanState implements CreatePlanState {
   CreatePlan? get plan => throw _privateConstructorUsedError;
   @override
   bool get isDestinationSwitch => throw _privateConstructorUsedError;
+  @override
+  bool get isAddressSearchBar => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CreatePlanStateCopyWith<_CreatePlanState> get copyWith =>

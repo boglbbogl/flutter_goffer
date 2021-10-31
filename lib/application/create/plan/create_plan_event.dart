@@ -7,5 +7,8 @@ class CreatePlanEvent with _$CreatePlanEvent {
     required DateTime start,
     required DateTime end,
   }) = _DateSelected;
-  const factory CreatePlanEvent.timeSelected() = _TimeSelected;
+  const factory CreatePlanEvent.startTimeSelected({required String start}) =
+      _StartTimeSelected;
+  const factory CreatePlanEvent.endTimeSelected({required String end}) =
+      _EndTimeSelected;
 }

@@ -17,7 +17,7 @@ class DateRangePicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: size.width * 0.9,
-      // height: siz,
+      height: size.height * 0.4,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(12),

@@ -93,7 +93,10 @@ class DateCreateBody extends StatelessWidget {
           AnimatedSwitcher(
               duration: const Duration(milliseconds: 1000),
               child: isExpandable
-                  ? const TimePicker()
+                  ? TimePicker(
+                      start: plan.startTime,
+                      end: plan.endTime,
+                    )
                   : DateRangePicker(
                       start: plan.startDate,
                       end: plan.endDate,

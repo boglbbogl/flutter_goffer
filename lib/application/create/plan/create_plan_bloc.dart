@@ -34,7 +34,12 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
         yield state.copyWith(
             plan: state.plan!.copyWith(startDate: e.start, endDate: e.end));
       },
-      timeSelected: (e) async* {},
+      startTimeSelected: (e) async* {
+        yield state.copyWith(plan: state.plan!.copyWith(startTime: e.start));
+      },
+      endTimeSelected: (e) async* {
+        yield state.copyWith(plan: state.plan!.copyWith(endTime: e.end));
+      },
     );
   }
 }

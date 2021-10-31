@@ -27,8 +27,16 @@ class _$CreatePlanEventTearOff {
     );
   }
 
-  _TimeSelected timeSelected() {
-    return const _TimeSelected();
+  _StartTimeSelected startTimeSelected({required String start}) {
+    return _StartTimeSelected(
+      start: start,
+    );
+  }
+
+  _EndTimeSelected endTimeSelected({required String end}) {
+    return _EndTimeSelected(
+      end: end,
+    );
   }
 }
 
@@ -41,14 +49,16 @@ mixin _$CreatePlanEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(DateTime start, DateTime end) dateSelected,
-    required TResult Function() timeSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String end) endTimeSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(DateTime start, DateTime end)? dateSelected,
-    TResult Function()? timeSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String end)? endTimeSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,14 +66,16 @@ mixin _$CreatePlanEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_DateSelected value) dateSelected,
-    required TResult Function(_TimeSelected value) timeSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_DateSelected value)? dateSelected,
-    TResult Function(_TimeSelected value)? timeSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +137,8 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(DateTime start, DateTime end) dateSelected,
-    required TResult Function() timeSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String end) endTimeSelected,
   }) {
     return started();
   }
@@ -135,7 +148,8 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(DateTime start, DateTime end)? dateSelected,
-    TResult Function()? timeSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String end)? endTimeSelected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -149,7 +163,8 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_DateSelected value) dateSelected,
-    required TResult Function(_TimeSelected value) timeSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
   }) {
     return started(this);
   }
@@ -159,7 +174,8 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_DateSelected value)? dateSelected,
-    TResult Function(_TimeSelected value)? timeSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -251,7 +267,8 @@ class _$_DateSelected implements _DateSelected {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(DateTime start, DateTime end) dateSelected,
-    required TResult Function() timeSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String end) endTimeSelected,
   }) {
     return dateSelected(start, end);
   }
@@ -261,7 +278,8 @@ class _$_DateSelected implements _DateSelected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(DateTime start, DateTime end)? dateSelected,
-    TResult Function()? timeSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String end)? endTimeSelected,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -275,7 +293,8 @@ class _$_DateSelected implements _DateSelected {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_DateSelected value) dateSelected,
-    required TResult Function(_TimeSelected value) timeSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
   }) {
     return dateSelected(this);
   }
@@ -285,7 +304,8 @@ class _$_DateSelected implements _DateSelected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_DateSelected value)? dateSelected,
-    TResult Function(_TimeSelected value)? timeSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -307,50 +327,76 @@ abstract class _DateSelected implements CreatePlanEvent {
 }
 
 /// @nodoc
-abstract class _$TimeSelectedCopyWith<$Res> {
-  factory _$TimeSelectedCopyWith(
-          _TimeSelected value, $Res Function(_TimeSelected) then) =
-      __$TimeSelectedCopyWithImpl<$Res>;
+abstract class _$StartTimeSelectedCopyWith<$Res> {
+  factory _$StartTimeSelectedCopyWith(
+          _StartTimeSelected value, $Res Function(_StartTimeSelected) then) =
+      __$StartTimeSelectedCopyWithImpl<$Res>;
+  $Res call({String start});
 }
 
 /// @nodoc
-class __$TimeSelectedCopyWithImpl<$Res>
+class __$StartTimeSelectedCopyWithImpl<$Res>
     extends _$CreatePlanEventCopyWithImpl<$Res>
-    implements _$TimeSelectedCopyWith<$Res> {
-  __$TimeSelectedCopyWithImpl(
-      _TimeSelected _value, $Res Function(_TimeSelected) _then)
-      : super(_value, (v) => _then(v as _TimeSelected));
+    implements _$StartTimeSelectedCopyWith<$Res> {
+  __$StartTimeSelectedCopyWithImpl(
+      _StartTimeSelected _value, $Res Function(_StartTimeSelected) _then)
+      : super(_value, (v) => _then(v as _StartTimeSelected));
 
   @override
-  _TimeSelected get _value => super._value as _TimeSelected;
+  _StartTimeSelected get _value => super._value as _StartTimeSelected;
+
+  @override
+  $Res call({
+    Object? start = freezed,
+  }) {
+    return _then(_StartTimeSelected(
+      start: start == freezed
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_TimeSelected implements _TimeSelected {
-  const _$_TimeSelected();
+class _$_StartTimeSelected implements _StartTimeSelected {
+  const _$_StartTimeSelected({required this.start});
+
+  @override
+  final String start;
 
   @override
   String toString() {
-    return 'CreatePlanEvent.timeSelected()';
+    return 'CreatePlanEvent.startTimeSelected(start: $start)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TimeSelected);
+    return identical(this, other) ||
+        (other is _StartTimeSelected &&
+            (identical(other.start, start) ||
+                const DeepCollectionEquality().equals(other.start, start)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(start);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StartTimeSelectedCopyWith<_StartTimeSelected> get copyWith =>
+      __$StartTimeSelectedCopyWithImpl<_StartTimeSelected>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(DateTime start, DateTime end) dateSelected,
-    required TResult Function() timeSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String end) endTimeSelected,
   }) {
-    return timeSelected();
+    return startTimeSelected(start);
   }
 
   @override
@@ -358,11 +404,12 @@ class _$_TimeSelected implements _TimeSelected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(DateTime start, DateTime end)? dateSelected,
-    TResult Function()? timeSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String end)? endTimeSelected,
     required TResult orElse(),
   }) {
-    if (timeSelected != null) {
-      return timeSelected();
+    if (startTimeSelected != null) {
+      return startTimeSelected(start);
     }
     return orElse();
   }
@@ -372,9 +419,10 @@ class _$_TimeSelected implements _TimeSelected {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_DateSelected value) dateSelected,
-    required TResult Function(_TimeSelected value) timeSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
   }) {
-    return timeSelected(this);
+    return startTimeSelected(this);
   }
 
   @override
@@ -382,18 +430,149 @@ class _$_TimeSelected implements _TimeSelected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_DateSelected value)? dateSelected,
-    TResult Function(_TimeSelected value)? timeSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
     required TResult orElse(),
   }) {
-    if (timeSelected != null) {
-      return timeSelected(this);
+    if (startTimeSelected != null) {
+      return startTimeSelected(this);
     }
     return orElse();
   }
 }
 
-abstract class _TimeSelected implements CreatePlanEvent {
-  const factory _TimeSelected() = _$_TimeSelected;
+abstract class _StartTimeSelected implements CreatePlanEvent {
+  const factory _StartTimeSelected({required String start}) =
+      _$_StartTimeSelected;
+
+  String get start => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$StartTimeSelectedCopyWith<_StartTimeSelected> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$EndTimeSelectedCopyWith<$Res> {
+  factory _$EndTimeSelectedCopyWith(
+          _EndTimeSelected value, $Res Function(_EndTimeSelected) then) =
+      __$EndTimeSelectedCopyWithImpl<$Res>;
+  $Res call({String end});
+}
+
+/// @nodoc
+class __$EndTimeSelectedCopyWithImpl<$Res>
+    extends _$CreatePlanEventCopyWithImpl<$Res>
+    implements _$EndTimeSelectedCopyWith<$Res> {
+  __$EndTimeSelectedCopyWithImpl(
+      _EndTimeSelected _value, $Res Function(_EndTimeSelected) _then)
+      : super(_value, (v) => _then(v as _EndTimeSelected));
+
+  @override
+  _EndTimeSelected get _value => super._value as _EndTimeSelected;
+
+  @override
+  $Res call({
+    Object? end = freezed,
+  }) {
+    return _then(_EndTimeSelected(
+      end: end == freezed
+          ? _value.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_EndTimeSelected implements _EndTimeSelected {
+  const _$_EndTimeSelected({required this.end});
+
+  @override
+  final String end;
+
+  @override
+  String toString() {
+    return 'CreatePlanEvent.endTimeSelected(end: $end)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EndTimeSelected &&
+            (identical(other.end, end) ||
+                const DeepCollectionEquality().equals(other.end, end)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(end);
+
+  @JsonKey(ignore: true)
+  @override
+  _$EndTimeSelectedCopyWith<_EndTimeSelected> get copyWith =>
+      __$EndTimeSelectedCopyWithImpl<_EndTimeSelected>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String end) endTimeSelected,
+  }) {
+    return endTimeSelected(end);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String end)? endTimeSelected,
+    required TResult orElse(),
+  }) {
+    if (endTimeSelected != null) {
+      return endTimeSelected(end);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_DateSelected value) dateSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
+  }) {
+    return endTimeSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_DateSelected value)? dateSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
+    required TResult orElse(),
+  }) {
+    if (endTimeSelected != null) {
+      return endTimeSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EndTimeSelected implements CreatePlanEvent {
+  const factory _EndTimeSelected({required String end}) = _$_EndTimeSelected;
+
+  String get end => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$EndTimeSelectedCopyWith<_EndTimeSelected> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

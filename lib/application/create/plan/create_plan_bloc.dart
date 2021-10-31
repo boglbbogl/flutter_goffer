@@ -21,8 +21,8 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
         final CreatePlan initialPlan = CreatePlan.empty().copyWith(
           startDate: DateTime.now(),
           endDate: DateTime.now(),
-          startTime: "09:00",
-          endTime: "09:00",
+          startTime: "09 : 00",
+          endTime: "09 : 00",
         );
         CreatePlanState _state;
         _state = state.copyWith(

@@ -20,7 +20,7 @@ class _$CreatePlanEventTearOff {
     return const _Started();
   }
 
-  _DateSelected dateSelected({required String start, required String end}) {
+  _DateSelected dateSelected({required DateTime start, required DateTime end}) {
     return _DateSelected(
       start: start,
       end: end,
@@ -40,14 +40,14 @@ mixin _$CreatePlanEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String start, String end) dateSelected,
+    required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function() timeSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String start, String end)? dateSelected,
+    TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function()? timeSelected,
     required TResult orElse(),
   }) =>
@@ -124,7 +124,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String start, String end) dateSelected,
+    required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function() timeSelected,
   }) {
     return started();
@@ -134,7 +134,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String start, String end)? dateSelected,
+    TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function()? timeSelected,
     required TResult orElse(),
   }) {
@@ -178,7 +178,7 @@ abstract class _$DateSelectedCopyWith<$Res> {
   factory _$DateSelectedCopyWith(
           _DateSelected value, $Res Function(_DateSelected) then) =
       __$DateSelectedCopyWithImpl<$Res>;
-  $Res call({String start, String end});
+  $Res call({DateTime start, DateTime end});
 }
 
 /// @nodoc
@@ -201,11 +201,11 @@ class __$DateSelectedCopyWithImpl<$Res>
       start: start == freezed
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       end: end == freezed
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ));
   }
 }
@@ -216,9 +216,9 @@ class _$_DateSelected implements _DateSelected {
   const _$_DateSelected({required this.start, required this.end});
 
   @override
-  final String start;
+  final DateTime start;
   @override
-  final String end;
+  final DateTime end;
 
   @override
   String toString() {
@@ -250,7 +250,7 @@ class _$_DateSelected implements _DateSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String start, String end) dateSelected,
+    required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function() timeSelected,
   }) {
     return dateSelected(start, end);
@@ -260,7 +260,7 @@ class _$_DateSelected implements _DateSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String start, String end)? dateSelected,
+    TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function()? timeSelected,
     required TResult orElse(),
   }) {
@@ -296,11 +296,11 @@ class _$_DateSelected implements _DateSelected {
 }
 
 abstract class _DateSelected implements CreatePlanEvent {
-  const factory _DateSelected({required String start, required String end}) =
-      _$_DateSelected;
+  const factory _DateSelected(
+      {required DateTime start, required DateTime end}) = _$_DateSelected;
 
-  String get start => throw _privateConstructorUsedError;
-  String get end => throw _privateConstructorUsedError;
+  DateTime get start => throw _privateConstructorUsedError;
+  DateTime get end => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$DateSelectedCopyWith<_DateSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -347,7 +347,7 @@ class _$_TimeSelected implements _TimeSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String start, String end) dateSelected,
+    required TResult Function(DateTime start, DateTime end) dateSelected,
     required TResult Function() timeSelected,
   }) {
     return timeSelected();
@@ -357,7 +357,7 @@ class _$_TimeSelected implements _TimeSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String start, String end)? dateSelected,
+    TResult Function(DateTime start, DateTime end)? dateSelected,
     TResult Function()? timeSelected,
     required TResult orElse(),
   }) {

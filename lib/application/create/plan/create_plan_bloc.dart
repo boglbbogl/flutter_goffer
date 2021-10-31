@@ -19,8 +19,8 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
       started: (e) async* {
         yield state.copyWith(isLoading: true);
         final CreatePlan initialPlan = CreatePlan.empty().copyWith(
-          startDate: DateTime.now().toString().substring(0, 10),
-          endDate: DateTime.now().toString().substring(0, 10),
+          startDate: DateTime.now(),
+          endDate: DateTime.now(),
           startTime: "09:00",
           endTime: "09:00",
         );

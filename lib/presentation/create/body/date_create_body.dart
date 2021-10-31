@@ -4,6 +4,7 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/create/animation/create_animation_cubit.dart';
 import 'package:flutter_goffer/domain/create_plan.dart';
 import 'package:flutter_goffer/presentation/create/widget/date_range_picker.dart';
+import 'package:flutter_goffer/presentation/create/widget/time_picker.dart';
 
 class DateCreateBody extends StatelessWidget {
   final bool isExpandable;
@@ -40,12 +41,14 @@ class DateCreateBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         dateAndTimeForm(
-                            date: plan.startDate, time: plan.startTime),
+                            date: plan.startDate.toString(),
+                            time: plan.startTime),
                         Icon(
                           Icons.airplane_ticket_outlined,
                           color: appColor,
                         ),
-                        dateAndTimeForm(date: plan.endDate, time: plan.endTime),
+                        dateAndTimeForm(
+                            date: plan.endDate.toString(), time: plan.endTime),
                       ],
                     ),
                     Row(
@@ -89,7 +92,12 @@ class DateCreateBody extends StatelessWidget {
           ),
           AnimatedSwitcher(
               duration: const Duration(milliseconds: 1000),
-              child: isExpandable ? const SizedBox() : const DateRangePicker()),
+              child: isExpandable
+                  ? const TimePicker()
+                  : DateRangePicker(
+                      start: plan.startDate,
+                      end: plan.endDate,
+                    )),
         ],
       ),
     );

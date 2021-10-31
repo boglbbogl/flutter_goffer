@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_goffer/presentation/main_page.dart';
+import 'package:flutter_goffer/presentation/_main/main_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class AppWidget extends StatelessWidget {

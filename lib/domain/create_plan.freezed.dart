@@ -17,8 +17,8 @@ class _$CreatePlanTearOff {
   const _$CreatePlanTearOff();
 
   _CreatePlan call(
-      {required String startDate,
-      required String endDate,
+      {required DateTime startDate,
+      required DateTime endDate,
       required String startTime,
       required String endTime}) {
     return _CreatePlan(
@@ -35,8 +35,8 @@ const $CreatePlan = _$CreatePlanTearOff();
 
 /// @nodoc
 mixin _$CreatePlan {
-  String get startDate => throw _privateConstructorUsedError;
-  String get endDate => throw _privateConstructorUsedError;
+  DateTime get startDate => throw _privateConstructorUsedError;
+  DateTime get endDate => throw _privateConstructorUsedError;
   String get startTime => throw _privateConstructorUsedError;
   String get endTime => throw _privateConstructorUsedError;
 
@@ -51,7 +51,7 @@ abstract class $CreatePlanCopyWith<$Res> {
           CreatePlan value, $Res Function(CreatePlan) then) =
       _$CreatePlanCopyWithImpl<$Res>;
   $Res call(
-      {String startDate, String endDate, String startTime, String endTime});
+      {DateTime startDate, DateTime endDate, String startTime, String endTime});
 }
 
 /// @nodoc
@@ -73,11 +73,11 @@ class _$CreatePlanCopyWithImpl<$Res> implements $CreatePlanCopyWith<$Res> {
       startDate: startDate == freezed
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       endDate: endDate == freezed
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       startTime: startTime == freezed
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
@@ -97,7 +97,7 @@ abstract class _$CreatePlanCopyWith<$Res> implements $CreatePlanCopyWith<$Res> {
       __$CreatePlanCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String startDate, String endDate, String startTime, String endTime});
+      {DateTime startDate, DateTime endDate, String startTime, String endTime});
 }
 
 /// @nodoc
@@ -121,11 +121,11 @@ class __$CreatePlanCopyWithImpl<$Res> extends _$CreatePlanCopyWithImpl<$Res>
       startDate: startDate == freezed
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       endDate: endDate == freezed
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       startTime: startTime == freezed
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
@@ -148,9 +148,9 @@ class _$_CreatePlan implements _CreatePlan {
       required this.endTime});
 
   @override
-  final String startDate;
+  final DateTime startDate;
   @override
-  final String endDate;
+  final DateTime endDate;
   @override
   final String startTime;
   @override
@@ -194,15 +194,15 @@ class _$_CreatePlan implements _CreatePlan {
 
 abstract class _CreatePlan implements CreatePlan {
   const factory _CreatePlan(
-      {required String startDate,
-      required String endDate,
+      {required DateTime startDate,
+      required DateTime endDate,
       required String startTime,
       required String endTime}) = _$_CreatePlan;
 
   @override
-  String get startDate => throw _privateConstructorUsedError;
+  DateTime get startDate => throw _privateConstructorUsedError;
   @override
-  String get endDate => throw _privateConstructorUsedError;
+  DateTime get endDate => throw _privateConstructorUsedError;
   @override
   String get startTime => throw _privateConstructorUsedError;
   @override

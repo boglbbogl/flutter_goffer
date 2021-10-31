@@ -5,7 +5,13 @@ import 'package:flutter_goffer/application/create/plan/create_plan_bloc.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class DateRangePicker extends StatelessWidget {
-  const DateRangePicker({Key? key}) : super(key: key);
+  final DateTime start;
+  final DateTime end;
+  const DateRangePicker({
+    Key? key,
+    required this.start,
+    required this.end,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +26,15 @@ class DateRangePicker extends StatelessWidget {
       child: SfDateRangePicker(
         minDate: DateTime.now(),
         maxDate: DateTime(2024),
-        initialSelectedRange: PickerDateRange(DateTime.now(), DateTime.now()),
+        initialDisplayDate: start,
+        initialSelectedRange: PickerDateRange(start, end),
         onSelectionChanged: (args) {
           if (args.value is PickerDateRange) {
             context.read<CreatePlanBloc>().add(CreatePlanEvent.dateSelected(
-                start: args.value.startDate.toString().substring(0, 10),
+                start: DateTime.parse(args.value.startDate.toString()),
                 end: args.value.endDate == null
-                    ? args.value.startDate.toString().substring(0, 10)
-                    : args.value.endDate.toString().substring(0, 10)));
+                    ? DateTime.parse(args.value.startDate.toString())
+                    : DateTime.parse(args.value.endDate.toString())));
           }
         },
         selectionMode: DateRangePickerSelectionMode.range,

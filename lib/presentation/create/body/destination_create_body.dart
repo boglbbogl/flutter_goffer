@@ -103,9 +103,7 @@ class DestinationCreateBody extends StatelessWidget {
                 ),
               ],
             ),
-            if (isAddressSearchBar) ...[
-              AdressSearchBottomBar(),
-            ],
+            AdressSearchBottomBar(isAddressSearchBar: isAddressSearchBar),
           ],
         ),
       ),

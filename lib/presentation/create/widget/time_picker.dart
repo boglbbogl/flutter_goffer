@@ -24,79 +24,35 @@ class TimePicker extends StatelessWidget {
               bottomLeft: Radius.circular(12),
               bottomRight: Radius.circular(12)),
           color: Colors.white38),
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Row(
-            children: [
-              timePickerForm(
-                title: '출발 시간',
-                listWidget: ListView(
-                  children: [
-                    ...timeList.map((e) => Center(
-                            child: InkWell(
-                          onTap: () {
-                            context.read<CreatePlanBloc>().add(
-                                CreatePlanEvent.startTimeSelected(
-                                    start: e.toString()));
-                          },
-                          child: timeListItemForm(e: e.toString(), time: start),
-                        )))
-                  ],
-                ),
-              ),
-              // SizedBox(
-              //   height: size.height * 0.3,
-              //   width: size.width * 0.35,
-              //   child: CupertinoPicker(
-              //     scrollController:
-              //         FixedExtentScrollController(initialItem: 18),
-              //     itemExtent: 55,
-              //     onSelectedItemChanged: (index) {},
-              //   children: [],),
-              // ),
-              timePickerForm(
-                title: '도착 시간',
-                listWidget: ListView(
-                  children: [
-                    ...timeList.map((e) => Center(
-                            child: InkWell(
-                          onTap: () {
-                            context.read<CreatePlanBloc>().add(
-                                CreatePlanEvent.endTimeSelected(
-                                    end: e.toString()));
-                          },
-                          child: timeListItemForm(e: e.toString(), time: end),
-                        )))
-                  ],
-                ),
-              ),
-            ],
-          )
+          _timePickerForm(
+            context: context,
+            title: '출발 시간',
+            time: start,
+            onSelectedItemChanged: (int i) => context
+                .read<CreatePlanBloc>()
+                .add(CreatePlanEvent.startTimeSelected(start: timeList[i])),
+          ),
+          _timePickerForm(
+            context: context,
+            title: '도착 시간',
+            time: end,
+            onSelectedItemChanged: (int i) => context
+                .read<CreatePlanBloc>()
+                .add(CreatePlanEvent.endTimeSelected(end: timeList[i])),
+          ),
         ],
       ),
     );
   }
 
-  Padding timeListItemForm({
-    required String e,
-    required String time,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Text(
-        e,
-        style: theme.textTheme.bodyText2!.copyWith(
-            fontSize: e != time ? 18 : 22,
-            color:
-                e != time ? const Color.fromRGBO(155, 155, 155, 1) : appColor,
-            fontWeight: e != time ? FontWeight.normal : FontWeight.bold),
-      ),
-    );
-  }
-
-  Column timePickerForm({
+  Column _timePickerForm({
+    required BuildContext context,
     required String title,
-    required Widget listWidget,
+    required String time,
+    required Function(int) onSelectedItemChanged,
   }) {
     return Column(
       children: [
@@ -113,7 +69,26 @@ class TimePicker extends StatelessWidget {
         SizedBox(
           height: size.height * 0.25,
           width: size.width * 0.35,
-          child: listWidget,
+          child: CupertinoPicker(
+              scrollController: FixedExtentScrollController(
+                  initialItem: timeList.indexOf(time)),
+              itemExtent: 40,
+              onSelectedItemChanged: onSelectedItemChanged,
+              selectionOverlay: const CupertinoPickerDefaultSelectionOverlay(
+                background: Colors.white10,
+              ),
+              children: [
+                ...timeList.map((e) => Text(
+                      e,
+                      style: theme.textTheme.bodyText2!.copyWith(
+                          fontSize: e != time ? 18 : 22,
+                          color: e != time
+                              ? const Color.fromRGBO(135, 135, 135, 1)
+                              : appColor,
+                          fontWeight:
+                              e != time ? FontWeight.normal : FontWeight.bold),
+                    )),
+              ]),
         ),
       ],
     );

@@ -62,8 +62,9 @@ class CreateMainPage extends StatelessWidget {
                                     .startAnimation(index: 2);
                               },
                               widget: DateCreateBody(
-                                  isExpandable: state.isExpandable,
-                                  plan: planState.plan!))
+                                isExpandable: state.isExpandable,
+                                plan: planState.plan!,
+                              ))
                           : CreateMatrixSliderPage(
                               destinationPosition: state.destination,
                               layoverPosition: state.layover,

@@ -4,8 +4,8 @@ part of 'create_plan_bloc.dart';
 class CreatePlanEvent with _$CreatePlanEvent {
   const factory CreatePlanEvent.started() = _Started;
   const factory CreatePlanEvent.dateSelected({
-    required DateTime start,
-    required DateTime end,
+    required String start,
+    required String end,
   }) = _DateSelected;
   const factory CreatePlanEvent.startTimeSelected({required String start}) =
       _StartTimeSelected;

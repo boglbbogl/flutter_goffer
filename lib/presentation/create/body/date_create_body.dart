@@ -4,7 +4,7 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/create/animation/create_animation_cubit.dart';
 import 'package:flutter_goffer/domain/create_plan.dart';
 import 'package:flutter_goffer/presentation/create/widget/date_range_picker.dart';
-import 'package:flutter_goffer/presentation/create/widget/time_picker.dart';
+import 'package:flutter_goffer/presentation/create/widget/time_picker1.dart';
 
 class DateCreateBody extends StatelessWidget {
   final bool isExpandable;
@@ -93,7 +93,7 @@ class DateCreateBody extends StatelessWidget {
           AnimatedSwitcher(
               duration: const Duration(milliseconds: 1000),
               child: isExpandable
-                  ? TimePicker(
+                  ? TimePicker1(
                       start: plan.startTime,
                       end: plan.endTime,
                     )

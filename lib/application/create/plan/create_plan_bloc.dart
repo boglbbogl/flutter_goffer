@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_goffer/domain/create_plan.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -19,8 +20,8 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
       started: (e) async* {
         yield state.copyWith(isLoading: true);
         final CreatePlan initialPlan = CreatePlan.empty().copyWith(
-          startDate: DateTime.now(),
-          endDate: DateTime.now(),
+          startDate: DateTime.now().toString().substring(0, 10),
+          endDate: DateTime.now().toString().substring(0, 10),
           startTime: "09 : 00",
           endTime: "09 : 00",
         );

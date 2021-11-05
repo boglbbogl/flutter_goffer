@@ -20,7 +20,7 @@ class _$CreatePlanEventTearOff {
     return const _Started();
   }
 
-  _DateSelected dateSelected({required DateTime start, required DateTime end}) {
+  _DateSelected dateSelected({required String start, required String end}) {
     return _DateSelected(
       start: start,
       end: end,
@@ -58,7 +58,7 @@ mixin _$CreatePlanEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
@@ -68,7 +68,7 @@ mixin _$CreatePlanEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
@@ -157,7 +157,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
@@ -170,7 +170,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
@@ -226,7 +226,7 @@ abstract class _$DateSelectedCopyWith<$Res> {
   factory _$DateSelectedCopyWith(
           _DateSelected value, $Res Function(_DateSelected) then) =
       __$DateSelectedCopyWithImpl<$Res>;
-  $Res call({DateTime start, DateTime end});
+  $Res call({String start, String end});
 }
 
 /// @nodoc
@@ -249,11 +249,11 @@ class __$DateSelectedCopyWithImpl<$Res>
       start: start == freezed
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       end: end == freezed
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
     ));
   }
 }
@@ -264,9 +264,9 @@ class _$_DateSelected implements _DateSelected {
   const _$_DateSelected({required this.start, required this.end});
 
   @override
-  final DateTime start;
+  final String start;
   @override
-  final DateTime end;
+  final String end;
 
   @override
   String toString() {
@@ -298,7 +298,7 @@ class _$_DateSelected implements _DateSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
@@ -311,7 +311,7 @@ class _$_DateSelected implements _DateSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
@@ -359,11 +359,11 @@ class _$_DateSelected implements _DateSelected {
 }
 
 abstract class _DateSelected implements CreatePlanEvent {
-  const factory _DateSelected(
-      {required DateTime start, required DateTime end}) = _$_DateSelected;
+  const factory _DateSelected({required String start, required String end}) =
+      _$_DateSelected;
 
-  DateTime get start => throw _privateConstructorUsedError;
-  DateTime get end => throw _privateConstructorUsedError;
+  String get start => throw _privateConstructorUsedError;
+  String get end => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$DateSelectedCopyWith<_DateSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -435,7 +435,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
@@ -448,7 +448,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
@@ -571,7 +571,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
@@ -584,7 +584,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
@@ -682,7 +682,7 @@ class _$_DestinationToggleSwitched implements _DestinationToggleSwitched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
@@ -695,7 +695,7 @@ class _$_DestinationToggleSwitched implements _DestinationToggleSwitched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,
@@ -813,7 +813,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(DateTime start, DateTime end) dateSelected,
+    required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function() destinationToggleSwitched,
@@ -826,7 +826,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(DateTime start, DateTime end)? dateSelected,
+    TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function()? destinationToggleSwitched,

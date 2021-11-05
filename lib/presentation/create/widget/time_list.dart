@@ -1,4 +1,4 @@
-List timeList = [
+List<String> timeList = [
   '00 : 00',
   '00 : 30',
   '01 : 00',

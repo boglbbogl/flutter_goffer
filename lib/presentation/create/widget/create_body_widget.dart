@@ -23,14 +23,14 @@ class CreateBodyWidget extends StatelessWidget {
         children: [
           Positioned(
               top: 35,
-              right: 15,
+              right: 20,
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                child: Icon(
+                child: const Icon(
                   Icons.clear_outlined,
-                  color: appColor,
+                  color: Color.fromRGBO(71, 71, 71, 1),
                   size: 30,
                 ),
               )),

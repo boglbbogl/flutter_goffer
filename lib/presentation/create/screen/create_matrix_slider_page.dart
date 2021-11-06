@@ -39,7 +39,8 @@ class CreateMatrixSliderPage extends StatelessWidget {
               _animationWidget(
                   context: context,
                   xPosition: destinationPosition,
-                  images: 'assets/images/cappadocia_first.jpg',
+                  // images: 'assets/images/cappadocia_first.jpg',
+                  images: 'assets/images/anabji_first.jpg',
                   widget: DestinationCreateBody(
                     plan: plan,
                     isDestinationSwitch: isDestinationSwitch,
@@ -48,12 +49,14 @@ class CreateMatrixSliderPage extends StatelessWidget {
               _animationWidget(
                   context: context,
                   xPosition: layoverPosition,
-                  images: 'assets/images/cappadocia_second.jpg',
+                  // images: 'assets/images/cappadocia_second.jpg',
+                  images: 'assets/images/anabji_second.jpg',
                   widget: const LayoverCreateBody()),
               _animationWidget(
                   context: context,
                   xPosition: resultPosition,
-                  images: 'assets/images/cappadocia_third.jpg',
+                  // images: 'assets/images/cappadocia_third.jpg',
+                  images: 'assets/images/anabji_third.jpg',
                   widget: const ResultCreateBody()),
             ],
           ),

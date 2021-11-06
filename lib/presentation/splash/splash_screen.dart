@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -5,6 +6,18 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/splash/splash_main_gif.gif');
+    return LayoutBuilder(builder: (context, constraints) {
+      return Container(
+        height: constraints.maxHeight,
+        width: constraints.maxWidth,
+        color: Colors.white,
+        child: Opacity(
+            opacity: 0.8,
+            child: ExtendedImage.asset(
+              'assets/splash/splash_main_gif.gif',
+              fit: BoxFit.cover,
+            )),
+      );
+    });
   }
 }

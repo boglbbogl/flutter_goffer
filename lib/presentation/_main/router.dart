@@ -22,7 +22,7 @@ final routerDelegate = BeamerDelegate(
         check: (context, location) {
           return true;
         },
-        showPage: BeamPage(child: ErrorScreen())),
+        showPage: BeamPage(child: const ErrorScreen())),
   ],
   locationBuilder: BeamerLocationBuilder(beamLocations: [
     Location(),

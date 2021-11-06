@@ -101,7 +101,7 @@ class CreateMainPage extends StatelessWidget {
               height: size.height,
               child: const Image(
                 image: AssetImage(
-                  'assets/images/create_main_gif.gif',
+                  'assets/images/create_main.png',
                 ),
                 fit: BoxFit.cover,
               ),

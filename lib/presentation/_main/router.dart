@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_goffer/presentation/_main/main_page.dart';
 import 'package:flutter_goffer/presentation/splash/error_screen.dart';
 
+// Main Location
 class Location extends BeamLocation {
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) {
@@ -13,6 +14,7 @@ class Location extends BeamLocation {
 
   @override
   List get pathBlueprints => ['/'];
+  // router 추가시 변경 작업 해야함
 }
 
 final routerDelegate = BeamerDelegate(
@@ -21,6 +23,7 @@ final routerDelegate = BeamerDelegate(
         pathBlueprints: ['/'],
         check: (context, location) {
           return true;
+          // false -> SignIn, true -> Main
         },
         showPage: BeamPage(child: const ErrorScreen())),
   ],

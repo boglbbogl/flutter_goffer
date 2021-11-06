@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/domain/create_plan.dart';
@@ -79,13 +80,12 @@ class CreateMatrixSliderPage extends StatelessWidget {
           Opacity(
             opacity: 0.4,
             child: SizedBox(
-              width: size.width,
-              height: size.height,
-              child: Image(
-                image: AssetImage(images),
-                fit: BoxFit.cover,
-              ),
-            ),
+                width: size.width,
+                height: size.height,
+                child: ExtendedImage.asset(
+                  images,
+                  fit: BoxFit.cover,
+                )),
           ),
           widget,
         ],

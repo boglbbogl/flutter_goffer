@@ -4,6 +4,8 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/presentation/_main/router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+// App Start
+
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
 

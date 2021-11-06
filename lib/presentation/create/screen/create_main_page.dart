@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
@@ -99,10 +100,8 @@ class CreateMainPage extends StatelessWidget {
             child: SizedBox(
               width: size.width,
               height: size.height,
-              child: const Image(
-                image: AssetImage(
-                  'assets/images/create_main.png',
-                ),
+              child: ExtendedImage.asset(
+                'assets/images/create_main.png',
                 fit: BoxFit.cover,
               ),
             ),

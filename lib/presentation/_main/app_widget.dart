@@ -23,7 +23,8 @@ class AppWidget extends StatelessWidget {
         Locale('en', ''),
       ],
       theme: ThemeData(
-          fontFamily: 'Yanolja',
+          // fontFamily: 'Yanolja',
+          fontFamily: 'Baemin_Dohyeon',
           primaryColor: Colors.deepPurple,
           inputDecorationTheme: InputDecorationTheme(
             enabledBorder: UnderlineInputBorder(

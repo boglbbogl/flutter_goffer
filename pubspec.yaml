@@ -88,6 +88,9 @@ flutter:
       fonts:
         - asset: assets/fonts/Yanolja-Regular.ttf
         - asset: assets/fonts/Yanolja-Bold.ttf
+    - family: Baemin_Dohyeon
+      fonts:
+        - asset: assets/fonts/BMDOHYEON_ttf.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

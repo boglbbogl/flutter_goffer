@@ -28,6 +28,18 @@ class CreateImageCubit extends Cubit<CreateImageState> {
     } else if (index == 2) {
       emit(state.copyWith(planIndex: 3, planImg: 'anabji_night'));
     } else if (index == 3) {
+      emit(state.copyWith(planIndex: 4, planImg: 'kyungbok'));
+    } else if (index == 4) {
+      emit(state.copyWith(planIndex: 5, planImg: 'hanok'));
+    } else if (index == 5) {
+      emit(state.copyWith(planIndex: 6, planImg: 'kyungbok_night'));
+    } else if (index == 6) {
+      emit(state.copyWith(planIndex: 7, planImg: 'night'));
+    } else if (index == 7) {
+      emit(state.copyWith(planIndex: 8, planImg: 'seoul_night'));
+    } else if (index == 8) {
+      emit(state.copyWith(planIndex: 9, planImg: 'winter'));
+    } else if (index == 9) {
       emit(state.copyWith(planIndex: 0, planImg: 'cappadocia'));
     } else {
       emit(state.copyWith(planImg: 'cappadocia'));

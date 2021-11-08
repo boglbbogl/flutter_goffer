@@ -26,8 +26,8 @@ class MainPage extends StatelessWidget {
       icon: Icon(icon, size: 22),
       inactiveIcon: Icon(inactiveIcon, size: 22),
       textStyle: const TextStyle(fontSize: 12),
-      activeColorPrimary: const Color.fromRGBO(71, 71, 71, 1),
-      inactiveColorPrimary: const Color.fromRGBO(215, 215, 215, 1),
+      activeColorPrimary: appColor,
+      inactiveColorPrimary: const Color.fromRGBO(135, 135, 135, 1),
       activeColorSecondary: Colors.white,
     );
   }

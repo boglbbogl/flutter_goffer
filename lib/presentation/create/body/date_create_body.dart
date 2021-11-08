@@ -41,14 +41,17 @@ class DateCreateBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         dateAndTimeForm(
+                            isExpandable: isExpandable,
                             date: plan.startDate.toString(),
                             time: plan.startTime),
                         Icon(
                           Icons.airplane_ticket_outlined,
-                          color: appColor,
+                          color: isExpandable ? appSubColor : appColor,
                         ),
                         dateAndTimeForm(
-                            date: plan.endDate.toString(), time: plan.endTime),
+                            isExpandable: isExpandable,
+                            date: plan.endDate.toString(),
+                            time: plan.endTime),
                       ],
                     ),
                     Row(
@@ -88,7 +91,7 @@ class DateCreateBody extends StatelessWidget {
           Container(
             width: size.width * 0.9,
             height: 2,
-            color: appColor,
+            color: isExpandable ? appSubColor : appColor,
           ),
           AnimatedSwitcher(
               duration: const Duration(milliseconds: 1000),
@@ -109,6 +112,7 @@ class DateCreateBody extends StatelessWidget {
   SizedBox dateAndTimeForm({
     required String date,
     required String time,
+    required bool isExpandable,
   }) {
     return SizedBox(
       width: size.width * 0.29,
@@ -121,21 +125,31 @@ class DateCreateBody extends StatelessWidget {
               Text(
                 date.substring(0, 4),
                 style: theme.textTheme.bodyText2!.copyWith(
-                    color: appColor, fontWeight: FontWeight.bold, fontSize: 22),
+                    color: isExpandable
+                        ? const Color.fromRGBO(175, 175, 175, 1)
+                        : appColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
               ),
               Text(
                 date.substring(5, 10).replaceAll("-", "/"),
                 style: theme.textTheme.bodyText2!.copyWith(
-                    color: appColor, fontWeight: FontWeight.bold, fontSize: 18),
+                    color: isExpandable
+                        ? const Color.fromRGBO(175, 175, 175, 1)
+                        : appColor,
+                    // fontWeight: FontWeight.bold,
+                    fontSize: 14),
               ),
             ],
           ),
           Text(
             time,
             style: theme.textTheme.bodyText2!.copyWith(
-                color: const Color.fromRGBO(135, 135, 135, 1),
+                color: isExpandable
+                    ? appSubColor
+                    : const Color.fromRGBO(175, 175, 175, 1),
                 fontWeight: FontWeight.bold,
-                fontSize: 14),
+                fontSize: 12),
           ),
         ],
       ),

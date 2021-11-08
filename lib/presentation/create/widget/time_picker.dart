@@ -62,8 +62,8 @@ class TimePicker extends StatelessWidget {
             child: Center(
                 child: Text(title,
                     style: theme.textTheme.bodyText2!.copyWith(
-                      color: appColor,
-                      fontSize: 20,
+                      color: appSubColor,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     )))),
         SizedBox(
@@ -81,10 +81,10 @@ class TimePicker extends StatelessWidget {
                 ...timeList.map((e) => Text(
                       e,
                       style: theme.textTheme.bodyText2!.copyWith(
-                          fontSize: e != time ? 18 : 22,
+                          fontSize: e != time ? 15 : 18,
                           color: e != time
-                              ? const Color.fromRGBO(135, 135, 135, 1)
-                              : appColor,
+                              ? const Color.fromRGBO(175, 175, 175, 1)
+                              : appSubColor,
                           fontWeight:
                               e != time ? FontWeight.normal : FontWeight.bold),
                     )),

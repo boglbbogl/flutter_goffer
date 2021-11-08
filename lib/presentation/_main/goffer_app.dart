@@ -10,11 +10,11 @@ class GofferApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: Future.delayed(const Duration(milliseconds: 2500), () => 0),
+        future: Future.delayed(const Duration(milliseconds: 2000), () => 0),
         builder: (context, snapshot) {
           // switcher duration 테스트 중
           return AnimatedSwitcher(
-            duration: const Duration(milliseconds: 3000),
+            duration: const Duration(milliseconds: 1500),
             child: _splashLoadingWidget(snapshot),
           );
         });

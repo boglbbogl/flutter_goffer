@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 
 class CreateBodyWidget extends StatelessWidget {
-  final Function() onTap;
   final Widget widget;
-  final String btnText;
-  final bool isAddressSearchBar;
+  final bool isShowBackBtn;
+  final Function() onTap;
+
   const CreateBodyWidget({
     Key? key,
-    required this.onTap,
     required this.widget,
-    required this.btnText,
-    required this.isAddressSearchBar,
+    required this.onTap,
+    required this.isShowBackBtn,
   }) : super(key: key);
 
   @override
@@ -21,6 +20,20 @@ class CreateBodyWidget extends StatelessWidget {
       height: size.height,
       child: Stack(
         children: [
+          if (isShowBackBtn)
+            Positioned(
+                top: 35,
+                left: 20,
+                child: InkWell(
+                  onTap: onTap,
+                  child: const Icon(
+                    Icons.arrow_back_ios_new_outlined,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ))
+          else
+            Container(),
           Positioned(
               top: 35,
               right: 20,
@@ -30,37 +43,11 @@ class CreateBodyWidget extends StatelessWidget {
                 },
                 child: const Icon(
                   Icons.clear_outlined,
-                  color: Color.fromRGBO(71, 71, 71, 1),
+                  color: Colors.white,
                   size: 30,
                 ),
               )),
           widget,
-          if (isAddressSearchBar)
-            Container()
-          else
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: InkWell(
-                onTap: onTap,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: Container(
-                    width: size.width * 0.8,
-                    height: size.height * 0.07,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(18),
-                        color: appColor),
-                    child: Center(
-                      child: Text(
-                        btnText,
-                        style: theme.textTheme.bodyText2!
-                            .copyWith(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
         ],
       ),
     );

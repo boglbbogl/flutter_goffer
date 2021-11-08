@@ -28,7 +28,7 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
         CreatePlanState _state;
         _state = state.copyWith(
           plan: initialPlan,
-          isDestinationSwitch: false,
+          isColorChanged: false,
           isAddressSearchBar: false,
         );
         yield _state;
@@ -44,10 +44,10 @@ class CreatePlanBloc extends Bloc<CreatePlanEvent, CreatePlanState> {
         yield state.copyWith(plan: state.plan!.copyWith(endTime: e.end));
       },
       destinationToggleSwitched: (e) async* {
-        if (state.isDestinationSwitch) {
-          yield state.copyWith(isDestinationSwitch: false);
+        if (state.isColorChanged) {
+          yield state.copyWith(isColorChanged: false);
         } else {
-          yield state.copyWith(isDestinationSwitch: true);
+          yield state.copyWith(isColorChanged: true);
         }
       },
       addressBottomSearched: (e) async* {

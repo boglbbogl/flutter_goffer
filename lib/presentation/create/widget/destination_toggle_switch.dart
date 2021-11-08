@@ -4,7 +4,7 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 
 Padding destinationToggleSwitch({
   required Function() onTap,
-  required bool isToggle,
+  required bool isDestinationSwitch,
 }) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 8),
@@ -23,23 +23,23 @@ Padding destinationToggleSwitch({
                   height: 30,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 2, color: appColor),
+                      border: Border.all(
+                          width: 2,
+                          color: isDestinationSwitch ? appSubColor : appColor),
                       color: Colors.white70),
                 ),
                 Positioned(
-                  right: !isToggle ? null : 0,
+                  right: !isDestinationSwitch ? null : 0,
                   child: Container(
                     width: 60,
                     height: 30,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: appColor),
+                        color: isDestinationSwitch ? appSubColor : appColor),
                     child: Center(
-                        child: Text(!isToggle ? "출발지" : "목적지",
-                            style: theme.textTheme.bodyText2!.copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12))),
+                        child: Text(!isDestinationSwitch ? "출발지" : "도착지",
+                            style: theme.textTheme.bodyText2!
+                                .copyWith(color: Colors.white, fontSize: 9))),
                   ),
                 ),
               ],

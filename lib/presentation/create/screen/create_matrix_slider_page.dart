@@ -11,7 +11,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
   final double layoverPosition;
   final double resultPosition;
   final CreatePlan plan;
-  final bool isDestinationSwitch;
+  final bool isColorChanged;
   final bool isAddressSearchBar;
   const CreateMatrixSliderPage({
     Key? key,
@@ -19,7 +19,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
     required this.layoverPosition,
     required this.resultPosition,
     required this.plan,
-    required this.isDestinationSwitch,
+    required this.isColorChanged,
     required this.isAddressSearchBar,
   }) : super(key: key);
 
@@ -34,7 +34,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.white,
+          backgroundColor: const Color.fromRGBO(31, 31, 31, 1),
           body: Stack(
             children: [
               _animationWidget(
@@ -44,7 +44,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
                   images: 'assets/images/anabji_first.jpg',
                   widget: DestinationCreateBody(
                     plan: plan,
-                    isDestinationSwitch: isDestinationSwitch,
+                    isColorChanged: isColorChanged,
                     isAddressSearchBar: isAddressSearchBar,
                   )),
               _animationWidget(
@@ -74,11 +74,11 @@ class CreateMatrixSliderPage extends StatelessWidget {
   }) {
     return AnimatedContainer(
       transform: Matrix4.translationValues(xPosition, 0, 0),
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 500),
       child: Stack(
         children: [
           Opacity(
-            opacity: 0.4,
+            opacity: 0.3,
             child: SizedBox(
                 width: size.width,
                 height: size.height,

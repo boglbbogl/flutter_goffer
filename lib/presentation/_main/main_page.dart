@@ -2,37 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_background_page.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_main_page.dart';
+import 'package:flutter_goffer/presentation/home/home_main_page.dart';
+import 'package:flutter_goffer/presentation/profile/profile_main_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class MainPage extends StatelessWidget {
   final PersistentTabController controller = PersistentTabController();
   List<Widget> _screens() {
     return [
-      Scaffold(
-        body: Container(
-          color: Colors.white,
-          child: const Center(child: Text('First Screen')),
-        ),
-      ),
+      const HomeMainPage(),
       const CreateBackgroundPage(),
-      Container(
-        color: Colors.white,
-        child: const Center(child: Text('Third Screen')),
-      ),
+      const ProfileMainPage(),
     ];
   }
 
   PersistentBottomNavBarItem _btnItem({
     required String title,
     required IconData icon,
-    required Color activeColor,
+    required IconData inactiveIcon,
   }) {
     return PersistentBottomNavBarItem(
       title: title,
-      icon: Icon(icon),
-      textStyle: const TextStyle(fontWeight: FontWeight.bold),
-      activeColorPrimary: activeColor,
-      inactiveColorPrimary: const Color.fromRGBO(195, 195, 195, 1),
+      icon: Icon(icon, size: 22),
+      inactiveIcon: Icon(inactiveIcon, size: 22),
+      textStyle: const TextStyle(fontSize: 12),
+      activeColorPrimary: const Color.fromRGBO(71, 71, 71, 1),
+      inactiveColorPrimary: const Color.fromRGBO(215, 215, 215, 1),
       activeColorSecondary: Colors.white,
     );
   }
@@ -40,19 +35,19 @@ class MainPage extends StatelessWidget {
   List<PersistentBottomNavBarItem> _items() {
     return [
       _btnItem(
-        title: "Home",
+        title: "홈",
         icon: Icons.home_filled,
-        activeColor: appColor,
+        inactiveIcon: Icons.home_outlined,
       ),
       _btnItem(
-        title: "Add",
+        title: "만들기",
         icon: Icons.add_box_rounded,
-        activeColor: appColor,
+        inactiveIcon: Icons.add_box_rounded,
       ),
       _btnItem(
-        title: "Setting",
-        icon: Icons.settings,
-        activeColor: appColor,
+        title: "프로필",
+        icon: Icons.account_box_rounded,
+        inactiveIcon: Icons.account_box_outlined,
       ),
     ];
   }
@@ -76,8 +71,8 @@ class MainPage extends StatelessWidget {
             controller.jumpToTab(0);
           }
         },
-        // backgroundColor: Colors.white,
-        navBarHeight: 62,
+        // backgroundColor: appColor,
+        navBarHeight: 65,
         navBarStyle: NavBarStyle.style10,
       ),
     );

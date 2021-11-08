@@ -40,16 +40,17 @@ class DateRangePicker extends StatelessWidget {
         },
         selectionMode: DateRangePickerSelectionMode.range,
 
-        rangeTextStyle:
-            theme.textTheme.bodyText2!.copyWith(color: Colors.white),
+        rangeTextStyle: theme.textTheme.bodyText2!
+            .copyWith(color: Colors.white, fontSize: 12),
 
         monthCellStyle: DateRangePickerMonthCellStyle(
             disabledDatesTextStyle:
                 theme.textTheme.bodyText2!.copyWith(fontSize: 0),
-            textStyle: theme.textTheme.bodyText2!
-                .copyWith(color: const Color.fromRGBO(155, 155, 155, 1)),
+            textStyle: theme.textTheme.bodyText2!.copyWith(
+                color: const Color.fromRGBO(195, 195, 195, 1), fontSize: 12),
             todayTextStyle: theme.textTheme.bodyText2!.copyWith(
-                color: const Color.fromRGBO(91, 91, 91, 1),
+                color: const Color.fromRGBO(135, 135, 135, 1),
+                fontSize: 12,
                 fontWeight: FontWeight.bold)),
         startRangeSelectionColor: appColor,
         endRangeSelectionColor: appColor,
@@ -64,9 +65,9 @@ class DateRangePicker extends StatelessWidget {
         // view:  DateRangePickerView.month,
         headerStyle: DateRangePickerHeaderStyle(
           textStyle: theme.textTheme.bodyText2!.copyWith(
-            fontWeight: FontWeight.bold,
+            // fontWeight: FontWeight.bold,
             color: appColor,
-            fontSize: 22,
+            fontSize: 15,
             fontStyle: FontStyle.italic,
           ),
         ),

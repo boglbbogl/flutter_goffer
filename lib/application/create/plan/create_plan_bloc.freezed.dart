@@ -890,12 +890,12 @@ class _$CreatePlanStateTearOff {
   _CreatePlanState call(
       {required bool isLoading,
       required CreatePlan? plan,
-      required bool isDestinationSwitch,
+      required bool isColorChanged,
       required bool isAddressSearchBar}) {
     return _CreatePlanState(
       isLoading: isLoading,
       plan: plan,
-      isDestinationSwitch: isDestinationSwitch,
+      isColorChanged: isColorChanged,
       isAddressSearchBar: isAddressSearchBar,
     );
   }
@@ -908,7 +908,7 @@ const $CreatePlanState = _$CreatePlanStateTearOff();
 mixin _$CreatePlanState {
   bool get isLoading => throw _privateConstructorUsedError;
   CreatePlan? get plan => throw _privateConstructorUsedError;
-  bool get isDestinationSwitch => throw _privateConstructorUsedError;
+  bool get isColorChanged => throw _privateConstructorUsedError;
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -924,7 +924,7 @@ abstract class $CreatePlanStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       CreatePlan? plan,
-      bool isDestinationSwitch,
+      bool isColorChanged,
       bool isAddressSearchBar});
 
   $CreatePlanCopyWith<$Res>? get plan;
@@ -943,7 +943,7 @@ class _$CreatePlanStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? plan = freezed,
-    Object? isDestinationSwitch = freezed,
+    Object? isColorChanged = freezed,
     Object? isAddressSearchBar = freezed,
   }) {
     return _then(_value.copyWith(
@@ -955,9 +955,9 @@ class _$CreatePlanStateCopyWithImpl<$Res>
           ? _value.plan
           : plan // ignore: cast_nullable_to_non_nullable
               as CreatePlan?,
-      isDestinationSwitch: isDestinationSwitch == freezed
-          ? _value.isDestinationSwitch
-          : isDestinationSwitch // ignore: cast_nullable_to_non_nullable
+      isColorChanged: isColorChanged == freezed
+          ? _value.isColorChanged
+          : isColorChanged // ignore: cast_nullable_to_non_nullable
               as bool,
       isAddressSearchBar: isAddressSearchBar == freezed
           ? _value.isAddressSearchBar
@@ -988,7 +988,7 @@ abstract class _$CreatePlanStateCopyWith<$Res>
   $Res call(
       {bool isLoading,
       CreatePlan? plan,
-      bool isDestinationSwitch,
+      bool isColorChanged,
       bool isAddressSearchBar});
 
   @override
@@ -1010,7 +1010,7 @@ class __$CreatePlanStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = freezed,
     Object? plan = freezed,
-    Object? isDestinationSwitch = freezed,
+    Object? isColorChanged = freezed,
     Object? isAddressSearchBar = freezed,
   }) {
     return _then(_CreatePlanState(
@@ -1022,9 +1022,9 @@ class __$CreatePlanStateCopyWithImpl<$Res>
           ? _value.plan
           : plan // ignore: cast_nullable_to_non_nullable
               as CreatePlan?,
-      isDestinationSwitch: isDestinationSwitch == freezed
-          ? _value.isDestinationSwitch
-          : isDestinationSwitch // ignore: cast_nullable_to_non_nullable
+      isColorChanged: isColorChanged == freezed
+          ? _value.isColorChanged
+          : isColorChanged // ignore: cast_nullable_to_non_nullable
               as bool,
       isAddressSearchBar: isAddressSearchBar == freezed
           ? _value.isAddressSearchBar
@@ -1040,7 +1040,7 @@ class _$_CreatePlanState implements _CreatePlanState {
   _$_CreatePlanState(
       {required this.isLoading,
       required this.plan,
-      required this.isDestinationSwitch,
+      required this.isColorChanged,
       required this.isAddressSearchBar});
 
   @override
@@ -1048,13 +1048,13 @@ class _$_CreatePlanState implements _CreatePlanState {
   @override
   final CreatePlan? plan;
   @override
-  final bool isDestinationSwitch;
+  final bool isColorChanged;
   @override
   final bool isAddressSearchBar;
 
   @override
   String toString() {
-    return 'CreatePlanState(isLoading: $isLoading, plan: $plan, isDestinationSwitch: $isDestinationSwitch, isAddressSearchBar: $isAddressSearchBar)';
+    return 'CreatePlanState(isLoading: $isLoading, plan: $plan, isColorChanged: $isColorChanged, isAddressSearchBar: $isAddressSearchBar)';
   }
 
   @override
@@ -1066,9 +1066,9 @@ class _$_CreatePlanState implements _CreatePlanState {
                     .equals(other.isLoading, isLoading)) &&
             (identical(other.plan, plan) ||
                 const DeepCollectionEquality().equals(other.plan, plan)) &&
-            (identical(other.isDestinationSwitch, isDestinationSwitch) ||
+            (identical(other.isColorChanged, isColorChanged) ||
                 const DeepCollectionEquality()
-                    .equals(other.isDestinationSwitch, isDestinationSwitch)) &&
+                    .equals(other.isColorChanged, isColorChanged)) &&
             (identical(other.isAddressSearchBar, isAddressSearchBar) ||
                 const DeepCollectionEquality()
                     .equals(other.isAddressSearchBar, isAddressSearchBar)));
@@ -1079,7 +1079,7 @@ class _$_CreatePlanState implements _CreatePlanState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(plan) ^
-      const DeepCollectionEquality().hash(isDestinationSwitch) ^
+      const DeepCollectionEquality().hash(isColorChanged) ^
       const DeepCollectionEquality().hash(isAddressSearchBar);
 
   @JsonKey(ignore: true)
@@ -1092,7 +1092,7 @@ abstract class _CreatePlanState implements CreatePlanState {
   factory _CreatePlanState(
       {required bool isLoading,
       required CreatePlan? plan,
-      required bool isDestinationSwitch,
+      required bool isColorChanged,
       required bool isAddressSearchBar}) = _$_CreatePlanState;
 
   @override
@@ -1100,7 +1100,7 @@ abstract class _CreatePlanState implements CreatePlanState {
   @override
   CreatePlan? get plan => throw _privateConstructorUsedError;
   @override
-  bool get isDestinationSwitch => throw _privateConstructorUsedError;
+  bool get isColorChanged => throw _privateConstructorUsedError;
   @override
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
   @override

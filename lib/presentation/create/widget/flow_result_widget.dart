@@ -6,10 +6,8 @@ DefaultTextStyle dateAndTimeFlowResutl({
   required CreatePlan plan,
 }) {
   return DefaultTextStyle(
-    style: theme.textTheme.bodyText2!.copyWith(
-        color: const Color.fromRGBO(115, 115, 115, 1),
-        fontWeight: FontWeight.bold,
-        fontSize: 15),
+    style:
+        theme.textTheme.bodyText2!.copyWith(color: Colors.white, fontSize: 12),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -23,7 +21,7 @@ DefaultTextStyle dateAndTimeFlowResutl({
         ),
         const Icon(
           Icons.airplane_ticket_outlined,
-          color: Color.fromRGBO(115, 115, 115, 1),
+          color: Colors.white,
         ),
         Column(
           children: [

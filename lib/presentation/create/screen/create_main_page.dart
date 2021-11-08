@@ -53,6 +53,9 @@ class CreateMainPage extends StatelessWidget {
                         )
                       : state.switcherIndex == 1
                           ? switcherPage(
+                              titleColor:
+                                  !state.isExpandable ? appColor : appSubColor,
+                              btnColor: Colors.white70,
                               key: 'date',
                               context: context,
                               backgroundColor: Colors.white,
@@ -71,8 +74,7 @@ class CreateMainPage extends StatelessWidget {
                               layoverPosition: state.layover,
                               resultPosition: state.result,
                               plan: planState.plan!,
-                              isDestinationSwitch:
-                                  planState.isDestinationSwitch,
+                              isColorChanged: planState.isColorChanged,
                               isAddressSearchBar: planState.isAddressSearchBar,
                             ));
             },
@@ -86,6 +88,8 @@ class CreateMainPage extends StatelessWidget {
     required BuildContext context,
     required String key,
     required Color backgroundColor,
+    Color? btnColor,
+    Color? titleColor,
     required Widget widget,
     required Function() onTap,
     required String btnTitle,
@@ -117,13 +121,14 @@ class CreateMainPage extends StatelessWidget {
                   width: size.width * 0.85,
                   height: size.height * 0.07,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30), color: appColor),
+                      borderRadius: BorderRadius.circular(30),
+                      color: btnColor ?? appColor),
                   child: Center(
                       child: Text(
                     btnTitle,
                     style: theme.textTheme.bodyText2!.copyWith(
-                        color: Colors.white,
-                        fontSize: 18,
+                        color: titleColor ?? Colors.white,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold),
                   )),
                 ),
@@ -145,7 +150,7 @@ class CreateMainPage extends StatelessWidget {
       child: Text(
         title,
         style: theme.textTheme.bodyText2!.copyWith(
-            color: appColor, fontWeight: FontWeight.bold, fontSize: 50),
+            color: appColor, fontWeight: FontWeight.bold, fontSize: 30),
       ),
     );
   }

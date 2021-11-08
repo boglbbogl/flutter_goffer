@@ -13,6 +13,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
   final CreatePlan plan;
   final bool isColorChanged;
   final bool isAddressSearchBar;
+  final String planImg;
   const CreateMatrixSliderPage({
     Key? key,
     required this.destinationPosition,
@@ -21,6 +22,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
     required this.plan,
     required this.isColorChanged,
     required this.isAddressSearchBar,
+    required this.planImg,
   }) : super(key: key);
 
   @override
@@ -40,8 +42,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
               _animationWidget(
                   context: context,
                   xPosition: destinationPosition,
-                  // images: 'assets/images/cappadocia_first.jpg',
-                  images: 'assets/images/anabji_first.jpg',
+                  images: '${planImg}_first.jpg',
                   widget: DestinationCreateBody(
                     plan: plan,
                     isColorChanged: isColorChanged,
@@ -50,14 +51,12 @@ class CreateMatrixSliderPage extends StatelessWidget {
               _animationWidget(
                   context: context,
                   xPosition: layoverPosition,
-                  // images: 'assets/images/cappadocia_second.jpg',
-                  images: 'assets/images/anabji_second.jpg',
+                  images: '${planImg}_second.jpg',
                   widget: const LayoverCreateBody()),
               _animationWidget(
                   context: context,
                   xPosition: resultPosition,
-                  // images: 'assets/images/cappadocia_third.jpg',
-                  images: 'assets/images/anabji_third.jpg',
+                  images: '${planImg}_third.jpg',
                   widget: const ResultCreateBody()),
             ],
           ),

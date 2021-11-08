@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/create/animation/create_animation_cubit.dart';
+import 'package:flutter_goffer/application/create/cubit/create_image_cubit.dart';
 import 'package:flutter_goffer/application/create/plan/create_plan_bloc.dart';
+import 'package:flutter_goffer/injection.dart';
 import 'package:flutter_goffer/presentation/create/body/date_create_body.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_matrix_slider_page.dart';
 
@@ -14,69 +16,78 @@ class CreateMainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => CreateAnimationCubit()..started()),
+        BlocProvider(
+            create: (context) => getIt<CreateAnimationCubit>()..started()),
         BlocProvider(
             create: (context) =>
-                CreatePlanBloc()..add(const CreatePlanEvent.started())),
+                getIt<CreatePlanBloc>()..add(const CreatePlanEvent.started())),
+        BlocProvider(create: (context) => getIt<CreateImageCubit>())
       ],
       child: BlocBuilder<CreateAnimationCubit, CreateAnimationState>(
         builder: (context, state) {
           return BlocBuilder<CreatePlanBloc, CreatePlanState>(
             builder: (context, planState) {
-              return AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 1500),
-                  child: state.switcherIndex == 0
-                      ? switcherPage(
-                          key: 'start',
-                          context: context,
-                          backgroundColor: Colors.black,
-                          btnTitle: '시작하기',
-                          onTap: () {
-                            context
-                                .read<CreateAnimationCubit>()
-                                .startAnimation(index: 1);
-                          },
-                          widget: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: size.height * 0.20),
-                              titleForm(
-                                  title: '나만의 일정을',
-                                  leftPadding: 30,
-                                  topPadding: 0),
-                              titleForm(
-                                  title: '만드시겠습니까 ?',
-                                  leftPadding: 70,
-                                  topPadding: 20),
-                            ],
-                          ),
-                        )
-                      : state.switcherIndex == 1
+              return BlocBuilder<CreateImageCubit, CreateImageState>(
+                builder: (context, imageState) {
+                  return AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 1500),
+                      child: state.switcherIndex == 0
                           ? switcherPage(
-                              titleColor:
-                                  !state.isExpandable ? appColor : appSubColor,
-                              btnColor: Colors.white70,
-                              key: 'date',
+                              key: 'start',
                               context: context,
-                              backgroundColor: Colors.white,
-                              btnTitle: '목적지 만들러 가기',
+                              backgroundColor: Colors.black,
+                              btnTitle: '시작하기',
                               onTap: () {
                                 context
                                     .read<CreateAnimationCubit>()
-                                    .startAnimation(index: 2);
+                                    .startAnimation(index: 1);
                               },
-                              widget: DateCreateBody(
-                                isExpandable: state.isExpandable,
-                                plan: planState.plan!,
-                              ))
-                          : CreateMatrixSliderPage(
-                              destinationPosition: state.destination,
-                              layoverPosition: state.layover,
-                              resultPosition: state.result,
-                              plan: planState.plan!,
-                              isColorChanged: planState.isColorChanged,
-                              isAddressSearchBar: planState.isAddressSearchBar,
-                            ));
+                              widget: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: size.height * 0.20),
+                                  titleForm(
+                                      title: '나만의 일정을',
+                                      leftPadding: 30,
+                                      topPadding: 0),
+                                  titleForm(
+                                      title: '만드시겠습니까 ?',
+                                      leftPadding: 70,
+                                      topPadding: 20),
+                                ],
+                              ),
+                            )
+                          : state.switcherIndex == 1
+                              ? switcherPage(
+                                  titleColor: !state.isExpandable
+                                      ? appColor
+                                      : appSubColor,
+                                  btnColor: Colors.white70,
+                                  key: 'date',
+                                  context: context,
+                                  backgroundColor: Colors.white,
+                                  btnTitle: '목적지 만들러 가기',
+                                  onTap: () {
+                                    context
+                                        .read<CreateAnimationCubit>()
+                                        .startAnimation(index: 2);
+                                  },
+                                  widget: DateCreateBody(
+                                    isExpandable: state.isExpandable,
+                                    plan: planState.plan!,
+                                  ))
+                              : CreateMatrixSliderPage(
+                                  destinationPosition: state.destination,
+                                  layoverPosition: state.layover,
+                                  resultPosition: state.result,
+                                  plan: planState.plan!,
+                                  isColorChanged: planState.isColorChanged,
+                                  isAddressSearchBar:
+                                      planState.isAddressSearchBar,
+                                  planImg: imageState.planImg,
+                                ));
+                },
+              );
             },
           );
         },

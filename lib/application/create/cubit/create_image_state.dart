@@ -7,7 +7,7 @@ class CreateImageState with _$CreateImageState {
     required int planIndex,
   }) = _CreateImageState;
   factory CreateImageState.initial() => CreateImageState(
-        planImg: "cappadocia",
+        planImg: "",
         planIndex: 0,
       );
 }

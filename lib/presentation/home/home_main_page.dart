@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_main_page.dart';
 import 'package:flutter_goffer/presentation/feed/feed.dart';
+import 'package:flutter_goffer/presentation/home/home_banner.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class HomeMainPage extends StatelessWidget {
@@ -27,7 +28,12 @@ class HomeMainPage extends StatelessWidget {
                   color: Color.fromRGBO(71, 71, 71, 1))),
         ],
       ),
-      body: const Feed(),
+      body: Column(
+        children: const [
+          HomeBanner(),
+          Feed(),
+        ],
+      ),
     );
   }
 }

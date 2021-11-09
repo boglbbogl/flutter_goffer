@@ -107,7 +107,7 @@ class CreateMainPage extends StatelessWidget {
               width: size.width,
               height: size.height,
               child: ExtendedImage.asset(
-                'assets/images/create_main.png',
+                'assets/images/main/create_main.png',
                 fit: BoxFit.cover,
               ),
             ),

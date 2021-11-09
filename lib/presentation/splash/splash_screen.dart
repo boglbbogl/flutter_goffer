@@ -13,9 +13,9 @@ class SplashScreen extends StatelessWidget {
         width: constraints.maxWidth,
         color: Colors.white,
         child: Opacity(
-            opacity: 0.8,
+            opacity: 1,
             child: ExtendedImage.asset(
-              'assets/splash/splash_main_gif.gif',
+              'assets/splash/splash_main5_gif.gif',
               fit: BoxFit.cover,
             )),
       );

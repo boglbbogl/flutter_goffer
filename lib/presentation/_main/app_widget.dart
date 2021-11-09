@@ -30,7 +30,7 @@ class AppWidget extends StatelessWidget {
             titleTextStyle: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
-              color: Color.fromRGBO(71, 71, 71, 1),
+              color: Color.fromRGBO(104, 165, 247, 1),
             )),
         // fontFamily: 'Yanolja',
         fontFamily: 'Baemin_Dohyeon',

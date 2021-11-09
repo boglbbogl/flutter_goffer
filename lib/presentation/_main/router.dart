@@ -1,7 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/presentation/_main/main_page.dart';
-import 'package:flutter_goffer/presentation/splash/error_screen.dart';
+import 'package:flutter_goffer/presentation/auth/sign_in_page.dart';
 
 // Main Location
 class Location extends BeamLocation {
@@ -22,10 +22,13 @@ final routerDelegate = BeamerDelegate(
     BeamGuard(
         pathBlueprints: ['/'],
         check: (context, location) {
-          return true;
+          return false;
           // false -> SignIn, true -> Main
         },
-        showPage: BeamPage(child: const ErrorScreen())),
+        showPage: BeamPage(
+            child:
+                //  const ErrorScreen()
+                const SignInPage())),
   ],
   locationBuilder: BeamerLocationBuilder(beamLocations: [
     Location(),

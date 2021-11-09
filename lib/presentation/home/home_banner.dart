@@ -10,18 +10,16 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        pushNewScreen(context,
-            screen: const HomeBannerAd(),
-            withNavBar: false,
-            pageTransitionAnimation: PageTransitionAnimation.slideUp);
-      },
+      onTap: () => pushNewScreen(context,
+          screen: const HomeBannerAd(),
+          withNavBar: false,
+          pageTransitionAnimation: PageTransitionAnimation.slideUp),
       child: Card(
         elevation: 10,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         shadowColor: Colors.white,
-        color: Colors.black,
+        color: Colors.grey,
         margin: const EdgeInsets.all(10),
         child: Stack(
           children: [
@@ -38,13 +36,25 @@ class HomeBanner extends StatelessWidget {
             ),
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 60, bottom: 40),
-                child: Text(
-                  '자신만의 사진을 올려주세요',
-                  style: theme.textTheme.bodyText2!.copyWith(
-                    color: Colors.white,
-                    fontSize: 15,
-                  ),
+                padding: const EdgeInsets.only(top: 40, bottom: 40),
+                child: Column(
+                  children: [
+                    Text(
+                      '여행 사진을 올려주세요',
+                      style: theme.textTheme.bodyText2!.copyWith(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    Text(
+                      'Goffer의 배경 이미지를 만드세요',
+                      style: theme.textTheme.bodyText2!.copyWith(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

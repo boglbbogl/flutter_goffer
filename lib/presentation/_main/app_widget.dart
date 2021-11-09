@@ -13,6 +13,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp.router(
       routerDelegate: routerDelegate,
       routeInformationParser: BeamerParser(),
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

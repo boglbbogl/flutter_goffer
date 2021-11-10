@@ -14,7 +14,7 @@ class GofferApp extends StatelessWidget {
         builder: (context, snapshot) {
           // switcher duration 테스트 중
           return AnimatedSwitcher(
-            duration: const Duration(milliseconds: 1500),
+            duration: const Duration(milliseconds: 300),
             child: _splashLoadingWidget(snapshot),
           );
         });

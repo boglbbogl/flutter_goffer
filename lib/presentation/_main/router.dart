@@ -1,5 +1,7 @@
 import 'package:beamer/beamer.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_goffer/application/authentication/auth_provider/user_provider.dart';
 import 'package:flutter_goffer/presentation/_main/main_page.dart';
 import 'package:flutter_goffer/presentation/auth/sign_in_page.dart';
 
@@ -22,7 +24,8 @@ final routerDelegate = BeamerDelegate(
     BeamGuard(
         pathBlueprints: ['/'],
         check: (context, location) {
-          return false;
+          return context.watch<UserProvider>().userState;
+
           // false -> SignIn, true -> Main
         },
         showPage: BeamPage(

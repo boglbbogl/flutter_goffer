@@ -36,7 +36,7 @@ class HomeBanner extends StatelessWidget {
             ),
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 40, bottom: 40),
+                padding: const EdgeInsets.only(top: 40, bottom: 30),
                 child: Column(
                   children: [
                     Text(

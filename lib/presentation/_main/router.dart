@@ -24,8 +24,8 @@ final routerDelegate = BeamerDelegate(
     BeamGuard(
         pathBlueprints: ['/'],
         check: (context, location) {
-          return true;
-          // return context.watch<UserProvider>().loginState;
+          // return true;
+          return context.watch<UserProvider>().loginState;
 
           // false -> SignIn, true -> Main
         },

@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/create/plan/create_plan_bloc.dart';
+import 'package:flutter_goffer/application/find_location/find_location_cubit.dart';
+import 'package:flutter_goffer/presentation/create/widget/destination/address_list_view.dart';
 
 class AdressSearchBottomBar extends StatelessWidget {
+  final TextEditingController _controller = TextEditingController();
   final bool isAddressSearchBar;
   final bool isColorChanged;
-  const AdressSearchBottomBar({
+  AdressSearchBottomBar({
     Key? key,
     required this.isAddressSearchBar,
     required this.isColorChanged,
@@ -84,6 +87,7 @@ class AdressSearchBottomBar extends StatelessWidget {
                               height: size.height * 0.07,
                               child: Center(
                                 child: TextFormField(
+                                  controller: _controller,
                                   style: theme.textTheme.bodyText2!
                                       .copyWith(color: Colors.black),
                                   cursorColor: Colors.black,
@@ -113,7 +117,13 @@ class AdressSearchBottomBar extends StatelessWidget {
                                       isColorChanged ? appSubColor : appColor,
                                 ),
                                 child: InkWell(
-                                    onTap: () {},
+                                    onTap: () {
+                                      FocusScope.of(context).unfocus();
+                                      context
+                                          .read<FindLocationCubit>()
+                                          .localFindLocation(
+                                              keyWord: _controller.text);
+                                    },
                                     child: const Icon(
                                       Icons.search_rounded,
                                       color: Colors.white,
@@ -125,6 +135,7 @@ class AdressSearchBottomBar extends StatelessWidget {
                         ),
                       ),
                     ),
+                    AddressListView(),
                   ],
                 ),
               ),

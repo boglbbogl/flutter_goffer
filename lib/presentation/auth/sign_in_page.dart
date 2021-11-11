@@ -45,9 +45,7 @@ class SignInPage extends StatelessWidget {
                             btnColor: const Color.fromRGBO(247, 82, 142, 1),
                             icon: Icons.airplane_ticket,
                             titleColor: Colors.black,
-                            onTap: () {
-                              _userProvider.setUserAuth(authState: true);
-                            }),
+                            onTap: () {}),
                         const SizedBox(height: 25),
                         _signInBtnForm(
                             context: context,
@@ -55,7 +53,9 @@ class SignInPage extends StatelessWidget {
                             btnColor: Colors.amber,
                             icon: Icons.chat_bubble,
                             titleColor: Colors.brown,
-                            onTap: () {}),
+                            onTap: () {
+                              _userProvider.logIn;
+                            }),
                       ],
                     ),
                   ],

@@ -2,77 +2,108 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/find_location/find_location_cubit.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
+import 'package:flutter_goffer/domain/find_location/find_location.dart';
 
 class AddressListView extends StatelessWidget {
-  const AddressListView({Key? key}) : super(key: key);
+  final TextEditingController controller;
+  final bool isColorChanged;
+  final List<FindLocation> location;
+
+  const AddressListView({
+    Key? key,
+    required this.location,
+    required this.controller,
+    required this.isColorChanged,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FindLocationCubit, FindLocationState>(
-      builder: (context, state) {
-        if (state.location.isEmpty) {
-          return Container();
-        }
-        return Expanded(
-            child: ListView(
-          shrinkWrap: true,
-          children: [
-            ...state.location.map((data) => InkWell(
-                  onTap: () {},
+    if (location.isEmpty) {
+      return Column(
+        children: [
+          const SizedBox(height: 50),
+          TextButton(
+            onPressed: () {
+              FocusScope.of(context).unfocus();
+              context
+                  .read<FindLocationCubit>()
+                  .apiFindLocation(keyWord: controller.text);
+            },
+            child: Text(
+              '검색 결과 더보기...',
+              style: theme.textTheme.bodyText2!
+                  .copyWith(color: const Color.fromRGBO(115, 115, 115, 1)),
+            ),
+          )
+        ],
+      );
+    }
+    return Expanded(
+        child: ListView(
+      shrinkWrap: true,
+      children: [
+        ...location.map((data) => InkWell(
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                if (!isColorChanged) {
+                  context.read<TravelCreateBloc>()
+                    ..add(TravelCreateEvent.startDestinationSelected(
+                        x: data.x,
+                        y: data.y,
+                        id: data.id,
+                        destination: data.place_name))
+                    ..add(const TravelCreateEvent.addressBottomSearched(
+                        value: false))
+                    ..add(const TravelCreateEvent.destinationToggleSwitched());
+                } else if (isColorChanged) {
+                  context.read<TravelCreateBloc>()
+                    ..add(TravelCreateEvent.endDestinationSelected(
+                        x: data.x,
+                        y: data.y,
+                        id: data.id,
+                        destination: data.place_name))
+                    ..add(const TravelCreateEvent.addressBottomSearched(
+                        value: false));
+                }
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    top: 8, bottom: 8, left: 18, right: 18),
+                child: Container(
+                  width: size.width * 0.9,
+                  height: size.height * 0.1,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                          color: const Color.fromRGBO(195, 195, 195, 1))),
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                        top: 8, bottom: 8, left: 18, right: 18),
-                    child: Container(
-                      width: size.width * 0.9,
-                      height: size.height * 0.1,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                              color: const Color.fromRGBO(195, 195, 195, 1))),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              data.place_name,
-                              style: theme.textTheme.bodyText2!
-                                  .copyWith(fontSize: 14, color: appColor),
-                            ),
-                            Expanded(
-                              child: Text(
-                                data.road_address_name!.isEmpty
-                                    ? data.address_name
-                                    : data.road_address_name!,
-                                style: theme.textTheme.bodyText2!.copyWith(
-                                    fontSize: 12,
-                                    color:
-                                        const Color.fromRGBO(135, 135, 135, 1)),
-                              ),
-                            ),
-                            DefaultTextStyle(
-                              style: theme.textTheme.bodyText2!.copyWith(
-                                color: const Color.fromRGBO(155, 155, 155, 1),
-                                fontSize: 9,
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(data.phone),
-                                  Text(data.place_url),
-                                ],
-                              ),
-                            ),
-                          ],
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          data.place_name,
+                          style: theme.textTheme.bodyText2!.copyWith(
+                              fontSize: 14,
+                              color: isColorChanged ? appSubColor : appColor),
                         ),
-                      ),
+                        const SizedBox(height: 10),
+                        Text(
+                          data.road_address_name!.isEmpty
+                              ? data.address_name
+                              : data.road_address_name!,
+                          style: theme.textTheme.bodyText2!.copyWith(
+                              fontSize: 12,
+                              color: const Color.fromRGBO(135, 135, 135, 1)),
+                        ),
+                      ],
                     ),
                   ),
-                )),
-          ],
-        ));
-      },
-    );
+                ),
+              ),
+            )),
+      ],
+    ));
   }
 }

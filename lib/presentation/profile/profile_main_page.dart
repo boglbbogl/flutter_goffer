@@ -18,7 +18,7 @@ class ProfileMainPage extends StatelessWidget {
               onPressed: () {
                 _userProvider.logOut;
               },
-              icon: const Icon(Icons.settings_rounded,
+              icon: const Icon(Icons.logout_rounded,
                   color: Color.fromRGBO(71, 71, 71, 1))),
         ],
       ),

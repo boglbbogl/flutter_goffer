@@ -15,7 +15,7 @@ Positioned createSubmittedBtn({
           onPressed: onTap,
           child: Container(
               width: size.width,
-              height: size.height * 0.07,
+              height: size.height * 0.06,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(22),
                   color: btnColor ?? appColor),
@@ -23,7 +23,7 @@ Positioned createSubmittedBtn({
                   child: Text(
                 title,
                 style: theme.textTheme.bodyText2!
-                    .copyWith(color: Colors.white, fontSize: 18),
+                    .copyWith(color: Colors.white, fontSize: 16),
               )))));
   // return Align(
   //   alignment: Alignment.bottomCenter,

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
-import 'package:flutter_goffer/application/create/animation/create_animation_cubit.dart';
-import 'package:flutter_goffer/domain/create_plan.dart';
+import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
+import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/create/widget/date/date_range_picker.dart';
 import 'package:flutter_goffer/presentation/create/widget/date/time_picker.dart';
 
 class DateCreateBody extends StatelessWidget {
   final bool isExpandable;
-  final CreatePlan plan;
+  final TravelResearch start;
+  final TravelResearch end;
   const DateCreateBody({
     Key? key,
     required this.isExpandable,
-    required this.plan,
+    required this.start,
+    required this.end,
   }) : super(key: key);
 
   @override
@@ -23,7 +25,7 @@ class DateCreateBody extends StatelessWidget {
           SizedBox(height: size.height * 0.2),
           InkWell(
             onTap: () =>
-                context.read<CreateAnimationCubit>().dateAndTimeExpandable(),
+                context.read<TravelAnimationCubit>().dateAndTimeExpandable(),
             child: Container(
               width: size.width * 0.9,
               height: size.height * 0.12,
@@ -42,16 +44,16 @@ class DateCreateBody extends StatelessWidget {
                       children: [
                         dateAndTimeForm(
                             isExpandable: isExpandable,
-                            date: plan.startDate.toString(),
-                            time: plan.startTime),
+                            date: start.date,
+                            time: start.time),
                         Icon(
                           Icons.airplane_ticket_outlined,
                           color: isExpandable ? appSubColor : appColor,
                         ),
                         dateAndTimeForm(
                             isExpandable: isExpandable,
-                            date: plan.endDate.toString(),
-                            time: plan.endTime),
+                            date: end.date,
+                            time: end.time),
                       ],
                     ),
                     Row(
@@ -97,12 +99,12 @@ class DateCreateBody extends StatelessWidget {
               duration: const Duration(milliseconds: 1000),
               child: isExpandable
                   ? TimePicker(
-                      start: plan.startTime,
-                      end: plan.endTime,
+                      start: start.time,
+                      end: end.time,
                     )
                   : DateRangePicker(
-                      start: plan.startDate,
-                      end: plan.endDate,
+                      start: start.date,
+                      end: end.date,
                     )),
         ],
       ),

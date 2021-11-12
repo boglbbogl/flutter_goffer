@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'create_animation_cubit.dart';
+part of 'travel_animation_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,16 +13,16 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$CreateAnimationStateTearOff {
-  const _$CreateAnimationStateTearOff();
+class _$TravelAnimationStateTearOff {
+  const _$TravelAnimationStateTearOff();
 
-  _CreateAnimationState call(
+  _TravelAnimationState call(
       {required int switcherIndex,
       required bool isExpandable,
       required double destination,
       required double layover,
       required double result}) {
-    return _CreateAnimationState(
+    return _TravelAnimationState(
       switcherIndex: switcherIndex,
       isExpandable: isExpandable,
       destination: destination,
@@ -33,10 +33,10 @@ class _$CreateAnimationStateTearOff {
 }
 
 /// @nodoc
-const $CreateAnimationState = _$CreateAnimationStateTearOff();
+const $TravelAnimationState = _$TravelAnimationStateTearOff();
 
 /// @nodoc
-mixin _$CreateAnimationState {
+mixin _$TravelAnimationState {
   int get switcherIndex => throw _privateConstructorUsedError;
   bool get isExpandable => throw _privateConstructorUsedError;
   double get destination => throw _privateConstructorUsedError;
@@ -44,15 +44,15 @@ mixin _$CreateAnimationState {
   double get result => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CreateAnimationStateCopyWith<CreateAnimationState> get copyWith =>
+  $TravelAnimationStateCopyWith<TravelAnimationState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CreateAnimationStateCopyWith<$Res> {
-  factory $CreateAnimationStateCopyWith(CreateAnimationState value,
-          $Res Function(CreateAnimationState) then) =
-      _$CreateAnimationStateCopyWithImpl<$Res>;
+abstract class $TravelAnimationStateCopyWith<$Res> {
+  factory $TravelAnimationStateCopyWith(TravelAnimationState value,
+          $Res Function(TravelAnimationState) then) =
+      _$TravelAnimationStateCopyWithImpl<$Res>;
   $Res call(
       {int switcherIndex,
       bool isExpandable,
@@ -62,13 +62,13 @@ abstract class $CreateAnimationStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreateAnimationStateCopyWithImpl<$Res>
-    implements $CreateAnimationStateCopyWith<$Res> {
-  _$CreateAnimationStateCopyWithImpl(this._value, this._then);
+class _$TravelAnimationStateCopyWithImpl<$Res>
+    implements $TravelAnimationStateCopyWith<$Res> {
+  _$TravelAnimationStateCopyWithImpl(this._value, this._then);
 
-  final CreateAnimationState _value;
+  final TravelAnimationState _value;
   // ignore: unused_field
-  final $Res Function(CreateAnimationState) _then;
+  final $Res Function(TravelAnimationState) _then;
 
   @override
   $Res call({
@@ -104,11 +104,11 @@ class _$CreateAnimationStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CreateAnimationStateCopyWith<$Res>
-    implements $CreateAnimationStateCopyWith<$Res> {
-  factory _$CreateAnimationStateCopyWith(_CreateAnimationState value,
-          $Res Function(_CreateAnimationState) then) =
-      __$CreateAnimationStateCopyWithImpl<$Res>;
+abstract class _$TravelAnimationStateCopyWith<$Res>
+    implements $TravelAnimationStateCopyWith<$Res> {
+  factory _$TravelAnimationStateCopyWith(_TravelAnimationState value,
+          $Res Function(_TravelAnimationState) then) =
+      __$TravelAnimationStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {int switcherIndex,
@@ -119,15 +119,15 @@ abstract class _$CreateAnimationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CreateAnimationStateCopyWithImpl<$Res>
-    extends _$CreateAnimationStateCopyWithImpl<$Res>
-    implements _$CreateAnimationStateCopyWith<$Res> {
-  __$CreateAnimationStateCopyWithImpl(
-      _CreateAnimationState _value, $Res Function(_CreateAnimationState) _then)
-      : super(_value, (v) => _then(v as _CreateAnimationState));
+class __$TravelAnimationStateCopyWithImpl<$Res>
+    extends _$TravelAnimationStateCopyWithImpl<$Res>
+    implements _$TravelAnimationStateCopyWith<$Res> {
+  __$TravelAnimationStateCopyWithImpl(
+      _TravelAnimationState _value, $Res Function(_TravelAnimationState) _then)
+      : super(_value, (v) => _then(v as _TravelAnimationState));
 
   @override
-  _CreateAnimationState get _value => super._value as _CreateAnimationState;
+  _TravelAnimationState get _value => super._value as _TravelAnimationState;
 
   @override
   $Res call({
@@ -137,7 +137,7 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
     Object? layover = freezed,
     Object? result = freezed,
   }) {
-    return _then(_CreateAnimationState(
+    return _then(_TravelAnimationState(
       switcherIndex: switcherIndex == freezed
           ? _value.switcherIndex
           : switcherIndex // ignore: cast_nullable_to_non_nullable
@@ -164,8 +164,8 @@ class __$CreateAnimationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreateAnimationState implements _CreateAnimationState {
-  _$_CreateAnimationState(
+class _$_TravelAnimationState implements _TravelAnimationState {
+  _$_TravelAnimationState(
       {required this.switcherIndex,
       required this.isExpandable,
       required this.destination,
@@ -185,13 +185,13 @@ class _$_CreateAnimationState implements _CreateAnimationState {
 
   @override
   String toString() {
-    return 'CreateAnimationState(switcherIndex: $switcherIndex, isExpandable: $isExpandable, destination: $destination, layover: $layover, result: $result)';
+    return 'TravelAnimationState(switcherIndex: $switcherIndex, isExpandable: $isExpandable, destination: $destination, layover: $layover, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CreateAnimationState &&
+        (other is _TravelAnimationState &&
             (identical(other.switcherIndex, switcherIndex) ||
                 const DeepCollectionEquality()
                     .equals(other.switcherIndex, switcherIndex)) &&
@@ -219,18 +219,18 @@ class _$_CreateAnimationState implements _CreateAnimationState {
 
   @JsonKey(ignore: true)
   @override
-  _$CreateAnimationStateCopyWith<_CreateAnimationState> get copyWith =>
-      __$CreateAnimationStateCopyWithImpl<_CreateAnimationState>(
+  _$TravelAnimationStateCopyWith<_TravelAnimationState> get copyWith =>
+      __$TravelAnimationStateCopyWithImpl<_TravelAnimationState>(
           this, _$identity);
 }
 
-abstract class _CreateAnimationState implements CreateAnimationState {
-  factory _CreateAnimationState(
+abstract class _TravelAnimationState implements TravelAnimationState {
+  factory _TravelAnimationState(
       {required int switcherIndex,
       required bool isExpandable,
       required double destination,
       required double layover,
-      required double result}) = _$_CreateAnimationState;
+      required double result}) = _$_TravelAnimationState;
 
   @override
   int get switcherIndex => throw _privateConstructorUsedError;
@@ -244,6 +244,6 @@ abstract class _CreateAnimationState implements CreateAnimationState {
   double get result => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CreateAnimationStateCopyWith<_CreateAnimationState> get copyWith =>
+  _$TravelAnimationStateCopyWith<_TravelAnimationState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -4,12 +4,12 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'create_animation_state.dart';
-part 'create_animation_cubit.freezed.dart';
+part 'travel_animation_state.dart';
+part 'travel_animation_cubit.freezed.dart';
 
 @Injectable()
-class CreateAnimationCubit extends Cubit<CreateAnimationState> {
-  CreateAnimationCubit() : super(CreateAnimationState.initial());
+class TravelAnimationCubit extends Cubit<TravelAnimationState> {
+  TravelAnimationCubit() : super(TravelAnimationState.initial());
 
   Future<Unit> started() async {
     emit(state.copyWith(switcherIndex: 0, isExpandable: false));

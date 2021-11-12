@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
-import 'package:flutter_goffer/application/create/plan/create_plan_bloc.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class DateRangePicker extends StatelessWidget {
@@ -31,7 +31,7 @@ class DateRangePicker extends StatelessWidget {
             PickerDateRange(DateTime.parse(start), DateTime.parse(end)),
         onSelectionChanged: (args) {
           if (args.value is PickerDateRange) {
-            context.read<CreatePlanBloc>().add(CreatePlanEvent.dateSelected(
+            context.read<TravelCreateBloc>().add(TravelCreateEvent.dateSelected(
                 start: args.value.startDate.toString(),
                 end: args.value.endDate == null
                     ? args.value.startDate.toString()

@@ -1,4 +1,4 @@
-import 'package:flutter_goffer/domain/find_location.dart';
+import 'package:flutter_goffer/domain/find_location/find_location.dart';
 
 abstract class IFindLocationRepository {
   Future<List<FindLocation>> getLocalFindLocation({

@@ -1,15 +1,15 @@
-part of 'create_animation_cubit.dart';
+part of 'travel_animation_cubit.dart';
 
 @freezed
-class CreateAnimationState with _$CreateAnimationState {
-  factory CreateAnimationState({
+class TravelAnimationState with _$TravelAnimationState {
+  factory TravelAnimationState({
     required int switcherIndex,
     required bool isExpandable,
     required double destination,
     required double layover,
     required double result,
-  }) = _CreateAnimationState;
-  factory CreateAnimationState.initial() => CreateAnimationState(
+  }) = _TravelAnimationState;
+  factory TravelAnimationState.initial() => TravelAnimationState(
         switcherIndex: 0,
         isExpandable: false,
         destination: 0.0,

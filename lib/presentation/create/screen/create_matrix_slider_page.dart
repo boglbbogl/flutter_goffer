@@ -1,7 +1,7 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
-import 'package:flutter_goffer/domain/create_plan.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/presentation/create/body/destination_create_body.dart';
 import 'package:flutter_goffer/presentation/create/body/layover_create_body.dart';
 import 'package:flutter_goffer/presentation/create/body/result_create_body.dart';
@@ -10,15 +10,15 @@ class CreateMatrixSliderPage extends StatelessWidget {
   final double destinationPosition;
   final double layoverPosition;
   final double resultPosition;
-  final CreatePlan plan;
   final bool isColorChanged;
+  final TravelCreateState state;
   final bool isAddressSearchBar;
   const CreateMatrixSliderPage({
     Key? key,
     required this.destinationPosition,
     required this.layoverPosition,
     required this.resultPosition,
-    required this.plan,
+    required this.state,
     required this.isColorChanged,
     required this.isAddressSearchBar,
   }) : super(key: key);
@@ -41,15 +41,23 @@ class CreateMatrixSliderPage extends StatelessWidget {
                   xPosition: destinationPosition,
                   images: 'assets/images/slide/cappadocia_first.jpg',
                   widget: DestinationCreateBody(
-                    plan: plan,
+                    startTravel: state.startTravel!,
+                    endTravel: state.endTravel!,
                     isColorChanged: isColorChanged,
                     isAddressSearchBar: isAddressSearchBar,
+                    startDestination: state.startDestination,
+                    endDestination: state.endDestination,
                   )),
               _animationWidget(
                   context: context,
                   xPosition: layoverPosition,
                   images: 'assets/images/slide/cappadocia_second.jpg',
-                  widget: const LayoverCreateBody()),
+                  widget: LayoverCreateBody(
+                    startTravel: state.startTravel!,
+                    endTravel: state.endTravel!,
+                    startDestination: state.startDestination,
+                    endDestination: state.endDestination,
+                  )),
               _animationWidget(
                   context: context,
                   xPosition: resultPosition,

@@ -1,20 +1,21 @@
 import 'dart:convert';
 
-import 'package:flutter_goffer/domain/find_location.dart';
-import 'package:flutter_goffer/domain/i_find_location_repository.dart';
-import 'package:flutter_goffer/infrastructure/find_location_dtos.dart';
+import 'package:flutter_goffer/_constant/_flavor/config_reader.dart';
+import 'package:flutter_goffer/domain/find_location/find_location.dart';
+import 'package:flutter_goffer/domain/find_location/i_find_location_repository.dart';
+import 'package:flutter_goffer/infrastructure/find_location/find_location_dtos.dart';
 import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IFindLocationRepository)
 class FindLocationRepository implements IFindLocationRepository {
-  String apiBase = 'http://3.35.47.124:3000/api/v2';
+  static String apiBaseUrl = ConfigReader.getAwsApiBase();
   @override
   Future<List<FindLocation>> getApiFindLocation({
     required String keyWord,
   }) async {
     try {
-      final url = Uri.parse('$apiBase/findlocation/more?keyword=$keyWord');
+      final url = Uri.parse('$apiBaseUrl/findlocation/more?keyword=$keyWord');
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final decoded = json.decode(utf8.decode(response.bodyBytes))
@@ -37,7 +38,7 @@ class FindLocationRepository implements IFindLocationRepository {
     required String keyWord,
   }) async {
     try {
-      final url = Uri.parse('$apiBase/findlocation?keyword=$keyWord');
+      final url = Uri.parse('$apiBaseUrl/findlocation?keyword=$keyWord');
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final decoded = json.decode(utf8.decode(response.bodyBytes))

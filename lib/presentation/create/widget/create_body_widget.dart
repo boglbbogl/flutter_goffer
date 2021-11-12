@@ -28,7 +28,7 @@ class CreateBodyWidget extends StatelessWidget {
                   onTap: onTap,
                   child: const Icon(
                     Icons.arrow_back_ios_new_outlined,
-                    color: Colors.white,
+                    color: Colors.white70,
                     size: 30,
                   ),
                 ))
@@ -43,7 +43,7 @@ class CreateBodyWidget extends StatelessWidget {
                 },
                 child: const Icon(
                   Icons.clear_outlined,
-                  color: Colors.white,
+                  color: Colors.white70,
                   size: 30,
                 ),
               )),

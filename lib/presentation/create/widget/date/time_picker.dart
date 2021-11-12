@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
-import 'package:flutter_goffer/application/create/plan/create_plan_bloc.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/presentation/create/widget/date/time_list.dart';
 
 class TimePicker extends StatelessWidget {
@@ -32,16 +32,16 @@ class TimePicker extends StatelessWidget {
             title: '출발 시간',
             time: start,
             onSelectedItemChanged: (int i) => context
-                .read<CreatePlanBloc>()
-                .add(CreatePlanEvent.startTimeSelected(start: timeList[i])),
+                .read<TravelCreateBloc>()
+                .add(TravelCreateEvent.startTimeSelected(start: timeList[i])),
           ),
           _timePickerForm(
             context: context,
             title: '도착 시간',
             time: end,
             onSelectedItemChanged: (int i) => context
-                .read<CreatePlanBloc>()
-                .add(CreatePlanEvent.endTimeSelected(end: timeList[i])),
+                .read<TravelCreateBloc>()
+                .add(TravelCreateEvent.endTimeSelected(end: timeList[i])),
           ),
         ],
       ),

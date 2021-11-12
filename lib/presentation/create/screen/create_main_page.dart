@@ -2,8 +2,8 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
-import 'package:flutter_goffer/application/create/animation/create_animation_cubit.dart';
-import 'package:flutter_goffer/application/create/plan/create_plan_bloc.dart';
+import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/injection.dart';
 import 'package:flutter_goffer/presentation/create/body/date_create_body.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_matrix_slider_page.dart';
@@ -16,14 +16,14 @@ class CreateMainPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => getIt<CreateAnimationCubit>()..started()),
+            create: (context) => getIt<TravelAnimationCubit>()..started()),
         BlocProvider(
-            create: (context) =>
-                getIt<CreatePlanBloc>()..add(const CreatePlanEvent.started())),
+            create: (context) => getIt<TravelCreateBloc>()
+              ..add(const TravelCreateEvent.started())),
       ],
-      child: BlocBuilder<CreateAnimationCubit, CreateAnimationState>(
+      child: BlocBuilder<TravelAnimationCubit, TravelAnimationState>(
         builder: (context, state) {
-          return BlocBuilder<CreatePlanBloc, CreatePlanState>(
+          return BlocBuilder<TravelCreateBloc, TravelCreateState>(
             builder: (context, planState) {
               return AnimatedSwitcher(
                   duration: const Duration(milliseconds: 1500),
@@ -35,7 +35,7 @@ class CreateMainPage extends StatelessWidget {
                           btnTitle: '시작하기',
                           onTap: () {
                             context
-                                .read<CreateAnimationCubit>()
+                                .read<TravelAnimationCubit>()
                                 .startAnimation(index: 1);
                           },
                           widget: Column(
@@ -64,18 +64,19 @@ class CreateMainPage extends StatelessWidget {
                               btnTitle: '목적지 만들러 가기',
                               onTap: () {
                                 context
-                                    .read<CreateAnimationCubit>()
+                                    .read<TravelAnimationCubit>()
                                     .startAnimation(index: 2);
                               },
                               widget: DateCreateBody(
                                 isExpandable: state.isExpandable,
-                                plan: planState.plan!,
+                                start: planState.startTravel!,
+                                end: planState.endTravel!,
                               ))
                           : CreateMatrixSliderPage(
                               destinationPosition: state.destination,
                               layoverPosition: state.layover,
                               resultPosition: state.result,
-                              plan: planState.plan!,
+                              state: planState,
                               isColorChanged: planState.isColorChanged,
                               isAddressSearchBar: planState.isAddressSearchBar,
                             ));

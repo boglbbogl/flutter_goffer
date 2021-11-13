@@ -57,6 +57,8 @@ class CreateMatrixSliderPage extends StatelessWidget {
                     endTravel: state.endTravel!,
                     startDestination: state.startDestination,
                     endDestination: state.endDestination,
+                    isLayoverScreen: state.isLayoverScreen,
+                    layover: state.wayTravel,
                   )),
               _animationWidget(
                   context: context,

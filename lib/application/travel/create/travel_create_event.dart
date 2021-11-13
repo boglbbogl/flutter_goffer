@@ -22,6 +22,9 @@ class TravelCreateEvent with _$TravelCreateEvent {
     required String id,
     required String destination,
   }) = _EndDestinationSelected;
+  const factory TravelCreateEvent.layoverSelected({
+    required List<TravelResearch> layover,
+  }) = _LayoverSelected;
   const factory TravelCreateEvent.endTimeSelected({required String end}) =
       _EndTimeSelected;
   const factory TravelCreateEvent.destinationToggleSwitched() =
@@ -29,4 +32,7 @@ class TravelCreateEvent with _$TravelCreateEvent {
   const factory TravelCreateEvent.addressBottomSearched({
     required bool value,
   }) = _AdressBottomSearched;
+  const factory TravelCreateEvent.showLayoverScreen({
+    required bool value,
+  }) = _ShowLayoverScreen;
 }

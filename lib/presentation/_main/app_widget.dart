@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/application/authentication/auth_provider/user_provider.dart';
 import 'package:flutter_goffer/application/find_location/find_location_cubit.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/injection.dart';
 import 'package:flutter_goffer/presentation/_main/router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

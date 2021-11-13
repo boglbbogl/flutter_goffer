@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_goffer/_constant/widgets/logger.dart';
 import 'package:flutter_goffer/domain/travel/i_travel_repository.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -42,13 +43,20 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
           endTravel: endInitialResearch,
           isColorChanged: false,
           isAddressSearchBar: false,
+          isLayoverScreen: false,
         );
         yield _state;
       },
       submitted: (e) async* {
         await _travelRepository.postTravel(
-            travel: state.travel!
-                .copyWith(start: state.startTravel, end: state.endTravel));
+            travel: state.travel!.copyWith(
+          start: state.startTravel,
+          end: state.endTravel,
+          wayArr: state.wayTravel,
+        ));
+      },
+      layoverSelected: (e) async* {
+        yield state.copyWith(wayTravel: e.layover);
       },
       startDestinationSelected: (e) async* {
         yield state.copyWith(
@@ -81,6 +89,9 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
       },
       addressBottomSearched: (e) async* {
         yield state.copyWith(isAddressSearchBar: e.value);
+      },
+      showLayoverScreen: (e) async* {
+        yield state.copyWith(isLayoverScreen: e.value);
       },
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/domain/find_location/find_location.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_add_layover_page.dart';
@@ -16,12 +17,16 @@ class LayoverCreateBody extends StatelessWidget {
   final TravelResearch endTravel;
   final String startDestination;
   final String endDestination;
+  final bool isLayoverScreen;
+  final List<TravelResearch> layover;
   const LayoverCreateBody({
     Key? key,
     required this.startTravel,
     required this.endTravel,
     required this.startDestination,
     required this.endDestination,
+    required this.isLayoverScreen,
+    required this.layover,
   }) : super(key: key);
 
   @override
@@ -64,11 +69,8 @@ class LayoverCreateBody extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    pushNewScreen(context,
-                        screen: CreateAddLayoverPage(),
-                        withNavBar: false,
-                        pageTransitionAnimation:
-                            PageTransitionAnimation.cupertino);
+                    context.read<TravelCreateBloc>().add(
+                        const TravelCreateEvent.showLayoverScreen(value: true));
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30),
@@ -93,7 +95,18 @@ class LayoverCreateBody extends StatelessWidget {
                     ),
                   ),
                 ),
+                Text(layover.length.toString()),
               ],
+            ),
+            AnimatedContainer(
+              width: size.width,
+              height: size.height,
+              duration: const Duration(milliseconds: 300),
+              transform: Matrix4.translationValues(
+                  isLayoverScreen ? 0 : size.width, 0, 0),
+              child: CreateAddLayoverPage(
+                layover: [],
+              ),
             ),
           ],
         ),

@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_goffer/_constant/widgets/logger.dart';
 import 'package:flutter_goffer/domain/travel/i_travel_repository.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -43,7 +42,7 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
           endTravel: endInitialResearch,
           isColorChanged: false,
           isAddressSearchBar: false,
-          isLayoverScreen: false,
+          isLayoverAddressBar: false,
         );
         yield _state;
       },
@@ -56,7 +55,15 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
         ));
       },
       layoverSelected: (e) async* {
-        yield state.copyWith(wayTravel: e.layover);
+        final List<TravelResearch> list = state.wayTravel;
+
+        // logger.e(list.map((e) => e.id).contains(e.layover.id));
+        if (list.map((e) => e.id).contains(e.layover.id)) {
+          list.remove(e.layover);
+        } else {
+          list.add(e.layover);
+        }
+        yield state.copyWith(wayTravel: list);
       },
       startDestinationSelected: (e) async* {
         yield state.copyWith(
@@ -90,8 +97,8 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
       addressBottomSearched: (e) async* {
         yield state.copyWith(isAddressSearchBar: e.value);
       },
-      showLayoverScreen: (e) async* {
-        yield state.copyWith(isLayoverScreen: e.value);
+      layoverAddressBottomSearched: (e) async* {
+        yield state.copyWith(isLayoverAddressBar: e.value);
       },
     );
   }

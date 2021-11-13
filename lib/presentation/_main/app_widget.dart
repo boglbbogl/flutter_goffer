@@ -24,6 +24,7 @@ class AppWidget extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => getIt<FindLocationCubit>()),
+          BlocProvider(create: (context) => getIt<TravelCreateBloc>()),
         ],
         child: MaterialApp.router(
           routerDelegate: routerDelegate,

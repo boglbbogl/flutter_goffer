@@ -10,7 +10,7 @@ class TravelCreateState with _$TravelCreateState {
     required List<TravelResearch> wayTravel,
     required bool isColorChanged,
     required bool isAddressSearchBar,
-    required bool isLayoverScreen,
+    required bool isLayoverAddressBar,
     required String startDestination,
     required String endDestination,
   }) = _TravelCreateState;
@@ -22,7 +22,7 @@ class TravelCreateState with _$TravelCreateState {
         wayTravel: [],
         isColorChanged: false,
         isAddressSearchBar: false,
-        isLayoverScreen: false,
+        isLayoverAddressBar: false,
         startDestination: "",
         endDestination: "",
       );

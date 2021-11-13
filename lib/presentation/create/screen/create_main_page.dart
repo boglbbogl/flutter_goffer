@@ -17,9 +17,6 @@ class CreateMainPage extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (context) => getIt<TravelAnimationCubit>()..started()),
-        BlocProvider(
-            create: (context) => getIt<TravelCreateBloc>()
-              ..add(const TravelCreateEvent.started())),
       ],
       child: BlocBuilder<TravelAnimationCubit, TravelAnimationState>(
         builder: (context, state) {

@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
-import 'package:flutter_goffer/domain/find_location/find_location.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
-import 'package:flutter_goffer/presentation/create/screen/create_add_layover_page.dart';
 import 'package:flutter_goffer/presentation/create/widget/create_body_widget.dart';
 import 'package:flutter_goffer/presentation/create/widget/create_submitted_btn.dart';
 import 'package:flutter_goffer/presentation/create/widget/flow_result_widget.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:flutter_goffer/presentation/create/widget/layover/layover_address_bottom_bar.dart';
 
 class LayoverCreateBody extends StatelessWidget {
   final TravelResearch startTravel;
   final TravelResearch endTravel;
   final String startDestination;
   final String endDestination;
-  final bool isLayoverScreen;
+  final bool isLayoverAddressBar;
   final List<TravelResearch> layover;
   const LayoverCreateBody({
     Key? key,
@@ -25,8 +22,8 @@ class LayoverCreateBody extends StatelessWidget {
     required this.endTravel,
     required this.startDestination,
     required this.endDestination,
-    required this.isLayoverScreen,
     required this.layover,
+    required this.isLayoverAddressBar,
   }) : super(key: key);
 
   @override
@@ -67,10 +64,30 @@ class LayoverCreateBody extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                if (layover.isNotEmpty) ...[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: [
+                        ...layover.map((e) => Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                  child: Text(
+                                e.id,
+                                style: theme.textTheme.bodyText2!.copyWith(
+                                    color: Colors.white, fontSize: 18),
+                              )),
+                            ))
+                      ],
+                    ),
+                  ),
+                ],
                 InkWell(
                   onTap: () {
                     context.read<TravelCreateBloc>().add(
-                        const TravelCreateEvent.showLayoverScreen(value: true));
+                        const TravelCreateEvent.layoverAddressBottomSearched(
+                            value: true));
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30),
@@ -81,7 +98,7 @@ class LayoverCreateBody extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            '경유지 추가하기(선택 3)',
+                            '경유지 추가하기(최대 3)',
                             style: theme.textTheme.bodyText2!
                                 .copyWith(color: appColor, fontSize: 22),
                           ),
@@ -95,18 +112,11 @@ class LayoverCreateBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(layover.length.toString()),
               ],
             ),
-            AnimatedContainer(
-              width: size.width,
-              height: size.height,
-              duration: const Duration(milliseconds: 300),
-              transform: Matrix4.translationValues(
-                  isLayoverScreen ? 0 : size.width, 0, 0),
-              child: CreateAddLayoverPage(
-                layover: [],
-              ),
+            LayoverAddressBottomBar(
+              isLayoverAddressBar: isLayoverAddressBar,
+              layoverList: layover,
             ),
           ],
         ),

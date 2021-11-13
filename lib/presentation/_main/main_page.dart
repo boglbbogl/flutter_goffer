@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_background_page.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_main_page.dart';
 import 'package:flutter_goffer/presentation/home/home_main_page.dart';
@@ -65,9 +67,13 @@ class MainPage extends StatelessWidget {
         items: _items(),
         onItemSelected: (index) {
           if (index == 1) {
+            context
+                .read<TravelCreateBloc>()
+                .add(const TravelCreateEvent.started());
             pushNewScreen(context,
                 screen: const CreateMainPage(),
                 pageTransitionAnimation: PageTransitionAnimation.slideUp);
+
             controller.jumpToTab(0);
           }
         },

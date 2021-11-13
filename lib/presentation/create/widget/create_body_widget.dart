@@ -23,28 +23,28 @@ class CreateBodyWidget extends StatelessWidget {
           if (isShowBackBtn)
             Positioned(
                 top: 35,
-                left: 20,
-                child: InkWell(
-                  onTap: onTap,
-                  child: const Icon(
+                left: 15,
+                child: IconButton(
+                  onPressed: onTap,
+                  icon: const Icon(
                     Icons.arrow_back_ios_new_outlined,
                     color: Colors.white70,
-                    size: 30,
+                    size: 22,
                   ),
                 ))
           else
             Container(),
           Positioned(
               top: 35,
-              right: 20,
-              child: InkWell(
-                onTap: () {
+              right: 15,
+              child: IconButton(
+                onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: const Icon(
+                icon: const Icon(
                   Icons.clear_outlined,
                   color: Colors.white70,
-                  size: 30,
+                  size: 25,
                 ),
               )),
           widget,

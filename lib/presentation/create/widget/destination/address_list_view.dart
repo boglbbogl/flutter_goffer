@@ -6,14 +6,17 @@ import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart
 import 'package:flutter_goffer/domain/find_location/find_location.dart';
 
 class AddressListView extends StatelessWidget {
+  final ScrollController _scrollController = ScrollController();
   final TextEditingController controller;
   final bool isColorChanged;
+  final bool isMore;
   final List<FindLocation> location;
 
-  const AddressListView({
+  AddressListView({
     Key? key,
     required this.location,
     required this.controller,
+    required this.isMore,
     required this.isColorChanged,
   }) : super(key: key);
 
@@ -41,6 +44,7 @@ class AddressListView extends StatelessWidget {
     }
     return Expanded(
         child: ListView(
+      controller: _scrollController,
       shrinkWrap: true,
       children: [
         ...location.map((data) => InkWell(
@@ -103,6 +107,25 @@ class AddressListView extends StatelessWidget {
                 ),
               ),
             )),
+        if (isMore) ...[
+          TextButton(
+            onPressed: () {
+              FocusScope.of(context).unfocus();
+              context
+                  .read<FindLocationCubit>()
+                  .apiFindLocation(keyWord: controller.text);
+
+              _scrollController.animateTo(0,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.ease);
+            },
+            child: Text(
+              '검색 결과 더보기...',
+              style: theme.textTheme.bodyText2!
+                  .copyWith(color: const Color.fromRGBO(115, 115, 115, 1)),
+            ),
+          ),
+        ],
       ],
     ));
   }

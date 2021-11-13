@@ -149,6 +149,7 @@ class AdressSearchBottomBar extends StatelessWidget {
                           isColorChanged: isColorChanged,
                           controller: _controller,
                           location: state.location,
+                          isMore: state.isMore,
                         ),
                       ],
                     ),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
+import 'package:flutter_goffer/domain/find_location/find_location.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/create/screen/create_add_layover_page.dart';
 import 'package:flutter_goffer/presentation/create/widget/create_body_widget.dart';
@@ -64,7 +65,7 @@ class LayoverCreateBody extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     pushNewScreen(context,
-                        screen: const CreateAddLayoverPage(),
+                        screen: CreateAddLayoverPage(),
                         withNavBar: false,
                         pageTransitionAnimation:
                             PageTransitionAnimation.cupertino);

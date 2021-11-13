@@ -28,7 +28,7 @@ class FindLocationCubit extends Cubit<FindLocationState> {
     if (result.isEmpty) {
       emit(state.copyWith(isLoading: false));
     }
-    emit(state.copyWith(isLoading: false, location: result));
+    emit(state.copyWith(isLoading: false, location: result, isMore: true));
     return unit;
   }
 
@@ -38,7 +38,7 @@ class FindLocationCubit extends Cubit<FindLocationState> {
     emit(state.copyWith(isLoading: true));
     final result =
         await _findLocationRepository.getApiFindLocation(keyWord: keyWord);
-    emit(state.copyWith(isLoading: false, location: result));
+    emit(state.copyWith(isLoading: false, location: result, isMore: false));
     return unit;
   }
 }

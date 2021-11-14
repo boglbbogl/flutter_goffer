@@ -129,7 +129,7 @@ class AdressSearchBottomBar extends StatelessWidget {
                                           FocusScope.of(context).unfocus();
                                           context
                                               .read<FindLocationCubit>()
-                                              .localFindLocation(
+                                              .apiFindLocation(
                                                   keyWord: _controller.text);
                                         },
                                         child: state.isLoading

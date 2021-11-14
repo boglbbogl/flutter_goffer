@@ -26,19 +26,11 @@ class AddressListView extends StatelessWidget {
       return Column(
         children: [
           const SizedBox(height: 50),
-          TextButton(
-            onPressed: () {
-              FocusScope.of(context).unfocus();
-              context
-                  .read<FindLocationCubit>()
-                  .apiFindLocation(keyWord: controller.text);
-            },
-            child: Text(
-              '검색 결과 더보기...',
-              style: theme.textTheme.bodyText2!
-                  .copyWith(color: const Color.fromRGBO(115, 115, 115, 1)),
-            ),
-          )
+          Text(
+            '검색 결과가 없습니다',
+            style: theme.textTheme.bodyText2!
+                .copyWith(color: const Color.fromRGBO(115, 115, 115, 1)),
+          ),
         ],
       );
     }

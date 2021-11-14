@@ -33,13 +33,13 @@ class CreateMatrixSliderPage extends StatelessWidget {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor: const Color.fromRGBO(31, 31, 31, 1),
+          backgroundColor: const Color.fromRGBO(71, 71, 71, 1),
           body: Stack(
             children: [
               _animationWidget(
                   context: context,
                   xPosition: destinationPosition,
-                  images: 'assets/images/slide/cappadocia_first.jpg',
+                  images: 'assets/images/slide/city_night_first.jpg',
                   widget: DestinationCreateBody(
                     startTravel: state.startTravel!,
                     endTravel: state.endTravel!,
@@ -51,7 +51,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
               _animationWidget(
                   context: context,
                   xPosition: layoverPosition,
-                  images: 'assets/images/slide/cappadocia_second.jpg',
+                  images: 'assets/images/slide/city_night_second.jpg',
                   widget: LayoverCreateBody(
                     startTravel: state.startTravel!,
                     endTravel: state.endTravel!,
@@ -63,7 +63,7 @@ class CreateMatrixSliderPage extends StatelessWidget {
               _animationWidget(
                   context: context,
                   xPosition: resultPosition,
-                  images: 'assets/images/slide/cappadocia_third.jpg',
+                  images: 'assets/images/slide/city_night_third.jpg',
                   widget: ResultCreateBody(
                     startTravel: state.startTravel!,
                     endTravel: state.endTravel!,

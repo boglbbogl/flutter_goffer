@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +21,18 @@ class CreateMainPage extends StatelessWidget {
       ],
       child: BlocBuilder<TravelAnimationCubit, TravelAnimationState>(
         builder: (context, state) {
-          return BlocBuilder<TravelCreateBloc, TravelCreateState>(
+          return BlocConsumer<TravelCreateBloc, TravelCreateState>(
+            listenWhen: (c, p) => c.submitResult != p.submitResult,
+            listener: (context, planState) {
+              planState.submitResult!.fold(
+                  (l) => FlushbarHelper.createError(
+                          message: l.map(
+                        notFound: (e) => '다시 시도해 주세요',
+                        serverError: (e) => '서버에러가 발생했습니다',
+                      )).show(context),
+                  (r) => FlushbarHelper.createSuccess(message: '성공')
+                      .show(context));
+            },
             builder: (context, planState) {
               return AnimatedSwitcher(
                   duration: const Duration(milliseconds: 1500),

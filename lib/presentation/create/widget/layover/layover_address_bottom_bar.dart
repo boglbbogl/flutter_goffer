@@ -1,9 +1,11 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/find_location/find_location_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
+import 'package:flutter_goffer/presentation/create/widget/shimmer_address_form.dart';
 
 class LayoverAddressBottomBar extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();
@@ -163,72 +165,95 @@ class LayoverAddressBottomBar extends StatelessWidget {
                           )),
                     ),
                     Expanded(
-                      child: ListView(
-                        shrinkWrap: true,
-                        children: [
-                          ...findState.location.map(
-                            (data) => InkWell(
-                              onTap: () {
-                                if (layoverList.length > 2) {
-                                  print('최대 선택 개수 초과 스낵바');
-                                }
-                                context.read<TravelCreateBloc>()
-                                  ..add(TravelCreateEvent.layoverSelected(
-                                    layover: travel.copyWith(
-                                        id: data.place_name,
-                                        x: data.x,
-                                        y: data.y),
-                                  ))
-                                  ..add(const TravelCreateEvent
-                                          .layoverAddressBottomSearched(
-                                      value: false));
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 8, bottom: 8, left: 30, right: 30),
-                                child: Container(
-                                  width: size.width * 0.9,
-                                  height: size.height * 0.1,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: list.contains(data.place_name)
-                                          ? Border.all(
-                                              color: appColor, width: 2)
-                                          : Border.all(
-                                              color: const Color.fromRGBO(
-                                                  215, 215, 215, 1))),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          data.place_name,
-                                          style: theme.textTheme.bodyText2!
-                                              .copyWith(
-                                                  fontSize: 14,
-                                                  color: Colors.black),
+                      child: AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 500),
+                        child: findState.isLoading
+                            ? shimmerAddressForm()
+                            : ListView(
+                                shrinkWrap: true,
+                                children: [
+                                  ...findState.location.map(
+                                    (data) => InkWell(
+                                      onTap: () {
+                                        if (layoverList.length > 2) {
+                                          FlushbarHelper.createInformation(
+                                                  message:
+                                                      '경유지는 최대 3곳 까지 선택할 수 있습니다')
+                                              .show(context);
+                                        } else {
+                                          context.read<TravelCreateBloc>()
+                                            ..add(TravelCreateEvent
+                                                .layoverSelected(
+                                              layover: travel.copyWith(
+                                                  id: data.place_name,
+                                                  x: data.x,
+                                                  y: data.y),
+                                            ))
+                                            ..add(const TravelCreateEvent
+                                                    .layoverAddressBottomSearched(
+                                                value: false));
+                                        }
+                                      },
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 8,
+                                            bottom: 8,
+                                            left: 30,
+                                            right: 30),
+                                        child: Container(
+                                          width: size.width * 0.9,
+                                          height: size.height * 0.1,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: list
+                                                      .contains(data.place_name)
+                                                  ? Border.all(
+                                                      color: appColor, width: 2)
+                                                  : Border.all(
+                                                      color:
+                                                          const Color.fromRGBO(
+                                                              215,
+                                                              215,
+                                                              215,
+                                                              1))),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  data.place_name,
+                                                  style: theme
+                                                      .textTheme.bodyText2!
+                                                      .copyWith(
+                                                          fontSize: 14,
+                                                          color: Colors.black),
+                                                ),
+                                                const SizedBox(height: 10),
+                                                Text(
+                                                  data.road_address_name!
+                                                          .isEmpty
+                                                      ? data.address_name
+                                                      : data.road_address_name!,
+                                                  style: theme
+                                                      .textTheme.bodyText2!
+                                                      .copyWith(
+                                                          fontSize: 12,
+                                                          color: const Color
+                                                                  .fromRGBO(195,
+                                                              195, 195, 1)),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                        const SizedBox(height: 10),
-                                        Text(
-                                          data.road_address_name!.isEmpty
-                                              ? data.address_name
-                                              : data.road_address_name!,
-                                          style: theme.textTheme.bodyText2!
-                                              .copyWith(
-                                                  fontSize: 12,
-                                                  color: const Color.fromRGBO(
-                                                      195, 195, 195, 1)),
-                                        ),
-                                      ],
+                                      ),
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
-                            ),
-                          ),
-                        ],
                       ),
                     )
                   ],

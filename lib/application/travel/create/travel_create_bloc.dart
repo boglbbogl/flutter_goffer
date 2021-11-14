@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/domain/travel/i_travel_repository.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
+import 'package:flutter_goffer/domain/travel/travel_failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -47,12 +49,14 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
         yield _state;
       },
       submitted: (e) async* {
-        await _travelRepository.postTravel(
+        yield state.copyWith(isLoading: true);
+        final result = await _travelRepository.postTravel(
             travel: state.travel!.copyWith(
           start: state.startTravel,
           end: state.endTravel,
           wayArr: state.wayTravel,
         ));
+        yield state.copyWith(isLoading: false, submitResult: result);
       },
       layoverSelected: (e) async* {
         final List<TravelResearch> list = state.wayTravel;

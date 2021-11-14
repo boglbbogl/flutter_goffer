@@ -4,6 +4,7 @@ part of 'travel_create_bloc.dart';
 class TravelCreateState with _$TravelCreateState {
   factory TravelCreateState({
     required bool isLoading,
+    required Either<TravelFailure, Unit>? submitResult,
     required Travel? travel,
     required TravelResearch? startTravel,
     required TravelResearch? endTravel,
@@ -16,6 +17,7 @@ class TravelCreateState with _$TravelCreateState {
   }) = _TravelCreateState;
   factory TravelCreateState.initial() => TravelCreateState(
         isLoading: false,
+        submitResult: null,
         travel: null,
         startTravel: null,
         endTravel: null,

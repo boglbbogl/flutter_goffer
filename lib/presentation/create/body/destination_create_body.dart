@@ -6,7 +6,7 @@ import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/create/widget/create_body_widget.dart';
 import 'package:flutter_goffer/presentation/create/widget/create_submitted_btn.dart';
-import 'package:flutter_goffer/presentation/create/widget/destination/address_search_bottom_bar.dart';
+import 'package:flutter_goffer/presentation/create/widget/destination/destination_address_bottom_bar.dart';
 import 'package:flutter_goffer/presentation/create/widget/destination/destination_toggle_switch.dart';
 import 'package:flutter_goffer/presentation/create/widget/flow_result_widget.dart';
 
@@ -141,7 +141,7 @@ class DestinationCreateBody extends StatelessWidget {
               ],
             ],
           ),
-          AdressSearchBottomBar(
+          DestinationAdressBottomBar(
               isAddressSearchBar: isAddressSearchBar,
               isColorChanged: isColorChanged),
         ],

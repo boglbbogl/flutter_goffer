@@ -4,13 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/find_location/find_location_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
-import 'package:flutter_goffer/presentation/create/widget/destination/address_list_view.dart';
+import 'package:flutter_goffer/presentation/create/widget/destination/desination_address_list_view.dart';
 
-class AdressSearchBottomBar extends StatelessWidget {
+class DestinationAdressBottomBar extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();
   final bool isAddressSearchBar;
   final bool isColorChanged;
-  AdressSearchBottomBar({
+  DestinationAdressBottomBar({
     Key? key,
     required this.isAddressSearchBar,
     required this.isColorChanged,
@@ -145,11 +145,12 @@ class AdressSearchBottomBar extends StatelessWidget {
                             ),
                           ),
                         ),
-                        AddressListView(
+                        DestinationAddressListView(
                           isColorChanged: isColorChanged,
                           controller: _controller,
                           location: state.location,
                           isMore: state.isMore,
+                          isLoading: state.isLoading,
                         ),
                       ],
                     ),

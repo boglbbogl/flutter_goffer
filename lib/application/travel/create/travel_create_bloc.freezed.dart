@@ -2016,6 +2016,7 @@ class _$TravelCreateStateTearOff {
 
   _TravelCreateState call(
       {required bool isLoading,
+      required Either<TravelFailure, Unit>? submitResult,
       required Travel? travel,
       required TravelResearch? startTravel,
       required TravelResearch? endTravel,
@@ -2027,6 +2028,7 @@ class _$TravelCreateStateTearOff {
       required String endDestination}) {
     return _TravelCreateState(
       isLoading: isLoading,
+      submitResult: submitResult,
       travel: travel,
       startTravel: startTravel,
       endTravel: endTravel,
@@ -2046,6 +2048,8 @@ const $TravelCreateState = _$TravelCreateStateTearOff();
 /// @nodoc
 mixin _$TravelCreateState {
   bool get isLoading => throw _privateConstructorUsedError;
+  Either<TravelFailure, Unit>? get submitResult =>
+      throw _privateConstructorUsedError;
   Travel? get travel => throw _privateConstructorUsedError;
   TravelResearch? get startTravel => throw _privateConstructorUsedError;
   TravelResearch? get endTravel => throw _privateConstructorUsedError;
@@ -2068,6 +2072,7 @@ abstract class $TravelCreateStateCopyWith<$Res> {
       _$TravelCreateStateCopyWithImpl<$Res>;
   $Res call(
       {bool isLoading,
+      Either<TravelFailure, Unit>? submitResult,
       Travel? travel,
       TravelResearch? startTravel,
       TravelResearch? endTravel,
@@ -2095,6 +2100,7 @@ class _$TravelCreateStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? submitResult = freezed,
     Object? travel = freezed,
     Object? startTravel = freezed,
     Object? endTravel = freezed,
@@ -2110,6 +2116,10 @@ class _$TravelCreateStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      submitResult: submitResult == freezed
+          ? _value.submitResult
+          : submitResult // ignore: cast_nullable_to_non_nullable
+              as Either<TravelFailure, Unit>?,
       travel: travel == freezed
           ? _value.travel
           : travel // ignore: cast_nullable_to_non_nullable
@@ -2192,6 +2202,7 @@ abstract class _$TravelCreateStateCopyWith<$Res>
   @override
   $Res call(
       {bool isLoading,
+      Either<TravelFailure, Unit>? submitResult,
       Travel? travel,
       TravelResearch? startTravel,
       TravelResearch? endTravel,
@@ -2224,6 +2235,7 @@ class __$TravelCreateStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? submitResult = freezed,
     Object? travel = freezed,
     Object? startTravel = freezed,
     Object? endTravel = freezed,
@@ -2239,6 +2251,10 @@ class __$TravelCreateStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      submitResult: submitResult == freezed
+          ? _value.submitResult
+          : submitResult // ignore: cast_nullable_to_non_nullable
+              as Either<TravelFailure, Unit>?,
       travel: travel == freezed
           ? _value.travel
           : travel // ignore: cast_nullable_to_non_nullable
@@ -2284,6 +2300,7 @@ class __$TravelCreateStateCopyWithImpl<$Res>
 class _$_TravelCreateState implements _TravelCreateState {
   _$_TravelCreateState(
       {required this.isLoading,
+      required this.submitResult,
       required this.travel,
       required this.startTravel,
       required this.endTravel,
@@ -2296,6 +2313,8 @@ class _$_TravelCreateState implements _TravelCreateState {
 
   @override
   final bool isLoading;
+  @override
+  final Either<TravelFailure, Unit>? submitResult;
   @override
   final Travel? travel;
   @override
@@ -2317,7 +2336,7 @@ class _$_TravelCreateState implements _TravelCreateState {
 
   @override
   String toString() {
-    return 'TravelCreateState(isLoading: $isLoading, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, isColorChanged: $isColorChanged, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, startDestination: $startDestination, endDestination: $endDestination)';
+    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, isColorChanged: $isColorChanged, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, startDestination: $startDestination, endDestination: $endDestination)';
   }
 
   @override
@@ -2327,6 +2346,9 @@ class _$_TravelCreateState implements _TravelCreateState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.submitResult, submitResult) ||
+                const DeepCollectionEquality()
+                    .equals(other.submitResult, submitResult)) &&
             (identical(other.travel, travel) ||
                 const DeepCollectionEquality().equals(other.travel, travel)) &&
             (identical(other.startTravel, startTravel) ||
@@ -2359,6 +2381,7 @@ class _$_TravelCreateState implements _TravelCreateState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(submitResult) ^
       const DeepCollectionEquality().hash(travel) ^
       const DeepCollectionEquality().hash(startTravel) ^
       const DeepCollectionEquality().hash(endTravel) ^
@@ -2378,6 +2401,7 @@ class _$_TravelCreateState implements _TravelCreateState {
 abstract class _TravelCreateState implements TravelCreateState {
   factory _TravelCreateState(
       {required bool isLoading,
+      required Either<TravelFailure, Unit>? submitResult,
       required Travel? travel,
       required TravelResearch? startTravel,
       required TravelResearch? endTravel,
@@ -2390,6 +2414,9 @@ abstract class _TravelCreateState implements TravelCreateState {
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  Either<TravelFailure, Unit>? get submitResult =>
+      throw _privateConstructorUsedError;
   @override
   Travel? get travel => throw _privateConstructorUsedError;
   @override

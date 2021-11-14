@@ -1,8 +1,8 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/create/widget/create_body_widget.dart';
 import 'package:flutter_goffer/presentation/create/widget/create_submitted_btn.dart';
@@ -33,7 +33,13 @@ class ResultCreateBody extends StatelessWidget {
       widget: SafeArea(
         child: Stack(
           children: [
-            createSubmittedBtn(title: '경로 생성하기', onTap: () {}),
+            createSubmittedBtn(
+                title: '경로 생성하기',
+                onTap: () {
+                  context
+                      .read<TravelCreateBloc>()
+                      .add(const TravelCreateEvent.submitted());
+                }),
             Column(
               children: [
                 const SizedBox(height: 100),

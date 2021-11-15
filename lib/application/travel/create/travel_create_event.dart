@@ -28,13 +28,13 @@ class TravelCreateEvent with _$TravelCreateEvent {
 
   const factory TravelCreateEvent.endTimeSelected({required String end}) =
       _EndTimeSelected;
-  const factory TravelCreateEvent.destinationToggleSwitched() =
-      _DestinationToggleSwitched;
-  const factory TravelCreateEvent.addressBottomSearched({
+  // const factory TravelCreateEvent.destinationToggleSwitched() =
+  //     _DestinationToggleSwitched;
+  const factory TravelCreateEvent.dateAndTimeBottomBar({
     required bool value,
   }) = _AdressBottomSearched;
 
-  const factory TravelCreateEvent.layoverAddressBottomSearched({
+  const factory TravelCreateEvent.addressBottomSearched({
     required bool value,
   }) = _LayoverAddressBottomSearched;
 }

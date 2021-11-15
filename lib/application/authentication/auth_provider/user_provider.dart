@@ -6,12 +6,14 @@ import 'package:kakao_flutter_sdk/auth.dart';
 class UserProvider extends ChangeNotifier {
   UserProvider() {
     _userStatus();
+    _kakaoUserInfo();
   }
   bool _isKakaoTalkInstalled = true;
-
+  User? _user;
   Future<void> _userStatus() async {
     final OAuthToken token = await TokenManager.instance.getToken();
     logger.e(token);
+
     if (token.refreshToken == null) {
       _isLogin = false;
       notifyListeners();
@@ -19,6 +21,11 @@ class UserProvider extends ChangeNotifier {
       _isLogin = true;
       notifyListeners();
     }
+  }
+
+  Future<void> _kakaoUserInfo() async {
+    _user = await UserApi.instance.me();
+    notifyListeners();
   }
 
   bool _isLogin = false;
@@ -77,7 +84,7 @@ class UserProvider extends ChangeNotifier {
   }
 
   bool get loginState => _isLogin;
-
   Future<void> get logOut => _kakaoSignOut();
   Future<void> get logIn => _kakaoSignIn();
+  User? get kakaoUser => _user;
 }

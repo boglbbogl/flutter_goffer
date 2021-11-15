@@ -23,19 +23,6 @@ class TravelAnimationCubit extends Cubit<TravelAnimationState> {
     return unit;
   }
 
-  Future<Unit> changedPage({
-    required double destination,
-    required double layover,
-    required double result,
-  }) async {
-    emit(state.copyWith(
-      destination: destination,
-      layover: layover,
-      result: result,
-    ));
-    return unit;
-  }
-
   Future<Unit> dateAndTimeExpandable() async {
     if (state.isExpandable) {
       emit(state.copyWith(isExpandable: false));

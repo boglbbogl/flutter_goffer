@@ -53,8 +53,8 @@ class SignInPage extends StatelessWidget {
                             btnColor: Colors.amber,
                             icon: Icons.chat_bubble,
                             titleColor: Colors.brown,
-                            onTap: () {
-                              _userProvider.logIn;
+                            onTap: () async {
+                              await _userProvider.logIn;
                             }),
                       ],
                     ),

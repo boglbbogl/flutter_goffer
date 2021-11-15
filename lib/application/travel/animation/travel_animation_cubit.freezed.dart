@@ -17,17 +17,10 @@ class _$TravelAnimationStateTearOff {
   const _$TravelAnimationStateTearOff();
 
   _TravelAnimationState call(
-      {required int switcherIndex,
-      required bool isExpandable,
-      required double destination,
-      required double layover,
-      required double result}) {
+      {required int switcherIndex, required bool isExpandable}) {
     return _TravelAnimationState(
       switcherIndex: switcherIndex,
       isExpandable: isExpandable,
-      destination: destination,
-      layover: layover,
-      result: result,
     );
   }
 }
@@ -39,9 +32,6 @@ const $TravelAnimationState = _$TravelAnimationStateTearOff();
 mixin _$TravelAnimationState {
   int get switcherIndex => throw _privateConstructorUsedError;
   bool get isExpandable => throw _privateConstructorUsedError;
-  double get destination => throw _privateConstructorUsedError;
-  double get layover => throw _privateConstructorUsedError;
-  double get result => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TravelAnimationStateCopyWith<TravelAnimationState> get copyWith =>
@@ -53,12 +43,7 @@ abstract class $TravelAnimationStateCopyWith<$Res> {
   factory $TravelAnimationStateCopyWith(TravelAnimationState value,
           $Res Function(TravelAnimationState) then) =
       _$TravelAnimationStateCopyWithImpl<$Res>;
-  $Res call(
-      {int switcherIndex,
-      bool isExpandable,
-      double destination,
-      double layover,
-      double result});
+  $Res call({int switcherIndex, bool isExpandable});
 }
 
 /// @nodoc
@@ -74,9 +59,6 @@ class _$TravelAnimationStateCopyWithImpl<$Res>
   $Res call({
     Object? switcherIndex = freezed,
     Object? isExpandable = freezed,
-    Object? destination = freezed,
-    Object? layover = freezed,
-    Object? result = freezed,
   }) {
     return _then(_value.copyWith(
       switcherIndex: switcherIndex == freezed
@@ -87,18 +69,6 @@ class _$TravelAnimationStateCopyWithImpl<$Res>
           ? _value.isExpandable
           : isExpandable // ignore: cast_nullable_to_non_nullable
               as bool,
-      destination: destination == freezed
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as double,
-      layover: layover == freezed
-          ? _value.layover
-          : layover // ignore: cast_nullable_to_non_nullable
-              as double,
-      result: result == freezed
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as double,
     ));
   }
 }
@@ -110,12 +80,7 @@ abstract class _$TravelAnimationStateCopyWith<$Res>
           $Res Function(_TravelAnimationState) then) =
       __$TravelAnimationStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int switcherIndex,
-      bool isExpandable,
-      double destination,
-      double layover,
-      double result});
+  $Res call({int switcherIndex, bool isExpandable});
 }
 
 /// @nodoc
@@ -133,9 +98,6 @@ class __$TravelAnimationStateCopyWithImpl<$Res>
   $Res call({
     Object? switcherIndex = freezed,
     Object? isExpandable = freezed,
-    Object? destination = freezed,
-    Object? layover = freezed,
-    Object? result = freezed,
   }) {
     return _then(_TravelAnimationState(
       switcherIndex: switcherIndex == freezed
@@ -146,18 +108,6 @@ class __$TravelAnimationStateCopyWithImpl<$Res>
           ? _value.isExpandable
           : isExpandable // ignore: cast_nullable_to_non_nullable
               as bool,
-      destination: destination == freezed
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as double,
-      layover: layover == freezed
-          ? _value.layover
-          : layover // ignore: cast_nullable_to_non_nullable
-              as double,
-      result: result == freezed
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as double,
     ));
   }
 }
@@ -166,26 +116,16 @@ class __$TravelAnimationStateCopyWithImpl<$Res>
 
 class _$_TravelAnimationState implements _TravelAnimationState {
   _$_TravelAnimationState(
-      {required this.switcherIndex,
-      required this.isExpandable,
-      required this.destination,
-      required this.layover,
-      required this.result});
+      {required this.switcherIndex, required this.isExpandable});
 
   @override
   final int switcherIndex;
   @override
   final bool isExpandable;
-  @override
-  final double destination;
-  @override
-  final double layover;
-  @override
-  final double result;
 
   @override
   String toString() {
-    return 'TravelAnimationState(switcherIndex: $switcherIndex, isExpandable: $isExpandable, destination: $destination, layover: $layover, result: $result)';
+    return 'TravelAnimationState(switcherIndex: $switcherIndex, isExpandable: $isExpandable)';
   }
 
   @override
@@ -197,25 +137,14 @@ class _$_TravelAnimationState implements _TravelAnimationState {
                     .equals(other.switcherIndex, switcherIndex)) &&
             (identical(other.isExpandable, isExpandable) ||
                 const DeepCollectionEquality()
-                    .equals(other.isExpandable, isExpandable)) &&
-            (identical(other.destination, destination) ||
-                const DeepCollectionEquality()
-                    .equals(other.destination, destination)) &&
-            (identical(other.layover, layover) ||
-                const DeepCollectionEquality()
-                    .equals(other.layover, layover)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+                    .equals(other.isExpandable, isExpandable)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(switcherIndex) ^
-      const DeepCollectionEquality().hash(isExpandable) ^
-      const DeepCollectionEquality().hash(destination) ^
-      const DeepCollectionEquality().hash(layover) ^
-      const DeepCollectionEquality().hash(result);
+      const DeepCollectionEquality().hash(isExpandable);
 
   @JsonKey(ignore: true)
   @override
@@ -227,21 +156,12 @@ class _$_TravelAnimationState implements _TravelAnimationState {
 abstract class _TravelAnimationState implements TravelAnimationState {
   factory _TravelAnimationState(
       {required int switcherIndex,
-      required bool isExpandable,
-      required double destination,
-      required double layover,
-      required double result}) = _$_TravelAnimationState;
+      required bool isExpandable}) = _$_TravelAnimationState;
 
   @override
   int get switcherIndex => throw _privateConstructorUsedError;
   @override
   bool get isExpandable => throw _privateConstructorUsedError;
-  @override
-  double get destination => throw _privateConstructorUsedError;
-  @override
-  double get layover => throw _privateConstructorUsedError;
-  @override
-  double get result => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelAnimationStateCopyWith<_TravelAnimationState> get copyWith =>

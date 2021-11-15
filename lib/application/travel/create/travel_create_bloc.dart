@@ -42,7 +42,6 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
           travel: initialTravel,
           startTravel: startInitialResearch,
           endTravel: endInitialResearch,
-          isColorChanged: false,
           isAddressSearchBar: false,
           isLayoverAddressBar: false,
         );
@@ -91,18 +90,11 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
       endTimeSelected: (e) async* {
         yield state.copyWith(endTravel: state.endTravel!.copyWith(time: e.end));
       },
-      destinationToggleSwitched: (e) async* {
-        if (state.isColorChanged) {
-          yield state.copyWith(isColorChanged: false);
-        } else {
-          yield state.copyWith(isColorChanged: true);
-        }
+      dateAndTimeBottomBar: (e) async* {
+        yield state.copyWith(isDateAndTimeSearchBar: e.value);
       },
       addressBottomSearched: (e) async* {
         yield state.copyWith(isAddressSearchBar: e.value);
-      },
-      layoverAddressBottomSearched: (e) async* {
-        yield state.copyWith(isLayoverAddressBar: e.value);
       },
     );
   }

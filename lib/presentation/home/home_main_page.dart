@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_goffer/presentation/create/screen/create_main_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/presentation/feed/feed.dart';
 import 'package:flutter_goffer/presentation/home/home_banner.dart';
+import 'package:flutter_goffer/presentation/travel/travel_start_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class HomeMainPage extends StatelessWidget {
@@ -15,8 +17,11 @@ class HomeMainPage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
+                context
+                    .read<TravelCreateBloc>()
+                    .add(const TravelCreateEvent.started());
                 pushNewScreen(context,
-                    screen: const CreateMainPage(),
+                    screen: const TravelStartScreen(),
                     pageTransitionAnimation: PageTransitionAnimation.slideUp,
                     withNavBar: false);
               },

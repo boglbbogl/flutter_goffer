@@ -1,54 +1,57 @@
-import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/find_location/find_location_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
-import 'package:flutter_goffer/presentation/create/widget/shimmer_address_form.dart';
+import 'package:flutter_goffer/presentation/travel/widgets/address/travel_shimmer_address_form.dart';
 
-class LayoverAddressBottomBar extends StatelessWidget {
+class TravelAddressSearchBottom extends StatelessWidget {
+  final bool isAddressSearchBar;
+  final TravelResearch startTravel;
+  final TravelResearch endTravel;
+  final List<TravelResearch> layoverTravel;
   final TextEditingController _controller = TextEditingController();
-  final bool isLayoverAddressBar;
-  final List<TravelResearch> layoverList;
-  LayoverAddressBottomBar({
+
+  TravelAddressSearchBottom({
     Key? key,
-    required this.isLayoverAddressBar,
-    required this.layoverList,
+    required this.isAddressSearchBar,
+    required this.startTravel,
+    required this.endTravel,
+    required this.layoverTravel,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final List list = [];
-    for (final element in layoverList) {
-      list.add(element.id);
+    final List selectedList = [];
+    selectedList.add(startTravel.id);
+    for (final element in layoverTravel) {
+      selectedList.add(element.id);
+      selectedList.add(startTravel.id);
+      selectedList.add(startTravel.id);
     }
+    const TravelResearch travel =
+        TravelResearch(date: "", time: "", id: "", x: "", y: "");
     return BlocBuilder<FindLocationCubit, FindLocationState>(
-      builder: (context, findState) {
-        const TravelResearch travel =
-            TravelResearch(date: "", time: "", id: "", x: "", y: "");
+      builder: (context, state) {
         return AnimatedContainer(
-          width: size.width,
-          height: size.height,
           color: Colors.white,
-          duration: const Duration(milliseconds: 500),
           transform: Matrix4.translationValues(
-              0, isLayoverAddressBar ? 0 : size.height, 0),
-          child: GestureDetector(
-            onTap: () {
-              FocusScope.of(context).unfocus();
-            },
+              0, isAddressSearchBar ? 0 : size.height, 0),
+          duration: const Duration(milliseconds: 300),
+          child: SizedBox(
+            height: size.height,
+            width: size.width,
             child: Stack(
               children: [
-                Positioned(
-                    right: 25, top: 20, child: Text('${layoverList.length}/3')),
                 Column(
                   children: [
                     IconButton(
                       onPressed: () {
+                        FocusScope.of(context).unfocus();
                         context.read<TravelCreateBloc>().add(
-                            const TravelCreateEvent
-                                .layoverAddressBottomSearched(value: false));
+                            const TravelCreateEvent.addressBottomSearched(
+                                value: false));
                       },
                       icon: const Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -98,101 +101,28 @@ class LayoverAddressBottomBar extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: SizedBox(
-                          width: size.width * 0.9,
-                          height: size.height * 0.05,
-                          child: ListView(
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              ...layoverList.map((e) => InkWell(
-                                    onTap: () {
-                                      context.read<TravelCreateBloc>()
-                                        ..add(TravelCreateEvent.layoverSelected(
-                                          layover: travel.copyWith(
-                                              id: e.id, x: e.x, y: e.y),
-                                        ))
-                                        ..add(const TravelCreateEvent
-                                                .layoverAddressBottomSearched(
-                                            value: false));
-                                    },
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(
-                                          right: 8, left: 8),
-                                      child: Stack(
-                                        children: [
-                                          Container(
-                                              height: size.height * 0.05,
-                                              decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                border: Border.all(width: 2),
-                                              ),
-                                              child: Center(
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(width: 14),
-                                                    Text(
-                                                      " ${e.id} ",
-                                                      style: theme
-                                                          .textTheme.bodyText2!
-                                                          .copyWith(
-                                                              color:
-                                                                  Colors.white,
-                                                              fontSize: 12),
-                                                    ),
-                                                    const SizedBox(width: 14),
-                                                  ],
-                                                ),
-                                              )),
-                                          const Positioned(
-                                            right: 1,
-                                            top: 2,
-                                            child: Icon(
-                                              Icons.remove_circle,
-                                              color: Colors.white,
-                                              size: 18,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ))
-                            ],
-                          )),
-                    ),
                     Expanded(
                       child: AnimatedSwitcher(
                         duration: const Duration(milliseconds: 500),
-                        child: findState.isLoading
+                        child: state.isLoading
                             ? shimmerAddressForm()
                             : ListView(
                                 shrinkWrap: true,
                                 children: [
-                                  ...findState.location.map(
+                                  ...state.location.map(
                                     (data) => InkWell(
                                       onTap: () {
-                                        if (layoverList.length > 2) {
-                                          FlushbarHelper.createInformation(
-                                                  message:
-                                                      '경유지는 최대 3곳 까지 선택할 수 있습니다')
-                                              .show(context);
-                                        } else {
-                                          context.read<TravelCreateBloc>()
-                                            ..add(TravelCreateEvent
-                                                .layoverSelected(
-                                              layover: travel.copyWith(
-                                                  id: data.place_name,
-                                                  x: data.x,
-                                                  y: data.y),
-                                            ))
-                                            ..add(const TravelCreateEvent
-                                                    .layoverAddressBottomSearched(
-                                                value: false));
-                                        }
+                                        context.read<TravelCreateBloc>()
+                                          ..add(
+                                              TravelCreateEvent.layoverSelected(
+                                            layover: travel.copyWith(
+                                                id: data.place_name,
+                                                x: data.x,
+                                                y: data.y),
+                                          ))
+                                          ..add(const TravelCreateEvent
+                                                  .addressBottomSearched(
+                                              value: false));
                                       },
                                       child: Padding(
                                         padding: const EdgeInsets.only(
@@ -206,7 +136,7 @@ class LayoverAddressBottomBar extends StatelessWidget {
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(12),
-                                              border: list
+                                              border: selectedList
                                                       .contains(data.place_name)
                                                   ? Border.all(
                                                       color: appColor, width: 2)

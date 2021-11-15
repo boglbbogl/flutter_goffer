@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
-import 'package:flutter_goffer/presentation/create/widget/date/time_list.dart';
+import 'package:flutter_goffer/presentation/travel/widgets/date/time_list.dart';
 
 class TimePicker extends StatelessWidget {
   final String start;

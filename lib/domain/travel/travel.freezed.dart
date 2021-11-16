@@ -224,13 +224,15 @@ class _$TravelResearchTearOff {
       required String time,
       required String id,
       required String x,
-      required String y}) {
+      required String y,
+      required String placeName}) {
     return _TravelResearch(
       date: date,
       time: time,
       id: id,
       x: x,
       y: y,
+      placeName: placeName,
     );
   }
 }
@@ -245,6 +247,7 @@ mixin _$TravelResearch {
   String get id => throw _privateConstructorUsedError;
   String get x => throw _privateConstructorUsedError;
   String get y => throw _privateConstructorUsedError;
+  String get placeName => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TravelResearchCopyWith<TravelResearch> get copyWith =>
@@ -256,7 +259,13 @@ abstract class $TravelResearchCopyWith<$Res> {
   factory $TravelResearchCopyWith(
           TravelResearch value, $Res Function(TravelResearch) then) =
       _$TravelResearchCopyWithImpl<$Res>;
-  $Res call({String date, String time, String id, String x, String y});
+  $Res call(
+      {String date,
+      String time,
+      String id,
+      String x,
+      String y,
+      String placeName});
 }
 
 /// @nodoc
@@ -275,6 +284,7 @@ class _$TravelResearchCopyWithImpl<$Res>
     Object? id = freezed,
     Object? x = freezed,
     Object? y = freezed,
+    Object? placeName = freezed,
   }) {
     return _then(_value.copyWith(
       date: date == freezed
@@ -297,6 +307,10 @@ class _$TravelResearchCopyWithImpl<$Res>
           ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
               as String,
+      placeName: placeName == freezed
+          ? _value.placeName
+          : placeName // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -308,7 +322,13 @@ abstract class _$TravelResearchCopyWith<$Res>
           _TravelResearch value, $Res Function(_TravelResearch) then) =
       __$TravelResearchCopyWithImpl<$Res>;
   @override
-  $Res call({String date, String time, String id, String x, String y});
+  $Res call(
+      {String date,
+      String time,
+      String id,
+      String x,
+      String y,
+      String placeName});
 }
 
 /// @nodoc
@@ -329,6 +349,7 @@ class __$TravelResearchCopyWithImpl<$Res>
     Object? id = freezed,
     Object? x = freezed,
     Object? y = freezed,
+    Object? placeName = freezed,
   }) {
     return _then(_TravelResearch(
       date: date == freezed
@@ -351,6 +372,10 @@ class __$TravelResearchCopyWithImpl<$Res>
           ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
               as String,
+      placeName: placeName == freezed
+          ? _value.placeName
+          : placeName // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -363,7 +388,8 @@ class _$_TravelResearch implements _TravelResearch {
       required this.time,
       required this.id,
       required this.x,
-      required this.y});
+      required this.y,
+      required this.placeName});
 
   @override
   final String date;
@@ -375,10 +401,12 @@ class _$_TravelResearch implements _TravelResearch {
   final String x;
   @override
   final String y;
+  @override
+  final String placeName;
 
   @override
   String toString() {
-    return 'TravelResearch(date: $date, time: $time, id: $id, x: $x, y: $y)';
+    return 'TravelResearch(date: $date, time: $time, id: $id, x: $x, y: $y, placeName: $placeName)';
   }
 
   @override
@@ -394,7 +422,10 @@ class _$_TravelResearch implements _TravelResearch {
             (identical(other.x, x) ||
                 const DeepCollectionEquality().equals(other.x, x)) &&
             (identical(other.y, y) ||
-                const DeepCollectionEquality().equals(other.y, y)));
+                const DeepCollectionEquality().equals(other.y, y)) &&
+            (identical(other.placeName, placeName) ||
+                const DeepCollectionEquality()
+                    .equals(other.placeName, placeName)));
   }
 
   @override
@@ -404,7 +435,8 @@ class _$_TravelResearch implements _TravelResearch {
       const DeepCollectionEquality().hash(time) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(x) ^
-      const DeepCollectionEquality().hash(y);
+      const DeepCollectionEquality().hash(y) ^
+      const DeepCollectionEquality().hash(placeName);
 
   @JsonKey(ignore: true)
   @override
@@ -418,7 +450,8 @@ abstract class _TravelResearch implements TravelResearch {
       required String time,
       required String id,
       required String x,
-      required String y}) = _$_TravelResearch;
+      required String y,
+      required String placeName}) = _$_TravelResearch;
 
   @override
   String get date => throw _privateConstructorUsedError;
@@ -430,6 +463,8 @@ abstract class _TravelResearch implements TravelResearch {
   String get x => throw _privateConstructorUsedError;
   @override
   String get y => throw _privateConstructorUsedError;
+  @override
+  String get placeName => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelResearchCopyWith<_TravelResearch> get copyWith =>

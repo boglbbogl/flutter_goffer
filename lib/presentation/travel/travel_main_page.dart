@@ -25,10 +25,11 @@ class TravelMainPage extends StatelessWidget {
                 children: [
                   SizedBox(height: size.height * 0.02),
                   TravelDateAndTimeBody(
-                    isAddressSearchBar: state.isAddressSearchBar,
+                    isAddressSearchBar: state.isDateAndTimeSearchBar,
                     startDate: state.startTravel!.date,
                     endDate: state.endTravel!.date,
                   ),
+                  SizedBox(height: size.height * 0.01),
                   const TravelAddressSearchBody(),
                 ],
               ),

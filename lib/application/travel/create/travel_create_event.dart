@@ -14,13 +14,13 @@ class TravelCreateEvent with _$TravelCreateEvent {
     required String x,
     required String y,
     required String id,
-    required String destination,
+    required String placeName,
   }) = _StartDestinationSelected;
   const factory TravelCreateEvent.endDestinationSelected({
     required String x,
     required String y,
     required String id,
-    required String destination,
+    required String placeName,
   }) = _EndDestinationSelected;
   const factory TravelCreateEvent.layoverSelected({
     required TravelResearch layover,

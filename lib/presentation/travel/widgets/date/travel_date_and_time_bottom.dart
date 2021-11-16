@@ -37,7 +37,7 @@ class TravelDateAndTimeBottom extends StatelessWidget {
                     const TravelCreateEvent.dateAndTimeBottomBar(value: false));
               },
               child: Container(
-                // color: Colors.white,
+                // color: Colors.white70,
                 height: size.height,
               ),
             ),

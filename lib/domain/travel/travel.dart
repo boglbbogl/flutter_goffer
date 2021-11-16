@@ -25,6 +25,7 @@ class TravelResearch with _$TravelResearch {
     required String id,
     required String x,
     required String y,
+    required String placeName,
   }) = _TravelResearch;
 
   factory TravelResearch.empty() => const TravelResearch(
@@ -33,5 +34,6 @@ class TravelResearch with _$TravelResearch {
         id: "",
         x: "",
         y: "",
+        placeName: "",
       );
 }

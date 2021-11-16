@@ -23,6 +23,7 @@ class TravelDateAndTimeBody extends StatelessWidget {
             .add(const TravelCreateEvent.dateAndTimeBottomBar(value: true));
       },
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           dateAndTimeForm(
             date: startDate,

@@ -12,8 +12,6 @@ class TravelCreateState with _$TravelCreateState {
     required bool isDateAndTimeSearchBar,
     required bool isAddressSearchBar,
     required bool isLayoverAddressBar,
-    required String startDestination,
-    required String endDestination,
   }) = _TravelCreateState;
   factory TravelCreateState.initial() => TravelCreateState(
         isLoading: false,
@@ -25,7 +23,5 @@ class TravelCreateState with _$TravelCreateState {
         isDateAndTimeSearchBar: false,
         isAddressSearchBar: false,
         isLayoverAddressBar: false,
-        startDestination: "",
-        endDestination: "",
       );
 }

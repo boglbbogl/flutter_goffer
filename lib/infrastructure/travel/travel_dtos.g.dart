@@ -34,6 +34,7 @@ _$_TravelResearchDto _$_$_TravelResearchDtoFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     x: json['_x'] as String,
     y: json['_y'] as String,
+    placeName: json['place_name'] as String,
   );
 }
 
@@ -45,4 +46,5 @@ Map<String, dynamic> _$_$_TravelResearchDtoToJson(
       'id': instance.id,
       '_x': instance.x,
       '_y': instance.y,
+      'place_name': instance.placeName,
     };

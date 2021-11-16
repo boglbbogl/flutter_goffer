@@ -35,6 +35,7 @@ class TravelResearchDto with _$TravelResearchDto {
     required String id,
     @JsonKey(name: '_x') required String x,
     @JsonKey(name: '_y') required String y,
+    @JsonKey(name: 'place_name') required String placeName,
   }) = _TravelResearchDto;
   const TravelResearchDto._();
   factory TravelResearchDto.fromJson(Map<String, dynamic> json) =>
@@ -46,6 +47,7 @@ class TravelResearchDto with _$TravelResearchDto {
         id: r.id,
         x: r.x,
         y: r.y,
+        placeName: r.placeName,
       );
 
   TravelResearch toDomain() => TravelResearch(
@@ -54,5 +56,6 @@ class TravelResearchDto with _$TravelResearchDto {
         id: id,
         x: x,
         y: y,
+        placeName: placeName,
       );
 }

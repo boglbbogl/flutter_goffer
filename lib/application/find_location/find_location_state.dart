@@ -6,10 +6,12 @@ class FindLocationState with _$FindLocationState {
     required bool isLoading,
     required List<FindLocation> location,
     required bool isMore,
+    required int selectedIndex,
   }) = _FindLocationState;
   factory FindLocationState.initial() => FindLocationState(
         isLoading: false,
         location: [],
+        selectedIndex: 0,
         isMore: false,
       );
 }

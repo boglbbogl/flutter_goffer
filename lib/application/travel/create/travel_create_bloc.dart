@@ -70,13 +70,13 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
       },
       startDestinationSelected: (e) async* {
         yield state.copyWith(
-            startDestination: e.destination,
-            startTravel: state.startTravel!.copyWith(id: e.id, x: e.x, y: e.y));
+            startTravel: state.startTravel!
+                .copyWith(id: e.id, x: e.x, y: e.y, placeName: e.placeName));
       },
       endDestinationSelected: (e) async* {
         yield state.copyWith(
-            endDestination: e.destination,
-            endTravel: state.endTravel!.copyWith(id: e.id, x: e.x, y: e.y));
+            endTravel: state.endTravel!
+                .copyWith(id: e.id, x: e.x, y: e.y, placeName: e.placeName));
       },
       dateSelected: (e) async* {
         yield state.copyWith(

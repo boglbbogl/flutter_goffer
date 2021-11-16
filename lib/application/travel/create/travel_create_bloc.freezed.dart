@@ -41,12 +41,12 @@ class _$TravelCreateEventTearOff {
       {required String x,
       required String y,
       required String id,
-      required String destination}) {
+      required String placeName}) {
     return _StartDestinationSelected(
       x: x,
       y: y,
       id: id,
-      destination: destination,
+      placeName: placeName,
     );
   }
 
@@ -54,12 +54,12 @@ class _$TravelCreateEventTearOff {
       {required String x,
       required String y,
       required String id,
-      required String destination}) {
+      required String placeName}) {
     return _EndDestinationSelected(
       x: x,
       y: y,
       id: id,
-      destination: destination,
+      placeName: placeName,
     );
   }
 
@@ -99,9 +99,9 @@ mixin _$TravelCreateEvent {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -115,9 +115,9 @@ mixin _$TravelCreateEvent {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -219,9 +219,9 @@ class _$_Started implements _Started {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -238,9 +238,9 @@ class _$_Started implements _Started {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -344,9 +344,9 @@ class _$_Submitted implements _Submitted {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -363,9 +363,9 @@ class _$_Submitted implements _Submitted {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -506,9 +506,9 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -525,9 +525,9 @@ class _$_DateSelected implements _DateSelected {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -664,9 +664,9 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -683,9 +683,9 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -757,7 +757,7 @@ abstract class _$StartDestinationSelectedCopyWith<$Res> {
   factory _$StartDestinationSelectedCopyWith(_StartDestinationSelected value,
           $Res Function(_StartDestinationSelected) then) =
       __$StartDestinationSelectedCopyWithImpl<$Res>;
-  $Res call({String x, String y, String id, String destination});
+  $Res call({String x, String y, String id, String placeName});
 }
 
 /// @nodoc
@@ -777,7 +777,7 @@ class __$StartDestinationSelectedCopyWithImpl<$Res>
     Object? x = freezed,
     Object? y = freezed,
     Object? id = freezed,
-    Object? destination = freezed,
+    Object? placeName = freezed,
   }) {
     return _then(_StartDestinationSelected(
       x: x == freezed
@@ -792,9 +792,9 @@ class __$StartDestinationSelectedCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      destination: destination == freezed
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
+      placeName: placeName == freezed
+          ? _value.placeName
+          : placeName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -807,7 +807,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
       {required this.x,
       required this.y,
       required this.id,
-      required this.destination});
+      required this.placeName});
 
   @override
   final String x;
@@ -816,11 +816,11 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
   @override
   final String id;
   @override
-  final String destination;
+  final String placeName;
 
   @override
   String toString() {
-    return 'TravelCreateEvent.startDestinationSelected(x: $x, y: $y, id: $id, destination: $destination)';
+    return 'TravelCreateEvent.startDestinationSelected(x: $x, y: $y, id: $id, placeName: $placeName)';
   }
 
   @override
@@ -833,9 +833,9 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
                 const DeepCollectionEquality().equals(other.y, y)) &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.destination, destination) ||
+            (identical(other.placeName, placeName) ||
                 const DeepCollectionEquality()
-                    .equals(other.destination, destination)));
+                    .equals(other.placeName, placeName)));
   }
 
   @override
@@ -844,7 +844,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
       const DeepCollectionEquality().hash(x) ^
       const DeepCollectionEquality().hash(y) ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(destination);
+      const DeepCollectionEquality().hash(placeName);
 
   @JsonKey(ignore: true)
   @override
@@ -859,16 +859,16 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
   }) {
-    return startDestinationSelected(x, y, id, destination);
+    return startDestinationSelected(x, y, id, placeName);
   }
 
   @override
@@ -878,9 +878,9 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -889,7 +889,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     required TResult orElse(),
   }) {
     if (startDestinationSelected != null) {
-      return startDestinationSelected(x, y, id, destination);
+      return startDestinationSelected(x, y, id, placeName);
     }
     return orElse();
   }
@@ -942,12 +942,12 @@ abstract class _StartDestinationSelected implements TravelCreateEvent {
       {required String x,
       required String y,
       required String id,
-      required String destination}) = _$_StartDestinationSelected;
+      required String placeName}) = _$_StartDestinationSelected;
 
   String get x => throw _privateConstructorUsedError;
   String get y => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  String get destination => throw _privateConstructorUsedError;
+  String get placeName => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$StartDestinationSelectedCopyWith<_StartDestinationSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -958,7 +958,7 @@ abstract class _$EndDestinationSelectedCopyWith<$Res> {
   factory _$EndDestinationSelectedCopyWith(_EndDestinationSelected value,
           $Res Function(_EndDestinationSelected) then) =
       __$EndDestinationSelectedCopyWithImpl<$Res>;
-  $Res call({String x, String y, String id, String destination});
+  $Res call({String x, String y, String id, String placeName});
 }
 
 /// @nodoc
@@ -977,7 +977,7 @@ class __$EndDestinationSelectedCopyWithImpl<$Res>
     Object? x = freezed,
     Object? y = freezed,
     Object? id = freezed,
-    Object? destination = freezed,
+    Object? placeName = freezed,
   }) {
     return _then(_EndDestinationSelected(
       x: x == freezed
@@ -992,9 +992,9 @@ class __$EndDestinationSelectedCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      destination: destination == freezed
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
+      placeName: placeName == freezed
+          ? _value.placeName
+          : placeName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1007,7 +1007,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
       {required this.x,
       required this.y,
       required this.id,
-      required this.destination});
+      required this.placeName});
 
   @override
   final String x;
@@ -1016,11 +1016,11 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
   @override
   final String id;
   @override
-  final String destination;
+  final String placeName;
 
   @override
   String toString() {
-    return 'TravelCreateEvent.endDestinationSelected(x: $x, y: $y, id: $id, destination: $destination)';
+    return 'TravelCreateEvent.endDestinationSelected(x: $x, y: $y, id: $id, placeName: $placeName)';
   }
 
   @override
@@ -1033,9 +1033,9 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
                 const DeepCollectionEquality().equals(other.y, y)) &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.destination, destination) ||
+            (identical(other.placeName, placeName) ||
                 const DeepCollectionEquality()
-                    .equals(other.destination, destination)));
+                    .equals(other.placeName, placeName)));
   }
 
   @override
@@ -1044,7 +1044,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
       const DeepCollectionEquality().hash(x) ^
       const DeepCollectionEquality().hash(y) ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(destination);
+      const DeepCollectionEquality().hash(placeName);
 
   @JsonKey(ignore: true)
   @override
@@ -1059,16 +1059,16 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
   }) {
-    return endDestinationSelected(x, y, id, destination);
+    return endDestinationSelected(x, y, id, placeName);
   }
 
   @override
@@ -1078,9 +1078,9 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -1089,7 +1089,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     required TResult orElse(),
   }) {
     if (endDestinationSelected != null) {
-      return endDestinationSelected(x, y, id, destination);
+      return endDestinationSelected(x, y, id, placeName);
     }
     return orElse();
   }
@@ -1142,12 +1142,12 @@ abstract class _EndDestinationSelected implements TravelCreateEvent {
       {required String x,
       required String y,
       required String id,
-      required String destination}) = _$_EndDestinationSelected;
+      required String placeName}) = _$_EndDestinationSelected;
 
   String get x => throw _privateConstructorUsedError;
   String get y => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  String get destination => throw _privateConstructorUsedError;
+  String get placeName => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$EndDestinationSelectedCopyWith<_EndDestinationSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1231,9 +1231,9 @@ class _$_LayoverSelected implements _LayoverSelected {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -1250,9 +1250,9 @@ class _$_LayoverSelected implements _LayoverSelected {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -1388,9 +1388,9 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -1407,9 +1407,9 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -1545,9 +1545,9 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -1564,9 +1564,9 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -1706,9 +1706,9 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         startDestinationSelected,
-    required TResult Function(String x, String y, String id, String destination)
+    required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
     required TResult Function(TravelResearch layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
@@ -1725,9 +1725,9 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         startDestinationSelected,
-    TResult Function(String x, String y, String id, String destination)?
+    TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
     TResult Function(TravelResearch layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
@@ -1807,9 +1807,7 @@ class _$TravelCreateStateTearOff {
       required List<TravelResearch> wayTravel,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
-      required bool isLayoverAddressBar,
-      required String startDestination,
-      required String endDestination}) {
+      required bool isLayoverAddressBar}) {
     return _TravelCreateState(
       isLoading: isLoading,
       submitResult: submitResult,
@@ -1820,8 +1818,6 @@ class _$TravelCreateStateTearOff {
       isDateAndTimeSearchBar: isDateAndTimeSearchBar,
       isAddressSearchBar: isAddressSearchBar,
       isLayoverAddressBar: isLayoverAddressBar,
-      startDestination: startDestination,
-      endDestination: endDestination,
     );
   }
 }
@@ -1841,8 +1837,6 @@ mixin _$TravelCreateState {
   bool get isDateAndTimeSearchBar => throw _privateConstructorUsedError;
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
   bool get isLayoverAddressBar => throw _privateConstructorUsedError;
-  String get startDestination => throw _privateConstructorUsedError;
-  String get endDestination => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TravelCreateStateCopyWith<TravelCreateState> get copyWith =>
@@ -1863,9 +1857,7 @@ abstract class $TravelCreateStateCopyWith<$Res> {
       List<TravelResearch> wayTravel,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
-      bool isLayoverAddressBar,
-      String startDestination,
-      String endDestination});
+      bool isLayoverAddressBar});
 
   $TravelCopyWith<$Res>? get travel;
   $TravelResearchCopyWith<$Res>? get startTravel;
@@ -1892,8 +1884,6 @@ class _$TravelCreateStateCopyWithImpl<$Res>
     Object? isDateAndTimeSearchBar = freezed,
     Object? isAddressSearchBar = freezed,
     Object? isLayoverAddressBar = freezed,
-    Object? startDestination = freezed,
-    Object? endDestination = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -1932,14 +1922,6 @@ class _$TravelCreateStateCopyWithImpl<$Res>
           ? _value.isLayoverAddressBar
           : isLayoverAddressBar // ignore: cast_nullable_to_non_nullable
               as bool,
-      startDestination: startDestination == freezed
-          ? _value.startDestination
-          : startDestination // ignore: cast_nullable_to_non_nullable
-              as String,
-      endDestination: endDestination == freezed
-          ? _value.endDestination
-          : endDestination // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 
@@ -1993,9 +1975,7 @@ abstract class _$TravelCreateStateCopyWith<$Res>
       List<TravelResearch> wayTravel,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
-      bool isLayoverAddressBar,
-      String startDestination,
-      String endDestination});
+      bool isLayoverAddressBar});
 
   @override
   $TravelCopyWith<$Res>? get travel;
@@ -2027,8 +2007,6 @@ class __$TravelCreateStateCopyWithImpl<$Res>
     Object? isDateAndTimeSearchBar = freezed,
     Object? isAddressSearchBar = freezed,
     Object? isLayoverAddressBar = freezed,
-    Object? startDestination = freezed,
-    Object? endDestination = freezed,
   }) {
     return _then(_TravelCreateState(
       isLoading: isLoading == freezed
@@ -2067,14 +2045,6 @@ class __$TravelCreateStateCopyWithImpl<$Res>
           ? _value.isLayoverAddressBar
           : isLayoverAddressBar // ignore: cast_nullable_to_non_nullable
               as bool,
-      startDestination: startDestination == freezed
-          ? _value.startDestination
-          : startDestination // ignore: cast_nullable_to_non_nullable
-              as String,
-      endDestination: endDestination == freezed
-          ? _value.endDestination
-          : endDestination // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -2091,9 +2061,7 @@ class _$_TravelCreateState implements _TravelCreateState {
       required this.wayTravel,
       required this.isDateAndTimeSearchBar,
       required this.isAddressSearchBar,
-      required this.isLayoverAddressBar,
-      required this.startDestination,
-      required this.endDestination});
+      required this.isLayoverAddressBar});
 
   @override
   final bool isLoading;
@@ -2113,14 +2081,10 @@ class _$_TravelCreateState implements _TravelCreateState {
   final bool isAddressSearchBar;
   @override
   final bool isLayoverAddressBar;
-  @override
-  final String startDestination;
-  @override
-  final String endDestination;
 
   @override
   String toString() {
-    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, startDestination: $startDestination, endDestination: $endDestination)';
+    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar)';
   }
 
   @override
@@ -2152,13 +2116,7 @@ class _$_TravelCreateState implements _TravelCreateState {
                     .equals(other.isAddressSearchBar, isAddressSearchBar)) &&
             (identical(other.isLayoverAddressBar, isLayoverAddressBar) ||
                 const DeepCollectionEquality()
-                    .equals(other.isLayoverAddressBar, isLayoverAddressBar)) &&
-            (identical(other.startDestination, startDestination) ||
-                const DeepCollectionEquality()
-                    .equals(other.startDestination, startDestination)) &&
-            (identical(other.endDestination, endDestination) ||
-                const DeepCollectionEquality()
-                    .equals(other.endDestination, endDestination)));
+                    .equals(other.isLayoverAddressBar, isLayoverAddressBar)));
   }
 
   @override
@@ -2172,9 +2130,7 @@ class _$_TravelCreateState implements _TravelCreateState {
       const DeepCollectionEquality().hash(wayTravel) ^
       const DeepCollectionEquality().hash(isDateAndTimeSearchBar) ^
       const DeepCollectionEquality().hash(isAddressSearchBar) ^
-      const DeepCollectionEquality().hash(isLayoverAddressBar) ^
-      const DeepCollectionEquality().hash(startDestination) ^
-      const DeepCollectionEquality().hash(endDestination);
+      const DeepCollectionEquality().hash(isLayoverAddressBar);
 
   @JsonKey(ignore: true)
   @override
@@ -2192,9 +2148,7 @@ abstract class _TravelCreateState implements TravelCreateState {
       required List<TravelResearch> wayTravel,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
-      required bool isLayoverAddressBar,
-      required String startDestination,
-      required String endDestination}) = _$_TravelCreateState;
+      required bool isLayoverAddressBar}) = _$_TravelCreateState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -2215,10 +2169,6 @@ abstract class _TravelCreateState implements TravelCreateState {
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
   @override
   bool get isLayoverAddressBar => throw _privateConstructorUsedError;
-  @override
-  String get startDestination => throw _privateConstructorUsedError;
-  @override
-  String get endDestination => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelCreateStateCopyWith<_TravelCreateState> get copyWith =>

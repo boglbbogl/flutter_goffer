@@ -41,4 +41,11 @@ class FindLocationCubit extends Cubit<FindLocationState> {
     emit(state.copyWith(isLoading: false, location: result, isMore: false));
     return unit;
   }
+
+  Future<Unit> selectedLocationBar({
+    required int index,
+  }) async {
+    emit(state.copyWith(selectedIndex: index));
+    return unit;
+  }
 }

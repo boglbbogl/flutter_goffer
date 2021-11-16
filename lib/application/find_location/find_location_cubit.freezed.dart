@@ -19,11 +19,13 @@ class _$FindLocationStateTearOff {
   _FindLocationState call(
       {required bool isLoading,
       required List<FindLocation> location,
-      required bool isMore}) {
+      required bool isMore,
+      required int selectedIndex}) {
     return _FindLocationState(
       isLoading: isLoading,
       location: location,
       isMore: isMore,
+      selectedIndex: selectedIndex,
     );
   }
 }
@@ -36,6 +38,7 @@ mixin _$FindLocationState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<FindLocation> get location => throw _privateConstructorUsedError;
   bool get isMore => throw _privateConstructorUsedError;
+  int get selectedIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FindLocationStateCopyWith<FindLocationState> get copyWith =>
@@ -47,7 +50,11 @@ abstract class $FindLocationStateCopyWith<$Res> {
   factory $FindLocationStateCopyWith(
           FindLocationState value, $Res Function(FindLocationState) then) =
       _$FindLocationStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, List<FindLocation> location, bool isMore});
+  $Res call(
+      {bool isLoading,
+      List<FindLocation> location,
+      bool isMore,
+      int selectedIndex});
 }
 
 /// @nodoc
@@ -64,6 +71,7 @@ class _$FindLocationStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? location = freezed,
     Object? isMore = freezed,
+    Object? selectedIndex = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -78,6 +86,10 @@ class _$FindLocationStateCopyWithImpl<$Res>
           ? _value.isMore
           : isMore // ignore: cast_nullable_to_non_nullable
               as bool,
+      selectedIndex: selectedIndex == freezed
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -89,7 +101,11 @@ abstract class _$FindLocationStateCopyWith<$Res>
           _FindLocationState value, $Res Function(_FindLocationState) then) =
       __$FindLocationStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, List<FindLocation> location, bool isMore});
+  $Res call(
+      {bool isLoading,
+      List<FindLocation> location,
+      bool isMore,
+      int selectedIndex});
 }
 
 /// @nodoc
@@ -108,6 +124,7 @@ class __$FindLocationStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? location = freezed,
     Object? isMore = freezed,
+    Object? selectedIndex = freezed,
   }) {
     return _then(_FindLocationState(
       isLoading: isLoading == freezed
@@ -122,6 +139,10 @@ class __$FindLocationStateCopyWithImpl<$Res>
           ? _value.isMore
           : isMore // ignore: cast_nullable_to_non_nullable
               as bool,
+      selectedIndex: selectedIndex == freezed
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -130,7 +151,10 @@ class __$FindLocationStateCopyWithImpl<$Res>
 
 class _$_FindLocationState implements _FindLocationState {
   _$_FindLocationState(
-      {required this.isLoading, required this.location, required this.isMore});
+      {required this.isLoading,
+      required this.location,
+      required this.isMore,
+      required this.selectedIndex});
 
   @override
   final bool isLoading;
@@ -138,10 +162,12 @@ class _$_FindLocationState implements _FindLocationState {
   final List<FindLocation> location;
   @override
   final bool isMore;
+  @override
+  final int selectedIndex;
 
   @override
   String toString() {
-    return 'FindLocationState(isLoading: $isLoading, location: $location, isMore: $isMore)';
+    return 'FindLocationState(isLoading: $isLoading, location: $location, isMore: $isMore, selectedIndex: $selectedIndex)';
   }
 
   @override
@@ -155,7 +181,10 @@ class _$_FindLocationState implements _FindLocationState {
                 const DeepCollectionEquality()
                     .equals(other.location, location)) &&
             (identical(other.isMore, isMore) ||
-                const DeepCollectionEquality().equals(other.isMore, isMore)));
+                const DeepCollectionEquality().equals(other.isMore, isMore)) &&
+            (identical(other.selectedIndex, selectedIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedIndex, selectedIndex)));
   }
 
   @override
@@ -163,7 +192,8 @@ class _$_FindLocationState implements _FindLocationState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(isMore);
+      const DeepCollectionEquality().hash(isMore) ^
+      const DeepCollectionEquality().hash(selectedIndex);
 
   @JsonKey(ignore: true)
   @override
@@ -175,7 +205,8 @@ abstract class _FindLocationState implements FindLocationState {
   factory _FindLocationState(
       {required bool isLoading,
       required List<FindLocation> location,
-      required bool isMore}) = _$_FindLocationState;
+      required bool isMore,
+      required int selectedIndex}) = _$_FindLocationState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -183,6 +214,8 @@ abstract class _FindLocationState implements FindLocationState {
   List<FindLocation> get location => throw _privateConstructorUsedError;
   @override
   bool get isMore => throw _privateConstructorUsedError;
+  @override
+  int get selectedIndex => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$FindLocationStateCopyWith<_FindLocationState> get copyWith =>

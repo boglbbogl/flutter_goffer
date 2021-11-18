@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_goffer/_constant/widgets/logger.dart';
 import 'package:flutter_goffer/domain/travel/i_travel_repository.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/domain/travel/travel_failure.dart';
@@ -36,12 +37,15 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
         final Travel initialTravel = Travel.empty().copyWith(
           start: startInitialResearch,
           end: endInitialResearch,
+          wayArr: [],
         );
         TravelCreateState _state;
         _state = state.copyWith(
           travel: initialTravel,
           startTravel: startInitialResearch,
           endTravel: endInitialResearch,
+          wayTravel: [],
+          wayAddAndRemoveList: [],
           isAddressSearchBar: false,
           isLayoverAddressBar: false,
         );
@@ -58,25 +62,58 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
         yield state.copyWith(isLoading: false, submitResult: result);
       },
       layoverSelected: (e) async* {
-        final List<TravelResearch> list = state.wayTravel;
-
-        // logger.e(list.map((e) => e.id).contains(e.layover.id));
-        if (list.map((e) => e.id).contains(e.layover.id)) {
-          list.remove(e.layover);
+        // final List<TravelResearch> list = [];
+        logger.e(state.wayAddAndRemoveList);
+        yield state.copyWith(wayAddAndRemoveList: state.wayTravel);
+        if (state.wayAddAndRemoveList.map((e) => e.id).contains(e.layover.id)) {
+          state.wayAddAndRemoveList.remove(e.layover);
+          yield state.copyWith(
+              wayTravel: state.wayAddAndRemoveList,
+              isSelectedTourist: state.isSelectedTourist ? false : true);
         } else {
-          list.add(e.layover);
+          state.wayAddAndRemoveList.add(e.layover);
+
+          yield state.copyWith(
+              wayTravel: state.wayAddAndRemoveList,
+              isSelectedTourist: state.isSelectedTourist ? false : true);
         }
-        yield state.copyWith(wayTravel: list);
+        // if (list.map((e) => e.id).contains(e.layover.id)) {
+        //   list.remove(e.layover);
+        //   yield state.copyWith(wayTravel: list);
+        // } else {
+        //   list.add(e.layover);
+        //   yield state.copyWith(wayTravel: list);
+        // }
       },
       startDestinationSelected: (e) async* {
-        yield state.copyWith(
-            startTravel: state.startTravel!
-                .copyWith(id: e.id, x: e.x, y: e.y, placeName: e.placeName));
+        if (state.startTravel!.id.contains(e.id)) {
+          yield state.copyWith(
+              startTravel: TravelResearch.empty().copyWith(
+                  id: "",
+                  x: "",
+                  y: "",
+                  placeName: "",
+                  date: state.startTravel!.date));
+        } else {
+          yield state.copyWith(
+              startTravel: state.startTravel!
+                  .copyWith(id: e.id, x: e.x, y: e.y, placeName: e.placeName));
+        }
       },
       endDestinationSelected: (e) async* {
-        yield state.copyWith(
-            endTravel: state.endTravel!
-                .copyWith(id: e.id, x: e.x, y: e.y, placeName: e.placeName));
+        if (state.endTravel!.id.contains(e.id)) {
+          yield state.copyWith(
+              endTravel: TravelResearch.empty().copyWith(
+                  id: "",
+                  x: "",
+                  y: "",
+                  placeName: "",
+                  date: state.endTravel!.date));
+        } else {
+          yield state.copyWith(
+              endTravel: state.endTravel!
+                  .copyWith(id: e.id, x: e.x, y: e.y, placeName: e.placeName));
+        }
       },
       dateSelected: (e) async* {
         yield state.copyWith(

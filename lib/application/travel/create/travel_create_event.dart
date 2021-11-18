@@ -25,11 +25,8 @@ class TravelCreateEvent with _$TravelCreateEvent {
   const factory TravelCreateEvent.layoverSelected({
     required TravelResearch layover,
   }) = _LayoverSelected;
-
   const factory TravelCreateEvent.endTimeSelected({required String end}) =
       _EndTimeSelected;
-  // const factory TravelCreateEvent.destinationToggleSwitched() =
-  //     _DestinationToggleSwitched;
   const factory TravelCreateEvent.dateAndTimeBottomBar({
     required bool value,
   }) = _AdressBottomSearched;

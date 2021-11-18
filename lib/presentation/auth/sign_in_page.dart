@@ -1,6 +1,6 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_goffer/application/authentication/auth_provider/user_provider.dart';
+import 'package:flutter_goffer/application/authentication/auth_bloc/auth_bloc.dart';
 import 'package:provider/provider.dart';
 
 class SignInPage extends StatelessWidget {
@@ -8,8 +8,8 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final UserProvider _userProvider =
-        Provider.of<UserProvider>(context, listen: false);
+    // final UserProvider _userProvider =
+    //     Provider.of<UserProvider>(context, listen: false);
     return Scaffold(
         backgroundColor: Colors.black,
         body: Stack(
@@ -54,7 +54,11 @@ class SignInPage extends StatelessWidget {
                             icon: Icons.chat_bubble,
                             titleColor: Colors.brown,
                             onTap: () async {
-                              await _userProvider.logIn;
+                              context
+                                  .read<AuthBloc>()
+                                  .add(const AuthEvent.signInWithKakao());
+
+                              // await _userProvider.logIn;
                             }),
                       ],
                     ),

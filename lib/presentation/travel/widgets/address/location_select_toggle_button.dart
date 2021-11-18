@@ -14,7 +14,7 @@ class LocationSelectToggleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: size.width * 0.88,
-      height: size.height * 0.035,
+      height: size.height * 0.045,
       decoration: BoxDecoration(
           border: Border.all(width: 0.5),
           borderRadius: BorderRadius.circular(13)),
@@ -61,12 +61,13 @@ class LocationSelectToggleButton extends StatelessWidget {
   }) {
     return InkWell(
       onTap: () {
+        FocusScope.of(context).unfocus();
         context.read<FindLocationCubit>().selectedLocationBar(index: index);
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         width: width ?? size.width * 0.289,
-        height: size.height * 0.035,
+        height: size.height * 0.045,
         decoration: BoxDecoration(
           border: border,
           borderRadius: radius,

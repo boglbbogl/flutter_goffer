@@ -1,90 +1,91 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_goffer/_constant/widgets/logger.dart';
-import 'package:kakao_flutter_sdk/all.dart';
-import 'package:kakao_flutter_sdk/auth.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_goffer/_constant/widgets/logger.dart';
+// import 'package:kakao_flutter_sdk/all.dart';
+// import 'package:kakao_flutter_sdk/auth.dart';
 
-class UserProvider extends ChangeNotifier {
-  UserProvider() {
-    _userStatus();
-    _kakaoUserInfo();
-  }
-  bool _isKakaoTalkInstalled = true;
-  User? _user;
-  Future<void> _userStatus() async {
-    final OAuthToken token = await TokenManager.instance.getToken();
-    logger.e(token);
+// class UserProvider extends ChangeNotifier {
+//   UserProvider() {
+//     _userStatus();
+//     _kakaoUserInfo();
+//   }
+//   User? _user;
+//   Future<void> _userStatus() async {
+//     final OAuthToken token = await TokenManager.instance.getToken();
+//     logger.e(token);
 
-    if (token.refreshToken == null) {
-      _isLogin = false;
-      notifyListeners();
-    } else {
-      _isLogin = true;
-      notifyListeners();
-    }
-  }
+//     if (token.refreshToken == null) {
+//       _isLogin = false;
+//       notifyListeners();
+//     } else {
+//       _isLogin = true;
+//       notifyListeners();
+//     }
+//   }
 
-  Future<void> _kakaoUserInfo() async {
-    _user = await UserApi.instance.me();
-    notifyListeners();
-  }
+//   Future<void> _kakaoUserInfo() async {
+//     _user = await UserApi.instance.me();
+//     notifyListeners();
+//   }
 
-  bool _isLogin = false;
-  Future<void> _kakaoSignOut() async {
-    // await UserApi.instance.unlink();
-    await UserApi.instance.logout();
-    await TokenManager.instance.clear();
+//   bool _isLogin = false;
+//   Future<void> _kakaoSignOut() async {
+//     // await UserApi.instance.unlink();
+//     await UserApi.instance.logout();
+//     await TokenManager.instance.clear();
 
-    _isLogin = false;
-    notifyListeners();
-  }
+//     _isLogin = false;
+//     notifyListeners();
+//   }
 
-  Future<void> _kakaoSignIn() async {
-    _initKakaoTalkInstalled();
-    if (_isKakaoTalkInstalled) {
-      await _loginWithKakaoTalk();
-    } else {
-      await _loginWithKakaoWeb();
-    }
-  }
+//   bool _isKakaoTalkInstalled = true;
 
-  Future<void> _initKakaoTalkInstalled() async {
-    final installed = await isKakaoTalkInstalled();
-    _isKakaoTalkInstalled = installed;
-  }
+//   Future<void> _kakaoSignIn() async {
+//     _initKakaoTalkInstalled();
+//     if (_isKakaoTalkInstalled) {
+//       await _loginWithKakaoTalk();
+//     } else {
+//       await _loginWithKakaoWeb();
+//     }
+//   }
 
-  Future<void> _loginWithKakaoWeb() async {
-    try {
-      final code = await AuthCodeClient.instance.request();
-      await _issueAccessToken(code);
-      _isLogin = true;
-      notifyListeners();
-    } catch (e) {
-      logger.e(e);
-    }
-  }
+//   Future<void> _initKakaoTalkInstalled() async {
+//     final installed = await isKakaoTalkInstalled();
+//     _isKakaoTalkInstalled = installed;
+//   }
 
-  Future<void> _loginWithKakaoTalk() async {
-    try {
-      final code = await AuthCodeClient.instance.requestWithTalk();
-      await _issueAccessToken(code);
-      _isLogin = true;
-      notifyListeners();
-    } catch (e) {
-      logger.e(e);
-    }
-  }
+//   Future<void> _loginWithKakaoWeb() async {
+//     try {
+//       final code = await AuthCodeClient.instance.request();
+//       await _issueAccessToken(code);
+//       _isLogin = true;
+//       notifyListeners();
+//     } catch (e) {
+//       logger.e(e);
+//     }
+//   }
 
-  Future _issueAccessToken(String authCode) async {
-    try {
-      final token = await AuthApi.instance.issueAccessToken(authCode);
-      await TokenManager.instance.setToken(token);
-    } catch (e) {
-      logger.e("error on issuing access token: $e");
-    }
-  }
+//   Future<void> _loginWithKakaoTalk() async {
+//     try {
+//       final code = await AuthCodeClient.instance.requestWithTalk();
+//       await _issueAccessToken(code);
+//       _isLogin = true;
+//       notifyListeners();
+//     } catch (e) {
+//       logger.e(e);
+//     }
+//   }
 
-  bool get loginState => _isLogin;
-  Future<void> get logOut => _kakaoSignOut();
-  Future<void> get logIn => _kakaoSignIn();
-  User? get kakaoUser => _user;
-}
+//   Future _issueAccessToken(String authCode) async {
+//     try {
+//       final token = await AuthApi.instance.issueAccessToken(authCode);
+//       await TokenManager.instance.setToken(token);
+//     } catch (e) {
+//       logger.e("error on issuing access token: $e");
+//     }
+//   }
+
+//   bool get loginState => _isLogin;
+//   Future<void> get logOut => _kakaoSignOut();
+//   Future<void> get logIn => _kakaoSignIn();
+//   User? get kakaoUser => _user;
+// }

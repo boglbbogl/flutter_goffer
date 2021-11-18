@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
         child: Opacity(
             opacity: 1,
             child: ExtendedImage.asset(
-              'assets/splash/splash_main5_gif.gif',
+              'assets/splash/splash_main_gif.gif',
               fit: BoxFit.cover,
             )),
       );

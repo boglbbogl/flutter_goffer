@@ -1805,9 +1805,11 @@ class _$TravelCreateStateTearOff {
       required TravelResearch? startTravel,
       required TravelResearch? endTravel,
       required List<TravelResearch> wayTravel,
+      required List<TravelResearch> wayAddAndRemoveList,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
-      required bool isLayoverAddressBar}) {
+      required bool isLayoverAddressBar,
+      required bool isSelectedTourist}) {
     return _TravelCreateState(
       isLoading: isLoading,
       submitResult: submitResult,
@@ -1815,9 +1817,11 @@ class _$TravelCreateStateTearOff {
       startTravel: startTravel,
       endTravel: endTravel,
       wayTravel: wayTravel,
+      wayAddAndRemoveList: wayAddAndRemoveList,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar,
       isAddressSearchBar: isAddressSearchBar,
       isLayoverAddressBar: isLayoverAddressBar,
+      isSelectedTourist: isSelectedTourist,
     );
   }
 }
@@ -1834,9 +1838,12 @@ mixin _$TravelCreateState {
   TravelResearch? get startTravel => throw _privateConstructorUsedError;
   TravelResearch? get endTravel => throw _privateConstructorUsedError;
   List<TravelResearch> get wayTravel => throw _privateConstructorUsedError;
+  List<TravelResearch> get wayAddAndRemoveList =>
+      throw _privateConstructorUsedError;
   bool get isDateAndTimeSearchBar => throw _privateConstructorUsedError;
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
   bool get isLayoverAddressBar => throw _privateConstructorUsedError;
+  bool get isSelectedTourist => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TravelCreateStateCopyWith<TravelCreateState> get copyWith =>
@@ -1855,9 +1862,11 @@ abstract class $TravelCreateStateCopyWith<$Res> {
       TravelResearch? startTravel,
       TravelResearch? endTravel,
       List<TravelResearch> wayTravel,
+      List<TravelResearch> wayAddAndRemoveList,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
-      bool isLayoverAddressBar});
+      bool isLayoverAddressBar,
+      bool isSelectedTourist});
 
   $TravelCopyWith<$Res>? get travel;
   $TravelResearchCopyWith<$Res>? get startTravel;
@@ -1881,9 +1890,11 @@ class _$TravelCreateStateCopyWithImpl<$Res>
     Object? startTravel = freezed,
     Object? endTravel = freezed,
     Object? wayTravel = freezed,
+    Object? wayAddAndRemoveList = freezed,
     Object? isDateAndTimeSearchBar = freezed,
     Object? isAddressSearchBar = freezed,
     Object? isLayoverAddressBar = freezed,
+    Object? isSelectedTourist = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -1910,6 +1921,10 @@ class _$TravelCreateStateCopyWithImpl<$Res>
           ? _value.wayTravel
           : wayTravel // ignore: cast_nullable_to_non_nullable
               as List<TravelResearch>,
+      wayAddAndRemoveList: wayAddAndRemoveList == freezed
+          ? _value.wayAddAndRemoveList
+          : wayAddAndRemoveList // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar == freezed
           ? _value.isDateAndTimeSearchBar
           : isDateAndTimeSearchBar // ignore: cast_nullable_to_non_nullable
@@ -1921,6 +1936,10 @@ class _$TravelCreateStateCopyWithImpl<$Res>
       isLayoverAddressBar: isLayoverAddressBar == freezed
           ? _value.isLayoverAddressBar
           : isLayoverAddressBar // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSelectedTourist: isSelectedTourist == freezed
+          ? _value.isSelectedTourist
+          : isSelectedTourist // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -1973,9 +1992,11 @@ abstract class _$TravelCreateStateCopyWith<$Res>
       TravelResearch? startTravel,
       TravelResearch? endTravel,
       List<TravelResearch> wayTravel,
+      List<TravelResearch> wayAddAndRemoveList,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
-      bool isLayoverAddressBar});
+      bool isLayoverAddressBar,
+      bool isSelectedTourist});
 
   @override
   $TravelCopyWith<$Res>? get travel;
@@ -2004,9 +2025,11 @@ class __$TravelCreateStateCopyWithImpl<$Res>
     Object? startTravel = freezed,
     Object? endTravel = freezed,
     Object? wayTravel = freezed,
+    Object? wayAddAndRemoveList = freezed,
     Object? isDateAndTimeSearchBar = freezed,
     Object? isAddressSearchBar = freezed,
     Object? isLayoverAddressBar = freezed,
+    Object? isSelectedTourist = freezed,
   }) {
     return _then(_TravelCreateState(
       isLoading: isLoading == freezed
@@ -2033,6 +2056,10 @@ class __$TravelCreateStateCopyWithImpl<$Res>
           ? _value.wayTravel
           : wayTravel // ignore: cast_nullable_to_non_nullable
               as List<TravelResearch>,
+      wayAddAndRemoveList: wayAddAndRemoveList == freezed
+          ? _value.wayAddAndRemoveList
+          : wayAddAndRemoveList // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar == freezed
           ? _value.isDateAndTimeSearchBar
           : isDateAndTimeSearchBar // ignore: cast_nullable_to_non_nullable
@@ -2044,6 +2071,10 @@ class __$TravelCreateStateCopyWithImpl<$Res>
       isLayoverAddressBar: isLayoverAddressBar == freezed
           ? _value.isLayoverAddressBar
           : isLayoverAddressBar // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSelectedTourist: isSelectedTourist == freezed
+          ? _value.isSelectedTourist
+          : isSelectedTourist // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -2059,9 +2090,11 @@ class _$_TravelCreateState implements _TravelCreateState {
       required this.startTravel,
       required this.endTravel,
       required this.wayTravel,
+      required this.wayAddAndRemoveList,
       required this.isDateAndTimeSearchBar,
       required this.isAddressSearchBar,
-      required this.isLayoverAddressBar});
+      required this.isLayoverAddressBar,
+      required this.isSelectedTourist});
 
   @override
   final bool isLoading;
@@ -2076,15 +2109,19 @@ class _$_TravelCreateState implements _TravelCreateState {
   @override
   final List<TravelResearch> wayTravel;
   @override
+  final List<TravelResearch> wayAddAndRemoveList;
+  @override
   final bool isDateAndTimeSearchBar;
   @override
   final bool isAddressSearchBar;
   @override
   final bool isLayoverAddressBar;
+  @override
+  final bool isSelectedTourist;
 
   @override
   String toString() {
-    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar)';
+    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, wayAddAndRemoveList: $wayAddAndRemoveList, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, isSelectedTourist: $isSelectedTourist)';
   }
 
   @override
@@ -2108,6 +2145,9 @@ class _$_TravelCreateState implements _TravelCreateState {
             (identical(other.wayTravel, wayTravel) ||
                 const DeepCollectionEquality()
                     .equals(other.wayTravel, wayTravel)) &&
+            (identical(other.wayAddAndRemoveList, wayAddAndRemoveList) ||
+                const DeepCollectionEquality()
+                    .equals(other.wayAddAndRemoveList, wayAddAndRemoveList)) &&
             (identical(other.isDateAndTimeSearchBar, isDateAndTimeSearchBar) ||
                 const DeepCollectionEquality().equals(
                     other.isDateAndTimeSearchBar, isDateAndTimeSearchBar)) &&
@@ -2116,7 +2156,10 @@ class _$_TravelCreateState implements _TravelCreateState {
                     .equals(other.isAddressSearchBar, isAddressSearchBar)) &&
             (identical(other.isLayoverAddressBar, isLayoverAddressBar) ||
                 const DeepCollectionEquality()
-                    .equals(other.isLayoverAddressBar, isLayoverAddressBar)));
+                    .equals(other.isLayoverAddressBar, isLayoverAddressBar)) &&
+            (identical(other.isSelectedTourist, isSelectedTourist) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSelectedTourist, isSelectedTourist)));
   }
 
   @override
@@ -2128,9 +2171,11 @@ class _$_TravelCreateState implements _TravelCreateState {
       const DeepCollectionEquality().hash(startTravel) ^
       const DeepCollectionEquality().hash(endTravel) ^
       const DeepCollectionEquality().hash(wayTravel) ^
+      const DeepCollectionEquality().hash(wayAddAndRemoveList) ^
       const DeepCollectionEquality().hash(isDateAndTimeSearchBar) ^
       const DeepCollectionEquality().hash(isAddressSearchBar) ^
-      const DeepCollectionEquality().hash(isLayoverAddressBar);
+      const DeepCollectionEquality().hash(isLayoverAddressBar) ^
+      const DeepCollectionEquality().hash(isSelectedTourist);
 
   @JsonKey(ignore: true)
   @override
@@ -2146,9 +2191,11 @@ abstract class _TravelCreateState implements TravelCreateState {
       required TravelResearch? startTravel,
       required TravelResearch? endTravel,
       required List<TravelResearch> wayTravel,
+      required List<TravelResearch> wayAddAndRemoveList,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
-      required bool isLayoverAddressBar}) = _$_TravelCreateState;
+      required bool isLayoverAddressBar,
+      required bool isSelectedTourist}) = _$_TravelCreateState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -2164,11 +2211,16 @@ abstract class _TravelCreateState implements TravelCreateState {
   @override
   List<TravelResearch> get wayTravel => throw _privateConstructorUsedError;
   @override
+  List<TravelResearch> get wayAddAndRemoveList =>
+      throw _privateConstructorUsedError;
+  @override
   bool get isDateAndTimeSearchBar => throw _privateConstructorUsedError;
   @override
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
   @override
   bool get isLayoverAddressBar => throw _privateConstructorUsedError;
+  @override
+  bool get isSelectedTourist => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelCreateStateCopyWith<_TravelCreateState> get copyWith =>

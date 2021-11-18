@@ -1,8 +1,9 @@
 import 'package:extended_image/extended_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
-import 'package:flutter_goffer/application/authentication/auth_provider/user_provider.dart';
+import 'package:flutter_goffer/application/authentication/auth_bloc/auth_bloc.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/presentation/home/home_main_page.dart';
 import 'package:flutter_goffer/presentation/profile/profile_main_page.dart';
@@ -78,7 +79,7 @@ class MainPage extends StatelessWidget {
       _btnItem(
         icon: Icons.add_box_rounded,
         inactiveIcon: Icons.add_box_rounded,
-        iconSize: 35,
+        iconSize: 30,
       ),
       _btnProfileItem(profileUrl: profileUrl),
     ];
@@ -86,35 +87,49 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final UserProvider _userProvider = Provider.of<UserProvider>(context);
     size = MediaQuery.of(context).size;
     theme = Theme.of(context);
-    return WillPopScope(
-      onWillPop: () async => false,
-      child: PersistentTabView(
-        context,
-        controller: controller,
-        screens: _screens(),
-        items: _items(
-            profileUrl: _userProvider.kakaoUser == null
-                ? ""
-                : _userProvider
-                    .kakaoUser!.kakaoAccount!.profile!.thumbnailImageUrl!),
-        onItemSelected: (index) {
-          if (index == 1) {
-            context
-                .read<TravelCreateBloc>()
-                .add(const TravelCreateEvent.started());
-            pushNewScreen(context,
-                screen: const TravelStartScreen(),
-                pageTransitionAnimation: PageTransitionAnimation.slideUp);
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        if (state.isLoading) {
+          return Scaffold(
+            backgroundColor: Colors.black12,
+            body: Center(
+              child: CircularProgressIndicator(color: appSubColor),
+            ),
+          );
+        }
+        return WillPopScope(
+          onWillPop: () async => false,
+          child: PersistentTabView(
+            context,
+            controller: controller,
+            screens: _screens(),
+            items: _items(
+              profileUrl:
+                  state.appUser == null ? "" : state.appUser!.profileUrl,
+              // profileUrl: _userProvider.kakaoUser == null
+              //     ? ""
+              //     : _userProvider
+              //         .kakaoUser!.kakaoAccount!.profile!.thumbnailImageUrl!,
+            ),
+            onItemSelected: (index) {
+              if (index == 1) {
+                context
+                    .read<TravelCreateBloc>()
+                    .add(const TravelCreateEvent.started());
+                pushNewScreen(context,
+                    screen: const TravelStartScreen(),
+                    pageTransitionAnimation: PageTransitionAnimation.slideUp);
 
-            controller.jumpToTab(0);
-          }
-        },
-        navBarHeight: 65,
-        navBarStyle: NavBarStyle.style6,
-      ),
+                controller.jumpToTab(0);
+              }
+            },
+            navBarHeight: 65,
+            navBarStyle: NavBarStyle.style6,
+          ),
+        );
+      },
     );
   }
 }

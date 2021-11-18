@@ -78,7 +78,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/main/
-    - assets/images/slide/
+    - assets/images/city/
     - assets/splash/
     - config/
 

@@ -9,9 +9,11 @@ class TravelCreateState with _$TravelCreateState {
     required TravelResearch? startTravel,
     required TravelResearch? endTravel,
     required List<TravelResearch> wayTravel,
+    required List<TravelResearch> wayAddAndRemoveList,
     required bool isDateAndTimeSearchBar,
     required bool isAddressSearchBar,
     required bool isLayoverAddressBar,
+    required bool isSelectedTourist,
   }) = _TravelCreateState;
   factory TravelCreateState.initial() => TravelCreateState(
         isLoading: false,
@@ -20,8 +22,10 @@ class TravelCreateState with _$TravelCreateState {
         startTravel: null,
         endTravel: null,
         wayTravel: [],
+        wayAddAndRemoveList: [],
         isDateAndTimeSearchBar: false,
         isAddressSearchBar: false,
         isLayoverAddressBar: false,
+        isSelectedTourist: false,
       );
 }

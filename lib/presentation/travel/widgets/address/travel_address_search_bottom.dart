@@ -14,6 +14,7 @@ class TravelAddressSearchBottom extends StatelessWidget {
   final TravelResearch endTravel;
   final List<TravelResearch> layoverTravel;
   final TextEditingController _controller = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
 
   TravelAddressSearchBottom({
     Key? key,
@@ -65,7 +66,8 @@ class TravelAddressSearchBottom extends StatelessWidget {
                                 FocusScope.of(context).unfocus();
                                 context
                                     .read<FindLocationCubit>()
-                                    .apiFindLocation(keyWord: _controller.text);
+                                    .localFindLocation(
+                                        keyWord: _controller.text);
                               },
                               icon: const Icon(
                                 Icons.search_rounded,
@@ -110,6 +112,7 @@ class TravelAddressSearchBottom extends StatelessWidget {
                         child: state.isLoading
                             ? shimmerAddressForm()
                             : ListView(
+                                controller: _scrollController,
                                 shrinkWrap: true,
                                 children: [
                                   ...state.location.map(
@@ -121,6 +124,33 @@ class TravelAddressSearchBottom extends StatelessWidget {
                                       layoverTravel: layoverTravel,
                                     ),
                                   ),
+                                  if (state.isMore)
+                                    _listViewMoreButtonForm(
+                                        context: context,
+                                        title: '원하는 검색 결과가 없으신가요 ?',
+                                        widget: IconButton(
+                                            onPressed: () {
+                                              if (_controller.text.isEmpty) {
+                                              } else {
+                                                _scrollController.animateTo(0,
+                                                    duration: const Duration(
+                                                        milliseconds: 300),
+                                                    curve: Curves.ease);
+                                                context
+                                                    .read<FindLocationCubit>()
+                                                    .apiFindLocation(
+                                                        keyWord:
+                                                            _controller.text);
+                                              }
+                                            },
+                                            icon: const Icon(Icons.add_circle,
+                                                color: Color.fromRGBO(
+                                                    135, 135, 135, 1))))
+                                  else
+                                    _listViewMoreButtonForm(
+                                        context: context,
+                                        title: '검색 결과가 없습니다...',
+                                        widget: Container())
                                 ],
                               ),
                       ),
@@ -133,5 +163,28 @@ class TravelAddressSearchBottom extends StatelessWidget {
         );
       },
     );
+  }
+
+  Container _listViewMoreButtonForm({
+    required BuildContext context,
+    required String title,
+    required Widget widget,
+  }) {
+    return Container(
+        width: size.width * 0.9,
+        height: size.height * 0.07,
+        color: Colors.white,
+        child: Center(
+            child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: theme.textTheme.bodyText2!
+                  .copyWith(color: const Color.fromRGBO(135, 135, 135, 1)),
+            ),
+            widget
+          ],
+        )));
   }
 }

@@ -50,7 +50,7 @@ class TravelDateAndTimeBottom extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(22),
                       topRight: Radius.circular(22)),
-                  color: Colors.white54,
+                  color: Colors.white,
                 ),
                 child: Column(
                   children: [

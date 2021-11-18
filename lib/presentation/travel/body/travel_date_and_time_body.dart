@@ -51,7 +51,7 @@ class TravelDateAndTimeBody extends StatelessWidget {
   }) {
     return SizedBox(
       width: size.width * 0.29,
-      height: size.height * 0.04,
+      height: size.height * 0.07,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

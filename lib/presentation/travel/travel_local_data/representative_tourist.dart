@@ -1,7 +1,7 @@
 import 'package:flutter_goffer/domain/travel/travel.dart';
 
-const TravelResearch travel =
-    TravelResearch(date: "", time: "", id: "", x: "", y: "", placeName: "");
+const TravelCourse travel =
+    TravelCourse(date: "", time: "", id: "", x: "", y: "", placeName: "");
 
 List<Map<String, String>> representativeTourist = [
   {

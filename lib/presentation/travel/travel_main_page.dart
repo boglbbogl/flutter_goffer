@@ -11,6 +11,7 @@ import 'package:flutter_goffer/presentation/travel/body/travel_destination_icon_
 import 'package:flutter_goffer/presentation/travel/body/travel_tourist_representative_body.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_address_search_bottom.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/date/travel_date_and_time_bottom.dart';
+import 'package:flutter_goffer/presentation/travel/body/travel_main_location_toggle_body.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/travel_submitted_button.dart';
 
 class TravelMainPage extends StatelessWidget {
@@ -34,7 +35,7 @@ class TravelMainPage extends StatelessWidget {
             (r) => FlushbarHelper.createSuccess(message: '성공').show(context));
       },
       builder: (context, state) {
-        final List<TravelResearch> travelList = [];
+        final List<TravelCourse> travelList = [];
         travelList
           ..add(state.startTravel!)
           ..add(state.endTravel!)
@@ -61,11 +62,15 @@ class TravelMainPage extends StatelessWidget {
                   ],
                   SizedBox(height: size.height * 0.01),
                   const TravelAddressSearchBody(),
+                  SizedBox(height: size.height * 0.01),
+                  TravelMainLocationToggleBody(
+                      selectedIndex: state.selectedTogglButtonIndex),
                   SizedBox(height: size.height * 0.02),
                   TravelTouristRepresentative(
                     startId: state.startTravel!.id,
                     endId: state.endTravel!.id,
                     layoverId: state.wayTravel.map((e) => e.id).toList(),
+                    selectedToggleIndex: state.selectedTogglButtonIndex,
                   ),
                 ],
               ),

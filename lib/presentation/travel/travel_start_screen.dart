@@ -5,17 +5,15 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
 import 'package:flutter_goffer/injection.dart';
 import 'package:flutter_goffer/presentation/travel/travel_main_page.dart';
+import 'package:flutter_goffer/presentation/travel/widgets/travel_start_animation_widget.dart';
 
 class TravelStartScreen extends StatelessWidget {
   const TravelStartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-            create: (context) => getIt<TravelAnimationCubit>()..started()),
-      ],
+    return BlocProvider<TravelAnimationCubit>(
+      create: (context) => getIt<TravelAnimationCubit>(),
       child: BlocBuilder<TravelAnimationCubit, TravelAnimationState>(
           builder: (context, state) {
         return AnimatedSwitcher(
@@ -32,19 +30,7 @@ class TravelStartScreen extends StatelessWidget {
                           .read<TravelAnimationCubit>()
                           .startAnimation(index: 1);
                     },
-                    widget: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: size.height * 0.20),
-                        titleForm(
-                            title: '나만의 일정을', leftPadding: 30, topPadding: 0),
-                        titleForm(
-                            title: '만드시겠습니까 ?',
-                            leftPadding: 70,
-                            topPadding: 20),
-                      ],
-                    ),
-                  )
+                    widget: const TravelStartAnimationWidget())
                 : switcherPage(
                     isButton: false,
                     titleColor: !state.isExpandable ? appColor : appSubColor,
@@ -122,21 +108,6 @@ class TravelStartScreen extends StatelessWidget {
           else
             Container()
         ],
-      ),
-    );
-  }
-
-  Padding titleForm({
-    required String title,
-    required double leftPadding,
-    required double topPadding,
-  }) {
-    return Padding(
-      padding: EdgeInsets.only(left: leftPadding, top: topPadding),
-      child: Text(
-        title,
-        style: theme.textTheme.bodyText2!.copyWith(
-            color: appColor, fontWeight: FontWeight.bold, fontSize: 30),
       ),
     );
   }

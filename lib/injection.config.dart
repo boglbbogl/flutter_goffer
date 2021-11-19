@@ -7,10 +7,11 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/authentication/auth_bloc/auth_bloc.dart' as _i11;
-import 'application/find_location/find_location_cubit.dart' as _i12;
+import 'application/authentication/auth_bloc/auth_bloc.dart' as _i12;
+import 'application/find_location/find_location_cubit.dart' as _i13;
 import 'application/travel/animation/travel_animation_cubit.dart' as _i9;
 import 'application/travel/create/travel_create_bloc.dart' as _i10;
+import 'application/travel/research/travel_research_cubit.dart' as _i11;
 import 'domain/auth/i_app_user_repository.dart' as _i3;
 import 'domain/find_location/i_find_location_repository.dart' as _i5;
 import 'domain/travel/i_travel_repository.dart' as _i7;
@@ -31,8 +32,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i9.TravelAnimationCubit>(() => _i9.TravelAnimationCubit());
   gh.factory<_i10.TravelCreateBloc>(
       () => _i10.TravelCreateBloc(get<_i7.ITravelRepository>()));
-  gh.factory<_i11.AuthBloc>(() => _i11.AuthBloc(get<_i3.IAppUserRepository>()));
-  gh.factory<_i12.FindLocationCubit>(
-      () => _i12.FindLocationCubit(get<_i5.IFindLocationRepository>()));
+  gh.factory<_i11.TravelResearchCubit>(
+      () => _i11.TravelResearchCubit(get<_i7.ITravelRepository>()));
+  gh.factory<_i12.AuthBloc>(() => _i12.AuthBloc(get<_i3.IAppUserRepository>()));
+  gh.factory<_i13.FindLocationCubit>(
+      () => _i13.FindLocationCubit(get<_i5.IFindLocationRepository>()));
   return get;
 }

@@ -10,8 +10,8 @@ import 'package:flutter_goffer/presentation/travel/widgets/date/time_picker.dart
 class TravelDateAndTimeBottom extends StatelessWidget {
   final bool dateAndTimeExpandable;
   final bool isDateAndTimeSearchBar;
-  final TravelResearch startTravel;
-  final TravelResearch endTravel;
+  final TravelCourse startTravel;
+  final TravelCourse endTravel;
   const TravelDateAndTimeBottom({
     Key? key,
     required this.dateAndTimeExpandable,

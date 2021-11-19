@@ -54,7 +54,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             final code = await AuthCodeClient.instance.request();
             final token = await AuthApi.instance.issueAccessToken(code);
             await TokenManager.instance.setToken(token);
-            yield state.copyWith(loginState: true, isLoading: false);
+            yield state.copyWith(
+              loginState: true,
+              isLoading: false,
+            );
           } catch (e) {
             logger.e(e);
           }
@@ -63,11 +66,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             final code = await AuthCodeClient.instance.requestWithTalk();
             final token = await AuthApi.instance.issueAccessToken(code);
             await TokenManager.instance.setToken(token);
-            yield state.copyWith(loginState: true, isLoading: false);
+            yield state.copyWith(
+              loginState: true,
+              isLoading: false,
+            );
           } catch (e) {
             logger.e(e);
           }
         }
+      },
+      signInWithGoogle: (e) async* {},
+      signInWithGuest: (e) async* {
+        yield state.copyWith(isLoading: true);
+        const AppUser appUser = AppUser(
+            email: 'develop@goffer.com', profileUrl: "", nickName: "Guest");
+        yield state.copyWith(
+          isLoading: false,
+          loginState: true,
+          appUser: appUser,
+        );
       },
       signOut: (e) async* {
         await UserApi.instance.logout();

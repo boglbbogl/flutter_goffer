@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/application/authentication/auth_bloc/auth_bloc.dart';
 import 'package:flutter_goffer/application/find_location/find_location_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
+import 'package:flutter_goffer/application/travel/research/travel_research_cubit.dart';
 import 'package:flutter_goffer/injection.dart';
 import 'package:flutter_goffer/presentation/_main/router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -22,6 +23,7 @@ class AppWidget extends StatelessWidget {
                 getIt<AuthBloc>()..add(const AuthCheckRequested())),
         BlocProvider(create: (context) => getIt<FindLocationCubit>()),
         BlocProvider(create: (context) => getIt<TravelCreateBloc>()),
+        BlocProvider(create: (context) => getIt<TravelResearchCubit>()),
       ],
       child: MaterialApp.router(
         routerDelegate: routerDelegate,

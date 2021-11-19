@@ -6,14 +6,15 @@ class TravelCreateState with _$TravelCreateState {
     required bool isLoading,
     required Either<TravelFailure, Unit>? submitResult,
     required Travel? travel,
-    required TravelResearch? startTravel,
-    required TravelResearch? endTravel,
-    required List<TravelResearch> wayTravel,
-    required List<TravelResearch> wayAddAndRemoveList,
+    required TravelCourse? startTravel,
+    required TravelCourse? endTravel,
+    required List<TravelCourse> wayTravel,
+    required List<TravelCourse> wayAddAndRemoveList,
     required bool isDateAndTimeSearchBar,
     required bool isAddressSearchBar,
     required bool isLayoverAddressBar,
     required bool isSelectedTourist,
+    required int selectedTogglButtonIndex,
   }) = _TravelCreateState;
   factory TravelCreateState.initial() => TravelCreateState(
         isLoading: false,
@@ -27,5 +28,6 @@ class TravelCreateState with _$TravelCreateState {
         isAddressSearchBar: false,
         isLayoverAddressBar: false,
         isSelectedTourist: false,
+        selectedTogglButtonIndex: 0,
       );
 }

@@ -6,7 +6,7 @@ import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/travel/travel_local_data/representative_tourist.dart';
 
 class TravelDestinationIconBody extends StatelessWidget {
-  final List<TravelResearch> travelList;
+  final List<TravelCourse> travelList;
   final String startId;
   final String endId;
   const TravelDestinationIconBody({
@@ -61,8 +61,8 @@ class TravelDestinationIconBody extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 e.placeName,
-                                style: theme.textTheme.bodyText2!
-                                    .copyWith(color: Colors.white),
+                                style: theme.textTheme.bodyText2!.copyWith(
+                                    color: Colors.white, fontSize: 12),
                               ),
                             ),
                           ),

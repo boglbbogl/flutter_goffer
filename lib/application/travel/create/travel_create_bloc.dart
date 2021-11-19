@@ -26,19 +26,17 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
     yield* event.map(
       started: (e) async* {
         yield state.copyWith(isLoading: true);
-        final TravelResearch startInitialResearch = TravelResearch.empty()
-            .copyWith(
-                date: DateTime.now().toString().substring(0, 10),
-                time: "09 : 00");
-        final TravelResearch endInitialResearch = TravelResearch.empty()
-            .copyWith(
-                date: DateTime.now().toString().substring(0, 10),
-                time: "09 : 00");
+        final TravelCourse startInitialResearch = TravelCourse.empty().copyWith(
+            date: DateTime.now().toString().substring(0, 10), time: "09 : 00");
+        final TravelCourse endInitialResearch = TravelCourse.empty().copyWith(
+            date: DateTime.now().toString().substring(0, 10), time: "09 : 00");
+
         final Travel initialTravel = Travel.empty().copyWith(
           start: startInitialResearch,
           end: endInitialResearch,
           wayArr: [],
         );
+
         TravelCreateState _state;
         _state = state.copyWith(
           travel: initialTravel,
@@ -88,7 +86,7 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
       startDestinationSelected: (e) async* {
         if (state.startTravel!.id.contains(e.id)) {
           yield state.copyWith(
-              startTravel: TravelResearch.empty().copyWith(
+              startTravel: TravelCourse.empty().copyWith(
                   id: "",
                   x: "",
                   y: "",
@@ -103,7 +101,7 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
       endDestinationSelected: (e) async* {
         if (state.endTravel!.id.contains(e.id)) {
           yield state.copyWith(
-              endTravel: TravelResearch.empty().copyWith(
+              endTravel: TravelCourse.empty().copyWith(
                   id: "",
                   x: "",
                   y: "",
@@ -132,6 +130,9 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
       },
       addressBottomSearched: (e) async* {
         yield state.copyWith(isAddressSearchBar: e.value);
+      },
+      locationToggleButton: (e) async* {
+        yield state.copyWith(selectedTogglButtonIndex: e.index);
       },
     );
   }

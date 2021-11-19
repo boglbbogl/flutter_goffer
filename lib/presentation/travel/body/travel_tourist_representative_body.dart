@@ -10,11 +10,13 @@ class TravelTouristRepresentative extends StatelessWidget {
   final String startId;
   final String endId;
   final List<String> layoverId;
+  final int selectedToggleIndex;
   const TravelTouristRepresentative({
     Key? key,
     required this.startId,
     required this.endId,
     required this.layoverId,
+    required this.selectedToggleIndex,
   }) : super(key: key);
 
   @override
@@ -42,7 +44,26 @@ class TravelTouristRepresentative extends StatelessWidget {
             children: [
               ...representativeTourist.map((e) => InkWell(
                     onTap: () {
-                      if (layoverId.length < 3) {
+                      if (selectedToggleIndex == 0) {
+                        context
+                            .read<TravelCreateBloc>()
+                            .add(TravelCreateEvent.startDestinationSelected(
+                              x: e.entries.elementAt(1).value,
+                              y: e.entries.elementAt(2).value,
+                              id: e.entries.elementAt(0).value,
+                              placeName: e.entries.elementAt(3).value,
+                            ));
+                      } else if (selectedToggleIndex == 1) {
+                        context
+                            .read<TravelCreateBloc>()
+                            .add(TravelCreateEvent.endDestinationSelected(
+                              x: e.entries.elementAt(1).value,
+                              y: e.entries.elementAt(2).value,
+                              id: e.entries.elementAt(0).value,
+                              placeName: e.entries.elementAt(3).value,
+                            ));
+                      } else if (selectedToggleIndex == 2 &&
+                          layoverId.length < 3) {
                         context
                             .read<TravelCreateBloc>()
                             .add(TravelCreateEvent.layoverSelected(
@@ -56,7 +77,7 @@ class TravelTouristRepresentative extends StatelessWidget {
                             )));
                       } else {
                         FlushbarHelper.createInformation(
-                                message: '더 이상 경유지를 선택할 수 없습니다')
+                                message: '경유지는 3곳 이상 선택할 수 없습니다')
                             .show(context);
                       }
                     },

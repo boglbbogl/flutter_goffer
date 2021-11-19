@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/authentication/auth_bloc/auth_bloc.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
+import 'package:flutter_goffer/application/travel/research/travel_research_cubit.dart';
 import 'package:flutter_goffer/presentation/home/home_main_page.dart';
 import 'package:flutter_goffer/presentation/profile/profile_main_page.dart';
 import 'package:flutter_goffer/presentation/travel/create_background_page.dart';
@@ -118,6 +119,9 @@ class MainPage extends StatelessWidget {
                 context
                     .read<TravelCreateBloc>()
                     .add(const TravelCreateEvent.started());
+                context.read<TravelResearchCubit>()
+                  ..getTravelResearch(id: 1)
+                  ..researchPageChanged(0);
                 pushNewScreen(context,
                     screen: const TravelStartScreen(),
                     pageTransitionAnimation: PageTransitionAnimation.slideUp);

@@ -10,9 +10,9 @@ import 'package:flutter_goffer/presentation/travel/travel_local_data/representat
 class TravelListViewAddressForm extends StatelessWidget {
   final FindLocation data;
   final int selectedIndex;
-  final List<TravelResearch> layoverTravel;
-  final TravelResearch startTravel;
-  final TravelResearch endTravel;
+  final List<TravelCourse> layoverTravel;
+  final TravelCourse startTravel;
+  final TravelCourse endTravel;
   const TravelListViewAddressForm(
       {Key? key,
       required this.data,
@@ -32,7 +32,6 @@ class TravelListViewAddressForm extends StatelessWidget {
     return InkWell(
       onTap: () {
         FocusScope.of(context).unfocus();
-
         if (selectedIndex == 0) {
           context.read<TravelCreateBloc>().add(
               TravelCreateEvent.startDestinationSelected(

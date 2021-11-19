@@ -8,8 +8,6 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final UserProvider _userProvider =
-    //     Provider.of<UserProvider>(context, listen: false);
     return Scaffold(
         backgroundColor: Colors.black,
         body: Stack(
@@ -20,7 +18,7 @@ class SignInPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: ExtendedImage.asset(
-                  'assets/images/main/create_main2.jpg',
+                  'assets/images/main/sign_in_main.jpg',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -45,7 +43,11 @@ class SignInPage extends StatelessWidget {
                             btnColor: const Color.fromRGBO(247, 82, 142, 1),
                             icon: Icons.airplane_ticket,
                             titleColor: Colors.black,
-                            onTap: () {}),
+                            onTap: () {
+                              context
+                                  .read<AuthBloc>()
+                                  .add(const AuthEvent.signInWithGuest());
+                            }),
                         const SizedBox(height: 25),
                         _signInBtnForm(
                             context: context,

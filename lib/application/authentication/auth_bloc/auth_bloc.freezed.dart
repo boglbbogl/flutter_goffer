@@ -24,6 +24,14 @@ class _$AuthEventTearOff {
     return const SignInWithKakao();
   }
 
+  SignInWithGoogle signInWithGoogle() {
+    return const SignInWithGoogle();
+  }
+
+  SignInWithGuest signInWithGuest() {
+    return const SignInWithGuest();
+  }
+
   SignOut signOut() {
     return const SignOut();
   }
@@ -38,6 +46,8 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() signInWithKakao,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithGuest,
     required TResult Function() signOut,
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +55,8 @@ mixin _$AuthEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? signInWithKakao,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithGuest,
     TResult Function()? signOut,
     required TResult orElse(),
   }) =>
@@ -53,6 +65,8 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequested value) authCheckRequested,
     required TResult Function(SignInWithKakao value) signInWithKakao,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(SignInWithGuest value) signInWithGuest,
     required TResult Function(SignOut value) signOut,
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +74,8 @@ mixin _$AuthEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(SignInWithKakao value)? signInWithKakao,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(SignInWithGuest value)? signInWithGuest,
     TResult Function(SignOut value)? signOut,
     required TResult orElse(),
   }) =>
@@ -123,6 +139,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() signInWithKakao,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithGuest,
     required TResult Function() signOut,
   }) {
     return authCheckRequested();
@@ -133,6 +151,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? signInWithKakao,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithGuest,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -147,6 +167,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequested value) authCheckRequested,
     required TResult Function(SignInWithKakao value) signInWithKakao,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(SignInWithGuest value) signInWithGuest,
     required TResult Function(SignOut value) signOut,
   }) {
     return authCheckRequested(this);
@@ -157,6 +179,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(SignInWithKakao value)? signInWithKakao,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(SignInWithGuest value)? signInWithGuest,
     TResult Function(SignOut value)? signOut,
     required TResult orElse(),
   }) {
@@ -212,6 +236,8 @@ class _$SignInWithKakao implements SignInWithKakao {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() signInWithKakao,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithGuest,
     required TResult Function() signOut,
   }) {
     return signInWithKakao();
@@ -222,6 +248,8 @@ class _$SignInWithKakao implements SignInWithKakao {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? signInWithKakao,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithGuest,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -236,6 +264,8 @@ class _$SignInWithKakao implements SignInWithKakao {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequested value) authCheckRequested,
     required TResult Function(SignInWithKakao value) signInWithKakao,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(SignInWithGuest value) signInWithGuest,
     required TResult Function(SignOut value) signOut,
   }) {
     return signInWithKakao(this);
@@ -246,6 +276,8 @@ class _$SignInWithKakao implements SignInWithKakao {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(SignInWithKakao value)? signInWithKakao,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(SignInWithGuest value)? signInWithGuest,
     TResult Function(SignOut value)? signOut,
     required TResult orElse(),
   }) {
@@ -258,6 +290,200 @@ class _$SignInWithKakao implements SignInWithKakao {
 
 abstract class SignInWithKakao implements AuthEvent {
   const factory SignInWithKakao() = _$SignInWithKakao;
+}
+
+/// @nodoc
+abstract class $SignInWithGoogleCopyWith<$Res> {
+  factory $SignInWithGoogleCopyWith(
+          SignInWithGoogle value, $Res Function(SignInWithGoogle) then) =
+      _$SignInWithGoogleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInWithGoogleCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
+    implements $SignInWithGoogleCopyWith<$Res> {
+  _$SignInWithGoogleCopyWithImpl(
+      SignInWithGoogle _value, $Res Function(SignInWithGoogle) _then)
+      : super(_value, (v) => _then(v as SignInWithGoogle));
+
+  @override
+  SignInWithGoogle get _value => super._value as SignInWithGoogle;
+}
+
+/// @nodoc
+
+class _$SignInWithGoogle implements SignInWithGoogle {
+  const _$SignInWithGoogle();
+
+  @override
+  String toString() {
+    return 'AuthEvent.signInWithGoogle()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SignInWithGoogle);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequested,
+    required TResult Function() signInWithKakao,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithGuest,
+    required TResult Function() signOut,
+  }) {
+    return signInWithGoogle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? signInWithKakao,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithGuest,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthCheckRequested value) authCheckRequested,
+    required TResult Function(SignInWithKakao value) signInWithKakao,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(SignInWithGuest value) signInWithGuest,
+    required TResult Function(SignOut value) signOut,
+  }) {
+    return signInWithGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(SignInWithKakao value)? signInWithKakao,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(SignInWithGuest value)? signInWithGuest,
+    TResult Function(SignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInWithGoogle implements AuthEvent {
+  const factory SignInWithGoogle() = _$SignInWithGoogle;
+}
+
+/// @nodoc
+abstract class $SignInWithGuestCopyWith<$Res> {
+  factory $SignInWithGuestCopyWith(
+          SignInWithGuest value, $Res Function(SignInWithGuest) then) =
+      _$SignInWithGuestCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInWithGuestCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
+    implements $SignInWithGuestCopyWith<$Res> {
+  _$SignInWithGuestCopyWithImpl(
+      SignInWithGuest _value, $Res Function(SignInWithGuest) _then)
+      : super(_value, (v) => _then(v as SignInWithGuest));
+
+  @override
+  SignInWithGuest get _value => super._value as SignInWithGuest;
+}
+
+/// @nodoc
+
+class _$SignInWithGuest implements SignInWithGuest {
+  const _$SignInWithGuest();
+
+  @override
+  String toString() {
+    return 'AuthEvent.signInWithGuest()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SignInWithGuest);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequested,
+    required TResult Function() signInWithKakao,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithGuest,
+    required TResult Function() signOut,
+  }) {
+    return signInWithGuest();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? signInWithKakao,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithGuest,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (signInWithGuest != null) {
+      return signInWithGuest();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthCheckRequested value) authCheckRequested,
+    required TResult Function(SignInWithKakao value) signInWithKakao,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(SignInWithGuest value) signInWithGuest,
+    required TResult Function(SignOut value) signOut,
+  }) {
+    return signInWithGuest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(SignInWithKakao value)? signInWithKakao,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(SignInWithGuest value)? signInWithGuest,
+    TResult Function(SignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (signInWithGuest != null) {
+      return signInWithGuest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInWithGuest implements AuthEvent {
+  const factory SignInWithGuest() = _$SignInWithGuest;
 }
 
 /// @nodoc
@@ -299,6 +525,8 @@ class _$SignOut implements SignOut {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() signInWithKakao,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithGuest,
     required TResult Function() signOut,
   }) {
     return signOut();
@@ -309,6 +537,8 @@ class _$SignOut implements SignOut {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? signInWithKakao,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithGuest,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -323,6 +553,8 @@ class _$SignOut implements SignOut {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequested value) authCheckRequested,
     required TResult Function(SignInWithKakao value) signInWithKakao,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(SignInWithGuest value) signInWithGuest,
     required TResult Function(SignOut value) signOut,
   }) {
     return signOut(this);
@@ -333,6 +565,8 @@ class _$SignOut implements SignOut {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(SignInWithKakao value)? signInWithKakao,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(SignInWithGuest value)? signInWithGuest,
     TResult Function(SignOut value)? signOut,
     required TResult orElse(),
   }) {

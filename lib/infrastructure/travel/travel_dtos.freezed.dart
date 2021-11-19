@@ -21,13 +21,15 @@ class _$TravelDtoTearOff {
   const _$TravelDtoTearOff();
 
   _TravelDto call(
-      {required TravelResearchDto? start,
-      required TravelResearchDto? end,
-      @JsonKey(name: 'way_arr') required List<TravelResearchDto> wayArr}) {
+      {required TravelCourseDto? start,
+      required TravelCourseDto? end,
+      @JsonKey(name: 'way_arr') required List<TravelCourseDto> wayArr,
+      required TravelResearchDto? research}) {
     return _TravelDto(
       start: start,
       end: end,
       wayArr: wayArr,
+      research: research,
     );
   }
 
@@ -41,10 +43,11 @@ const $TravelDto = _$TravelDtoTearOff();
 
 /// @nodoc
 mixin _$TravelDto {
-  TravelResearchDto? get start => throw _privateConstructorUsedError;
-  TravelResearchDto? get end => throw _privateConstructorUsedError;
+  TravelCourseDto? get start => throw _privateConstructorUsedError;
+  TravelCourseDto? get end => throw _privateConstructorUsedError;
   @JsonKey(name: 'way_arr')
-  List<TravelResearchDto> get wayArr => throw _privateConstructorUsedError;
+  List<TravelCourseDto> get wayArr => throw _privateConstructorUsedError;
+  TravelResearchDto? get research => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -57,12 +60,14 @@ abstract class $TravelDtoCopyWith<$Res> {
   factory $TravelDtoCopyWith(TravelDto value, $Res Function(TravelDto) then) =
       _$TravelDtoCopyWithImpl<$Res>;
   $Res call(
-      {TravelResearchDto? start,
-      TravelResearchDto? end,
-      @JsonKey(name: 'way_arr') List<TravelResearchDto> wayArr});
+      {TravelCourseDto? start,
+      TravelCourseDto? end,
+      @JsonKey(name: 'way_arr') List<TravelCourseDto> wayArr,
+      TravelResearchDto? research});
 
-  $TravelResearchDtoCopyWith<$Res>? get start;
-  $TravelResearchDtoCopyWith<$Res>? get end;
+  $TravelCourseDtoCopyWith<$Res>? get start;
+  $TravelCourseDtoCopyWith<$Res>? get end;
+  $TravelResearchDtoCopyWith<$Res>? get research;
 }
 
 /// @nodoc
@@ -78,42 +83,58 @@ class _$TravelDtoCopyWithImpl<$Res> implements $TravelDtoCopyWith<$Res> {
     Object? start = freezed,
     Object? end = freezed,
     Object? wayArr = freezed,
+    Object? research = freezed,
   }) {
     return _then(_value.copyWith(
       start: start == freezed
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
-              as TravelResearchDto?,
+              as TravelCourseDto?,
       end: end == freezed
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
-              as TravelResearchDto?,
+              as TravelCourseDto?,
       wayArr: wayArr == freezed
           ? _value.wayArr
           : wayArr // ignore: cast_nullable_to_non_nullable
-              as List<TravelResearchDto>,
+              as List<TravelCourseDto>,
+      research: research == freezed
+          ? _value.research
+          : research // ignore: cast_nullable_to_non_nullable
+              as TravelResearchDto?,
     ));
   }
 
   @override
-  $TravelResearchDtoCopyWith<$Res>? get start {
+  $TravelCourseDtoCopyWith<$Res>? get start {
     if (_value.start == null) {
       return null;
     }
 
-    return $TravelResearchDtoCopyWith<$Res>(_value.start!, (value) {
+    return $TravelCourseDtoCopyWith<$Res>(_value.start!, (value) {
       return _then(_value.copyWith(start: value));
     });
   }
 
   @override
-  $TravelResearchDtoCopyWith<$Res>? get end {
+  $TravelCourseDtoCopyWith<$Res>? get end {
     if (_value.end == null) {
       return null;
     }
 
-    return $TravelResearchDtoCopyWith<$Res>(_value.end!, (value) {
+    return $TravelCourseDtoCopyWith<$Res>(_value.end!, (value) {
       return _then(_value.copyWith(end: value));
+    });
+  }
+
+  @override
+  $TravelResearchDtoCopyWith<$Res>? get research {
+    if (_value.research == null) {
+      return null;
+    }
+
+    return $TravelResearchDtoCopyWith<$Res>(_value.research!, (value) {
+      return _then(_value.copyWith(research: value));
     });
   }
 }
@@ -125,14 +146,17 @@ abstract class _$TravelDtoCopyWith<$Res> implements $TravelDtoCopyWith<$Res> {
       __$TravelDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {TravelResearchDto? start,
-      TravelResearchDto? end,
-      @JsonKey(name: 'way_arr') List<TravelResearchDto> wayArr});
+      {TravelCourseDto? start,
+      TravelCourseDto? end,
+      @JsonKey(name: 'way_arr') List<TravelCourseDto> wayArr,
+      TravelResearchDto? research});
 
   @override
-  $TravelResearchDtoCopyWith<$Res>? get start;
+  $TravelCourseDtoCopyWith<$Res>? get start;
   @override
-  $TravelResearchDtoCopyWith<$Res>? get end;
+  $TravelCourseDtoCopyWith<$Res>? get end;
+  @override
+  $TravelResearchDtoCopyWith<$Res>? get research;
 }
 
 /// @nodoc
@@ -149,20 +173,25 @@ class __$TravelDtoCopyWithImpl<$Res> extends _$TravelDtoCopyWithImpl<$Res>
     Object? start = freezed,
     Object? end = freezed,
     Object? wayArr = freezed,
+    Object? research = freezed,
   }) {
     return _then(_TravelDto(
       start: start == freezed
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
-              as TravelResearchDto?,
+              as TravelCourseDto?,
       end: end == freezed
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
-              as TravelResearchDto?,
+              as TravelCourseDto?,
       wayArr: wayArr == freezed
           ? _value.wayArr
           : wayArr // ignore: cast_nullable_to_non_nullable
-              as List<TravelResearchDto>,
+              as List<TravelCourseDto>,
+      research: research == freezed
+          ? _value.research
+          : research // ignore: cast_nullable_to_non_nullable
+              as TravelResearchDto?,
     ));
   }
 }
@@ -173,23 +202,26 @@ class _$_TravelDto extends _TravelDto {
   const _$_TravelDto(
       {required this.start,
       required this.end,
-      @JsonKey(name: 'way_arr') required this.wayArr})
+      @JsonKey(name: 'way_arr') required this.wayArr,
+      required this.research})
       : super._();
 
   factory _$_TravelDto.fromJson(Map<String, dynamic> json) =>
       _$_$_TravelDtoFromJson(json);
 
   @override
-  final TravelResearchDto? start;
+  final TravelCourseDto? start;
   @override
-  final TravelResearchDto? end;
+  final TravelCourseDto? end;
   @override
   @JsonKey(name: 'way_arr')
-  final List<TravelResearchDto> wayArr;
+  final List<TravelCourseDto> wayArr;
+  @override
+  final TravelResearchDto? research;
 
   @override
   String toString() {
-    return 'TravelDto(start: $start, end: $end, wayArr: $wayArr)';
+    return 'TravelDto(start: $start, end: $end, wayArr: $wayArr, research: $research)';
   }
 
   @override
@@ -201,7 +233,10 @@ class _$_TravelDto extends _TravelDto {
             (identical(other.end, end) ||
                 const DeepCollectionEquality().equals(other.end, end)) &&
             (identical(other.wayArr, wayArr) ||
-                const DeepCollectionEquality().equals(other.wayArr, wayArr)));
+                const DeepCollectionEquality().equals(other.wayArr, wayArr)) &&
+            (identical(other.research, research) ||
+                const DeepCollectionEquality()
+                    .equals(other.research, research)));
   }
 
   @override
@@ -209,7 +244,8 @@ class _$_TravelDto extends _TravelDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(start) ^
       const DeepCollectionEquality().hash(end) ^
-      const DeepCollectionEquality().hash(wayArr);
+      const DeepCollectionEquality().hash(wayArr) ^
+      const DeepCollectionEquality().hash(research);
 
   @JsonKey(ignore: true)
   @override
@@ -224,44 +260,46 @@ class _$_TravelDto extends _TravelDto {
 
 abstract class _TravelDto extends TravelDto {
   const factory _TravelDto(
-          {required TravelResearchDto? start,
-          required TravelResearchDto? end,
-          @JsonKey(name: 'way_arr') required List<TravelResearchDto> wayArr}) =
-      _$_TravelDto;
+      {required TravelCourseDto? start,
+      required TravelCourseDto? end,
+      @JsonKey(name: 'way_arr') required List<TravelCourseDto> wayArr,
+      required TravelResearchDto? research}) = _$_TravelDto;
   const _TravelDto._() : super._();
 
   factory _TravelDto.fromJson(Map<String, dynamic> json) =
       _$_TravelDto.fromJson;
 
   @override
-  TravelResearchDto? get start => throw _privateConstructorUsedError;
+  TravelCourseDto? get start => throw _privateConstructorUsedError;
   @override
-  TravelResearchDto? get end => throw _privateConstructorUsedError;
+  TravelCourseDto? get end => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'way_arr')
-  List<TravelResearchDto> get wayArr => throw _privateConstructorUsedError;
+  List<TravelCourseDto> get wayArr => throw _privateConstructorUsedError;
+  @override
+  TravelResearchDto? get research => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelDtoCopyWith<_TravelDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-TravelResearchDto _$TravelResearchDtoFromJson(Map<String, dynamic> json) {
-  return _TravelResearchDto.fromJson(json);
+TravelCourseDto _$TravelCourseDtoFromJson(Map<String, dynamic> json) {
+  return _TravelCourseDto.fromJson(json);
 }
 
 /// @nodoc
-class _$TravelResearchDtoTearOff {
-  const _$TravelResearchDtoTearOff();
+class _$TravelCourseDtoTearOff {
+  const _$TravelCourseDtoTearOff();
 
-  _TravelResearchDto call(
+  _TravelCourseDto call(
       {required String date,
       required String time,
       required String id,
       @JsonKey(name: '_x') required String x,
       @JsonKey(name: '_y') required String y,
       @JsonKey(name: 'place_name') required String placeName}) {
-    return _TravelResearchDto(
+    return _TravelCourseDto(
       date: date,
       time: time,
       id: id,
@@ -271,16 +309,16 @@ class _$TravelResearchDtoTearOff {
     );
   }
 
-  TravelResearchDto fromJson(Map<String, Object> json) {
-    return TravelResearchDto.fromJson(json);
+  TravelCourseDto fromJson(Map<String, Object> json) {
+    return TravelCourseDto.fromJson(json);
   }
 }
 
 /// @nodoc
-const $TravelResearchDto = _$TravelResearchDtoTearOff();
+const $TravelCourseDto = _$TravelCourseDtoTearOff();
 
 /// @nodoc
-mixin _$TravelResearchDto {
+mixin _$TravelCourseDto {
   String get date => throw _privateConstructorUsedError;
   String get time => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
@@ -293,15 +331,15 @@ mixin _$TravelResearchDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TravelResearchDtoCopyWith<TravelResearchDto> get copyWith =>
+  $TravelCourseDtoCopyWith<TravelCourseDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TravelResearchDtoCopyWith<$Res> {
-  factory $TravelResearchDtoCopyWith(
-          TravelResearchDto value, $Res Function(TravelResearchDto) then) =
-      _$TravelResearchDtoCopyWithImpl<$Res>;
+abstract class $TravelCourseDtoCopyWith<$Res> {
+  factory $TravelCourseDtoCopyWith(
+          TravelCourseDto value, $Res Function(TravelCourseDto) then) =
+      _$TravelCourseDtoCopyWithImpl<$Res>;
   $Res call(
       {String date,
       String time,
@@ -312,13 +350,13 @@ abstract class $TravelResearchDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TravelResearchDtoCopyWithImpl<$Res>
-    implements $TravelResearchDtoCopyWith<$Res> {
-  _$TravelResearchDtoCopyWithImpl(this._value, this._then);
+class _$TravelCourseDtoCopyWithImpl<$Res>
+    implements $TravelCourseDtoCopyWith<$Res> {
+  _$TravelCourseDtoCopyWithImpl(this._value, this._then);
 
-  final TravelResearchDto _value;
+  final TravelCourseDto _value;
   // ignore: unused_field
-  final $Res Function(TravelResearchDto) _then;
+  final $Res Function(TravelCourseDto) _then;
 
   @override
   $Res call({
@@ -359,11 +397,11 @@ class _$TravelResearchDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TravelResearchDtoCopyWith<$Res>
-    implements $TravelResearchDtoCopyWith<$Res> {
-  factory _$TravelResearchDtoCopyWith(
-          _TravelResearchDto value, $Res Function(_TravelResearchDto) then) =
-      __$TravelResearchDtoCopyWithImpl<$Res>;
+abstract class _$TravelCourseDtoCopyWith<$Res>
+    implements $TravelCourseDtoCopyWith<$Res> {
+  factory _$TravelCourseDtoCopyWith(
+          _TravelCourseDto value, $Res Function(_TravelCourseDto) then) =
+      __$TravelCourseDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String date,
@@ -375,15 +413,15 @@ abstract class _$TravelResearchDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TravelResearchDtoCopyWithImpl<$Res>
-    extends _$TravelResearchDtoCopyWithImpl<$Res>
-    implements _$TravelResearchDtoCopyWith<$Res> {
-  __$TravelResearchDtoCopyWithImpl(
-      _TravelResearchDto _value, $Res Function(_TravelResearchDto) _then)
-      : super(_value, (v) => _then(v as _TravelResearchDto));
+class __$TravelCourseDtoCopyWithImpl<$Res>
+    extends _$TravelCourseDtoCopyWithImpl<$Res>
+    implements _$TravelCourseDtoCopyWith<$Res> {
+  __$TravelCourseDtoCopyWithImpl(
+      _TravelCourseDto _value, $Res Function(_TravelCourseDto) _then)
+      : super(_value, (v) => _then(v as _TravelCourseDto));
 
   @override
-  _TravelResearchDto get _value => super._value as _TravelResearchDto;
+  _TravelCourseDto get _value => super._value as _TravelCourseDto;
 
   @override
   $Res call({
@@ -394,7 +432,7 @@ class __$TravelResearchDtoCopyWithImpl<$Res>
     Object? y = freezed,
     Object? placeName = freezed,
   }) {
-    return _then(_TravelResearchDto(
+    return _then(_TravelCourseDto(
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -425,8 +463,8 @@ class __$TravelResearchDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TravelResearchDto extends _TravelResearchDto {
-  const _$_TravelResearchDto(
+class _$_TravelCourseDto extends _TravelCourseDto {
+  const _$_TravelCourseDto(
       {required this.date,
       required this.time,
       required this.id,
@@ -435,8 +473,8 @@ class _$_TravelResearchDto extends _TravelResearchDto {
       @JsonKey(name: 'place_name') required this.placeName})
       : super._();
 
-  factory _$_TravelResearchDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_TravelResearchDtoFromJson(json);
+  factory _$_TravelCourseDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_TravelCourseDtoFromJson(json);
 
   @override
   final String date;
@@ -456,13 +494,13 @@ class _$_TravelResearchDto extends _TravelResearchDto {
 
   @override
   String toString() {
-    return 'TravelResearchDto(date: $date, time: $time, id: $id, x: $x, y: $y, placeName: $placeName)';
+    return 'TravelCourseDto(date: $date, time: $time, id: $id, x: $x, y: $y, placeName: $placeName)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TravelResearchDto &&
+        (other is _TravelCourseDto &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.time, time) ||
@@ -490,28 +528,28 @@ class _$_TravelResearchDto extends _TravelResearchDto {
 
   @JsonKey(ignore: true)
   @override
-  _$TravelResearchDtoCopyWith<_TravelResearchDto> get copyWith =>
-      __$TravelResearchDtoCopyWithImpl<_TravelResearchDto>(this, _$identity);
+  _$TravelCourseDtoCopyWith<_TravelCourseDto> get copyWith =>
+      __$TravelCourseDtoCopyWithImpl<_TravelCourseDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TravelResearchDtoToJson(this);
+    return _$_$_TravelCourseDtoToJson(this);
   }
 }
 
-abstract class _TravelResearchDto extends TravelResearchDto {
-  const factory _TravelResearchDto(
+abstract class _TravelCourseDto extends TravelCourseDto {
+  const factory _TravelCourseDto(
           {required String date,
           required String time,
           required String id,
           @JsonKey(name: '_x') required String x,
           @JsonKey(name: '_y') required String y,
           @JsonKey(name: 'place_name') required String placeName}) =
-      _$_TravelResearchDto;
-  const _TravelResearchDto._() : super._();
+      _$_TravelCourseDto;
+  const _TravelCourseDto._() : super._();
 
-  factory _TravelResearchDto.fromJson(Map<String, dynamic> json) =
-      _$_TravelResearchDto.fromJson;
+  factory _TravelCourseDto.fromJson(Map<String, dynamic> json) =
+      _$_TravelCourseDto.fromJson;
 
   @override
   String get date => throw _privateConstructorUsedError;
@@ -528,6 +566,179 @@ abstract class _TravelResearchDto extends TravelResearchDto {
   @override
   @JsonKey(name: 'place_name')
   String get placeName => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$TravelCourseDtoCopyWith<_TravelCourseDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TravelResearchDto _$TravelResearchDtoFromJson(Map<String, dynamic> json) {
+  return _TravelResearchDto.fromJson(json);
+}
+
+/// @nodoc
+class _$TravelResearchDtoTearOff {
+  const _$TravelResearchDtoTearOff();
+
+  _TravelResearchDto call({required String id, required List<String> answer}) {
+    return _TravelResearchDto(
+      id: id,
+      answer: answer,
+    );
+  }
+
+  TravelResearchDto fromJson(Map<String, Object> json) {
+    return TravelResearchDto.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $TravelResearchDto = _$TravelResearchDtoTearOff();
+
+/// @nodoc
+mixin _$TravelResearchDto {
+  String get id => throw _privateConstructorUsedError;
+  List<String> get answer => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TravelResearchDtoCopyWith<TravelResearchDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TravelResearchDtoCopyWith<$Res> {
+  factory $TravelResearchDtoCopyWith(
+          TravelResearchDto value, $Res Function(TravelResearchDto) then) =
+      _$TravelResearchDtoCopyWithImpl<$Res>;
+  $Res call({String id, List<String> answer});
+}
+
+/// @nodoc
+class _$TravelResearchDtoCopyWithImpl<$Res>
+    implements $TravelResearchDtoCopyWith<$Res> {
+  _$TravelResearchDtoCopyWithImpl(this._value, this._then);
+
+  final TravelResearchDto _value;
+  // ignore: unused_field
+  final $Res Function(TravelResearchDto) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? answer = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      answer: answer == freezed
+          ? _value.answer
+          : answer // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$TravelResearchDtoCopyWith<$Res>
+    implements $TravelResearchDtoCopyWith<$Res> {
+  factory _$TravelResearchDtoCopyWith(
+          _TravelResearchDto value, $Res Function(_TravelResearchDto) then) =
+      __$TravelResearchDtoCopyWithImpl<$Res>;
+  @override
+  $Res call({String id, List<String> answer});
+}
+
+/// @nodoc
+class __$TravelResearchDtoCopyWithImpl<$Res>
+    extends _$TravelResearchDtoCopyWithImpl<$Res>
+    implements _$TravelResearchDtoCopyWith<$Res> {
+  __$TravelResearchDtoCopyWithImpl(
+      _TravelResearchDto _value, $Res Function(_TravelResearchDto) _then)
+      : super(_value, (v) => _then(v as _TravelResearchDto));
+
+  @override
+  _TravelResearchDto get _value => super._value as _TravelResearchDto;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? answer = freezed,
+  }) {
+    return _then(_TravelResearchDto(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      answer: answer == freezed
+          ? _value.answer
+          : answer // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_TravelResearchDto extends _TravelResearchDto {
+  const _$_TravelResearchDto({required this.id, required this.answer})
+      : super._();
+
+  factory _$_TravelResearchDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_TravelResearchDtoFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final List<String> answer;
+
+  @override
+  String toString() {
+    return 'TravelResearchDto(id: $id, answer: $answer)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _TravelResearchDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.answer, answer) ||
+                const DeepCollectionEquality().equals(other.answer, answer)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(answer);
+
+  @JsonKey(ignore: true)
+  @override
+  _$TravelResearchDtoCopyWith<_TravelResearchDto> get copyWith =>
+      __$TravelResearchDtoCopyWithImpl<_TravelResearchDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_TravelResearchDtoToJson(this);
+  }
+}
+
+abstract class _TravelResearchDto extends TravelResearchDto {
+  const factory _TravelResearchDto(
+      {required String id,
+      required List<String> answer}) = _$_TravelResearchDto;
+  const _TravelResearchDto._() : super._();
+
+  factory _TravelResearchDto.fromJson(Map<String, dynamic> json) =
+      _$_TravelResearchDto.fromJson;
+
+  @override
+  String get id => throw _privateConstructorUsedError;
+  @override
+  List<String> get answer => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelResearchDtoCopyWith<_TravelResearchDto> get copyWith =>

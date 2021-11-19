@@ -7,12 +7,13 @@ import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/location_select_toggle_button.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_list_view_address_form.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_shimmer_address_form.dart';
+import 'package:flutter_goffer/presentation/travel/body/travel_main_location_toggle_body.dart';
 
 class TravelAddressSearchBottom extends StatelessWidget {
   final bool isAddressSearchBar;
-  final TravelResearch startTravel;
-  final TravelResearch endTravel;
-  final List<TravelResearch> layoverTravel;
+  final TravelCourse startTravel;
+  final TravelCourse endTravel;
+  final List<TravelCourse> layoverTravel;
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
 

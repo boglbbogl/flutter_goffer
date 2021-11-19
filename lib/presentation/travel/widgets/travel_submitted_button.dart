@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_goffer/_constant/widgets/logger.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 
@@ -38,9 +39,17 @@ class TravelSubmittedButton extends StatelessWidget {
                   fontSize: 18),
             ),
             onPressed: () {
-              context
-                  .read<TravelCreateBloc>()
-                  .add(const TravelCreateEvent.submitted());
+              if (startId.isEmpty || endId.isEmpty) {
+                if (startId.isEmpty) {
+                  logger.d("Start Null !!");
+                } else if (endId.isEmpty) {
+                  logger.d("End Null !!");
+                }
+              } else {
+                context
+                    .read<TravelCreateBloc>()
+                    .add(const TravelCreateEvent.submitted());
+              }
             },
           ),
         ),

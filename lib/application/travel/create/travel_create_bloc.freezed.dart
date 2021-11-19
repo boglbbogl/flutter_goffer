@@ -63,7 +63,7 @@ class _$TravelCreateEventTearOff {
     );
   }
 
-  _LayoverSelected layoverSelected({required TravelResearch layover}) {
+  _LayoverSelected layoverSelected({required TravelCourse layover}) {
     return _LayoverSelected(
       layover: layover,
     );
@@ -86,6 +86,12 @@ class _$TravelCreateEventTearOff {
       value: value,
     );
   }
+
+  _LocationToggleButton locationToggleButton({required int index}) {
+    return _LocationToggleButton(
+      index: index,
+    );
+  }
 }
 
 /// @nodoc
@@ -103,10 +109,11 @@ mixin _$TravelCreateEvent {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -119,10 +126,11 @@ mixin _$TravelCreateEvent {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +149,7 @@ mixin _$TravelCreateEvent {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -156,6 +165,7 @@ mixin _$TravelCreateEvent {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -223,10 +233,11 @@ class _$_Started implements _Started {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return started();
   }
@@ -242,10 +253,11 @@ class _$_Started implements _Started {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -270,6 +282,7 @@ class _$_Started implements _Started {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return started(this);
   }
@@ -288,6 +301,7 @@ class _$_Started implements _Started {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -348,10 +362,11 @@ class _$_Submitted implements _Submitted {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return submitted();
   }
@@ -367,10 +382,11 @@ class _$_Submitted implements _Submitted {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (submitted != null) {
@@ -395,6 +411,7 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return submitted(this);
   }
@@ -413,6 +430,7 @@ class _$_Submitted implements _Submitted {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (submitted != null) {
@@ -510,10 +528,11 @@ class _$_DateSelected implements _DateSelected {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return dateSelected(start, end);
   }
@@ -529,10 +548,11 @@ class _$_DateSelected implements _DateSelected {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -557,6 +577,7 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return dateSelected(this);
   }
@@ -575,6 +596,7 @@ class _$_DateSelected implements _DateSelected {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -668,10 +690,11 @@ class _$_StartTimeSelected implements _StartTimeSelected {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return startTimeSelected(start);
   }
@@ -687,10 +710,11 @@ class _$_StartTimeSelected implements _StartTimeSelected {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -715,6 +739,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return startTimeSelected(this);
   }
@@ -733,6 +758,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -863,10 +889,11 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return startDestinationSelected(x, y, id, placeName);
   }
@@ -882,10 +909,11 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (startDestinationSelected != null) {
@@ -910,6 +938,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return startDestinationSelected(this);
   }
@@ -928,6 +957,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (startDestinationSelected != null) {
@@ -1063,10 +1093,11 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return endDestinationSelected(x, y, id, placeName);
   }
@@ -1082,10 +1113,11 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (endDestinationSelected != null) {
@@ -1110,6 +1142,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return endDestinationSelected(this);
   }
@@ -1128,6 +1161,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (endDestinationSelected != null) {
@@ -1158,9 +1192,9 @@ abstract class _$LayoverSelectedCopyWith<$Res> {
   factory _$LayoverSelectedCopyWith(
           _LayoverSelected value, $Res Function(_LayoverSelected) then) =
       __$LayoverSelectedCopyWithImpl<$Res>;
-  $Res call({TravelResearch layover});
+  $Res call({TravelCourse layover});
 
-  $TravelResearchCopyWith<$Res> get layover;
+  $TravelCourseCopyWith<$Res> get layover;
 }
 
 /// @nodoc
@@ -1182,13 +1216,13 @@ class __$LayoverSelectedCopyWithImpl<$Res>
       layover: layover == freezed
           ? _value.layover
           : layover // ignore: cast_nullable_to_non_nullable
-              as TravelResearch,
+              as TravelCourse,
     ));
   }
 
   @override
-  $TravelResearchCopyWith<$Res> get layover {
-    return $TravelResearchCopyWith<$Res>(_value.layover, (value) {
+  $TravelCourseCopyWith<$Res> get layover {
+    return $TravelCourseCopyWith<$Res>(_value.layover, (value) {
       return _then(_value.copyWith(layover: value));
     });
   }
@@ -1200,7 +1234,7 @@ class _$_LayoverSelected implements _LayoverSelected {
   const _$_LayoverSelected({required this.layover});
 
   @override
-  final TravelResearch layover;
+  final TravelCourse layover;
 
   @override
   String toString() {
@@ -1235,10 +1269,11 @@ class _$_LayoverSelected implements _LayoverSelected {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return layoverSelected(layover);
   }
@@ -1254,10 +1289,11 @@ class _$_LayoverSelected implements _LayoverSelected {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (layoverSelected != null) {
@@ -1282,6 +1318,7 @@ class _$_LayoverSelected implements _LayoverSelected {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return layoverSelected(this);
   }
@@ -1300,6 +1337,7 @@ class _$_LayoverSelected implements _LayoverSelected {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (layoverSelected != null) {
@@ -1310,10 +1348,10 @@ class _$_LayoverSelected implements _LayoverSelected {
 }
 
 abstract class _LayoverSelected implements TravelCreateEvent {
-  const factory _LayoverSelected({required TravelResearch layover}) =
+  const factory _LayoverSelected({required TravelCourse layover}) =
       _$_LayoverSelected;
 
-  TravelResearch get layover => throw _privateConstructorUsedError;
+  TravelCourse get layover => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LayoverSelectedCopyWith<_LayoverSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1392,10 +1430,11 @@ class _$_EndTimeSelected implements _EndTimeSelected {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return endTimeSelected(end);
   }
@@ -1411,10 +1450,11 @@ class _$_EndTimeSelected implements _EndTimeSelected {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -1439,6 +1479,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return endTimeSelected(this);
   }
@@ -1457,6 +1498,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -1549,10 +1591,11 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return dateAndTimeBottomBar(value);
   }
@@ -1568,10 +1611,11 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (dateAndTimeBottomBar != null) {
@@ -1596,6 +1640,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return dateAndTimeBottomBar(this);
   }
@@ -1614,6 +1659,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (dateAndTimeBottomBar != null) {
@@ -1710,10 +1756,11 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
         startDestinationSelected,
     required TResult Function(String x, String y, String id, String placeName)
         endDestinationSelected,
-    required TResult Function(TravelResearch layover) layoverSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
     required TResult Function(String end) endTimeSelected,
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
   }) {
     return addressBottomSearched(value);
   }
@@ -1729,10 +1776,11 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
         startDestinationSelected,
     TResult Function(String x, String y, String id, String placeName)?
         endDestinationSelected,
-    TResult Function(TravelResearch layover)? layoverSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
     TResult Function(String end)? endTimeSelected,
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (addressBottomSearched != null) {
@@ -1757,6 +1805,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
   }) {
     return addressBottomSearched(this);
   }
@@ -1775,6 +1824,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
     required TResult orElse(),
   }) {
     if (addressBottomSearched != null) {
@@ -1795,6 +1845,168 @@ abstract class _LayoverAddressBottomSearched implements TravelCreateEvent {
 }
 
 /// @nodoc
+abstract class _$LocationToggleButtonCopyWith<$Res> {
+  factory _$LocationToggleButtonCopyWith(_LocationToggleButton value,
+          $Res Function(_LocationToggleButton) then) =
+      __$LocationToggleButtonCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$LocationToggleButtonCopyWithImpl<$Res>
+    extends _$TravelCreateEventCopyWithImpl<$Res>
+    implements _$LocationToggleButtonCopyWith<$Res> {
+  __$LocationToggleButtonCopyWithImpl(
+      _LocationToggleButton _value, $Res Function(_LocationToggleButton) _then)
+      : super(_value, (v) => _then(v as _LocationToggleButton));
+
+  @override
+  _LocationToggleButton get _value => super._value as _LocationToggleButton;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(_LocationToggleButton(
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_LocationToggleButton implements _LocationToggleButton {
+  const _$_LocationToggleButton({required this.index});
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'TravelCreateEvent.locationToggleButton(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LocationToggleButton &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
+  @JsonKey(ignore: true)
+  @override
+  _$LocationToggleButtonCopyWith<_LocationToggleButton> get copyWith =>
+      __$LocationToggleButtonCopyWithImpl<_LocationToggleButton>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() submitted,
+    required TResult Function(String start, String end) dateSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String x, String y, String id, String placeName)
+        startDestinationSelected,
+    required TResult Function(String x, String y, String id, String placeName)
+        endDestinationSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
+    required TResult Function(String end) endTimeSelected,
+    required TResult Function(bool value) dateAndTimeBottomBar,
+    required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
+  }) {
+    return locationToggleButton(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? submitted,
+    TResult Function(String start, String end)? dateSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String x, String y, String id, String placeName)?
+        startDestinationSelected,
+    TResult Function(String x, String y, String id, String placeName)?
+        endDestinationSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
+    TResult Function(String end)? endTimeSelected,
+    TResult Function(bool value)? dateAndTimeBottomBar,
+    TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
+    required TResult orElse(),
+  }) {
+    if (locationToggleButton != null) {
+      return locationToggleButton(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_DateSelected value) dateSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_StartDestinationSelected value)
+        startDestinationSelected,
+    required TResult Function(_EndDestinationSelected value)
+        endDestinationSelected,
+    required TResult Function(_LayoverSelected value) layoverSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
+    required TResult Function(_LayoverAddressBottomSearched value)
+        addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
+  }) {
+    return locationToggleButton(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_DateSelected value)? dateSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_StartDestinationSelected value)? startDestinationSelected,
+    TResult Function(_EndDestinationSelected value)? endDestinationSelected,
+    TResult Function(_LayoverSelected value)? layoverSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
+    TResult Function(_LayoverAddressBottomSearched value)?
+        addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
+    required TResult orElse(),
+  }) {
+    if (locationToggleButton != null) {
+      return locationToggleButton(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LocationToggleButton implements TravelCreateEvent {
+  const factory _LocationToggleButton({required int index}) =
+      _$_LocationToggleButton;
+
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LocationToggleButtonCopyWith<_LocationToggleButton> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$TravelCreateStateTearOff {
   const _$TravelCreateStateTearOff();
 
@@ -1802,14 +2014,15 @@ class _$TravelCreateStateTearOff {
       {required bool isLoading,
       required Either<TravelFailure, Unit>? submitResult,
       required Travel? travel,
-      required TravelResearch? startTravel,
-      required TravelResearch? endTravel,
-      required List<TravelResearch> wayTravel,
-      required List<TravelResearch> wayAddAndRemoveList,
+      required TravelCourse? startTravel,
+      required TravelCourse? endTravel,
+      required List<TravelCourse> wayTravel,
+      required List<TravelCourse> wayAddAndRemoveList,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
       required bool isLayoverAddressBar,
-      required bool isSelectedTourist}) {
+      required bool isSelectedTourist,
+      required int selectedTogglButtonIndex}) {
     return _TravelCreateState(
       isLoading: isLoading,
       submitResult: submitResult,
@@ -1822,6 +2035,7 @@ class _$TravelCreateStateTearOff {
       isAddressSearchBar: isAddressSearchBar,
       isLayoverAddressBar: isLayoverAddressBar,
       isSelectedTourist: isSelectedTourist,
+      selectedTogglButtonIndex: selectedTogglButtonIndex,
     );
   }
 }
@@ -1835,15 +2049,16 @@ mixin _$TravelCreateState {
   Either<TravelFailure, Unit>? get submitResult =>
       throw _privateConstructorUsedError;
   Travel? get travel => throw _privateConstructorUsedError;
-  TravelResearch? get startTravel => throw _privateConstructorUsedError;
-  TravelResearch? get endTravel => throw _privateConstructorUsedError;
-  List<TravelResearch> get wayTravel => throw _privateConstructorUsedError;
-  List<TravelResearch> get wayAddAndRemoveList =>
+  TravelCourse? get startTravel => throw _privateConstructorUsedError;
+  TravelCourse? get endTravel => throw _privateConstructorUsedError;
+  List<TravelCourse> get wayTravel => throw _privateConstructorUsedError;
+  List<TravelCourse> get wayAddAndRemoveList =>
       throw _privateConstructorUsedError;
   bool get isDateAndTimeSearchBar => throw _privateConstructorUsedError;
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
   bool get isLayoverAddressBar => throw _privateConstructorUsedError;
   bool get isSelectedTourist => throw _privateConstructorUsedError;
+  int get selectedTogglButtonIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TravelCreateStateCopyWith<TravelCreateState> get copyWith =>
@@ -1859,18 +2074,19 @@ abstract class $TravelCreateStateCopyWith<$Res> {
       {bool isLoading,
       Either<TravelFailure, Unit>? submitResult,
       Travel? travel,
-      TravelResearch? startTravel,
-      TravelResearch? endTravel,
-      List<TravelResearch> wayTravel,
-      List<TravelResearch> wayAddAndRemoveList,
+      TravelCourse? startTravel,
+      TravelCourse? endTravel,
+      List<TravelCourse> wayTravel,
+      List<TravelCourse> wayAddAndRemoveList,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
       bool isLayoverAddressBar,
-      bool isSelectedTourist});
+      bool isSelectedTourist,
+      int selectedTogglButtonIndex});
 
   $TravelCopyWith<$Res>? get travel;
-  $TravelResearchCopyWith<$Res>? get startTravel;
-  $TravelResearchCopyWith<$Res>? get endTravel;
+  $TravelCourseCopyWith<$Res>? get startTravel;
+  $TravelCourseCopyWith<$Res>? get endTravel;
 }
 
 /// @nodoc
@@ -1895,6 +2111,7 @@ class _$TravelCreateStateCopyWithImpl<$Res>
     Object? isAddressSearchBar = freezed,
     Object? isLayoverAddressBar = freezed,
     Object? isSelectedTourist = freezed,
+    Object? selectedTogglButtonIndex = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -1912,19 +2129,19 @@ class _$TravelCreateStateCopyWithImpl<$Res>
       startTravel: startTravel == freezed
           ? _value.startTravel
           : startTravel // ignore: cast_nullable_to_non_nullable
-              as TravelResearch?,
+              as TravelCourse?,
       endTravel: endTravel == freezed
           ? _value.endTravel
           : endTravel // ignore: cast_nullable_to_non_nullable
-              as TravelResearch?,
+              as TravelCourse?,
       wayTravel: wayTravel == freezed
           ? _value.wayTravel
           : wayTravel // ignore: cast_nullable_to_non_nullable
-              as List<TravelResearch>,
+              as List<TravelCourse>,
       wayAddAndRemoveList: wayAddAndRemoveList == freezed
           ? _value.wayAddAndRemoveList
           : wayAddAndRemoveList // ignore: cast_nullable_to_non_nullable
-              as List<TravelResearch>,
+              as List<TravelCourse>,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar == freezed
           ? _value.isDateAndTimeSearchBar
           : isDateAndTimeSearchBar // ignore: cast_nullable_to_non_nullable
@@ -1941,6 +2158,10 @@ class _$TravelCreateStateCopyWithImpl<$Res>
           ? _value.isSelectedTourist
           : isSelectedTourist // ignore: cast_nullable_to_non_nullable
               as bool,
+      selectedTogglButtonIndex: selectedTogglButtonIndex == freezed
+          ? _value.selectedTogglButtonIndex
+          : selectedTogglButtonIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -1956,23 +2177,23 @@ class _$TravelCreateStateCopyWithImpl<$Res>
   }
 
   @override
-  $TravelResearchCopyWith<$Res>? get startTravel {
+  $TravelCourseCopyWith<$Res>? get startTravel {
     if (_value.startTravel == null) {
       return null;
     }
 
-    return $TravelResearchCopyWith<$Res>(_value.startTravel!, (value) {
+    return $TravelCourseCopyWith<$Res>(_value.startTravel!, (value) {
       return _then(_value.copyWith(startTravel: value));
     });
   }
 
   @override
-  $TravelResearchCopyWith<$Res>? get endTravel {
+  $TravelCourseCopyWith<$Res>? get endTravel {
     if (_value.endTravel == null) {
       return null;
     }
 
-    return $TravelResearchCopyWith<$Res>(_value.endTravel!, (value) {
+    return $TravelCourseCopyWith<$Res>(_value.endTravel!, (value) {
       return _then(_value.copyWith(endTravel: value));
     });
   }
@@ -1989,21 +2210,22 @@ abstract class _$TravelCreateStateCopyWith<$Res>
       {bool isLoading,
       Either<TravelFailure, Unit>? submitResult,
       Travel? travel,
-      TravelResearch? startTravel,
-      TravelResearch? endTravel,
-      List<TravelResearch> wayTravel,
-      List<TravelResearch> wayAddAndRemoveList,
+      TravelCourse? startTravel,
+      TravelCourse? endTravel,
+      List<TravelCourse> wayTravel,
+      List<TravelCourse> wayAddAndRemoveList,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
       bool isLayoverAddressBar,
-      bool isSelectedTourist});
+      bool isSelectedTourist,
+      int selectedTogglButtonIndex});
 
   @override
   $TravelCopyWith<$Res>? get travel;
   @override
-  $TravelResearchCopyWith<$Res>? get startTravel;
+  $TravelCourseCopyWith<$Res>? get startTravel;
   @override
-  $TravelResearchCopyWith<$Res>? get endTravel;
+  $TravelCourseCopyWith<$Res>? get endTravel;
 }
 
 /// @nodoc
@@ -2030,6 +2252,7 @@ class __$TravelCreateStateCopyWithImpl<$Res>
     Object? isAddressSearchBar = freezed,
     Object? isLayoverAddressBar = freezed,
     Object? isSelectedTourist = freezed,
+    Object? selectedTogglButtonIndex = freezed,
   }) {
     return _then(_TravelCreateState(
       isLoading: isLoading == freezed
@@ -2047,19 +2270,19 @@ class __$TravelCreateStateCopyWithImpl<$Res>
       startTravel: startTravel == freezed
           ? _value.startTravel
           : startTravel // ignore: cast_nullable_to_non_nullable
-              as TravelResearch?,
+              as TravelCourse?,
       endTravel: endTravel == freezed
           ? _value.endTravel
           : endTravel // ignore: cast_nullable_to_non_nullable
-              as TravelResearch?,
+              as TravelCourse?,
       wayTravel: wayTravel == freezed
           ? _value.wayTravel
           : wayTravel // ignore: cast_nullable_to_non_nullable
-              as List<TravelResearch>,
+              as List<TravelCourse>,
       wayAddAndRemoveList: wayAddAndRemoveList == freezed
           ? _value.wayAddAndRemoveList
           : wayAddAndRemoveList // ignore: cast_nullable_to_non_nullable
-              as List<TravelResearch>,
+              as List<TravelCourse>,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar == freezed
           ? _value.isDateAndTimeSearchBar
           : isDateAndTimeSearchBar // ignore: cast_nullable_to_non_nullable
@@ -2076,6 +2299,10 @@ class __$TravelCreateStateCopyWithImpl<$Res>
           ? _value.isSelectedTourist
           : isSelectedTourist // ignore: cast_nullable_to_non_nullable
               as bool,
+      selectedTogglButtonIndex: selectedTogglButtonIndex == freezed
+          ? _value.selectedTogglButtonIndex
+          : selectedTogglButtonIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -2094,7 +2321,8 @@ class _$_TravelCreateState implements _TravelCreateState {
       required this.isDateAndTimeSearchBar,
       required this.isAddressSearchBar,
       required this.isLayoverAddressBar,
-      required this.isSelectedTourist});
+      required this.isSelectedTourist,
+      required this.selectedTogglButtonIndex});
 
   @override
   final bool isLoading;
@@ -2103,13 +2331,13 @@ class _$_TravelCreateState implements _TravelCreateState {
   @override
   final Travel? travel;
   @override
-  final TravelResearch? startTravel;
+  final TravelCourse? startTravel;
   @override
-  final TravelResearch? endTravel;
+  final TravelCourse? endTravel;
   @override
-  final List<TravelResearch> wayTravel;
+  final List<TravelCourse> wayTravel;
   @override
-  final List<TravelResearch> wayAddAndRemoveList;
+  final List<TravelCourse> wayAddAndRemoveList;
   @override
   final bool isDateAndTimeSearchBar;
   @override
@@ -2118,10 +2346,12 @@ class _$_TravelCreateState implements _TravelCreateState {
   final bool isLayoverAddressBar;
   @override
   final bool isSelectedTourist;
+  @override
+  final int selectedTogglButtonIndex;
 
   @override
   String toString() {
-    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, wayAddAndRemoveList: $wayAddAndRemoveList, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, isSelectedTourist: $isSelectedTourist)';
+    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, wayAddAndRemoveList: $wayAddAndRemoveList, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, isSelectedTourist: $isSelectedTourist, selectedTogglButtonIndex: $selectedTogglButtonIndex)';
   }
 
   @override
@@ -2159,7 +2389,11 @@ class _$_TravelCreateState implements _TravelCreateState {
                     .equals(other.isLayoverAddressBar, isLayoverAddressBar)) &&
             (identical(other.isSelectedTourist, isSelectedTourist) ||
                 const DeepCollectionEquality()
-                    .equals(other.isSelectedTourist, isSelectedTourist)));
+                    .equals(other.isSelectedTourist, isSelectedTourist)) &&
+            (identical(
+                    other.selectedTogglButtonIndex, selectedTogglButtonIndex) ||
+                const DeepCollectionEquality().equals(
+                    other.selectedTogglButtonIndex, selectedTogglButtonIndex)));
   }
 
   @override
@@ -2175,7 +2409,8 @@ class _$_TravelCreateState implements _TravelCreateState {
       const DeepCollectionEquality().hash(isDateAndTimeSearchBar) ^
       const DeepCollectionEquality().hash(isAddressSearchBar) ^
       const DeepCollectionEquality().hash(isLayoverAddressBar) ^
-      const DeepCollectionEquality().hash(isSelectedTourist);
+      const DeepCollectionEquality().hash(isSelectedTourist) ^
+      const DeepCollectionEquality().hash(selectedTogglButtonIndex);
 
   @JsonKey(ignore: true)
   @override
@@ -2188,14 +2423,15 @@ abstract class _TravelCreateState implements TravelCreateState {
       {required bool isLoading,
       required Either<TravelFailure, Unit>? submitResult,
       required Travel? travel,
-      required TravelResearch? startTravel,
-      required TravelResearch? endTravel,
-      required List<TravelResearch> wayTravel,
-      required List<TravelResearch> wayAddAndRemoveList,
+      required TravelCourse? startTravel,
+      required TravelCourse? endTravel,
+      required List<TravelCourse> wayTravel,
+      required List<TravelCourse> wayAddAndRemoveList,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
       required bool isLayoverAddressBar,
-      required bool isSelectedTourist}) = _$_TravelCreateState;
+      required bool isSelectedTourist,
+      required int selectedTogglButtonIndex}) = _$_TravelCreateState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -2205,13 +2441,13 @@ abstract class _TravelCreateState implements TravelCreateState {
   @override
   Travel? get travel => throw _privateConstructorUsedError;
   @override
-  TravelResearch? get startTravel => throw _privateConstructorUsedError;
+  TravelCourse? get startTravel => throw _privateConstructorUsedError;
   @override
-  TravelResearch? get endTravel => throw _privateConstructorUsedError;
+  TravelCourse? get endTravel => throw _privateConstructorUsedError;
   @override
-  List<TravelResearch> get wayTravel => throw _privateConstructorUsedError;
+  List<TravelCourse> get wayTravel => throw _privateConstructorUsedError;
   @override
-  List<TravelResearch> get wayAddAndRemoveList =>
+  List<TravelCourse> get wayAddAndRemoveList =>
       throw _privateConstructorUsedError;
   @override
   bool get isDateAndTimeSearchBar => throw _privateConstructorUsedError;
@@ -2221,6 +2457,8 @@ abstract class _TravelCreateState implements TravelCreateState {
   bool get isLayoverAddressBar => throw _privateConstructorUsedError;
   @override
   bool get isSelectedTourist => throw _privateConstructorUsedError;
+  @override
+  int get selectedTogglButtonIndex => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelCreateStateCopyWith<_TravelCreateState> get copyWith =>

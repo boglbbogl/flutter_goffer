@@ -1,7 +1,10 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 
 const TravelCourse travel =
     TravelCourse(date: "", time: "", id: "", x: "", y: "", placeName: "");
+
+const TravelResearch travelResearch = TravelResearch(id: "", answer: []);
 
 List<Map<String, String>> representativeTourist = [
   {

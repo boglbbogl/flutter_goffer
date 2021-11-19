@@ -17,7 +17,7 @@ class _$TravelResearchStateTearOff {
   const _$TravelResearchStateTearOff();
 
   _TravelResearchState call(
-      {required TravelQuestionResearch? research, required int researchIndex}) {
+      {required ResearchQuestion? research, required int researchIndex}) {
     return _TravelResearchState(
       research: research,
       researchIndex: researchIndex,
@@ -30,7 +30,7 @@ const $TravelResearchState = _$TravelResearchStateTearOff();
 
 /// @nodoc
 mixin _$TravelResearchState {
-  TravelQuestionResearch? get research => throw _privateConstructorUsedError;
+  ResearchQuestion? get research => throw _privateConstructorUsedError;
   int get researchIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -43,9 +43,9 @@ abstract class $TravelResearchStateCopyWith<$Res> {
   factory $TravelResearchStateCopyWith(
           TravelResearchState value, $Res Function(TravelResearchState) then) =
       _$TravelResearchStateCopyWithImpl<$Res>;
-  $Res call({TravelQuestionResearch? research, int researchIndex});
+  $Res call({ResearchQuestion? research, int researchIndex});
 
-  $TravelQuestionResearchCopyWith<$Res>? get research;
+  $ResearchQuestionCopyWith<$Res>? get research;
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$TravelResearchStateCopyWithImpl<$Res>
       research: research == freezed
           ? _value.research
           : research // ignore: cast_nullable_to_non_nullable
-              as TravelQuestionResearch?,
+              as ResearchQuestion?,
       researchIndex: researchIndex == freezed
           ? _value.researchIndex
           : researchIndex // ignore: cast_nullable_to_non_nullable
@@ -75,12 +75,12 @@ class _$TravelResearchStateCopyWithImpl<$Res>
   }
 
   @override
-  $TravelQuestionResearchCopyWith<$Res>? get research {
+  $ResearchQuestionCopyWith<$Res>? get research {
     if (_value.research == null) {
       return null;
     }
 
-    return $TravelQuestionResearchCopyWith<$Res>(_value.research!, (value) {
+    return $ResearchQuestionCopyWith<$Res>(_value.research!, (value) {
       return _then(_value.copyWith(research: value));
     });
   }
@@ -93,10 +93,10 @@ abstract class _$TravelResearchStateCopyWith<$Res>
           $Res Function(_TravelResearchState) then) =
       __$TravelResearchStateCopyWithImpl<$Res>;
   @override
-  $Res call({TravelQuestionResearch? research, int researchIndex});
+  $Res call({ResearchQuestion? research, int researchIndex});
 
   @override
-  $TravelQuestionResearchCopyWith<$Res>? get research;
+  $ResearchQuestionCopyWith<$Res>? get research;
 }
 
 /// @nodoc
@@ -119,7 +119,7 @@ class __$TravelResearchStateCopyWithImpl<$Res>
       research: research == freezed
           ? _value.research
           : research // ignore: cast_nullable_to_non_nullable
-              as TravelQuestionResearch?,
+              as ResearchQuestion?,
       researchIndex: researchIndex == freezed
           ? _value.researchIndex
           : researchIndex // ignore: cast_nullable_to_non_nullable
@@ -135,7 +135,7 @@ class _$_TravelResearchState implements _TravelResearchState {
       {required this.research, required this.researchIndex});
 
   @override
-  final TravelQuestionResearch? research;
+  final ResearchQuestion? research;
   @override
   final int researchIndex;
 
@@ -171,11 +171,11 @@ class _$_TravelResearchState implements _TravelResearchState {
 
 abstract class _TravelResearchState implements TravelResearchState {
   const factory _TravelResearchState(
-      {required TravelQuestionResearch? research,
+      {required ResearchQuestion? research,
       required int researchIndex}) = _$_TravelResearchState;
 
   @override
-  TravelQuestionResearch? get research => throw _privateConstructorUsedError;
+  ResearchQuestion? get research => throw _privateConstructorUsedError;
   @override
   int get researchIndex => throw _privateConstructorUsedError;
   @override

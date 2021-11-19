@@ -30,11 +30,13 @@ class TravelCreateEvent with _$TravelCreateEvent {
   const factory TravelCreateEvent.dateAndTimeBottomBar({
     required bool value,
   }) = _AdressBottomSearched;
-
   const factory TravelCreateEvent.addressBottomSearched({
     required bool value,
   }) = _LayoverAddressBottomSearched;
   const factory TravelCreateEvent.locationToggleButton({
     required int index,
   }) = _LocationToggleButton;
+  const factory TravelCreateEvent.preResearchSelected({
+    required TravelResearch research,
+  }) = _PreResearchSelected;
 }

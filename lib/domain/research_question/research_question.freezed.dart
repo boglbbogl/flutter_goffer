@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'travel_question_research.dart';
+part of 'research_question.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,12 +13,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$TravelQuestionResearchTearOff {
-  const _$TravelQuestionResearchTearOff();
+class _$ResearchQuestionTearOff {
+  const _$ResearchQuestionTearOff();
 
-  _TravelQuestionResearch call(
+  _ResearchQuestion call(
       {required String question, required Map<String, dynamic> answerChoice}) {
-    return _TravelQuestionResearch(
+    return _ResearchQuestion(
       question: question,
       answerChoice: answerChoice,
     );
@@ -26,34 +26,34 @@ class _$TravelQuestionResearchTearOff {
 }
 
 /// @nodoc
-const $TravelQuestionResearch = _$TravelQuestionResearchTearOff();
+const $ResearchQuestion = _$ResearchQuestionTearOff();
 
 /// @nodoc
-mixin _$TravelQuestionResearch {
+mixin _$ResearchQuestion {
   String get question => throw _privateConstructorUsedError;
   Map<String, dynamic> get answerChoice => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TravelQuestionResearchCopyWith<TravelQuestionResearch> get copyWith =>
+  $ResearchQuestionCopyWith<ResearchQuestion> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TravelQuestionResearchCopyWith<$Res> {
-  factory $TravelQuestionResearchCopyWith(TravelQuestionResearch value,
-          $Res Function(TravelQuestionResearch) then) =
-      _$TravelQuestionResearchCopyWithImpl<$Res>;
+abstract class $ResearchQuestionCopyWith<$Res> {
+  factory $ResearchQuestionCopyWith(
+          ResearchQuestion value, $Res Function(ResearchQuestion) then) =
+      _$ResearchQuestionCopyWithImpl<$Res>;
   $Res call({String question, Map<String, dynamic> answerChoice});
 }
 
 /// @nodoc
-class _$TravelQuestionResearchCopyWithImpl<$Res>
-    implements $TravelQuestionResearchCopyWith<$Res> {
-  _$TravelQuestionResearchCopyWithImpl(this._value, this._then);
+class _$ResearchQuestionCopyWithImpl<$Res>
+    implements $ResearchQuestionCopyWith<$Res> {
+  _$ResearchQuestionCopyWithImpl(this._value, this._then);
 
-  final TravelQuestionResearch _value;
+  final ResearchQuestion _value;
   // ignore: unused_field
-  final $Res Function(TravelQuestionResearch) _then;
+  final $Res Function(ResearchQuestion) _then;
 
   @override
   $Res call({
@@ -74,32 +74,32 @@ class _$TravelQuestionResearchCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TravelQuestionResearchCopyWith<$Res>
-    implements $TravelQuestionResearchCopyWith<$Res> {
-  factory _$TravelQuestionResearchCopyWith(_TravelQuestionResearch value,
-          $Res Function(_TravelQuestionResearch) then) =
-      __$TravelQuestionResearchCopyWithImpl<$Res>;
+abstract class _$ResearchQuestionCopyWith<$Res>
+    implements $ResearchQuestionCopyWith<$Res> {
+  factory _$ResearchQuestionCopyWith(
+          _ResearchQuestion value, $Res Function(_ResearchQuestion) then) =
+      __$ResearchQuestionCopyWithImpl<$Res>;
   @override
   $Res call({String question, Map<String, dynamic> answerChoice});
 }
 
 /// @nodoc
-class __$TravelQuestionResearchCopyWithImpl<$Res>
-    extends _$TravelQuestionResearchCopyWithImpl<$Res>
-    implements _$TravelQuestionResearchCopyWith<$Res> {
-  __$TravelQuestionResearchCopyWithImpl(_TravelQuestionResearch _value,
-      $Res Function(_TravelQuestionResearch) _then)
-      : super(_value, (v) => _then(v as _TravelQuestionResearch));
+class __$ResearchQuestionCopyWithImpl<$Res>
+    extends _$ResearchQuestionCopyWithImpl<$Res>
+    implements _$ResearchQuestionCopyWith<$Res> {
+  __$ResearchQuestionCopyWithImpl(
+      _ResearchQuestion _value, $Res Function(_ResearchQuestion) _then)
+      : super(_value, (v) => _then(v as _ResearchQuestion));
 
   @override
-  _TravelQuestionResearch get _value => super._value as _TravelQuestionResearch;
+  _ResearchQuestion get _value => super._value as _ResearchQuestion;
 
   @override
   $Res call({
     Object? question = freezed,
     Object? answerChoice = freezed,
   }) {
-    return _then(_TravelQuestionResearch(
+    return _then(_ResearchQuestion(
       question: question == freezed
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -114,8 +114,8 @@ class __$TravelQuestionResearchCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TravelQuestionResearch implements _TravelQuestionResearch {
-  const _$_TravelQuestionResearch(
+class _$_ResearchQuestion implements _ResearchQuestion {
+  const _$_ResearchQuestion(
       {required this.question, required this.answerChoice});
 
   @override
@@ -125,13 +125,13 @@ class _$_TravelQuestionResearch implements _TravelQuestionResearch {
 
   @override
   String toString() {
-    return 'TravelQuestionResearch(question: $question, answerChoice: $answerChoice)';
+    return 'ResearchQuestion(question: $question, answerChoice: $answerChoice)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TravelQuestionResearch &&
+        (other is _ResearchQuestion &&
             (identical(other.question, question) ||
                 const DeepCollectionEquality()
                     .equals(other.question, question)) &&
@@ -148,15 +148,14 @@ class _$_TravelQuestionResearch implements _TravelQuestionResearch {
 
   @JsonKey(ignore: true)
   @override
-  _$TravelQuestionResearchCopyWith<_TravelQuestionResearch> get copyWith =>
-      __$TravelQuestionResearchCopyWithImpl<_TravelQuestionResearch>(
-          this, _$identity);
+  _$ResearchQuestionCopyWith<_ResearchQuestion> get copyWith =>
+      __$ResearchQuestionCopyWithImpl<_ResearchQuestion>(this, _$identity);
 }
 
-abstract class _TravelQuestionResearch implements TravelQuestionResearch {
-  const factory _TravelQuestionResearch(
+abstract class _ResearchQuestion implements ResearchQuestion {
+  const factory _ResearchQuestion(
       {required String question,
-      required Map<String, dynamic> answerChoice}) = _$_TravelQuestionResearch;
+      required Map<String, dynamic> answerChoice}) = _$_ResearchQuestion;
 
   @override
   String get question => throw _privateConstructorUsedError;
@@ -164,6 +163,6 @@ abstract class _TravelQuestionResearch implements TravelQuestionResearch {
   Map<String, dynamic> get answerChoice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TravelQuestionResearchCopyWith<_TravelQuestionResearch> get copyWith =>
+  _$ResearchQuestionCopyWith<_ResearchQuestion> get copyWith =>
       throw _privateConstructorUsedError;
 }

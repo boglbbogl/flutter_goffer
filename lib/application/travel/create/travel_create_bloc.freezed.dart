@@ -92,6 +92,12 @@ class _$TravelCreateEventTearOff {
       index: index,
     );
   }
+
+  _PreResearchSelected preResearchSelected({required TravelResearch research}) {
+    return _PreResearchSelected(
+      research: research,
+    );
+  }
 }
 
 /// @nodoc
@@ -114,6 +120,7 @@ mixin _$TravelCreateEvent {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -131,6 +138,7 @@ mixin _$TravelCreateEvent {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +158,7 @@ mixin _$TravelCreateEvent {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -166,6 +175,7 @@ mixin _$TravelCreateEvent {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -238,6 +248,7 @@ class _$_Started implements _Started {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return started();
   }
@@ -258,6 +269,7 @@ class _$_Started implements _Started {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -283,6 +295,7 @@ class _$_Started implements _Started {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return started(this);
   }
@@ -302,6 +315,7 @@ class _$_Started implements _Started {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -367,6 +381,7 @@ class _$_Submitted implements _Submitted {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return submitted();
   }
@@ -387,6 +402,7 @@ class _$_Submitted implements _Submitted {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (submitted != null) {
@@ -412,6 +428,7 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return submitted(this);
   }
@@ -431,6 +448,7 @@ class _$_Submitted implements _Submitted {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (submitted != null) {
@@ -533,6 +551,7 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return dateSelected(start, end);
   }
@@ -553,6 +572,7 @@ class _$_DateSelected implements _DateSelected {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -578,6 +598,7 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return dateSelected(this);
   }
@@ -597,6 +618,7 @@ class _$_DateSelected implements _DateSelected {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -695,6 +717,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return startTimeSelected(start);
   }
@@ -715,6 +738,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -740,6 +764,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return startTimeSelected(this);
   }
@@ -759,6 +784,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -894,6 +920,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return startDestinationSelected(x, y, id, placeName);
   }
@@ -914,6 +941,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (startDestinationSelected != null) {
@@ -939,6 +967,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return startDestinationSelected(this);
   }
@@ -958,6 +987,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (startDestinationSelected != null) {
@@ -1098,6 +1128,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return endDestinationSelected(x, y, id, placeName);
   }
@@ -1118,6 +1149,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (endDestinationSelected != null) {
@@ -1143,6 +1175,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return endDestinationSelected(this);
   }
@@ -1162,6 +1195,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (endDestinationSelected != null) {
@@ -1274,6 +1308,7 @@ class _$_LayoverSelected implements _LayoverSelected {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return layoverSelected(layover);
   }
@@ -1294,6 +1329,7 @@ class _$_LayoverSelected implements _LayoverSelected {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (layoverSelected != null) {
@@ -1319,6 +1355,7 @@ class _$_LayoverSelected implements _LayoverSelected {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return layoverSelected(this);
   }
@@ -1338,6 +1375,7 @@ class _$_LayoverSelected implements _LayoverSelected {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (layoverSelected != null) {
@@ -1435,6 +1473,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return endTimeSelected(end);
   }
@@ -1455,6 +1494,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -1480,6 +1520,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return endTimeSelected(this);
   }
@@ -1499,6 +1540,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -1596,6 +1638,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return dateAndTimeBottomBar(value);
   }
@@ -1616,6 +1659,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (dateAndTimeBottomBar != null) {
@@ -1641,6 +1685,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return dateAndTimeBottomBar(this);
   }
@@ -1660,6 +1705,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (dateAndTimeBottomBar != null) {
@@ -1761,6 +1807,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return addressBottomSearched(value);
   }
@@ -1781,6 +1828,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (addressBottomSearched != null) {
@@ -1806,6 +1854,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return addressBottomSearched(this);
   }
@@ -1825,6 +1874,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (addressBottomSearched != null) {
@@ -1923,6 +1973,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
     required TResult Function(bool value) dateAndTimeBottomBar,
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
   }) {
     return locationToggleButton(index);
   }
@@ -1943,6 +1994,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
     TResult Function(bool value)? dateAndTimeBottomBar,
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (locationToggleButton != null) {
@@ -1968,6 +2020,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
     required TResult Function(_LayoverAddressBottomSearched value)
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
   }) {
     return locationToggleButton(this);
   }
@@ -1987,6 +2040,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
     TResult Function(_LayoverAddressBottomSearched value)?
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
     required TResult orElse(),
   }) {
     if (locationToggleButton != null) {
@@ -2007,6 +2061,182 @@ abstract class _LocationToggleButton implements TravelCreateEvent {
 }
 
 /// @nodoc
+abstract class _$PreResearchSelectedCopyWith<$Res> {
+  factory _$PreResearchSelectedCopyWith(_PreResearchSelected value,
+          $Res Function(_PreResearchSelected) then) =
+      __$PreResearchSelectedCopyWithImpl<$Res>;
+  $Res call({TravelResearch research});
+
+  $TravelResearchCopyWith<$Res> get research;
+}
+
+/// @nodoc
+class __$PreResearchSelectedCopyWithImpl<$Res>
+    extends _$TravelCreateEventCopyWithImpl<$Res>
+    implements _$PreResearchSelectedCopyWith<$Res> {
+  __$PreResearchSelectedCopyWithImpl(
+      _PreResearchSelected _value, $Res Function(_PreResearchSelected) _then)
+      : super(_value, (v) => _then(v as _PreResearchSelected));
+
+  @override
+  _PreResearchSelected get _value => super._value as _PreResearchSelected;
+
+  @override
+  $Res call({
+    Object? research = freezed,
+  }) {
+    return _then(_PreResearchSelected(
+      research: research == freezed
+          ? _value.research
+          : research // ignore: cast_nullable_to_non_nullable
+              as TravelResearch,
+    ));
+  }
+
+  @override
+  $TravelResearchCopyWith<$Res> get research {
+    return $TravelResearchCopyWith<$Res>(_value.research, (value) {
+      return _then(_value.copyWith(research: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_PreResearchSelected implements _PreResearchSelected {
+  const _$_PreResearchSelected({required this.research});
+
+  @override
+  final TravelResearch research;
+
+  @override
+  String toString() {
+    return 'TravelCreateEvent.preResearchSelected(research: $research)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PreResearchSelected &&
+            (identical(other.research, research) ||
+                const DeepCollectionEquality()
+                    .equals(other.research, research)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(research);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PreResearchSelectedCopyWith<_PreResearchSelected> get copyWith =>
+      __$PreResearchSelectedCopyWithImpl<_PreResearchSelected>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() submitted,
+    required TResult Function(String start, String end) dateSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String x, String y, String id, String placeName)
+        startDestinationSelected,
+    required TResult Function(String x, String y, String id, String placeName)
+        endDestinationSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
+    required TResult Function(String end) endTimeSelected,
+    required TResult Function(bool value) dateAndTimeBottomBar,
+    required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
+  }) {
+    return preResearchSelected(research);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? submitted,
+    TResult Function(String start, String end)? dateSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String x, String y, String id, String placeName)?
+        startDestinationSelected,
+    TResult Function(String x, String y, String id, String placeName)?
+        endDestinationSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
+    TResult Function(String end)? endTimeSelected,
+    TResult Function(bool value)? dateAndTimeBottomBar,
+    TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
+    required TResult orElse(),
+  }) {
+    if (preResearchSelected != null) {
+      return preResearchSelected(research);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_DateSelected value) dateSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_StartDestinationSelected value)
+        startDestinationSelected,
+    required TResult Function(_EndDestinationSelected value)
+        endDestinationSelected,
+    required TResult Function(_LayoverSelected value) layoverSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
+    required TResult Function(_LayoverAddressBottomSearched value)
+        addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
+  }) {
+    return preResearchSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_DateSelected value)? dateSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_StartDestinationSelected value)? startDestinationSelected,
+    TResult Function(_EndDestinationSelected value)? endDestinationSelected,
+    TResult Function(_LayoverSelected value)? layoverSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
+    TResult Function(_LayoverAddressBottomSearched value)?
+        addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
+    required TResult orElse(),
+  }) {
+    if (preResearchSelected != null) {
+      return preResearchSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PreResearchSelected implements TravelCreateEvent {
+  const factory _PreResearchSelected({required TravelResearch research}) =
+      _$_PreResearchSelected;
+
+  TravelResearch get research => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PreResearchSelectedCopyWith<_PreResearchSelected> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$TravelCreateStateTearOff {
   const _$TravelCreateStateTearOff();
 
@@ -2018,6 +2248,8 @@ class _$TravelCreateStateTearOff {
       required TravelCourse? endTravel,
       required List<TravelCourse> wayTravel,
       required List<TravelCourse> wayAddAndRemoveList,
+      required List<TravelResearch> preResearch,
+      required TravelResearch? travelResearch,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
       required bool isLayoverAddressBar,
@@ -2031,6 +2263,8 @@ class _$TravelCreateStateTearOff {
       endTravel: endTravel,
       wayTravel: wayTravel,
       wayAddAndRemoveList: wayAddAndRemoveList,
+      preResearch: preResearch,
+      travelResearch: travelResearch,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar,
       isAddressSearchBar: isAddressSearchBar,
       isLayoverAddressBar: isLayoverAddressBar,
@@ -2054,6 +2288,8 @@ mixin _$TravelCreateState {
   List<TravelCourse> get wayTravel => throw _privateConstructorUsedError;
   List<TravelCourse> get wayAddAndRemoveList =>
       throw _privateConstructorUsedError;
+  List<TravelResearch> get preResearch => throw _privateConstructorUsedError;
+  TravelResearch? get travelResearch => throw _privateConstructorUsedError;
   bool get isDateAndTimeSearchBar => throw _privateConstructorUsedError;
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
   bool get isLayoverAddressBar => throw _privateConstructorUsedError;
@@ -2078,6 +2314,8 @@ abstract class $TravelCreateStateCopyWith<$Res> {
       TravelCourse? endTravel,
       List<TravelCourse> wayTravel,
       List<TravelCourse> wayAddAndRemoveList,
+      List<TravelResearch> preResearch,
+      TravelResearch? travelResearch,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
       bool isLayoverAddressBar,
@@ -2087,6 +2325,7 @@ abstract class $TravelCreateStateCopyWith<$Res> {
   $TravelCopyWith<$Res>? get travel;
   $TravelCourseCopyWith<$Res>? get startTravel;
   $TravelCourseCopyWith<$Res>? get endTravel;
+  $TravelResearchCopyWith<$Res>? get travelResearch;
 }
 
 /// @nodoc
@@ -2107,6 +2346,8 @@ class _$TravelCreateStateCopyWithImpl<$Res>
     Object? endTravel = freezed,
     Object? wayTravel = freezed,
     Object? wayAddAndRemoveList = freezed,
+    Object? preResearch = freezed,
+    Object? travelResearch = freezed,
     Object? isDateAndTimeSearchBar = freezed,
     Object? isAddressSearchBar = freezed,
     Object? isLayoverAddressBar = freezed,
@@ -2142,6 +2383,14 @@ class _$TravelCreateStateCopyWithImpl<$Res>
           ? _value.wayAddAndRemoveList
           : wayAddAndRemoveList // ignore: cast_nullable_to_non_nullable
               as List<TravelCourse>,
+      preResearch: preResearch == freezed
+          ? _value.preResearch
+          : preResearch // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
+      travelResearch: travelResearch == freezed
+          ? _value.travelResearch
+          : travelResearch // ignore: cast_nullable_to_non_nullable
+              as TravelResearch?,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar == freezed
           ? _value.isDateAndTimeSearchBar
           : isDateAndTimeSearchBar // ignore: cast_nullable_to_non_nullable
@@ -2197,6 +2446,17 @@ class _$TravelCreateStateCopyWithImpl<$Res>
       return _then(_value.copyWith(endTravel: value));
     });
   }
+
+  @override
+  $TravelResearchCopyWith<$Res>? get travelResearch {
+    if (_value.travelResearch == null) {
+      return null;
+    }
+
+    return $TravelResearchCopyWith<$Res>(_value.travelResearch!, (value) {
+      return _then(_value.copyWith(travelResearch: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -2214,6 +2474,8 @@ abstract class _$TravelCreateStateCopyWith<$Res>
       TravelCourse? endTravel,
       List<TravelCourse> wayTravel,
       List<TravelCourse> wayAddAndRemoveList,
+      List<TravelResearch> preResearch,
+      TravelResearch? travelResearch,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
       bool isLayoverAddressBar,
@@ -2226,6 +2488,8 @@ abstract class _$TravelCreateStateCopyWith<$Res>
   $TravelCourseCopyWith<$Res>? get startTravel;
   @override
   $TravelCourseCopyWith<$Res>? get endTravel;
+  @override
+  $TravelResearchCopyWith<$Res>? get travelResearch;
 }
 
 /// @nodoc
@@ -2248,6 +2512,8 @@ class __$TravelCreateStateCopyWithImpl<$Res>
     Object? endTravel = freezed,
     Object? wayTravel = freezed,
     Object? wayAddAndRemoveList = freezed,
+    Object? preResearch = freezed,
+    Object? travelResearch = freezed,
     Object? isDateAndTimeSearchBar = freezed,
     Object? isAddressSearchBar = freezed,
     Object? isLayoverAddressBar = freezed,
@@ -2283,6 +2549,14 @@ class __$TravelCreateStateCopyWithImpl<$Res>
           ? _value.wayAddAndRemoveList
           : wayAddAndRemoveList // ignore: cast_nullable_to_non_nullable
               as List<TravelCourse>,
+      preResearch: preResearch == freezed
+          ? _value.preResearch
+          : preResearch // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
+      travelResearch: travelResearch == freezed
+          ? _value.travelResearch
+          : travelResearch // ignore: cast_nullable_to_non_nullable
+              as TravelResearch?,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar == freezed
           ? _value.isDateAndTimeSearchBar
           : isDateAndTimeSearchBar // ignore: cast_nullable_to_non_nullable
@@ -2318,6 +2592,8 @@ class _$_TravelCreateState implements _TravelCreateState {
       required this.endTravel,
       required this.wayTravel,
       required this.wayAddAndRemoveList,
+      required this.preResearch,
+      required this.travelResearch,
       required this.isDateAndTimeSearchBar,
       required this.isAddressSearchBar,
       required this.isLayoverAddressBar,
@@ -2339,6 +2615,10 @@ class _$_TravelCreateState implements _TravelCreateState {
   @override
   final List<TravelCourse> wayAddAndRemoveList;
   @override
+  final List<TravelResearch> preResearch;
+  @override
+  final TravelResearch? travelResearch;
+  @override
   final bool isDateAndTimeSearchBar;
   @override
   final bool isAddressSearchBar;
@@ -2351,7 +2631,7 @@ class _$_TravelCreateState implements _TravelCreateState {
 
   @override
   String toString() {
-    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, wayAddAndRemoveList: $wayAddAndRemoveList, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, isSelectedTourist: $isSelectedTourist, selectedTogglButtonIndex: $selectedTogglButtonIndex)';
+    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, wayAddAndRemoveList: $wayAddAndRemoveList, preResearch: $preResearch, travelResearch: $travelResearch, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, isSelectedTourist: $isSelectedTourist, selectedTogglButtonIndex: $selectedTogglButtonIndex)';
   }
 
   @override
@@ -2378,6 +2658,12 @@ class _$_TravelCreateState implements _TravelCreateState {
             (identical(other.wayAddAndRemoveList, wayAddAndRemoveList) ||
                 const DeepCollectionEquality()
                     .equals(other.wayAddAndRemoveList, wayAddAndRemoveList)) &&
+            (identical(other.preResearch, preResearch) ||
+                const DeepCollectionEquality()
+                    .equals(other.preResearch, preResearch)) &&
+            (identical(other.travelResearch, travelResearch) ||
+                const DeepCollectionEquality()
+                    .equals(other.travelResearch, travelResearch)) &&
             (identical(other.isDateAndTimeSearchBar, isDateAndTimeSearchBar) ||
                 const DeepCollectionEquality().equals(
                     other.isDateAndTimeSearchBar, isDateAndTimeSearchBar)) &&
@@ -2406,6 +2692,8 @@ class _$_TravelCreateState implements _TravelCreateState {
       const DeepCollectionEquality().hash(endTravel) ^
       const DeepCollectionEquality().hash(wayTravel) ^
       const DeepCollectionEquality().hash(wayAddAndRemoveList) ^
+      const DeepCollectionEquality().hash(preResearch) ^
+      const DeepCollectionEquality().hash(travelResearch) ^
       const DeepCollectionEquality().hash(isDateAndTimeSearchBar) ^
       const DeepCollectionEquality().hash(isAddressSearchBar) ^
       const DeepCollectionEquality().hash(isLayoverAddressBar) ^
@@ -2427,6 +2715,8 @@ abstract class _TravelCreateState implements TravelCreateState {
       required TravelCourse? endTravel,
       required List<TravelCourse> wayTravel,
       required List<TravelCourse> wayAddAndRemoveList,
+      required List<TravelResearch> preResearch,
+      required TravelResearch? travelResearch,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
       required bool isLayoverAddressBar,
@@ -2449,6 +2739,10 @@ abstract class _TravelCreateState implements TravelCreateState {
   @override
   List<TravelCourse> get wayAddAndRemoveList =>
       throw _privateConstructorUsedError;
+  @override
+  List<TravelResearch> get preResearch => throw _privateConstructorUsedError;
+  @override
+  TravelResearch? get travelResearch => throw _privateConstructorUsedError;
   @override
   bool get isDateAndTimeSearchBar => throw _privateConstructorUsedError;
   @override

@@ -17,9 +17,9 @@ _$_TravelDto _$_$_TravelDtoFromJson(Map<String, dynamic> json) {
     wayArr: (json['way_arr'] as List<dynamic>)
         .map((e) => TravelCourseDto.fromJson(e as Map<String, dynamic>))
         .toList(),
-    research: json['research'] == null
-        ? null
-        : TravelResearchDto.fromJson(json['research'] as Map<String, dynamic>),
+    preResearch: (json['pre_research'] as List<dynamic>)
+        .map((e) => TravelResearchDto.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
@@ -28,7 +28,7 @@ Map<String, dynamic> _$_$_TravelDtoToJson(_$_TravelDto instance) =>
       'start': instance.start,
       'end': instance.end,
       'way_arr': instance.wayArr,
-      'research': instance.research,
+      'pre_research': instance.preResearch,
     };
 
 _$_TravelCourseDto _$_$_TravelCourseDtoFromJson(Map<String, dynamic> json) {

@@ -20,12 +20,12 @@ class _$TravelTearOff {
       {required TravelCourse? start,
       required TravelCourse? end,
       required List<TravelCourse> wayArr,
-      required TravelResearch? research}) {
+      required List<TravelResearch> preResearch}) {
     return _Travel(
       start: start,
       end: end,
       wayArr: wayArr,
-      research: research,
+      preResearch: preResearch,
     );
   }
 }
@@ -38,7 +38,7 @@ mixin _$Travel {
   TravelCourse? get start => throw _privateConstructorUsedError;
   TravelCourse? get end => throw _privateConstructorUsedError;
   List<TravelCourse> get wayArr => throw _privateConstructorUsedError;
-  TravelResearch? get research => throw _privateConstructorUsedError;
+  List<TravelResearch> get preResearch => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TravelCopyWith<Travel> get copyWith => throw _privateConstructorUsedError;
@@ -52,11 +52,10 @@ abstract class $TravelCopyWith<$Res> {
       {TravelCourse? start,
       TravelCourse? end,
       List<TravelCourse> wayArr,
-      TravelResearch? research});
+      List<TravelResearch> preResearch});
 
   $TravelCourseCopyWith<$Res>? get start;
   $TravelCourseCopyWith<$Res>? get end;
-  $TravelResearchCopyWith<$Res>? get research;
 }
 
 /// @nodoc
@@ -72,7 +71,7 @@ class _$TravelCopyWithImpl<$Res> implements $TravelCopyWith<$Res> {
     Object? start = freezed,
     Object? end = freezed,
     Object? wayArr = freezed,
-    Object? research = freezed,
+    Object? preResearch = freezed,
   }) {
     return _then(_value.copyWith(
       start: start == freezed
@@ -87,10 +86,10 @@ class _$TravelCopyWithImpl<$Res> implements $TravelCopyWith<$Res> {
           ? _value.wayArr
           : wayArr // ignore: cast_nullable_to_non_nullable
               as List<TravelCourse>,
-      research: research == freezed
-          ? _value.research
-          : research // ignore: cast_nullable_to_non_nullable
-              as TravelResearch?,
+      preResearch: preResearch == freezed
+          ? _value.preResearch
+          : preResearch // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
     ));
   }
 
@@ -115,17 +114,6 @@ class _$TravelCopyWithImpl<$Res> implements $TravelCopyWith<$Res> {
       return _then(_value.copyWith(end: value));
     });
   }
-
-  @override
-  $TravelResearchCopyWith<$Res>? get research {
-    if (_value.research == null) {
-      return null;
-    }
-
-    return $TravelResearchCopyWith<$Res>(_value.research!, (value) {
-      return _then(_value.copyWith(research: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -137,14 +125,12 @@ abstract class _$TravelCopyWith<$Res> implements $TravelCopyWith<$Res> {
       {TravelCourse? start,
       TravelCourse? end,
       List<TravelCourse> wayArr,
-      TravelResearch? research});
+      List<TravelResearch> preResearch});
 
   @override
   $TravelCourseCopyWith<$Res>? get start;
   @override
   $TravelCourseCopyWith<$Res>? get end;
-  @override
-  $TravelResearchCopyWith<$Res>? get research;
 }
 
 /// @nodoc
@@ -161,7 +147,7 @@ class __$TravelCopyWithImpl<$Res> extends _$TravelCopyWithImpl<$Res>
     Object? start = freezed,
     Object? end = freezed,
     Object? wayArr = freezed,
-    Object? research = freezed,
+    Object? preResearch = freezed,
   }) {
     return _then(_Travel(
       start: start == freezed
@@ -176,10 +162,10 @@ class __$TravelCopyWithImpl<$Res> extends _$TravelCopyWithImpl<$Res>
           ? _value.wayArr
           : wayArr // ignore: cast_nullable_to_non_nullable
               as List<TravelCourse>,
-      research: research == freezed
-          ? _value.research
-          : research // ignore: cast_nullable_to_non_nullable
-              as TravelResearch?,
+      preResearch: preResearch == freezed
+          ? _value.preResearch
+          : preResearch // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
     ));
   }
 }
@@ -191,7 +177,7 @@ class _$_Travel implements _Travel {
       {required this.start,
       required this.end,
       required this.wayArr,
-      required this.research});
+      required this.preResearch});
 
   @override
   final TravelCourse? start;
@@ -200,11 +186,11 @@ class _$_Travel implements _Travel {
   @override
   final List<TravelCourse> wayArr;
   @override
-  final TravelResearch? research;
+  final List<TravelResearch> preResearch;
 
   @override
   String toString() {
-    return 'Travel(start: $start, end: $end, wayArr: $wayArr, research: $research)';
+    return 'Travel(start: $start, end: $end, wayArr: $wayArr, preResearch: $preResearch)';
   }
 
   @override
@@ -217,9 +203,9 @@ class _$_Travel implements _Travel {
                 const DeepCollectionEquality().equals(other.end, end)) &&
             (identical(other.wayArr, wayArr) ||
                 const DeepCollectionEquality().equals(other.wayArr, wayArr)) &&
-            (identical(other.research, research) ||
+            (identical(other.preResearch, preResearch) ||
                 const DeepCollectionEquality()
-                    .equals(other.research, research)));
+                    .equals(other.preResearch, preResearch)));
   }
 
   @override
@@ -228,7 +214,7 @@ class _$_Travel implements _Travel {
       const DeepCollectionEquality().hash(start) ^
       const DeepCollectionEquality().hash(end) ^
       const DeepCollectionEquality().hash(wayArr) ^
-      const DeepCollectionEquality().hash(research);
+      const DeepCollectionEquality().hash(preResearch);
 
   @JsonKey(ignore: true)
   @override
@@ -241,7 +227,7 @@ abstract class _Travel implements Travel {
       {required TravelCourse? start,
       required TravelCourse? end,
       required List<TravelCourse> wayArr,
-      required TravelResearch? research}) = _$_Travel;
+      required List<TravelResearch> preResearch}) = _$_Travel;
 
   @override
   TravelCourse? get start => throw _privateConstructorUsedError;
@@ -250,7 +236,7 @@ abstract class _Travel implements Travel {
   @override
   List<TravelCourse> get wayArr => throw _privateConstructorUsedError;
   @override
-  TravelResearch? get research => throw _privateConstructorUsedError;
+  List<TravelResearch> get preResearch => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelCopyWith<_Travel> get copyWith => throw _privateConstructorUsedError;

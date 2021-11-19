@@ -4,9 +4,7 @@ import 'package:flutter_goffer/_constant/_flavor/config_reader.dart';
 import 'package:flutter_goffer/domain/travel/i_travel_repository.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/domain/travel/travel_failure.dart';
-import 'package:flutter_goffer/domain/travel/travel_question_research.dart';
 import 'package:flutter_goffer/infrastructure/travel/travel_dtos.dart';
-import 'package:flutter_goffer/infrastructure/travel/travel_question_research_dtos.dart';
 import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 
@@ -32,27 +30,6 @@ class TravelRepository implements ITravelRepository {
       return left(const TravelFailure.notFound());
     } catch (error) {
       return left(const TravelFailure.serverError());
-    }
-  }
-
-  @override
-  Future<TravelQuestionResearch?> getResearch({
-    required int id,
-  }) async {
-    try {
-      final url = Uri.parse('$apiBaseUrl/research?id=$id');
-      final response = await http.get(url);
-      if (response.statusCode == 200) {
-        final decoded = json.decode(utf8.decode(response.bodyBytes));
-        final data = decoded["content"];
-        final result =
-            TravelQuestionResearchDto.fromJson(data as Map<String, dynamic>)
-                .toDomain();
-        return result;
-      }
-      return null;
-    } catch (error) {
-      return null;
     }
   }
 }

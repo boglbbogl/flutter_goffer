@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/_constant/widgets/logger.dart';
+import 'package:flutter_goffer/domain/research_question/research_question.dart';
 import 'package:flutter_goffer/domain/travel/i_travel_repository.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/domain/travel/travel_failure.dart';
@@ -35,6 +36,7 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
           start: startInitialResearch,
           end: endInitialResearch,
           wayArr: [],
+          preResearch: [],
         );
 
         TravelCreateState _state;
@@ -42,6 +44,7 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
           travel: initialTravel,
           startTravel: startInitialResearch,
           endTravel: endInitialResearch,
+          preResearch: [],
           wayTravel: [],
           wayAddAndRemoveList: [],
           isAddressSearchBar: false,
@@ -56,6 +59,7 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
           start: state.startTravel,
           end: state.endTravel,
           wayArr: state.wayTravel,
+          preResearch: state.preResearch,
         ));
         yield state.copyWith(isLoading: false, submitResult: result);
       },
@@ -75,13 +79,11 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
               wayTravel: state.wayAddAndRemoveList,
               isSelectedTourist: state.isSelectedTourist ? false : true);
         }
-        // if (list.map((e) => e.id).contains(e.layover.id)) {
-        //   list.remove(e.layover);
-        //   yield state.copyWith(wayTravel: list);
-        // } else {
-        //   list.add(e.layover);
-        //   yield state.copyWith(wayTravel: list);
-        // }
+      },
+      preResearchSelected: (e) async* {
+        state.preResearch.add(e.research);
+        logger.e(state.preResearch);
+        // yield state.copyWith(preResearch: state.preResearch);
       },
       startDestinationSelected: (e) async* {
         if (state.startTravel!.id.contains(e.id)) {

@@ -8,14 +8,14 @@ class Travel with _$Travel {
     required TravelCourse? start,
     required TravelCourse? end,
     required List<TravelCourse> wayArr,
-    required TravelResearch? research,
+    required List<TravelResearch> preResearch,
   }) = _Travel;
 
   factory Travel.empty() => const Travel(
         start: null,
         end: null,
         wayArr: [],
-        research: null,
+        preResearch: [],
       );
 }
 

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/application/travel/research/travel_research_cubit.dart';
+import 'package:flutter_goffer/presentation/travel/travel_local_data/representative_tourist.dart';
 
 class TravelStartAnimationWidget extends StatelessWidget {
-  const TravelStartAnimationWidget({Key? key}) : super(key: key);
+  const TravelStartAnimationWidget({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -118,18 +122,28 @@ class TravelStartAnimationWidget extends StatelessWidget {
                               childAspectRatio: 2.0,
                             ),
                             children: [
-                              ...state.research!.answerChoice.values.map((e) =>
+                              ...state.research!.answerChoice.entries.map((e) =>
                                   InkWell(
-                                    onTap: () {},
+                                    onTap: () {
+                                      context.read<TravelCreateBloc>().add(
+                                              TravelCreateEvent
+                                                  .preResearchSelected(
+                                            research: travelResearch.copyWith(
+                                                id: "${state.researchIndex + 1}"
+                                                    .toString(),
+                                                answer: [e.key]),
+                                          ));
+                                    },
                                     child: Container(
                                         height: size.height * 0.04,
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(20),
+                                            border: Border(),
                                             color: Colors.white70),
                                         child: Center(
                                           child: Text(
-                                            e.toString(),
+                                            e.value.toString(),
                                             style: theme.textTheme.bodyText2!
                                                 .copyWith(
                                                     color: const Color.fromRGBO(

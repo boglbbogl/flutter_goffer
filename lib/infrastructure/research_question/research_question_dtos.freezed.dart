@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'travel_question_research_dtos.dart';
+part of 'research_question_dtos.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,63 +12,62 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-TravelQuestionResearchDto _$TravelQuestionResearchDtoFromJson(
-    Map<String, dynamic> json) {
-  return _TravelQuestionResearchDto.fromJson(json);
+ResearchQuestionDto _$ResearchQuestionDtoFromJson(Map<String, dynamic> json) {
+  return _ResearchQuestionDto.fromJson(json);
 }
 
 /// @nodoc
-class _$TravelQuestionResearchDtoTearOff {
-  const _$TravelQuestionResearchDtoTearOff();
+class _$ResearchQuestionDtoTearOff {
+  const _$ResearchQuestionDtoTearOff();
 
-  _TravelQuestionResearchDto call(
+  _ResearchQuestionDto call(
       {required String question,
       @JsonKey(name: 'answer_choice')
           required Map<String, dynamic> answerChoice}) {
-    return _TravelQuestionResearchDto(
+    return _ResearchQuestionDto(
       question: question,
       answerChoice: answerChoice,
     );
   }
 
-  TravelQuestionResearchDto fromJson(Map<String, Object> json) {
-    return TravelQuestionResearchDto.fromJson(json);
+  ResearchQuestionDto fromJson(Map<String, Object> json) {
+    return ResearchQuestionDto.fromJson(json);
   }
 }
 
 /// @nodoc
-const $TravelQuestionResearchDto = _$TravelQuestionResearchDtoTearOff();
+const $ResearchQuestionDto = _$ResearchQuestionDtoTearOff();
 
 /// @nodoc
-mixin _$TravelQuestionResearchDto {
+mixin _$ResearchQuestionDto {
   String get question => throw _privateConstructorUsedError;
   @JsonKey(name: 'answer_choice')
   Map<String, dynamic> get answerChoice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TravelQuestionResearchDtoCopyWith<TravelQuestionResearchDto> get copyWith =>
+  $ResearchQuestionDtoCopyWith<ResearchQuestionDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TravelQuestionResearchDtoCopyWith<$Res> {
-  factory $TravelQuestionResearchDtoCopyWith(TravelQuestionResearchDto value,
-          $Res Function(TravelQuestionResearchDto) then) =
-      _$TravelQuestionResearchDtoCopyWithImpl<$Res>;
+abstract class $ResearchQuestionDtoCopyWith<$Res> {
+  factory $ResearchQuestionDtoCopyWith(
+          ResearchQuestionDto value, $Res Function(ResearchQuestionDto) then) =
+      _$ResearchQuestionDtoCopyWithImpl<$Res>;
   $Res call(
       {String question,
       @JsonKey(name: 'answer_choice') Map<String, dynamic> answerChoice});
 }
 
 /// @nodoc
-class _$TravelQuestionResearchDtoCopyWithImpl<$Res>
-    implements $TravelQuestionResearchDtoCopyWith<$Res> {
-  _$TravelQuestionResearchDtoCopyWithImpl(this._value, this._then);
+class _$ResearchQuestionDtoCopyWithImpl<$Res>
+    implements $ResearchQuestionDtoCopyWith<$Res> {
+  _$ResearchQuestionDtoCopyWithImpl(this._value, this._then);
 
-  final TravelQuestionResearchDto _value;
+  final ResearchQuestionDto _value;
   // ignore: unused_field
-  final $Res Function(TravelQuestionResearchDto) _then;
+  final $Res Function(ResearchQuestionDto) _then;
 
   @override
   $Res call({
@@ -89,11 +88,11 @@ class _$TravelQuestionResearchDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TravelQuestionResearchDtoCopyWith<$Res>
-    implements $TravelQuestionResearchDtoCopyWith<$Res> {
-  factory _$TravelQuestionResearchDtoCopyWith(_TravelQuestionResearchDto value,
-          $Res Function(_TravelQuestionResearchDto) then) =
-      __$TravelQuestionResearchDtoCopyWithImpl<$Res>;
+abstract class _$ResearchQuestionDtoCopyWith<$Res>
+    implements $ResearchQuestionDtoCopyWith<$Res> {
+  factory _$ResearchQuestionDtoCopyWith(_ResearchQuestionDto value,
+          $Res Function(_ResearchQuestionDto) then) =
+      __$ResearchQuestionDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String question,
@@ -101,23 +100,22 @@ abstract class _$TravelQuestionResearchDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TravelQuestionResearchDtoCopyWithImpl<$Res>
-    extends _$TravelQuestionResearchDtoCopyWithImpl<$Res>
-    implements _$TravelQuestionResearchDtoCopyWith<$Res> {
-  __$TravelQuestionResearchDtoCopyWithImpl(_TravelQuestionResearchDto _value,
-      $Res Function(_TravelQuestionResearchDto) _then)
-      : super(_value, (v) => _then(v as _TravelQuestionResearchDto));
+class __$ResearchQuestionDtoCopyWithImpl<$Res>
+    extends _$ResearchQuestionDtoCopyWithImpl<$Res>
+    implements _$ResearchQuestionDtoCopyWith<$Res> {
+  __$ResearchQuestionDtoCopyWithImpl(
+      _ResearchQuestionDto _value, $Res Function(_ResearchQuestionDto) _then)
+      : super(_value, (v) => _then(v as _ResearchQuestionDto));
 
   @override
-  _TravelQuestionResearchDto get _value =>
-      super._value as _TravelQuestionResearchDto;
+  _ResearchQuestionDto get _value => super._value as _ResearchQuestionDto;
 
   @override
   $Res call({
     Object? question = freezed,
     Object? answerChoice = freezed,
   }) {
-    return _then(_TravelQuestionResearchDto(
+    return _then(_ResearchQuestionDto(
       question: question == freezed
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -132,14 +130,14 @@ class __$TravelQuestionResearchDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TravelQuestionResearchDto extends _TravelQuestionResearchDto {
-  const _$_TravelQuestionResearchDto(
+class _$_ResearchQuestionDto extends _ResearchQuestionDto {
+  const _$_ResearchQuestionDto(
       {required this.question,
       @JsonKey(name: 'answer_choice') required this.answerChoice})
       : super._();
 
-  factory _$_TravelQuestionResearchDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_TravelQuestionResearchDtoFromJson(json);
+  factory _$_ResearchQuestionDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ResearchQuestionDtoFromJson(json);
 
   @override
   final String question;
@@ -149,13 +147,13 @@ class _$_TravelQuestionResearchDto extends _TravelQuestionResearchDto {
 
   @override
   String toString() {
-    return 'TravelQuestionResearchDto(question: $question, answerChoice: $answerChoice)';
+    return 'ResearchQuestionDto(question: $question, answerChoice: $answerChoice)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TravelQuestionResearchDto &&
+        (other is _ResearchQuestionDto &&
             (identical(other.question, question) ||
                 const DeepCollectionEquality()
                     .equals(other.question, question)) &&
@@ -172,27 +170,25 @@ class _$_TravelQuestionResearchDto extends _TravelQuestionResearchDto {
 
   @JsonKey(ignore: true)
   @override
-  _$TravelQuestionResearchDtoCopyWith<_TravelQuestionResearchDto>
-      get copyWith =>
-          __$TravelQuestionResearchDtoCopyWithImpl<_TravelQuestionResearchDto>(
-              this, _$identity);
+  _$ResearchQuestionDtoCopyWith<_ResearchQuestionDto> get copyWith =>
+      __$ResearchQuestionDtoCopyWithImpl<_ResearchQuestionDto>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TravelQuestionResearchDtoToJson(this);
+    return _$_$_ResearchQuestionDtoToJson(this);
   }
 }
 
-abstract class _TravelQuestionResearchDto extends TravelQuestionResearchDto {
-  const factory _TravelQuestionResearchDto(
-          {required String question,
-          @JsonKey(name: 'answer_choice')
-              required Map<String, dynamic> answerChoice}) =
-      _$_TravelQuestionResearchDto;
-  const _TravelQuestionResearchDto._() : super._();
+abstract class _ResearchQuestionDto extends ResearchQuestionDto {
+  const factory _ResearchQuestionDto(
+      {required String question,
+      @JsonKey(name: 'answer_choice')
+          required Map<String, dynamic> answerChoice}) = _$_ResearchQuestionDto;
+  const _ResearchQuestionDto._() : super._();
 
-  factory _TravelQuestionResearchDto.fromJson(Map<String, dynamic> json) =
-      _$_TravelQuestionResearchDto.fromJson;
+  factory _ResearchQuestionDto.fromJson(Map<String, dynamic> json) =
+      _$_ResearchQuestionDto.fromJson;
 
   @override
   String get question => throw _privateConstructorUsedError;
@@ -201,6 +197,6 @@ abstract class _TravelQuestionResearchDto extends TravelQuestionResearchDto {
   Map<String, dynamic> get answerChoice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TravelQuestionResearchDtoCopyWith<_TravelQuestionResearchDto>
-      get copyWith => throw _privateConstructorUsedError;
+  _$ResearchQuestionDtoCopyWith<_ResearchQuestionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

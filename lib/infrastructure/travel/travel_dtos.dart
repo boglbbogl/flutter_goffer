@@ -10,7 +10,7 @@ class TravelDto with _$TravelDto {
     required TravelCourseDto? start,
     required TravelCourseDto? end,
     @JsonKey(name: 'way_arr') required List<TravelCourseDto> wayArr,
-    required TravelResearchDto? research,
+    @JsonKey(name: 'pre_research') required List<TravelResearchDto> preResearch,
   }) = _TravelDto;
   const TravelDto._();
   factory TravelDto.fromJson(Map<String, dynamic> json) =>
@@ -19,14 +19,15 @@ class TravelDto with _$TravelDto {
         start: TravelCourseDto.fromDomain(t.start!),
         end: TravelCourseDto.fromDomain(t.end!),
         wayArr: t.wayArr.map((e) => TravelCourseDto.fromDomain(e)).toList(),
-        research: TravelResearchDto.fromDomain(t.research!),
+        preResearch:
+            t.preResearch.map((e) => TravelResearchDto.fromDomain(e)).toList(),
       );
 
   Travel toDomain() => Travel(
         start: start!.toDomain(),
         end: end!.toDomain(),
         wayArr: wayArr.map((e) => e.toDomain()).toList(),
-        research: research!.toDomain(),
+        preResearch: preResearch.map((e) => e.toDomain()).toList(),
       );
 }
 

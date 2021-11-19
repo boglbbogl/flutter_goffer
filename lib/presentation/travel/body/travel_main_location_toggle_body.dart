@@ -65,7 +65,7 @@ class TravelMainLocationToggleBody extends StatelessWidget {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        width: size.width * 0.29513,
+        width: size.width * 0.2942,
         height: size.height * 0.5,
         decoration: BoxDecoration(
           border: border,

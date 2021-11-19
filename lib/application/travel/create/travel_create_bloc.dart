@@ -65,7 +65,6 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
       },
       layoverSelected: (e) async* {
         // final List<TravelResearch> list = [];
-        logger.e(state.wayAddAndRemoveList);
         yield state.copyWith(wayAddAndRemoveList: state.wayTravel);
         if (state.wayAddAndRemoveList.map((e) => e.id).contains(e.layover.id)) {
           state.wayAddAndRemoveList.remove(e.layover);
@@ -74,16 +73,20 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
               isSelectedTourist: state.isSelectedTourist ? false : true);
         } else {
           state.wayAddAndRemoveList.add(e.layover);
-
           yield state.copyWith(
               wayTravel: state.wayAddAndRemoveList,
               isSelectedTourist: state.isSelectedTourist ? false : true);
         }
       },
       preResearchSelected: (e) async* {
-        state.preResearch.add(e.research);
-        logger.e(state.preResearch);
-        // yield state.copyWith(preResearch: state.preResearch);
+        if (state.preResearch.contains(e.research)) {
+          state.preResearch.remove(e.research);
+        } else {
+          state.preResearch.add(e.research);
+        }
+        yield state.copyWith(
+            preResearch: state.preResearch,
+            isSelectedTourist: state.isSelectedTourist ? false : true);
       },
       startDestinationSelected: (e) async* {
         if (state.startTravel!.id.contains(e.id)) {

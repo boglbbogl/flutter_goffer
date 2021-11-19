@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_goffer/_constant/_flavor/config_reader.dart';
+import 'package:flutter_goffer/_constant/widgets/logger.dart';
 import 'package:flutter_goffer/domain/travel/i_travel_repository.dart';
 import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/domain/travel/travel_failure.dart';
@@ -19,6 +20,7 @@ class TravelRepository implements ITravelRepository {
       final url = Uri.parse('$apiBaseUrl/travel');
       final json = TravelDto.fromDomain(travel).toJson();
       final body = jsonEncode(json);
+      logger.v(body);
       final response = await http.post(url,
           headers: {
             "Content-Type": "application/json",

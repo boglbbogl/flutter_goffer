@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
-import 'package:flutter_goffer/domain/travel/travel.dart';
+import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/injection.dart';
 import 'package:flutter_goffer/presentation/travel/travel_main_page.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/travel_start_animation_widget.dart';
@@ -23,7 +23,14 @@ class TravelStartScreen extends StatelessWidget {
             duration: const Duration(milliseconds: 1500),
             child: state.switcherIndex == 0
                 ? switcherPage(
-                    isButton: true,
+                    isButton: context
+                        .watch<TravelCreateBloc>()
+                        .state
+                        .preResearch
+                        .asMap()
+                        .values
+                        .map((e) => e.id)
+                        .contains("3"),
                     key: 'start',
                     context: context,
                     backgroundColor: Colors.black,

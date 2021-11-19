@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
@@ -7,7 +8,6 @@ import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/location_select_toggle_button.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_list_view_address_form.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_shimmer_address_form.dart';
-import 'package:flutter_goffer/presentation/travel/body/travel_main_location_toggle_body.dart';
 
 class TravelAddressSearchBottom extends StatelessWidget {
   final bool isAddressSearchBar;
@@ -129,28 +129,38 @@ class TravelAddressSearchBottom extends StatelessWidget {
                                     _listViewMoreButtonForm(
                                         context: context,
                                         title: '원하는 검색 결과가 없으신가요 ?',
-                                        widget: IconButton(
-                                            onPressed: () {
-                                              if (_controller.text.isEmpty) {
-                                              } else {
-                                                _scrollController.animateTo(0,
-                                                    duration: const Duration(
-                                                        milliseconds: 300),
-                                                    curve: Curves.ease);
-                                                context
-                                                    .read<FindLocationCubit>()
-                                                    .apiFindLocation(
-                                                        keyWord:
-                                                            _controller.text);
-                                              }
-                                            },
-                                            icon: const Icon(Icons.add_circle,
-                                                color: Color.fromRGBO(
-                                                    135, 135, 135, 1))))
-                                  else
+                                        onTap: () {
+                                          if (_controller.text.isEmpty) {
+                                          } else {
+                                            _scrollController.animateTo(0,
+                                                duration: const Duration(
+                                                    milliseconds: 300),
+                                                curve: Curves.ease);
+                                            context
+                                                .read<FindLocationCubit>()
+                                                .apiFindLocation(
+                                                    keyWord: _controller.text);
+                                          }
+                                        },
+                                        widget: state.isLoading
+                                            ? const Padding(
+                                                padding:
+                                                    EdgeInsets.only(left: 10),
+                                                child:
+                                                    CupertinoActivityIndicator(),
+                                              )
+                                            : const Padding(
+                                                padding:
+                                                    EdgeInsets.only(left: 10),
+                                                child: Icon(Icons.add_circle,
+                                                    color: Color.fromRGBO(
+                                                        135, 135, 135, 1)),
+                                              ))
+                                  else if (state.location.isEmpty)
                                     _listViewMoreButtonForm(
                                         context: context,
                                         title: '검색 결과가 없습니다...',
+                                        onTap: () {},
                                         widget: Container())
                                 ],
                               ),
@@ -170,22 +180,26 @@ class TravelAddressSearchBottom extends StatelessWidget {
     required BuildContext context,
     required String title,
     required Widget widget,
+    required Function() onTap,
   }) {
     return Container(
         width: size.width * 0.9,
         height: size.height * 0.07,
         color: Colors.white,
-        child: Center(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: theme.textTheme.bodyText2!
-                  .copyWith(color: const Color.fromRGBO(135, 135, 135, 1)),
-            ),
-            widget
-          ],
-        )));
+        child: InkWell(
+          onTap: onTap,
+          child: Center(
+              child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: theme.textTheme.bodyText2!
+                    .copyWith(color: const Color.fromRGBO(135, 135, 135, 1)),
+              ),
+              widget
+            ],
+          )),
+        ));
   }
 }

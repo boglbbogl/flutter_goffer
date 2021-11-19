@@ -15,15 +15,24 @@ class TravelResearchCubit extends Cubit<TravelResearchState> {
     this._researchQuestionRepository,
   ) : super(TravelResearchState.initial());
 
-  Future<Unit> getTravelResearch({required int id}) async {
+  Future<Unit> getTravelResearch({
+    required int id,
+  }) async {
     final research =
         await _researchQuestionRepository.getResearchQuestion(id: id);
-    emit(state.copyWith(research: research));
+    emit(state.copyWith(
+      research: research,
+    ));
     return unit;
   }
 
   Future<int> researchPageChanged(int index) async {
     emit(state.copyWith(researchIndex: index));
     return state.researchIndex;
+  }
+
+  Future<Unit> animationDelayTime({required bool value}) async {
+    emit(state.copyWith(isDelayTime: value));
+    return unit;
   }
 }

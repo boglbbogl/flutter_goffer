@@ -42,13 +42,13 @@ class TravelStartAnimationWidget extends StatelessWidget {
                     height: size.height * 0.07,
                     child: titleForm(
                         fontSize: 22,
-                        title: '여행의 테마를 알려주세요..',
+                        title: '여행의 테마를 알려주세요',
                         leftPadding: 10,
                         topPadding: 0,
                         fontColor: Colors.white70),
                   )),
               _futureAnimationForm(
-                  delayTime: 1500,
+                  delayTime: state.isDelayTime ? 0 : 1000,
                   showWidget: SizedBox(
                     key: const Key('show'),
                     width: size.width * 0.9,
@@ -57,6 +57,7 @@ class TravelStartAnimationWidget extends StatelessWidget {
                       children: [
                         SizedBox(
                           width: size.width * 0.9,
+                          height: size.height * 0.04,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -66,21 +67,44 @@ class TravelStartAnimationWidget extends StatelessWidget {
                                   leftPadding: 10,
                                   topPadding: 0,
                                   fontColor: appSubColor),
-                              IconButton(
-                                onPressed: () {
-                                  if (state.researchIndex == 0) {
-                                    context.read<TravelResearchCubit>()
-                                      ..getTravelResearch(id: 2)
-                                      ..researchPageChanged(1);
-                                  } else if (state.researchIndex == 1) {
-                                    context.read<TravelResearchCubit>()
-                                      ..getTravelResearch(id: 3)
-                                      ..researchPageChanged(2);
-                                  } else {}
-                                },
-                                icon: const Icon(Icons.double_arrow_rounded),
-                                color: appSubColor,
-                                iconSize: 40,
+                              Stack(
+                                children: [
+                                  if (state.researchIndex == 0 &&
+                                      context
+                                          .read<TravelCreateBloc>()
+                                          .state
+                                          .preResearch
+                                          .asMap()
+                                          .values
+                                          .map((e) => e.id)
+                                          .contains(
+                                              "${state.researchIndex + 1}")) ...[
+                                    _preResearchNextButtonForm(onTap: () {
+                                      context.read<TravelResearchCubit>()
+                                        ..getTravelResearch(id: 2)
+                                        ..researchPageChanged(1);
+                                    })
+                                  ],
+                                  if (state.researchIndex == 1 &&
+                                      context
+                                          .read<TravelCreateBloc>()
+                                          .state
+                                          .preResearch
+                                          .asMap()
+                                          .values
+                                          .map((e) => e.id)
+                                          .contains(
+                                              "${state.researchIndex + 1}")) ...[
+                                    _preResearchNextButtonForm(onTap: () {
+                                      context.read<TravelResearchCubit>()
+                                        ..getTravelResearch(id: 3)
+                                        ..researchPageChanged(2);
+                                    }),
+                                  ],
+                                  SizedBox(
+                                    height: size.height * 0.4,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -125,6 +149,10 @@ class TravelStartAnimationWidget extends StatelessWidget {
                               ...state.research!.answerChoice.entries.map((e) =>
                                   InkWell(
                                     onTap: () {
+                                      context
+                                          .read<TravelResearchCubit>()
+                                          .animationDelayTime(value: true);
+
                                       context.read<TravelCreateBloc>().add(
                                               TravelCreateEvent
                                                   .preResearchSelected(
@@ -139,14 +167,36 @@ class TravelStartAnimationWidget extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(20),
-                                            border: Border(),
+                                            border: context
+                                                    .watch<TravelCreateBloc>()
+                                                    .state
+                                                    .preResearch
+                                                    .contains(travelResearch
+                                                        .copyWith(
+                                                            answer: [e.key],
+                                                            id:
+                                                                "${state.researchIndex + 1}"))
+                                                ? Border.all(
+                                                    color: appSubColor,
+                                                    width: 3)
+                                                : Border.all(),
                                             color: Colors.white70),
                                         child: Center(
                                           child: Text(
                                             e.value.toString(),
-                                            style: theme.textTheme.bodyText2!
-                                                .copyWith(
-                                                    color: const Color.fromRGBO(
+                                            style: theme.textTheme.bodyText2!.copyWith(
+                                                color: context
+                                                        .watch<
+                                                            TravelCreateBloc>()
+                                                        .state
+                                                        .preResearch
+                                                        .contains(travelResearch
+                                                            .copyWith(
+                                                                answer: [e.key],
+                                                                id:
+                                                                    "${state.researchIndex + 1}"))
+                                                    ? appSubColor
+                                                    : const Color.fromRGBO(
                                                         115, 115, 115, 1)),
                                           ),
                                         )),
@@ -164,6 +214,23 @@ class TravelStartAnimationWidget extends StatelessWidget {
     );
   }
 
+  SizedBox _preResearchNextButtonForm({
+    required Function() onTap,
+  }) {
+    return SizedBox(
+      height: size.height * 0.04,
+      width: size.width * 0.12,
+      child: InkWell(
+        onTap: onTap,
+        child: Icon(
+          Icons.double_arrow_rounded,
+          color: appSubColor,
+          size: 35,
+        ),
+      ),
+    );
+  }
+
   FutureBuilder<int> _futureAnimationForm({
     required int delayTime,
     required Widget showWidget,
@@ -172,7 +239,7 @@ class TravelStartAnimationWidget extends StatelessWidget {
         future: Future.delayed(Duration(milliseconds: delayTime), () => 0),
         builder: (context, snapshot) {
           return AnimatedSwitcher(
-            duration: const Duration(milliseconds: 1000),
+            duration: const Duration(milliseconds: 500),
             child: snapshot.connectionState == ConnectionState.done
                 ? showWidget
                 : SizedBox(

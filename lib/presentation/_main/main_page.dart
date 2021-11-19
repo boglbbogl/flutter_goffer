@@ -121,7 +121,8 @@ class MainPage extends StatelessWidget {
                     .add(const TravelCreateEvent.started());
                 context.read<TravelResearchCubit>()
                   ..getTravelResearch(id: 1)
-                  ..researchPageChanged(0);
+                  ..researchPageChanged(0)
+                  ..animationDelayTime(value: false);
                 pushNewScreen(context,
                     screen: const TravelStartScreen(),
                     pageTransitionAnimation: PageTransitionAnimation.slideUp);

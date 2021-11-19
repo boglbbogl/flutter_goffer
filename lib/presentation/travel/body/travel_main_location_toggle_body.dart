@@ -27,14 +27,14 @@ class TravelMainLocationToggleBody extends StatelessWidget {
             title: '출발지',
             radius: const BorderRadius.only(
                 topLeft: Radius.circular(8), bottomLeft: Radius.circular(8)),
-            border: Border.all(width: 2),
+            border: Border.all(width: 1.5),
           ),
           _buttonItem(
             context: context,
             title: '도착지',
             index: 1,
             radius: BorderRadius.circular(0),
-            border: Border.all(width: 2),
+            border: Border.all(width: 1.5),
           ),
           _buttonItem(
             context: context,
@@ -42,7 +42,7 @@ class TravelMainLocationToggleBody extends StatelessWidget {
             title: '경유지',
             radius: const BorderRadius.only(
                 topRight: Radius.circular(8), bottomRight: Radius.circular(8)),
-            border: Border.all(width: 2),
+            border: Border.all(width: 1.5),
           ),
         ],
       ),

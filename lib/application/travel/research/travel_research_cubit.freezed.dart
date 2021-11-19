@@ -17,10 +17,15 @@ class _$TravelResearchStateTearOff {
   const _$TravelResearchStateTearOff();
 
   _TravelResearchState call(
-      {required ResearchQuestion? research, required int researchIndex}) {
+      {required ResearchQuestion? research,
+      required int researchIndex,
+      required List<String> createPreResearchUiControl,
+      required bool isDelayTime}) {
     return _TravelResearchState(
       research: research,
       researchIndex: researchIndex,
+      createPreResearchUiControl: createPreResearchUiControl,
+      isDelayTime: isDelayTime,
     );
   }
 }
@@ -32,6 +37,9 @@ const $TravelResearchState = _$TravelResearchStateTearOff();
 mixin _$TravelResearchState {
   ResearchQuestion? get research => throw _privateConstructorUsedError;
   int get researchIndex => throw _privateConstructorUsedError;
+  List<String> get createPreResearchUiControl =>
+      throw _privateConstructorUsedError;
+  bool get isDelayTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TravelResearchStateCopyWith<TravelResearchState> get copyWith =>
@@ -43,7 +51,11 @@ abstract class $TravelResearchStateCopyWith<$Res> {
   factory $TravelResearchStateCopyWith(
           TravelResearchState value, $Res Function(TravelResearchState) then) =
       _$TravelResearchStateCopyWithImpl<$Res>;
-  $Res call({ResearchQuestion? research, int researchIndex});
+  $Res call(
+      {ResearchQuestion? research,
+      int researchIndex,
+      List<String> createPreResearchUiControl,
+      bool isDelayTime});
 
   $ResearchQuestionCopyWith<$Res>? get research;
 }
@@ -61,6 +73,8 @@ class _$TravelResearchStateCopyWithImpl<$Res>
   $Res call({
     Object? research = freezed,
     Object? researchIndex = freezed,
+    Object? createPreResearchUiControl = freezed,
+    Object? isDelayTime = freezed,
   }) {
     return _then(_value.copyWith(
       research: research == freezed
@@ -71,6 +85,14 @@ class _$TravelResearchStateCopyWithImpl<$Res>
           ? _value.researchIndex
           : researchIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      createPreResearchUiControl: createPreResearchUiControl == freezed
+          ? _value.createPreResearchUiControl
+          : createPreResearchUiControl // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      isDelayTime: isDelayTime == freezed
+          ? _value.isDelayTime
+          : isDelayTime // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -93,7 +115,11 @@ abstract class _$TravelResearchStateCopyWith<$Res>
           $Res Function(_TravelResearchState) then) =
       __$TravelResearchStateCopyWithImpl<$Res>;
   @override
-  $Res call({ResearchQuestion? research, int researchIndex});
+  $Res call(
+      {ResearchQuestion? research,
+      int researchIndex,
+      List<String> createPreResearchUiControl,
+      bool isDelayTime});
 
   @override
   $ResearchQuestionCopyWith<$Res>? get research;
@@ -114,6 +140,8 @@ class __$TravelResearchStateCopyWithImpl<$Res>
   $Res call({
     Object? research = freezed,
     Object? researchIndex = freezed,
+    Object? createPreResearchUiControl = freezed,
+    Object? isDelayTime = freezed,
   }) {
     return _then(_TravelResearchState(
       research: research == freezed
@@ -124,6 +152,14 @@ class __$TravelResearchStateCopyWithImpl<$Res>
           ? _value.researchIndex
           : researchIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      createPreResearchUiControl: createPreResearchUiControl == freezed
+          ? _value.createPreResearchUiControl
+          : createPreResearchUiControl // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      isDelayTime: isDelayTime == freezed
+          ? _value.isDelayTime
+          : isDelayTime // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -132,16 +168,23 @@ class __$TravelResearchStateCopyWithImpl<$Res>
 
 class _$_TravelResearchState implements _TravelResearchState {
   const _$_TravelResearchState(
-      {required this.research, required this.researchIndex});
+      {required this.research,
+      required this.researchIndex,
+      required this.createPreResearchUiControl,
+      required this.isDelayTime});
 
   @override
   final ResearchQuestion? research;
   @override
   final int researchIndex;
+  @override
+  final List<String> createPreResearchUiControl;
+  @override
+  final bool isDelayTime;
 
   @override
   String toString() {
-    return 'TravelResearchState(research: $research, researchIndex: $researchIndex)';
+    return 'TravelResearchState(research: $research, researchIndex: $researchIndex, createPreResearchUiControl: $createPreResearchUiControl, isDelayTime: $isDelayTime)';
   }
 
   @override
@@ -153,14 +196,24 @@ class _$_TravelResearchState implements _TravelResearchState {
                     .equals(other.research, research)) &&
             (identical(other.researchIndex, researchIndex) ||
                 const DeepCollectionEquality()
-                    .equals(other.researchIndex, researchIndex)));
+                    .equals(other.researchIndex, researchIndex)) &&
+            (identical(other.createPreResearchUiControl,
+                    createPreResearchUiControl) ||
+                const DeepCollectionEquality().equals(
+                    other.createPreResearchUiControl,
+                    createPreResearchUiControl)) &&
+            (identical(other.isDelayTime, isDelayTime) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDelayTime, isDelayTime)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(research) ^
-      const DeepCollectionEquality().hash(researchIndex);
+      const DeepCollectionEquality().hash(researchIndex) ^
+      const DeepCollectionEquality().hash(createPreResearchUiControl) ^
+      const DeepCollectionEquality().hash(isDelayTime);
 
   @JsonKey(ignore: true)
   @override
@@ -172,12 +225,19 @@ class _$_TravelResearchState implements _TravelResearchState {
 abstract class _TravelResearchState implements TravelResearchState {
   const factory _TravelResearchState(
       {required ResearchQuestion? research,
-      required int researchIndex}) = _$_TravelResearchState;
+      required int researchIndex,
+      required List<String> createPreResearchUiControl,
+      required bool isDelayTime}) = _$_TravelResearchState;
 
   @override
   ResearchQuestion? get research => throw _privateConstructorUsedError;
   @override
   int get researchIndex => throw _privateConstructorUsedError;
+  @override
+  List<String> get createPreResearchUiControl =>
+      throw _privateConstructorUsedError;
+  @override
+  bool get isDelayTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelResearchStateCopyWith<_TravelResearchState> get copyWith =>

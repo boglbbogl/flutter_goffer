@@ -15,7 +15,7 @@ class TravelAddressSearchBody extends StatelessWidget {
             .add(const TravelCreateEvent.addressBottomSearched(value: true));
       },
       child: Container(
-        width: size.width * 0.9,
+        width: size.width * 0.92,
         height: size.height * 0.06,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),

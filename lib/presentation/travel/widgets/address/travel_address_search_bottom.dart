@@ -4,8 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/find_location/find_location_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
-import 'package:flutter_goffer/domain/travel/travel.dart';
-import 'package:flutter_goffer/presentation/travel/widgets/address/location_select_toggle_button.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_list_view_address_form.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_shimmer_address_form.dart';
 
@@ -51,7 +49,6 @@ class TravelAddressSearchBottom extends StatelessWidget {
                     ),
                     SizedBox(
                       width: size.width * 0.85,
-                      // height: size.height * 0.1,
                       child: TextFormField(
                         controller: _controller,
                         style: theme.textTheme.bodyText2!
@@ -77,9 +74,6 @@ class TravelAddressSearchBottom extends StatelessWidget {
                                 fontSize: 14)),
                       ),
                     ),
-                    LocationSelectToggleButton(
-                        selectedIndex: state.selectedIndex),
-                    const SizedBox(height: 10),
                     InkWell(
                       onTap: () {
                         context
@@ -89,16 +83,28 @@ class TravelAddressSearchBottom extends StatelessWidget {
                       child: SizedBox(
                         width: size.width * 0.85,
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Icon(Icons.error_outline,
-                                size: 16,
-                                color: Color.fromRGBO(155, 155, 155, 1)),
-                            Text(
-                              '경유지는 최대 3개 까지 추가할 수 있습니다',
-                              style: theme.textTheme.bodyText2!.copyWith(
-                                  color: const Color.fromRGBO(155, 155, 155, 1),
-                                  fontSize: 12),
+                            Row(
+                              children: [
+                                const Icon(Icons.error_outline,
+                                    size: 16,
+                                    color: Color.fromRGBO(155, 155, 155, 1)),
+                                Text(
+                                  '경유지는 최대 3개 까지 추가할 수 있습니다',
+                                  style: theme.textTheme.bodyText2!.copyWith(
+                                      color: const Color.fromRGBO(
+                                          155, 155, 155, 1),
+                                      fontSize: 12),
+                                ),
+                              ],
                             ),
+                            Text(
+                                "${context.watch<TravelCreateBloc>().state.wayTravel.length}/3",
+                                style: theme.textTheme.bodyText2!.copyWith(
+                                    color:
+                                        const Color.fromRGBO(155, 155, 155, 1),
+                                    fontSize: 12)),
                           ],
                         ),
                       ),

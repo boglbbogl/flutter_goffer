@@ -3,8 +3,11 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
+import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/presentation/travel/travel_local_data/representative_tourist.dart';
+import 'package:flutter_goffer/presentation/travel/widgets/route_research/travel_route_research_widget.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class TravelTouristRepresentativeBody extends StatelessWidget {
   final int layoverLength;
@@ -38,54 +41,13 @@ class TravelTouristRepresentativeBody extends StatelessWidget {
             children: [
               ...representativeTourist.map((e) => InkWell(
                     onTap: () {
-                      if (context
-                              .read<TravelCreateBloc>()
-                              .state
-                              .selectedTogglButtonIndex ==
-                          0) {
-                        context
-                            .read<TravelCreateBloc>()
-                            .add(TravelCreateEvent.startDestinationSelected(
-                              x: e.entries.elementAt(1).value,
-                              y: e.entries.elementAt(2).value,
-                              id: e.entries.elementAt(0).value,
-                              placeName: e.entries.elementAt(3).value,
-                            ));
-                      } else if (context
-                              .read<TravelCreateBloc>()
-                              .state
-                              .selectedTogglButtonIndex ==
-                          1) {
-                        context
-                            .read<TravelCreateBloc>()
-                            .add(TravelCreateEvent.endDestinationSelected(
-                              x: e.entries.elementAt(1).value,
-                              y: e.entries.elementAt(2).value,
-                              id: e.entries.elementAt(0).value,
-                              placeName: e.entries.elementAt(3).value,
-                            ));
-                      } else if (context
-                                  .read<TravelCreateBloc>()
-                                  .state
-                                  .selectedTogglButtonIndex ==
-                              2 &&
-                          layoverLength < 3) {
-                        context
-                            .read<TravelCreateBloc>()
-                            .add(TravelCreateEvent.layoverSelected(
-                                layover: travel.copyWith(
-                              date: "",
-                              time: "",
-                              x: e.entries.elementAt(1).value,
-                              y: e.entries.elementAt(2).value,
-                              id: e.entries.elementAt(0).value,
-                              placeName: e.entries.elementAt(3).value,
-                            )));
-                      } else {
-                        FlushbarHelper.createInformation(
-                                message: '경유지는 3곳 이상 선택할 수 없습니다')
-                            .show(context);
-                      }
+                      pushNewScreen(context,
+                          screen: TravelRouteResearchWidget(
+                            x: e.entries.elementAt(1).value,
+                            y: e.entries.elementAt(2).value,
+                            id: e.entries.elementAt(0).value,
+                            placeName: e.entries.elementAt(3).value,
+                          ));
                     },
                     child: Stack(
                       children: [

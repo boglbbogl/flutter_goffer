@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_goffer/presentation/feed/feed.dart';
 import 'package:flutter_goffer/presentation/home/home_banner.dart';
+import 'package:flutter_goffer/presentation/travel/widgets/route_research/travel_route_research_widget.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class HomeMainPage extends StatelessWidget {
   const HomeMainPage({Key? key}) : super(key: key);

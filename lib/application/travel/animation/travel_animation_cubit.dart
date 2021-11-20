@@ -28,7 +28,6 @@ class TravelAnimationCubit extends Cubit<TravelAnimationState> {
     } else {
       emit(state.copyWith(isExpandable: true));
     }
-
     return unit;
   }
 }

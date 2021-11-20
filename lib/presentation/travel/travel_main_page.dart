@@ -8,7 +8,6 @@ import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/travel/body/travel_address_search_body.dart';
 import 'package:flutter_goffer/presentation/travel/body/travel_date_and_time_body.dart';
 import 'package:flutter_goffer/presentation/travel/body/travel_destination_icon_body.dart';
-import 'package:flutter_goffer/presentation/travel/body/travel_main_location_toggle_body.dart';
 import 'package:flutter_goffer/presentation/travel/body/travel_tourist_representative_body.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_address_search_bottom.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/date/travel_date_and_time_bottom.dart';
@@ -54,8 +53,6 @@ class TravelMainPage extends StatelessWidget {
                   ],
                   SizedBox(height: size.height * 0.01),
                   const TravelAddressSearchBody(),
-                  SizedBox(height: size.height * 0.01),
-                  const TravelMainLocationToggleBody(),
                   SizedBox(height: size.height * 0.02),
                   TravelTouristRepresentativeBody(
                     layoverLength:
@@ -66,6 +63,7 @@ class TravelMainPage extends StatelessWidget {
               const TravelSubmittedButton(),
               const TravelDateAndTimeBottom(),
               TravelAddressSearchBottom(),
+              // const TravelRouteResearchWidget(),
             ],
           ),
         );

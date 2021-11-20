@@ -1,10 +1,10 @@
-import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/domain/find_location/find_location.dart';
-import 'package:flutter_goffer/presentation/travel/travel_local_data/representative_tourist.dart';
+import 'package:flutter_goffer/presentation/travel/widgets/route_research/travel_route_research_widget.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class TravelListViewAddressForm extends StatelessWidget {
   final FindLocation data;
@@ -25,40 +25,13 @@ class TravelListViewAddressForm extends StatelessWidget {
     return InkWell(
       onTap: () {
         FocusScope.of(context).unfocus();
-        if (selectedIndex == 0) {
-          context.read<TravelCreateBloc>().add(
-              TravelCreateEvent.startDestinationSelected(
-                  x: data.x,
-                  y: data.y,
-                  id: data.id,
-                  placeName: data.place_name));
-        } else if (selectedIndex == 1) {
-          context.read<TravelCreateBloc>().add(
-              TravelCreateEvent.endDestinationSelected(
-                  x: data.x,
-                  y: data.y,
-                  id: data.id,
-                  placeName: data.place_name));
-        } else if (selectedIndex == 2) {
-          if (context.read<TravelCreateBloc>().state.wayTravel.length < 3) {
-            context
-                .read<TravelCreateBloc>()
-                .add(TravelCreateEvent.layoverSelected(
-                  layover: travel.copyWith(
-                      id: data.id,
-                      x: data.x,
-                      y: data.y,
-                      placeName: data.place_name),
-                ));
-          } else {
-            FlushbarHelper.createInformation(message: '더 이상 경유지를 선택할 수 없습니다')
-                .show(context);
-          }
-        } else {
-          context
-              .read<TravelCreateBloc>()
-              .add(const TravelCreateEvent.addressBottomSearched(value: false));
-        }
+        pushNewScreen(context,
+            screen: TravelRouteResearchWidget(
+              x: data.x,
+              y: data.y,
+              id: data.id,
+              placeName: data.place_name,
+            ));
       },
       child: Padding(
         padding: const EdgeInsets.only(top: 8, bottom: 8, left: 20, right: 20),

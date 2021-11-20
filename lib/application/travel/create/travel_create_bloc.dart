@@ -64,13 +64,12 @@ class TravelCreateBloc extends Bloc<TravelCreateEvent, TravelCreateState> {
         yield state.copyWith(isLoading: false, submitResult: result);
       },
       layoverSelected: (e) async* {
-        // final List<TravelResearch> list = [];
         yield state.copyWith(wayAddAndRemoveList: state.wayTravel);
         if (state.wayAddAndRemoveList.map((e) => e.id).contains(e.layover.id)) {
           state.wayAddAndRemoveList.remove(e.layover);
           yield state.copyWith(
-              wayTravel: state.wayAddAndRemoveList,
-              isSelectedTourist: state.isSelectedTourist ? false : true);
+            wayTravel: state.wayAddAndRemoveList,
+          );
         } else {
           state.wayAddAndRemoveList.add(e.layover);
           yield state.copyWith(

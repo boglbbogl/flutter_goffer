@@ -14,7 +14,7 @@ class TravelMainLocationToggleBody extends StatelessWidget {
       width: size.width * 0.9,
       height: size.height * 0.05,
       decoration: BoxDecoration(
-          border: Border.all(width: 3),
+          border: Border.all(width: 4),
           borderRadius: BorderRadius.circular(12)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,16 +25,13 @@ class TravelMainLocationToggleBody extends StatelessWidget {
             title: '출발지',
             radius: const BorderRadius.only(
                 topLeft: Radius.circular(8), bottomLeft: Radius.circular(8)),
-            border: Border.all(width: 1.5),
           ),
           _buttonItem(
             context: context,
-            width: size.width * 0.2946,
+            width: size.width * 0.2931,
             title: '도착지',
             index: 1,
-            radius: BorderRadius.circular(0),
-            border: const Border(
-                top: BorderSide(width: 1.5), bottom: BorderSide(width: 1.5)),
+            radius: BorderRadius.zero,
           ),
           _buttonItem(
             context: context,
@@ -42,7 +39,6 @@ class TravelMainLocationToggleBody extends StatelessWidget {
             title: '경유지',
             radius: const BorderRadius.only(
                 topRight: Radius.circular(8), bottomRight: Radius.circular(8)),
-            border: Border.all(width: 1.5),
           ),
         ],
       ),
@@ -54,7 +50,6 @@ class TravelMainLocationToggleBody extends StatelessWidget {
     required int index,
     required BorderRadiusGeometry radius,
     required String title,
-    required BoxBorder border,
     double? width,
   }) {
     return InkWell(
@@ -66,10 +61,9 @@ class TravelMainLocationToggleBody extends StatelessWidget {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        width: width ?? size.width * 0.294,
+        width: width ?? size.width * 0.292,
         height: size.height * 0.5,
         decoration: BoxDecoration(
-          border: border,
           borderRadius: radius,
           color: context
                       .watch<TravelCreateBloc>()

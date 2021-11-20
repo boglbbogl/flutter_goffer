@@ -6,17 +6,11 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/presentation/travel/travel_local_data/representative_tourist.dart';
 
-class TravelTouristRepresentative extends StatelessWidget {
-  final String startId;
-  final String endId;
-  final List<String> layoverId;
-  final int selectedToggleIndex;
-  const TravelTouristRepresentative({
+class TravelTouristRepresentativeBody extends StatelessWidget {
+  final int layoverLength;
+  const TravelTouristRepresentativeBody({
     Key? key,
-    required this.startId,
-    required this.endId,
-    required this.layoverId,
-    required this.selectedToggleIndex,
+    required this.layoverLength,
   }) : super(key: key);
 
   @override
@@ -44,7 +38,11 @@ class TravelTouristRepresentative extends StatelessWidget {
             children: [
               ...representativeTourist.map((e) => InkWell(
                     onTap: () {
-                      if (selectedToggleIndex == 0) {
+                      if (context
+                              .read<TravelCreateBloc>()
+                              .state
+                              .selectedTogglButtonIndex ==
+                          0) {
                         context
                             .read<TravelCreateBloc>()
                             .add(TravelCreateEvent.startDestinationSelected(
@@ -53,7 +51,11 @@ class TravelTouristRepresentative extends StatelessWidget {
                               id: e.entries.elementAt(0).value,
                               placeName: e.entries.elementAt(3).value,
                             ));
-                      } else if (selectedToggleIndex == 1) {
+                      } else if (context
+                              .read<TravelCreateBloc>()
+                              .state
+                              .selectedTogglButtonIndex ==
+                          1) {
                         context
                             .read<TravelCreateBloc>()
                             .add(TravelCreateEvent.endDestinationSelected(
@@ -62,8 +64,12 @@ class TravelTouristRepresentative extends StatelessWidget {
                               id: e.entries.elementAt(0).value,
                               placeName: e.entries.elementAt(3).value,
                             ));
-                      } else if (selectedToggleIndex == 2 &&
-                          layoverId.length < 3) {
+                      } else if (context
+                                  .read<TravelCreateBloc>()
+                                  .state
+                                  .selectedTogglButtonIndex ==
+                              2 &&
+                          layoverLength < 3) {
                         context
                             .read<TravelCreateBloc>()
                             .add(TravelCreateEvent.layoverSelected(

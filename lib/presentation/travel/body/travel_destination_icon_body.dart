@@ -7,13 +7,9 @@ import 'package:flutter_goffer/presentation/travel/travel_local_data/representat
 
 class TravelDestinationIconBody extends StatelessWidget {
   final List<TravelCourse> travelList;
-  final String startId;
-  final String endId;
   const TravelDestinationIconBody({
     Key? key,
     required this.travelList,
-    required this.startId,
-    required this.endId,
   }) : super(key: key);
 
   @override
@@ -27,11 +23,21 @@ class TravelDestinationIconBody extends StatelessWidget {
         children: [
           ...travelList.where((element) => element.id != "").map((e) => InkWell(
                 onTap: () {
-                  if (startId.contains(e.id)) {
+                  if (context
+                      .read<TravelCreateBloc>()
+                      .state
+                      .startTravel!
+                      .id
+                      .contains(e.id)) {
                     context.read<TravelCreateBloc>().add(
                         TravelCreateEvent.startDestinationSelected(
                             x: e.x, y: e.y, id: e.id, placeName: e.placeName));
-                  } else if (endId.contains(e.id)) {
+                  } else if (context
+                      .read<TravelCreateBloc>()
+                      .state
+                      .endTravel!
+                      .id
+                      .contains(e.id)) {
                     context.read<TravelCreateBloc>().add(
                         TravelCreateEvent.endDestinationSelected(
                             x: e.x, y: e.y, id: e.id, placeName: e.placeName));
@@ -67,7 +73,12 @@ class TravelDestinationIconBody extends StatelessWidget {
                             ),
                           ),
                         ),
-                        if (endId.contains(e.id)) ...[
+                        if (context
+                            .watch<TravelCreateBloc>()
+                            .state
+                            .endTravel!
+                            .id
+                            .contains(e.id)) ...[
                           Positioned(
                             top: 2,
                             left: 9,
@@ -78,7 +89,12 @@ class TravelDestinationIconBody extends StatelessWidget {
                             ),
                           )
                         ],
-                        if (startId.contains(e.id)) ...[
+                        if (context
+                            .watch<TravelCreateBloc>()
+                            .state
+                            .startTravel!
+                            .id
+                            .contains(e.id)) ...[
                           Positioned(
                             top: 4,
                             left: 3,

@@ -4,14 +4,8 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 
 class TravelDateAndTimeBody extends StatelessWidget {
-  final bool isAddressSearchBar;
-  final String startDate;
-  final String endDate;
   const TravelDateAndTimeBody({
     Key? key,
-    required this.isAddressSearchBar,
-    required this.startDate,
-    required this.endDate,
   }) : super(key: key);
 
   @override
@@ -26,17 +20,17 @@ class TravelDateAndTimeBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           dateAndTimeForm(
-            date: startDate,
+            date: context.watch<TravelCreateBloc>().state.startTravel!.date,
           ),
           const Icon(
             Icons.airplane_ticket_outlined,
             color: Colors.black,
           ),
           dateAndTimeForm(
-            date: endDate,
+            date: context.watch<TravelCreateBloc>().state.endTravel!.date,
           ),
           Icon(
-            isAddressSearchBar
+            context.watch<TravelCreateBloc>().state.isDateAndTimeSearchBar
                 ? Icons.keyboard_arrow_down_outlined
                 : Icons.keyboard_arrow_up_outlined,
             color: Colors.black,

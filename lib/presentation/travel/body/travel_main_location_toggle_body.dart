@@ -4,10 +4,8 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 
 class TravelMainLocationToggleBody extends StatelessWidget {
-  final int selectedIndex;
   const TravelMainLocationToggleBody({
     Key? key,
-    required this.selectedIndex,
   }) : super(key: key);
 
   @override
@@ -31,10 +29,12 @@ class TravelMainLocationToggleBody extends StatelessWidget {
           ),
           _buttonItem(
             context: context,
+            width: size.width * 0.2946,
             title: '도착지',
             index: 1,
             radius: BorderRadius.circular(0),
-            border: Border.all(width: 1.5),
+            border: const Border(
+                top: BorderSide(width: 1.5), bottom: BorderSide(width: 1.5)),
           ),
           _buttonItem(
             context: context,
@@ -55,6 +55,7 @@ class TravelMainLocationToggleBody extends StatelessWidget {
     required BorderRadiusGeometry radius,
     required String title,
     required BoxBorder border,
+    double? width,
   }) {
     return InkWell(
       onTap: () {
@@ -65,18 +66,28 @@ class TravelMainLocationToggleBody extends StatelessWidget {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        width: size.width * 0.2942,
+        width: width ?? size.width * 0.294,
         height: size.height * 0.5,
         decoration: BoxDecoration(
           border: border,
           borderRadius: radius,
-          color: selectedIndex == index ? Colors.black : Colors.white38,
+          color: context
+                      .watch<TravelCreateBloc>()
+                      .state
+                      .selectedTogglButtonIndex ==
+                  index
+              ? Colors.black
+              : Colors.white38,
         ),
         child: Center(
           child: Text(
             title,
             style: theme.textTheme.bodyText2!.copyWith(
-                color: selectedIndex == index
+                color: context
+                            .watch<TravelCreateBloc>()
+                            .state
+                            .selectedTogglButtonIndex ==
+                        index
                     ? Colors.white
                     : const Color.fromRGBO(155, 155, 155, 1),
                 fontSize: 12),

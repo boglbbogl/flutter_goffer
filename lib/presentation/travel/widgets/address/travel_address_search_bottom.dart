@@ -10,19 +10,11 @@ import 'package:flutter_goffer/presentation/travel/widgets/address/travel_list_v
 import 'package:flutter_goffer/presentation/travel/widgets/address/travel_shimmer_address_form.dart';
 
 class TravelAddressSearchBottom extends StatelessWidget {
-  final bool isAddressSearchBar;
-  final TravelCourse startTravel;
-  final TravelCourse endTravel;
-  final List<TravelCourse> layoverTravel;
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
 
   TravelAddressSearchBottom({
     Key? key,
-    required this.isAddressSearchBar,
-    required this.startTravel,
-    required this.endTravel,
-    required this.layoverTravel,
   }) : super(key: key);
 
   @override
@@ -32,7 +24,11 @@ class TravelAddressSearchBottom extends StatelessWidget {
         return AnimatedContainer(
           color: Colors.white,
           transform: Matrix4.translationValues(
-              0, isAddressSearchBar ? 0 : size.height, 0),
+              0,
+              context.watch<TravelCreateBloc>().state.isAddressSearchBar
+                  ? 0
+                  : size.height,
+              0),
           duration: const Duration(milliseconds: 300),
           child: SizedBox(
             height: size.height,
@@ -120,9 +116,6 @@ class TravelAddressSearchBottom extends StatelessWidget {
                                     (data) => TravelListViewAddressForm(
                                       data: data,
                                       selectedIndex: state.selectedIndex,
-                                      startTravel: startTravel,
-                                      endTravel: endTravel,
-                                      layoverTravel: layoverTravel,
                                     ),
                                   ),
                                   if (state.isMore)

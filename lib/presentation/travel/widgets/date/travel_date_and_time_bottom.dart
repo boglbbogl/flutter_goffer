@@ -3,28 +3,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
-import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/date/date_range_picker.dart';
 import 'package:flutter_goffer/presentation/travel/widgets/date/time_picker.dart';
 
 class TravelDateAndTimeBottom extends StatelessWidget {
-  final bool dateAndTimeExpandable;
-  final bool isDateAndTimeSearchBar;
-  final TravelCourse startTravel;
-  final TravelCourse endTravel;
   const TravelDateAndTimeBottom({
     Key? key,
-    required this.dateAndTimeExpandable,
-    required this.isDateAndTimeSearchBar,
-    required this.startTravel,
-    required this.endTravel,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
       transform: Matrix4.translationValues(
-          0, isDateAndTimeSearchBar ? 0 : size.height, 0),
+          0,
+          context.watch<TravelCreateBloc>().state.isDateAndTimeSearchBar
+              ? 0
+              : size.height,
+          0),
       duration: const Duration(milliseconds: 300),
       child: SizedBox(
         height: size.height,
@@ -37,7 +32,7 @@ class TravelDateAndTimeBottom extends StatelessWidget {
                     const TravelCreateEvent.dateAndTimeBottomBar(value: false));
               },
               child: Container(
-                // color: Colors.white70,
+                color: Colors.white38,
                 height: size.height,
               ),
             ),
@@ -91,20 +86,45 @@ class TravelDateAndTimeBottom extends StatelessWidget {
                               Row(
                                 children: [
                                   dateAndTimeForm(
-                                    isExpandable: dateAndTimeExpandable,
-                                    date: startTravel.date,
-                                    time: startTravel.time,
+                                    isExpandable: context
+                                        .watch<TravelAnimationCubit>()
+                                        .state
+                                        .isExpandable,
+                                    date: context
+                                        .watch<TravelCreateBloc>()
+                                        .state
+                                        .startTravel!
+                                        .date,
+                                    time: context
+                                        .watch<TravelCreateBloc>()
+                                        .state
+                                        .startTravel!
+                                        .time,
                                   ),
                                   Icon(
                                     Icons.airplane_ticket_outlined,
-                                    color: dateAndTimeExpandable
+                                    color: context
+                                            .watch<TravelAnimationCubit>()
+                                            .state
+                                            .isExpandable
                                         ? appSubColor
                                         : appColor,
                                   ),
                                   dateAndTimeForm(
-                                    isExpandable: dateAndTimeExpandable,
-                                    date: endTravel.date,
-                                    time: endTravel.time,
+                                    isExpandable: context
+                                        .watch<TravelAnimationCubit>()
+                                        .state
+                                        .isExpandable,
+                                    date: context
+                                        .watch<TravelCreateBloc>()
+                                        .state
+                                        .endTravel!
+                                        .date,
+                                    time: context
+                                        .watch<TravelCreateBloc>()
+                                        .state
+                                        .endTravel!
+                                        .time,
                                   ),
                                 ],
                               ),
@@ -116,7 +136,10 @@ class TravelDateAndTimeBottom extends StatelessWidget {
                                     child: child,
                                   );
                                 },
-                                child: dateAndTimeExpandable
+                                child: context
+                                        .watch<TravelAnimationCubit>()
+                                        .state
+                                        .isExpandable
                                     ? const Center(
                                         child: Icon(
                                         Icons.date_range_outlined,
@@ -141,18 +164,33 @@ class TravelDateAndTimeBottom extends StatelessWidget {
                     Container(
                       width: size.width * 0.9,
                       height: 2,
-                      color: dateAndTimeExpandable ? appSubColor : appColor,
+                      color: context
+                              .watch<TravelAnimationCubit>()
+                              .state
+                              .isExpandable
+                          ? appSubColor
+                          : appColor,
                     ),
                     AnimatedSwitcher(
                         duration: const Duration(milliseconds: 1000),
-                        child: dateAndTimeExpandable
-                            ? TimePicker(
-                                start: startTravel.time,
-                                end: endTravel.time,
-                              )
+                        child: context
+                                .watch<TravelAnimationCubit>()
+                                .state
+                                .isExpandable
+                            ? const TimePicker()
                             : DateRangePicker(
-                                start: startTravel.date.substring(0, 10),
-                                end: endTravel.date.substring(0, 10),
+                                start: context
+                                    .watch<TravelCreateBloc>()
+                                    .state
+                                    .startTravel!
+                                    .date
+                                    .substring(0, 10),
+                                end: context
+                                    .watch<TravelCreateBloc>()
+                                    .state
+                                    .endTravel!
+                                    .date
+                                    .substring(0, 10),
                               )),
                   ],
                 ),

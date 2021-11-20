@@ -15,10 +15,8 @@ import 'package:flutter_goffer/presentation/travel/widgets/date/travel_date_and_
 import 'package:flutter_goffer/presentation/travel/widgets/travel_submitted_button.dart';
 
 class TravelMainPage extends StatelessWidget {
-  final bool dateAndTimeExpandable;
   const TravelMainPage({
     Key? key,
-    required this.dateAndTimeExpandable,
   }) : super(key: key);
 
   @override
@@ -46,48 +44,28 @@ class TravelMainPage extends StatelessWidget {
               Column(
                 children: [
                   SizedBox(height: size.height * 0.02),
-                  TravelDateAndTimeBody(
-                    isAddressSearchBar: state.isDateAndTimeSearchBar,
-                    startDate: state.startTravel!.date,
-                    endDate: state.endTravel!.date,
-                  ),
+                  const TravelDateAndTimeBody(),
                   SizedBox(height: size.height * 0.01),
                   if (travelList.first.id.isNotEmpty ||
                       travelList.last.id.isNotEmpty) ...[
                     TravelDestinationIconBody(
                       travelList: travelList,
-                      startId: state.startTravel!.id,
-                      endId: state.endTravel!.id,
                     ),
                   ],
                   SizedBox(height: size.height * 0.01),
                   const TravelAddressSearchBody(),
                   SizedBox(height: size.height * 0.01),
-                  TravelMainLocationToggleBody(
-                      selectedIndex: state.selectedTogglButtonIndex),
+                  const TravelMainLocationToggleBody(),
                   SizedBox(height: size.height * 0.02),
-                  TravelTouristRepresentative(
-                    startId: state.startTravel!.id,
-                    endId: state.endTravel!.id,
-                    layoverId: state.wayTravel.map((e) => e.id).toList(),
-                    selectedToggleIndex: state.selectedTogglButtonIndex,
+                  TravelTouristRepresentativeBody(
+                    layoverLength:
+                        state.wayTravel.map((e) => e.id).toList().length,
                   ),
                 ],
               ),
-              TravelSubmittedButton(
-                  startId: state.startTravel!.id, endId: state.endTravel!.id),
-              TravelDateAndTimeBottom(
-                dateAndTimeExpandable: dateAndTimeExpandable,
-                isDateAndTimeSearchBar: state.isDateAndTimeSearchBar,
-                startTravel: state.startTravel!,
-                endTravel: state.endTravel!,
-              ),
-              TravelAddressSearchBottom(
-                isAddressSearchBar: state.isAddressSearchBar,
-                startTravel: state.startTravel!,
-                endTravel: state.endTravel!,
-                layoverTravel: state.wayTravel,
-              ),
+              const TravelSubmittedButton(),
+              const TravelDateAndTimeBottom(),
+              TravelAddressSearchBottom(),
             ],
           ),
         );

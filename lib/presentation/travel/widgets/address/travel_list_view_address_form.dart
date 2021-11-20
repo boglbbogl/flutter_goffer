@@ -4,31 +4,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/domain/find_location/find_location.dart';
-import 'package:flutter_goffer/domain/travel/travel.dart';
 import 'package:flutter_goffer/presentation/travel/travel_local_data/representative_tourist.dart';
 
 class TravelListViewAddressForm extends StatelessWidget {
   final FindLocation data;
   final int selectedIndex;
-  final List<TravelCourse> layoverTravel;
-  final TravelCourse startTravel;
-  final TravelCourse endTravel;
-  const TravelListViewAddressForm(
-      {Key? key,
-      required this.data,
-      required this.selectedIndex,
-      required this.layoverTravel,
-      required this.startTravel,
-      required this.endTravel})
-      : super(key: key);
+
+  const TravelListViewAddressForm({
+    Key? key,
+    required this.data,
+    required this.selectedIndex,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final List selectedList = [];
-    for (final element in layoverTravel) {
+    for (final element in context.watch<TravelCreateBloc>().state.wayTravel) {
       selectedList.add(element.id);
     }
-
     return InkWell(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -47,7 +40,7 @@ class TravelListViewAddressForm extends StatelessWidget {
                   id: data.id,
                   placeName: data.place_name));
         } else if (selectedIndex == 2) {
-          if (layoverTravel.length < 3) {
+          if (context.read<TravelCreateBloc>().state.wayTravel.length < 3) {
             context
                 .read<TravelCreateBloc>()
                 .add(TravelCreateEvent.layoverSelected(
@@ -76,9 +69,19 @@ class TravelListViewAddressForm extends StatelessWidget {
               height: size.height * 0.1,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  border: startTravel.id.contains(data.id)
+                  border: context
+                          .watch<TravelCreateBloc>()
+                          .state
+                          .startTravel!
+                          .id
+                          .contains(data.id)
                       ? Border.all(color: appColor, width: 2)
-                      : endTravel.id.contains(data.id)
+                      : context
+                              .watch<TravelCreateBloc>()
+                              .state
+                              .endTravel!
+                              .id
+                              .contains(data.id)
                           ? Border.all(color: appSubColor, width: 2)
                           : selectedList.contains(data.id)
                               ? Border.all(color: Colors.deepPurple, width: 2)
@@ -108,7 +111,12 @@ class TravelListViewAddressForm extends StatelessWidget {
                 ),
               ),
             ),
-            if (startTravel.id.contains(data.id)) ...[
+            if (context
+                .watch<TravelCreateBloc>()
+                .state
+                .startTravel!
+                .id
+                .contains(data.id)) ...[
               Positioned(
                   top: 10,
                   left: 10,
@@ -120,7 +128,12 @@ class TravelListViewAddressForm extends StatelessWidget {
                         fontSize: 14),
                   )),
             ],
-            if (endTravel.id.contains(data.id)) ...[
+            if (context
+                .watch<TravelCreateBloc>()
+                .state
+                .endTravel!
+                .id
+                .contains(data.id)) ...[
               Positioned(
                   top: 30,
                   left: 10,

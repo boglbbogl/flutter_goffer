@@ -54,9 +54,7 @@ class TravelStartScreen extends StatelessWidget {
                           .read<TravelAnimationCubit>()
                           .startAnimation(index: 2);
                     },
-                    widget: TravelMainPage(
-                      dateAndTimeExpandable: state.isExpandable,
-                    )));
+                    widget: const TravelMainPage()));
       }),
     );
   }

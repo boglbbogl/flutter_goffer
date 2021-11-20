@@ -6,12 +6,8 @@ import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart
 import 'package:flutter_goffer/presentation/travel/widgets/date/time_list.dart';
 
 class TimePicker extends StatelessWidget {
-  final String start;
-  final String end;
   const TimePicker({
     Key? key,
-    required this.start,
-    required this.end,
   }) : super(key: key);
 
   @override
@@ -30,7 +26,7 @@ class TimePicker extends StatelessWidget {
           _timePickerForm(
             context: context,
             title: '출발 시간',
-            time: start,
+            time: context.watch<TravelCreateBloc>().state.startTravel!.time,
             onSelectedItemChanged: (int i) => context
                 .read<TravelCreateBloc>()
                 .add(TravelCreateEvent.startTimeSelected(start: timeList[i])),
@@ -38,7 +34,7 @@ class TimePicker extends StatelessWidget {
           _timePickerForm(
             context: context,
             title: '도착 시간',
-            time: end,
+            time: context.watch<TravelCreateBloc>().state.endTravel!.time,
             onSelectedItemChanged: (int i) => context
                 .read<TravelCreateBloc>()
                 .add(TravelCreateEvent.endTimeSelected(end: timeList[i])),

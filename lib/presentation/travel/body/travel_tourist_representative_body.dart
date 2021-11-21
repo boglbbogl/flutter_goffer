@@ -6,7 +6,7 @@ import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/animation/travel_animation_cubit.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/presentation/travel/travel_local_data/representative_tourist.dart';
-import 'package:flutter_goffer/presentation/travel/widgets/route_research/travel_route_research_widget.dart';
+import 'package:flutter_goffer/presentation/travel/travel_route_research_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class TravelTouristRepresentativeBody extends StatelessWidget {
@@ -41,8 +41,11 @@ class TravelTouristRepresentativeBody extends StatelessWidget {
             children: [
               ...representativeTourist.map((e) => InkWell(
                     onTap: () {
+                      context
+                          .read<TravelCreateBloc>()
+                          .add(const TravelCreateEvent.initialData());
                       pushNewScreen(context,
-                          screen: TravelRouteResearchWidget(
+                          screen: TravelRouteResearchScreen(
                             x: e.entries.elementAt(1).value,
                             y: e.entries.elementAt(2).value,
                             id: e.entries.elementAt(0).value,
@@ -52,16 +55,18 @@ class TravelTouristRepresentativeBody extends StatelessWidget {
                     child: Stack(
                       children: [
                         Container(
+                          width: size.width * 0.3,
+                          height: size.height * 0.09,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
-                            color: Colors.black,
+                            color: Colors.black54,
                           ),
                           child: Opacity(
-                            opacity: 0.7,
+                            opacity: 0.6,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(14),
                               child: ExtendedImage.asset(
-                                'assets/images/city/city_seoul.jpeg',
+                                e.values.elementAt(5),
                                 fit: BoxFit.cover,
                               ),
                             ),

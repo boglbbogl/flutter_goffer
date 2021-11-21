@@ -18,11 +18,13 @@ class _$TravelResearchStateTearOff {
 
   _TravelResearchState call(
       {required ResearchQuestion? research,
+      required List<ResearchQuestion> travelRouteResearchList,
       required int researchIndex,
       required List<String> createPreResearchUiControl,
       required bool isDelayTime}) {
     return _TravelResearchState(
       research: research,
+      travelRouteResearchList: travelRouteResearchList,
       researchIndex: researchIndex,
       createPreResearchUiControl: createPreResearchUiControl,
       isDelayTime: isDelayTime,
@@ -36,6 +38,8 @@ const $TravelResearchState = _$TravelResearchStateTearOff();
 /// @nodoc
 mixin _$TravelResearchState {
   ResearchQuestion? get research => throw _privateConstructorUsedError;
+  List<ResearchQuestion> get travelRouteResearchList =>
+      throw _privateConstructorUsedError;
   int get researchIndex => throw _privateConstructorUsedError;
   List<String> get createPreResearchUiControl =>
       throw _privateConstructorUsedError;
@@ -53,6 +57,7 @@ abstract class $TravelResearchStateCopyWith<$Res> {
       _$TravelResearchStateCopyWithImpl<$Res>;
   $Res call(
       {ResearchQuestion? research,
+      List<ResearchQuestion> travelRouteResearchList,
       int researchIndex,
       List<String> createPreResearchUiControl,
       bool isDelayTime});
@@ -72,6 +77,7 @@ class _$TravelResearchStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? research = freezed,
+    Object? travelRouteResearchList = freezed,
     Object? researchIndex = freezed,
     Object? createPreResearchUiControl = freezed,
     Object? isDelayTime = freezed,
@@ -81,6 +87,10 @@ class _$TravelResearchStateCopyWithImpl<$Res>
           ? _value.research
           : research // ignore: cast_nullable_to_non_nullable
               as ResearchQuestion?,
+      travelRouteResearchList: travelRouteResearchList == freezed
+          ? _value.travelRouteResearchList
+          : travelRouteResearchList // ignore: cast_nullable_to_non_nullable
+              as List<ResearchQuestion>,
       researchIndex: researchIndex == freezed
           ? _value.researchIndex
           : researchIndex // ignore: cast_nullable_to_non_nullable
@@ -117,6 +127,7 @@ abstract class _$TravelResearchStateCopyWith<$Res>
   @override
   $Res call(
       {ResearchQuestion? research,
+      List<ResearchQuestion> travelRouteResearchList,
       int researchIndex,
       List<String> createPreResearchUiControl,
       bool isDelayTime});
@@ -139,6 +150,7 @@ class __$TravelResearchStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? research = freezed,
+    Object? travelRouteResearchList = freezed,
     Object? researchIndex = freezed,
     Object? createPreResearchUiControl = freezed,
     Object? isDelayTime = freezed,
@@ -148,6 +160,10 @@ class __$TravelResearchStateCopyWithImpl<$Res>
           ? _value.research
           : research // ignore: cast_nullable_to_non_nullable
               as ResearchQuestion?,
+      travelRouteResearchList: travelRouteResearchList == freezed
+          ? _value.travelRouteResearchList
+          : travelRouteResearchList // ignore: cast_nullable_to_non_nullable
+              as List<ResearchQuestion>,
       researchIndex: researchIndex == freezed
           ? _value.researchIndex
           : researchIndex // ignore: cast_nullable_to_non_nullable
@@ -169,12 +185,15 @@ class __$TravelResearchStateCopyWithImpl<$Res>
 class _$_TravelResearchState implements _TravelResearchState {
   const _$_TravelResearchState(
       {required this.research,
+      required this.travelRouteResearchList,
       required this.researchIndex,
       required this.createPreResearchUiControl,
       required this.isDelayTime});
 
   @override
   final ResearchQuestion? research;
+  @override
+  final List<ResearchQuestion> travelRouteResearchList;
   @override
   final int researchIndex;
   @override
@@ -184,7 +203,7 @@ class _$_TravelResearchState implements _TravelResearchState {
 
   @override
   String toString() {
-    return 'TravelResearchState(research: $research, researchIndex: $researchIndex, createPreResearchUiControl: $createPreResearchUiControl, isDelayTime: $isDelayTime)';
+    return 'TravelResearchState(research: $research, travelRouteResearchList: $travelRouteResearchList, researchIndex: $researchIndex, createPreResearchUiControl: $createPreResearchUiControl, isDelayTime: $isDelayTime)';
   }
 
   @override
@@ -194,6 +213,10 @@ class _$_TravelResearchState implements _TravelResearchState {
             (identical(other.research, research) ||
                 const DeepCollectionEquality()
                     .equals(other.research, research)) &&
+            (identical(
+                    other.travelRouteResearchList, travelRouteResearchList) ||
+                const DeepCollectionEquality().equals(
+                    other.travelRouteResearchList, travelRouteResearchList)) &&
             (identical(other.researchIndex, researchIndex) ||
                 const DeepCollectionEquality()
                     .equals(other.researchIndex, researchIndex)) &&
@@ -211,6 +234,7 @@ class _$_TravelResearchState implements _TravelResearchState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(research) ^
+      const DeepCollectionEquality().hash(travelRouteResearchList) ^
       const DeepCollectionEquality().hash(researchIndex) ^
       const DeepCollectionEquality().hash(createPreResearchUiControl) ^
       const DeepCollectionEquality().hash(isDelayTime);
@@ -225,12 +249,16 @@ class _$_TravelResearchState implements _TravelResearchState {
 abstract class _TravelResearchState implements TravelResearchState {
   const factory _TravelResearchState(
       {required ResearchQuestion? research,
+      required List<ResearchQuestion> travelRouteResearchList,
       required int researchIndex,
       required List<String> createPreResearchUiControl,
       required bool isDelayTime}) = _$_TravelResearchState;
 
   @override
   ResearchQuestion? get research => throw _privateConstructorUsedError;
+  @override
+  List<ResearchQuestion> get travelRouteResearchList =>
+      throw _privateConstructorUsedError;
   @override
   int get researchIndex => throw _privateConstructorUsedError;
   @override

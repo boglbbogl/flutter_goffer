@@ -252,7 +252,8 @@ class _$TravelCourseTearOff {
       required String id,
       required String x,
       required String y,
-      required String placeName}) {
+      required String placeName,
+      required List<TravelResearch> research}) {
     return _TravelCourse(
       date: date,
       time: time,
@@ -260,6 +261,7 @@ class _$TravelCourseTearOff {
       x: x,
       y: y,
       placeName: placeName,
+      research: research,
     );
   }
 }
@@ -275,6 +277,7 @@ mixin _$TravelCourse {
   String get x => throw _privateConstructorUsedError;
   String get y => throw _privateConstructorUsedError;
   String get placeName => throw _privateConstructorUsedError;
+  List<TravelResearch> get research => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TravelCourseCopyWith<TravelCourse> get copyWith =>
@@ -292,7 +295,8 @@ abstract class $TravelCourseCopyWith<$Res> {
       String id,
       String x,
       String y,
-      String placeName});
+      String placeName,
+      List<TravelResearch> research});
 }
 
 /// @nodoc
@@ -311,6 +315,7 @@ class _$TravelCourseCopyWithImpl<$Res> implements $TravelCourseCopyWith<$Res> {
     Object? x = freezed,
     Object? y = freezed,
     Object? placeName = freezed,
+    Object? research = freezed,
   }) {
     return _then(_value.copyWith(
       date: date == freezed
@@ -337,6 +342,10 @@ class _$TravelCourseCopyWithImpl<$Res> implements $TravelCourseCopyWith<$Res> {
           ? _value.placeName
           : placeName // ignore: cast_nullable_to_non_nullable
               as String,
+      research: research == freezed
+          ? _value.research
+          : research // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
     ));
   }
 }
@@ -354,7 +363,8 @@ abstract class _$TravelCourseCopyWith<$Res>
       String id,
       String x,
       String y,
-      String placeName});
+      String placeName,
+      List<TravelResearch> research});
 }
 
 /// @nodoc
@@ -375,6 +385,7 @@ class __$TravelCourseCopyWithImpl<$Res> extends _$TravelCourseCopyWithImpl<$Res>
     Object? x = freezed,
     Object? y = freezed,
     Object? placeName = freezed,
+    Object? research = freezed,
   }) {
     return _then(_TravelCourse(
       date: date == freezed
@@ -401,6 +412,10 @@ class __$TravelCourseCopyWithImpl<$Res> extends _$TravelCourseCopyWithImpl<$Res>
           ? _value.placeName
           : placeName // ignore: cast_nullable_to_non_nullable
               as String,
+      research: research == freezed
+          ? _value.research
+          : research // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
     ));
   }
 }
@@ -414,7 +429,8 @@ class _$_TravelCourse implements _TravelCourse {
       required this.id,
       required this.x,
       required this.y,
-      required this.placeName});
+      required this.placeName,
+      required this.research});
 
   @override
   final String date;
@@ -428,10 +444,12 @@ class _$_TravelCourse implements _TravelCourse {
   final String y;
   @override
   final String placeName;
+  @override
+  final List<TravelResearch> research;
 
   @override
   String toString() {
-    return 'TravelCourse(date: $date, time: $time, id: $id, x: $x, y: $y, placeName: $placeName)';
+    return 'TravelCourse(date: $date, time: $time, id: $id, x: $x, y: $y, placeName: $placeName, research: $research)';
   }
 
   @override
@@ -450,7 +468,10 @@ class _$_TravelCourse implements _TravelCourse {
                 const DeepCollectionEquality().equals(other.y, y)) &&
             (identical(other.placeName, placeName) ||
                 const DeepCollectionEquality()
-                    .equals(other.placeName, placeName)));
+                    .equals(other.placeName, placeName)) &&
+            (identical(other.research, research) ||
+                const DeepCollectionEquality()
+                    .equals(other.research, research)));
   }
 
   @override
@@ -461,7 +482,8 @@ class _$_TravelCourse implements _TravelCourse {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(x) ^
       const DeepCollectionEquality().hash(y) ^
-      const DeepCollectionEquality().hash(placeName);
+      const DeepCollectionEquality().hash(placeName) ^
+      const DeepCollectionEquality().hash(research);
 
   @JsonKey(ignore: true)
   @override
@@ -476,7 +498,8 @@ abstract class _TravelCourse implements TravelCourse {
       required String id,
       required String x,
       required String y,
-      required String placeName}) = _$_TravelCourse;
+      required String placeName,
+      required List<TravelResearch> research}) = _$_TravelCourse;
 
   @override
   String get date => throw _privateConstructorUsedError;
@@ -490,6 +513,8 @@ abstract class _TravelCourse implements TravelCourse {
   String get y => throw _privateConstructorUsedError;
   @override
   String get placeName => throw _privateConstructorUsedError;
+  @override
+  List<TravelResearch> get research => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TravelCourseCopyWith<_TravelCourse> get copyWith =>

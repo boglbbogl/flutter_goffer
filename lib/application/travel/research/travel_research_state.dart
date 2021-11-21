@@ -4,7 +4,7 @@ part of 'travel_research_cubit.dart';
 class TravelResearchState with _$TravelResearchState {
   const factory TravelResearchState({
     required ResearchQuestion? research,
-    // required List<ResearchQuestion> travelRouteResearchList,
+    required List<ResearchQuestion> travelRouteResearchList,
     required int researchIndex,
     required List<String> createPreResearchUiControl,
     required bool isDelayTime,
@@ -14,6 +14,6 @@ class TravelResearchState with _$TravelResearchState {
         researchIndex: 0,
         isDelayTime: false,
         createPreResearchUiControl: [],
-        // travelRouteResearchList: [],
+        travelRouteResearchList: [],
       );
 }

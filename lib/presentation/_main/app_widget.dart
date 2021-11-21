@@ -23,7 +23,8 @@ class AppWidget extends StatelessWidget {
                 getIt<AuthBloc>()..add(const AuthCheckRequested())),
         BlocProvider(create: (context) => getIt<FindLocationCubit>()),
         BlocProvider(create: (context) => getIt<TravelCreateBloc>()),
-        BlocProvider(create: (context) => getIt<TravelResearchCubit>()),
+        BlocProvider(
+            create: (context) => getIt<TravelResearchCubit>()..started()),
       ],
       child: MaterialApp.router(
         routerDelegate: routerDelegate,

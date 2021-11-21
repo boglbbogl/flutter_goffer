@@ -56,17 +56,9 @@ class TravelSubmittedButton extends StatelessWidget {
                   fontSize: 18),
             ),
             onPressed: () {
-              // if (startId.isEmpty || endId.isEmpty) {
-              //   if (startId.isEmpty) {
-              //     logger.d("Start Null !!");
-              //   } else if (endId.isEmpty) {
-              //     logger.d("End Null !!");
-              //   }
-              // } else {
-              //   context
-              //       .read<TravelCreateBloc>()
-              //       .add(const TravelCreateEvent.submitted());
-              // }
+              context
+                  .read<TravelCreateBloc>()
+                  .add(const TravelCreateEvent.submitted());
             },
           ),
         ),

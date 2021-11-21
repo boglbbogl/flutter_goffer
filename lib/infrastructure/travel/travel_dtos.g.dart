@@ -39,6 +39,9 @@ _$_TravelCourseDto _$_$_TravelCourseDtoFromJson(Map<String, dynamic> json) {
     x: json['_x'] as String,
     y: json['_y'] as String,
     placeName: json['place_name'] as String,
+    research: (json['research'] as List<dynamic>)
+        .map((e) => TravelResearchDto.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
@@ -50,6 +53,7 @@ Map<String, dynamic> _$_$_TravelCourseDtoToJson(_$_TravelCourseDto instance) =>
       '_x': instance.x,
       '_y': instance.y,
       'place_name': instance.placeName,
+      'research': instance.research,
     };
 
 _$_TravelResearchDto _$_$_TravelResearchDtoFromJson(Map<String, dynamic> json) {

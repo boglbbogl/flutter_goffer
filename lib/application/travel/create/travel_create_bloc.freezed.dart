@@ -20,6 +20,10 @@ class _$TravelCreateEventTearOff {
     return const _Started();
   }
 
+  _InitialData initialData() {
+    return const _InitialData();
+  }
+
   _Submitted submitted() {
     return const _Submitted();
   }
@@ -98,6 +102,13 @@ class _$TravelCreateEventTearOff {
       research: research,
     );
   }
+
+  _routeResearchSelected routeResearchSelected(
+      {required TravelResearch research}) {
+    return _routeResearchSelected(
+      research: research,
+    );
+  }
 }
 
 /// @nodoc
@@ -108,6 +119,7 @@ mixin _$TravelCreateEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -121,11 +133,13 @@ mixin _$TravelCreateEvent {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -139,12 +153,14 @@ mixin _$TravelCreateEvent {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -159,11 +175,14 @@ mixin _$TravelCreateEvent {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -176,6 +195,7 @@ mixin _$TravelCreateEvent {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -236,6 +256,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -249,6 +270,7 @@ class _$_Started implements _Started {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return started();
   }
@@ -257,6 +279,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -270,6 +293,7 @@ class _$_Started implements _Started {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -282,6 +306,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -296,6 +321,8 @@ class _$_Started implements _Started {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return started(this);
   }
@@ -304,6 +331,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -316,6 +344,7 @@ class _$_Started implements _Started {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -327,6 +356,149 @@ class _$_Started implements _Started {
 
 abstract class _Started implements TravelCreateEvent {
   const factory _Started() = _$_Started;
+}
+
+/// @nodoc
+abstract class _$InitialDataCopyWith<$Res> {
+  factory _$InitialDataCopyWith(
+          _InitialData value, $Res Function(_InitialData) then) =
+      __$InitialDataCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InitialDataCopyWithImpl<$Res>
+    extends _$TravelCreateEventCopyWithImpl<$Res>
+    implements _$InitialDataCopyWith<$Res> {
+  __$InitialDataCopyWithImpl(
+      _InitialData _value, $Res Function(_InitialData) _then)
+      : super(_value, (v) => _then(v as _InitialData));
+
+  @override
+  _InitialData get _value => super._value as _InitialData;
+}
+
+/// @nodoc
+
+class _$_InitialData implements _InitialData {
+  const _$_InitialData();
+
+  @override
+  String toString() {
+    return 'TravelCreateEvent.initialData()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InitialData);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() initialData,
+    required TResult Function() submitted,
+    required TResult Function(String start, String end) dateSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String x, String y, String id, String placeName)
+        startDestinationSelected,
+    required TResult Function(String x, String y, String id, String placeName)
+        endDestinationSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
+    required TResult Function(String end) endTimeSelected,
+    required TResult Function(bool value) dateAndTimeBottomBar,
+    required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
+  }) {
+    return initialData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? initialData,
+    TResult Function()? submitted,
+    TResult Function(String start, String end)? dateSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String x, String y, String id, String placeName)?
+        startDestinationSelected,
+    TResult Function(String x, String y, String id, String placeName)?
+        endDestinationSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
+    TResult Function(String end)? endTimeSelected,
+    TResult Function(bool value)? dateAndTimeBottomBar,
+    TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
+    required TResult orElse(),
+  }) {
+    if (initialData != null) {
+      return initialData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_DateSelected value) dateSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_StartDestinationSelected value)
+        startDestinationSelected,
+    required TResult Function(_EndDestinationSelected value)
+        endDestinationSelected,
+    required TResult Function(_LayoverSelected value) layoverSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
+    required TResult Function(_LayoverAddressBottomSearched value)
+        addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
+  }) {
+    return initialData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_DateSelected value)? dateSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_StartDestinationSelected value)? startDestinationSelected,
+    TResult Function(_EndDestinationSelected value)? endDestinationSelected,
+    TResult Function(_LayoverSelected value)? layoverSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
+    TResult Function(_LayoverAddressBottomSearched value)?
+        addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
+    required TResult orElse(),
+  }) {
+    if (initialData != null) {
+      return initialData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitialData implements TravelCreateEvent {
+  const factory _InitialData() = _$_InitialData;
 }
 
 /// @nodoc
@@ -369,6 +541,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -382,6 +555,7 @@ class _$_Submitted implements _Submitted {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return submitted();
   }
@@ -390,6 +564,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -403,6 +578,7 @@ class _$_Submitted implements _Submitted {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (submitted != null) {
@@ -415,6 +591,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -429,6 +606,8 @@ class _$_Submitted implements _Submitted {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return submitted(this);
   }
@@ -437,6 +616,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -449,6 +629,7 @@ class _$_Submitted implements _Submitted {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (submitted != null) {
@@ -539,6 +720,7 @@ class _$_DateSelected implements _DateSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -552,6 +734,7 @@ class _$_DateSelected implements _DateSelected {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return dateSelected(start, end);
   }
@@ -560,6 +743,7 @@ class _$_DateSelected implements _DateSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -573,6 +757,7 @@ class _$_DateSelected implements _DateSelected {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -585,6 +770,7 @@ class _$_DateSelected implements _DateSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -599,6 +785,8 @@ class _$_DateSelected implements _DateSelected {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return dateSelected(this);
   }
@@ -607,6 +795,7 @@ class _$_DateSelected implements _DateSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -619,6 +808,7 @@ class _$_DateSelected implements _DateSelected {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (dateSelected != null) {
@@ -705,6 +895,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -718,6 +909,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return startTimeSelected(start);
   }
@@ -726,6 +918,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -739,6 +932,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -751,6 +945,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -765,6 +960,8 @@ class _$_StartTimeSelected implements _StartTimeSelected {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return startTimeSelected(this);
   }
@@ -773,6 +970,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -785,6 +983,7 @@ class _$_StartTimeSelected implements _StartTimeSelected {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -908,6 +1107,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -921,6 +1121,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return startDestinationSelected(x, y, id, placeName);
   }
@@ -929,6 +1130,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -942,6 +1144,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (startDestinationSelected != null) {
@@ -954,6 +1157,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -968,6 +1172,8 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return startDestinationSelected(this);
   }
@@ -976,6 +1182,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -988,6 +1195,7 @@ class _$_StartDestinationSelected implements _StartDestinationSelected {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (startDestinationSelected != null) {
@@ -1116,6 +1324,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -1129,6 +1338,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return endDestinationSelected(x, y, id, placeName);
   }
@@ -1137,6 +1347,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -1150,6 +1361,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (endDestinationSelected != null) {
@@ -1162,6 +1374,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -1176,6 +1389,8 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return endDestinationSelected(this);
   }
@@ -1184,6 +1399,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -1196,6 +1412,7 @@ class _$_EndDestinationSelected implements _EndDestinationSelected {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (endDestinationSelected != null) {
@@ -1296,6 +1513,7 @@ class _$_LayoverSelected implements _LayoverSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -1309,6 +1527,7 @@ class _$_LayoverSelected implements _LayoverSelected {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return layoverSelected(layover);
   }
@@ -1317,6 +1536,7 @@ class _$_LayoverSelected implements _LayoverSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -1330,6 +1550,7 @@ class _$_LayoverSelected implements _LayoverSelected {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (layoverSelected != null) {
@@ -1342,6 +1563,7 @@ class _$_LayoverSelected implements _LayoverSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -1356,6 +1578,8 @@ class _$_LayoverSelected implements _LayoverSelected {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return layoverSelected(this);
   }
@@ -1364,6 +1588,7 @@ class _$_LayoverSelected implements _LayoverSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -1376,6 +1601,7 @@ class _$_LayoverSelected implements _LayoverSelected {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (layoverSelected != null) {
@@ -1461,6 +1687,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -1474,6 +1701,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return endTimeSelected(end);
   }
@@ -1482,6 +1710,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -1495,6 +1724,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -1507,6 +1737,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -1521,6 +1752,8 @@ class _$_EndTimeSelected implements _EndTimeSelected {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return endTimeSelected(this);
   }
@@ -1529,6 +1762,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -1541,6 +1775,7 @@ class _$_EndTimeSelected implements _EndTimeSelected {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -1626,6 +1861,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -1639,6 +1875,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return dateAndTimeBottomBar(value);
   }
@@ -1647,6 +1884,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -1660,6 +1898,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (dateAndTimeBottomBar != null) {
@@ -1672,6 +1911,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -1686,6 +1926,8 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return dateAndTimeBottomBar(this);
   }
@@ -1694,6 +1936,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -1706,6 +1949,7 @@ class _$_AdressBottomSearched implements _AdressBottomSearched {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (dateAndTimeBottomBar != null) {
@@ -1795,6 +2039,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -1808,6 +2053,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return addressBottomSearched(value);
   }
@@ -1816,6 +2062,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -1829,6 +2076,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (addressBottomSearched != null) {
@@ -1841,6 +2089,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -1855,6 +2104,8 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return addressBottomSearched(this);
   }
@@ -1863,6 +2114,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -1875,6 +2127,7 @@ class _$_LayoverAddressBottomSearched implements _LayoverAddressBottomSearched {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (addressBottomSearched != null) {
@@ -1961,6 +2214,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -1974,6 +2228,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return locationToggleButton(index);
   }
@@ -1982,6 +2237,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -1995,6 +2251,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (locationToggleButton != null) {
@@ -2007,6 +2264,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -2021,6 +2279,8 @@ class _$_LocationToggleButton implements _LocationToggleButton {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return locationToggleButton(this);
   }
@@ -2029,6 +2289,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -2041,6 +2302,7 @@ class _$_LocationToggleButton implements _LocationToggleButton {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (locationToggleButton != null) {
@@ -2137,6 +2399,7 @@ class _$_PreResearchSelected implements _PreResearchSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() initialData,
     required TResult Function() submitted,
     required TResult Function(String start, String end) dateSelected,
     required TResult Function(String start) startTimeSelected,
@@ -2150,6 +2413,7 @@ class _$_PreResearchSelected implements _PreResearchSelected {
     required TResult Function(bool value) addressBottomSearched,
     required TResult Function(int index) locationToggleButton,
     required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
   }) {
     return preResearchSelected(research);
   }
@@ -2158,6 +2422,7 @@ class _$_PreResearchSelected implements _PreResearchSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? initialData,
     TResult Function()? submitted,
     TResult Function(String start, String end)? dateSelected,
     TResult Function(String start)? startTimeSelected,
@@ -2171,6 +2436,7 @@ class _$_PreResearchSelected implements _PreResearchSelected {
     TResult Function(bool value)? addressBottomSearched,
     TResult Function(int index)? locationToggleButton,
     TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (preResearchSelected != null) {
@@ -2183,6 +2449,7 @@ class _$_PreResearchSelected implements _PreResearchSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_DateSelected value) dateSelected,
     required TResult Function(_StartTimeSelected value) startTimeSelected,
@@ -2197,6 +2464,8 @@ class _$_PreResearchSelected implements _PreResearchSelected {
         addressBottomSearched,
     required TResult Function(_LocationToggleButton value) locationToggleButton,
     required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
   }) {
     return preResearchSelected(this);
   }
@@ -2205,6 +2474,7 @@ class _$_PreResearchSelected implements _PreResearchSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_DateSelected value)? dateSelected,
     TResult Function(_StartTimeSelected value)? startTimeSelected,
@@ -2217,6 +2487,7 @@ class _$_PreResearchSelected implements _PreResearchSelected {
         addressBottomSearched,
     TResult Function(_LocationToggleButton value)? locationToggleButton,
     TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
     required TResult orElse(),
   }) {
     if (preResearchSelected != null) {
@@ -2237,6 +2508,191 @@ abstract class _PreResearchSelected implements TravelCreateEvent {
 }
 
 /// @nodoc
+abstract class _$routeResearchSelectedCopyWith<$Res> {
+  factory _$routeResearchSelectedCopyWith(_routeResearchSelected value,
+          $Res Function(_routeResearchSelected) then) =
+      __$routeResearchSelectedCopyWithImpl<$Res>;
+  $Res call({TravelResearch research});
+
+  $TravelResearchCopyWith<$Res> get research;
+}
+
+/// @nodoc
+class __$routeResearchSelectedCopyWithImpl<$Res>
+    extends _$TravelCreateEventCopyWithImpl<$Res>
+    implements _$routeResearchSelectedCopyWith<$Res> {
+  __$routeResearchSelectedCopyWithImpl(_routeResearchSelected _value,
+      $Res Function(_routeResearchSelected) _then)
+      : super(_value, (v) => _then(v as _routeResearchSelected));
+
+  @override
+  _routeResearchSelected get _value => super._value as _routeResearchSelected;
+
+  @override
+  $Res call({
+    Object? research = freezed,
+  }) {
+    return _then(_routeResearchSelected(
+      research: research == freezed
+          ? _value.research
+          : research // ignore: cast_nullable_to_non_nullable
+              as TravelResearch,
+    ));
+  }
+
+  @override
+  $TravelResearchCopyWith<$Res> get research {
+    return $TravelResearchCopyWith<$Res>(_value.research, (value) {
+      return _then(_value.copyWith(research: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_routeResearchSelected implements _routeResearchSelected {
+  const _$_routeResearchSelected({required this.research});
+
+  @override
+  final TravelResearch research;
+
+  @override
+  String toString() {
+    return 'TravelCreateEvent.routeResearchSelected(research: $research)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _routeResearchSelected &&
+            (identical(other.research, research) ||
+                const DeepCollectionEquality()
+                    .equals(other.research, research)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(research);
+
+  @JsonKey(ignore: true)
+  @override
+  _$routeResearchSelectedCopyWith<_routeResearchSelected> get copyWith =>
+      __$routeResearchSelectedCopyWithImpl<_routeResearchSelected>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() initialData,
+    required TResult Function() submitted,
+    required TResult Function(String start, String end) dateSelected,
+    required TResult Function(String start) startTimeSelected,
+    required TResult Function(String x, String y, String id, String placeName)
+        startDestinationSelected,
+    required TResult Function(String x, String y, String id, String placeName)
+        endDestinationSelected,
+    required TResult Function(TravelCourse layover) layoverSelected,
+    required TResult Function(String end) endTimeSelected,
+    required TResult Function(bool value) dateAndTimeBottomBar,
+    required TResult Function(bool value) addressBottomSearched,
+    required TResult Function(int index) locationToggleButton,
+    required TResult Function(TravelResearch research) preResearchSelected,
+    required TResult Function(TravelResearch research) routeResearchSelected,
+  }) {
+    return routeResearchSelected(research);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? initialData,
+    TResult Function()? submitted,
+    TResult Function(String start, String end)? dateSelected,
+    TResult Function(String start)? startTimeSelected,
+    TResult Function(String x, String y, String id, String placeName)?
+        startDestinationSelected,
+    TResult Function(String x, String y, String id, String placeName)?
+        endDestinationSelected,
+    TResult Function(TravelCourse layover)? layoverSelected,
+    TResult Function(String end)? endTimeSelected,
+    TResult Function(bool value)? dateAndTimeBottomBar,
+    TResult Function(bool value)? addressBottomSearched,
+    TResult Function(int index)? locationToggleButton,
+    TResult Function(TravelResearch research)? preResearchSelected,
+    TResult Function(TravelResearch research)? routeResearchSelected,
+    required TResult orElse(),
+  }) {
+    if (routeResearchSelected != null) {
+      return routeResearchSelected(research);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_InitialData value) initialData,
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_DateSelected value) dateSelected,
+    required TResult Function(_StartTimeSelected value) startTimeSelected,
+    required TResult Function(_StartDestinationSelected value)
+        startDestinationSelected,
+    required TResult Function(_EndDestinationSelected value)
+        endDestinationSelected,
+    required TResult Function(_LayoverSelected value) layoverSelected,
+    required TResult Function(_EndTimeSelected value) endTimeSelected,
+    required TResult Function(_AdressBottomSearched value) dateAndTimeBottomBar,
+    required TResult Function(_LayoverAddressBottomSearched value)
+        addressBottomSearched,
+    required TResult Function(_LocationToggleButton value) locationToggleButton,
+    required TResult Function(_PreResearchSelected value) preResearchSelected,
+    required TResult Function(_routeResearchSelected value)
+        routeResearchSelected,
+  }) {
+    return routeResearchSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_InitialData value)? initialData,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_DateSelected value)? dateSelected,
+    TResult Function(_StartTimeSelected value)? startTimeSelected,
+    TResult Function(_StartDestinationSelected value)? startDestinationSelected,
+    TResult Function(_EndDestinationSelected value)? endDestinationSelected,
+    TResult Function(_LayoverSelected value)? layoverSelected,
+    TResult Function(_EndTimeSelected value)? endTimeSelected,
+    TResult Function(_AdressBottomSearched value)? dateAndTimeBottomBar,
+    TResult Function(_LayoverAddressBottomSearched value)?
+        addressBottomSearched,
+    TResult Function(_LocationToggleButton value)? locationToggleButton,
+    TResult Function(_PreResearchSelected value)? preResearchSelected,
+    TResult Function(_routeResearchSelected value)? routeResearchSelected,
+    required TResult orElse(),
+  }) {
+    if (routeResearchSelected != null) {
+      return routeResearchSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _routeResearchSelected implements TravelCreateEvent {
+  const factory _routeResearchSelected({required TravelResearch research}) =
+      _$_routeResearchSelected;
+
+  TravelResearch get research => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$routeResearchSelectedCopyWith<_routeResearchSelected> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$TravelCreateStateTearOff {
   const _$TravelCreateStateTearOff();
 
@@ -2249,6 +2705,7 @@ class _$TravelCreateStateTearOff {
       required List<TravelCourse> wayTravel,
       required List<TravelCourse> wayAddAndRemoveList,
       required List<TravelResearch> preResearch,
+      required List<TravelResearch> routeResearch,
       required TravelResearch? travelResearch,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
@@ -2264,6 +2721,7 @@ class _$TravelCreateStateTearOff {
       wayTravel: wayTravel,
       wayAddAndRemoveList: wayAddAndRemoveList,
       preResearch: preResearch,
+      routeResearch: routeResearch,
       travelResearch: travelResearch,
       isDateAndTimeSearchBar: isDateAndTimeSearchBar,
       isAddressSearchBar: isAddressSearchBar,
@@ -2289,6 +2747,7 @@ mixin _$TravelCreateState {
   List<TravelCourse> get wayAddAndRemoveList =>
       throw _privateConstructorUsedError;
   List<TravelResearch> get preResearch => throw _privateConstructorUsedError;
+  List<TravelResearch> get routeResearch => throw _privateConstructorUsedError;
   TravelResearch? get travelResearch => throw _privateConstructorUsedError;
   bool get isDateAndTimeSearchBar => throw _privateConstructorUsedError;
   bool get isAddressSearchBar => throw _privateConstructorUsedError;
@@ -2315,6 +2774,7 @@ abstract class $TravelCreateStateCopyWith<$Res> {
       List<TravelCourse> wayTravel,
       List<TravelCourse> wayAddAndRemoveList,
       List<TravelResearch> preResearch,
+      List<TravelResearch> routeResearch,
       TravelResearch? travelResearch,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
@@ -2347,6 +2807,7 @@ class _$TravelCreateStateCopyWithImpl<$Res>
     Object? wayTravel = freezed,
     Object? wayAddAndRemoveList = freezed,
     Object? preResearch = freezed,
+    Object? routeResearch = freezed,
     Object? travelResearch = freezed,
     Object? isDateAndTimeSearchBar = freezed,
     Object? isAddressSearchBar = freezed,
@@ -2386,6 +2847,10 @@ class _$TravelCreateStateCopyWithImpl<$Res>
       preResearch: preResearch == freezed
           ? _value.preResearch
           : preResearch // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
+      routeResearch: routeResearch == freezed
+          ? _value.routeResearch
+          : routeResearch // ignore: cast_nullable_to_non_nullable
               as List<TravelResearch>,
       travelResearch: travelResearch == freezed
           ? _value.travelResearch
@@ -2475,6 +2940,7 @@ abstract class _$TravelCreateStateCopyWith<$Res>
       List<TravelCourse> wayTravel,
       List<TravelCourse> wayAddAndRemoveList,
       List<TravelResearch> preResearch,
+      List<TravelResearch> routeResearch,
       TravelResearch? travelResearch,
       bool isDateAndTimeSearchBar,
       bool isAddressSearchBar,
@@ -2513,6 +2979,7 @@ class __$TravelCreateStateCopyWithImpl<$Res>
     Object? wayTravel = freezed,
     Object? wayAddAndRemoveList = freezed,
     Object? preResearch = freezed,
+    Object? routeResearch = freezed,
     Object? travelResearch = freezed,
     Object? isDateAndTimeSearchBar = freezed,
     Object? isAddressSearchBar = freezed,
@@ -2552,6 +3019,10 @@ class __$TravelCreateStateCopyWithImpl<$Res>
       preResearch: preResearch == freezed
           ? _value.preResearch
           : preResearch // ignore: cast_nullable_to_non_nullable
+              as List<TravelResearch>,
+      routeResearch: routeResearch == freezed
+          ? _value.routeResearch
+          : routeResearch // ignore: cast_nullable_to_non_nullable
               as List<TravelResearch>,
       travelResearch: travelResearch == freezed
           ? _value.travelResearch
@@ -2593,6 +3064,7 @@ class _$_TravelCreateState implements _TravelCreateState {
       required this.wayTravel,
       required this.wayAddAndRemoveList,
       required this.preResearch,
+      required this.routeResearch,
       required this.travelResearch,
       required this.isDateAndTimeSearchBar,
       required this.isAddressSearchBar,
@@ -2617,6 +3089,8 @@ class _$_TravelCreateState implements _TravelCreateState {
   @override
   final List<TravelResearch> preResearch;
   @override
+  final List<TravelResearch> routeResearch;
+  @override
   final TravelResearch? travelResearch;
   @override
   final bool isDateAndTimeSearchBar;
@@ -2631,7 +3105,7 @@ class _$_TravelCreateState implements _TravelCreateState {
 
   @override
   String toString() {
-    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, wayAddAndRemoveList: $wayAddAndRemoveList, preResearch: $preResearch, travelResearch: $travelResearch, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, isSelectedTourist: $isSelectedTourist, selectedTogglButtonIndex: $selectedTogglButtonIndex)';
+    return 'TravelCreateState(isLoading: $isLoading, submitResult: $submitResult, travel: $travel, startTravel: $startTravel, endTravel: $endTravel, wayTravel: $wayTravel, wayAddAndRemoveList: $wayAddAndRemoveList, preResearch: $preResearch, routeResearch: $routeResearch, travelResearch: $travelResearch, isDateAndTimeSearchBar: $isDateAndTimeSearchBar, isAddressSearchBar: $isAddressSearchBar, isLayoverAddressBar: $isLayoverAddressBar, isSelectedTourist: $isSelectedTourist, selectedTogglButtonIndex: $selectedTogglButtonIndex)';
   }
 
   @override
@@ -2661,6 +3135,9 @@ class _$_TravelCreateState implements _TravelCreateState {
             (identical(other.preResearch, preResearch) ||
                 const DeepCollectionEquality()
                     .equals(other.preResearch, preResearch)) &&
+            (identical(other.routeResearch, routeResearch) ||
+                const DeepCollectionEquality()
+                    .equals(other.routeResearch, routeResearch)) &&
             (identical(other.travelResearch, travelResearch) ||
                 const DeepCollectionEquality()
                     .equals(other.travelResearch, travelResearch)) &&
@@ -2693,6 +3170,7 @@ class _$_TravelCreateState implements _TravelCreateState {
       const DeepCollectionEquality().hash(wayTravel) ^
       const DeepCollectionEquality().hash(wayAddAndRemoveList) ^
       const DeepCollectionEquality().hash(preResearch) ^
+      const DeepCollectionEquality().hash(routeResearch) ^
       const DeepCollectionEquality().hash(travelResearch) ^
       const DeepCollectionEquality().hash(isDateAndTimeSearchBar) ^
       const DeepCollectionEquality().hash(isAddressSearchBar) ^
@@ -2716,6 +3194,7 @@ abstract class _TravelCreateState implements TravelCreateState {
       required List<TravelCourse> wayTravel,
       required List<TravelCourse> wayAddAndRemoveList,
       required List<TravelResearch> preResearch,
+      required List<TravelResearch> routeResearch,
       required TravelResearch? travelResearch,
       required bool isDateAndTimeSearchBar,
       required bool isAddressSearchBar,
@@ -2741,6 +3220,8 @@ abstract class _TravelCreateState implements TravelCreateState {
       throw _privateConstructorUsedError;
   @override
   List<TravelResearch> get preResearch => throw _privateConstructorUsedError;
+  @override
+  List<TravelResearch> get routeResearch => throw _privateConstructorUsedError;
   @override
   TravelResearch? get travelResearch => throw _privateConstructorUsedError;
   @override

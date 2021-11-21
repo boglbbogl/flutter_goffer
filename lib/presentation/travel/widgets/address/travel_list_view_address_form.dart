@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_goffer/_constant/widgets/theme.dart';
 import 'package:flutter_goffer/application/travel/create/travel_create_bloc.dart';
 import 'package:flutter_goffer/domain/find_location/find_location.dart';
-import 'package:flutter_goffer/presentation/travel/widgets/route_research/travel_route_research_widget.dart';
+import 'package:flutter_goffer/presentation/travel/travel_route_research_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class TravelListViewAddressForm extends StatelessWidget {
@@ -25,8 +25,11 @@ class TravelListViewAddressForm extends StatelessWidget {
     return InkWell(
       onTap: () {
         FocusScope.of(context).unfocus();
+        context
+            .read<TravelCreateBloc>()
+            .add(const TravelCreateEvent.initialData());
         pushNewScreen(context,
-            screen: TravelRouteResearchWidget(
+            screen: TravelRouteResearchScreen(
               x: data.x,
               y: data.y,
               id: data.id,

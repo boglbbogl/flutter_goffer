@@ -46,7 +46,11 @@ class TravelDestinationIconBody extends StatelessWidget {
                         .read<TravelCreateBloc>()
                         .add(TravelCreateEvent.layoverSelected(
                           layover: travel.copyWith(
-                              id: e.id, x: e.x, y: e.y, placeName: e.placeName),
+                              id: e.id,
+                              x: e.x,
+                              y: e.y,
+                              placeName: e.placeName,
+                              research: []),
                         ));
                   }
                 },

@@ -40,6 +40,7 @@ class TravelCourseDto with _$TravelCourseDto {
     @JsonKey(name: '_x') required String x,
     @JsonKey(name: '_y') required String y,
     @JsonKey(name: 'place_name') required String placeName,
+    required List<TravelResearchDto> research,
   }) = _TravelCourseDto;
   const TravelCourseDto._();
   factory TravelCourseDto.fromJson(Map<String, dynamic> json) =>
@@ -52,6 +53,8 @@ class TravelCourseDto with _$TravelCourseDto {
         x: r.x,
         y: r.y,
         placeName: r.placeName,
+        research:
+            r.research.map((e) => TravelResearchDto.fromDomain(e)).toList(),
       );
 
   TravelCourse toDomain() => TravelCourse(
@@ -61,6 +64,7 @@ class TravelCourseDto with _$TravelCourseDto {
         x: x,
         y: y,
         placeName: placeName,
+        research: research.map((e) => e.toDomain()).toList(),
       );
 }
 

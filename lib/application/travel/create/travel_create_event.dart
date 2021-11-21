@@ -3,6 +3,7 @@ part of 'travel_create_bloc.dart';
 @freezed
 class TravelCreateEvent with _$TravelCreateEvent {
   const factory TravelCreateEvent.started() = _Started;
+  const factory TravelCreateEvent.initialData() = _InitialData;
   const factory TravelCreateEvent.submitted() = _Submitted;
   const factory TravelCreateEvent.dateSelected({
     required String start,
@@ -39,4 +40,7 @@ class TravelCreateEvent with _$TravelCreateEvent {
   const factory TravelCreateEvent.preResearchSelected({
     required TravelResearch research,
   }) = _PreResearchSelected;
+  const factory TravelCreateEvent.routeResearchSelected({
+    required TravelResearch research,
+  }) = _routeResearchSelected;
 }

@@ -28,6 +28,7 @@ class TravelCourse with _$TravelCourse {
     required String x,
     required String y,
     required String placeName,
+    required List<TravelResearch> research,
   }) = _TravelCourse;
 
   factory TravelCourse.empty() => const TravelCourse(
@@ -37,6 +38,7 @@ class TravelCourse with _$TravelCourse {
         x: "",
         y: "",
         placeName: "",
+        research: [],
       );
 }
 
